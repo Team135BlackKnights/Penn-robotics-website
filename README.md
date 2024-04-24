@@ -9,6 +9,9 @@
 <img src="landing.png" alt="landing" />
 
 ## Important
+
+If you chose to edit this website, please do not push the changes to this directory, as just in case everything hits the fan this directory will be working 100% of the time.
+
 ## 1. Documentation Outline
 
 This documentation is aimed at future members of Penn Robotics looking to maintain and update this project. This document will contain a guide aimed at new web developers, along with information on project structure for those with more experience.

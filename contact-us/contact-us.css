@@ -140,6 +140,13 @@
     transform: translateY(-16px) rotate(-45deg);
   }
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
 .footer {
   display: flex;
   flex-direction: column;
@@ -149,7 +156,6 @@
   background-color: rgb(60, 72, 88);
   color: white;
   font-size: 18px;
-  margin-top: 2vw;
 }
 .footer .title {
   text-transform: uppercase;
@@ -185,13 +191,6 @@
 .footer .copywrite .name:hover {
   background-color: rgb(250, 200, 0);
   color: white;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
 .landing {
@@ -250,20 +249,16 @@
   justify-content: space-evenly;
 }
 .main .content .separator {
-  width: 80%; /* Width of the line */
-  height: 1px; /* Thickness of the line */
-  background-color: #000; /* Color of the line */
-  margin: 20px 0; /* Adjust vertical spacing as needed */
-  margin-left: 2.5vw;
-}
-.main .content .separator-coach {
   width: 100%; /* Width of the line */
   height: 1px; /* Thickness of the line */
   background-color: #000; /* Color of the line */
   margin: 20px 0; /* Adjust vertical spacing as needed */
-  margin-left: 0vw;
+}
+.main .content .link {
+  margin-bottom: 0vh;
 }
 .main .content img {
+  margin-top: 3vh;
   max-width: 100%;
   height: auto;
   width: 250px;
@@ -397,8 +392,8 @@
 }
 
 @media (max-width: 720px) {
-  .landing {
-    min-height: 80vh;
+  .landing .hero .title {
+    padding-top: 18vh;
   }
   .current-events .videos {
     flex-direction: column;

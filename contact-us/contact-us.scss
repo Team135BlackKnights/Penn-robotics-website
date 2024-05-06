@@ -1,6 +1,5 @@
 @import "../variables";
 @import "../navbar";
-@import "../footer";
 
 * {
   margin: 0;
@@ -9,6 +8,60 @@
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   // border: 1px solid red;
 }
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: $secondary;
+  color: $primary;
+  font-size: $body + 2px;
+
+  .title {
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .content {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+
+    a {
+      color: $primary;
+      font-size: ($icon / 2) - 2px;
+
+      i {
+        transition: transform 100ms ease-in, color 100ms ease-in;
+
+        &:hover {
+          transform: translateY(-2px) scale(1.15);
+          color: $decoration;
+        }
+      }
+    }
+  }
+
+  .copywrite {
+    margin-top: 1rem;
+    font-size: $body;
+
+    .name {
+      box-shadow: inset 0 -0.125rem 0 $decoration;
+      transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+      color: $decoration;
+      text-decoration: none;
+      display: inline-block;
+
+      &:hover {
+        background-color: $decoration;
+        color: $primary;
+      }
+    }
+  }
+}
+
 
 .landing {
   background-image: url("/328-page/Media/328-Background-Main.webp");
@@ -70,22 +123,19 @@
 
   .content {
     .separator {
-      width: 80%; /* Width of the line */
+      width: 100%; /* Width of the line */
       height: 1px; /* Thickness of the line */
       background-color: #000; /* Color of the line */
       margin: 20px 0; /* Adjust vertical spacing as needed */
-      margin-left: 2.5vw;
   }
-    .separator-coach {
-    width: 100%; /* Width of the line */
-    height: 1px; /* Thickness of the line */
-    background-color: #000; /* Color of the line */
-    margin: 20px 0; /* Adjust vertical spacing as needed */
-    margin-left: 0vw;
-  } 
+
+    .link{
+      margin-bottom: 0vh;
+    }
     display: flex;
     justify-content: space-evenly;
     img {
+      margin-top: 3vh;
       max-width: 100%;
       height: auto;
       width: 250px;
@@ -244,7 +294,11 @@
 
 @media (max-width: 720px) {
   .landing {
-    min-height: 80vh;
+    .hero{
+      .title{
+        padding-top: 18vh;
+      }
+    }
   }
 
   .current-events {

@@ -488,6 +488,9 @@
   }
 }
 @media (max-width: 1020px) {
+  .becomesponsor {
+    margin-bottom: 3vh;
+  }
   .popup {
     width: 100%;
     top: 0%;
@@ -501,6 +504,9 @@
   }
 }
 @media (max-width: 852px) {
+  .becomesponsor {
+    margin-bottom: 3vh;
+  }
   .popup {
     width: 100%;
     top: 0%;
@@ -639,5 +645,32 @@
   }
   .popup .popup-content #close-popup {
     transform: translate(30%, -550%);
+  }
+}
+@media (max-height: 900px) {
+  .popup {
+    width: 100%;
+    top: 0%;
+  }
+  .popup .popup-content #close-popup {
+    transform: translate(60%, -420%);
+  }
+}
+@media (max-height: 750px) {
+  .popup {
+    width: 100%;
+    top: 0%;
+  }
+  .popup .popup-content #close-popup {
+    transform: translate(60%, -380%);
+  }
+}
+@media (max-height: 520px) {
+  .popup {
+    width: 100%;
+    top: 0%;
+  }
+  .popup .popup-content #close-popup {
+    transform: translate(60%, -340%);
   }
 }/*# sourceMappingURL=landing.css.map */

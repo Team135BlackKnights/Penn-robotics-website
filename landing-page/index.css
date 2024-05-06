@@ -278,6 +278,7 @@
 
 .becomesponsor {
   text-align: center;
+  margin-bottom: 0vh;
 }
 .becomesponsor button {
   align-self: center;
@@ -488,6 +489,9 @@
   }
 }
 @media (max-width: 1020px) {
+  .becomesponsor {
+    margin-bottom: 3vh;
+  }
   .popup {
     width: 100%;
     top: 0%;
@@ -501,6 +505,9 @@
   }
 }
 @media (max-width: 852px) {
+  .becomesponsor {
+    margin-bottom: 3vh;
+  }
   .popup {
     width: 100%;
     top: 0%;

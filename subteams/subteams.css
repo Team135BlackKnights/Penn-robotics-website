@@ -206,6 +206,7 @@
   padding-top: 12vh;
 }
 .landing .hero .title {
+  border-radius: 70%;
   color: white;
   font-size: clamp(2.5rem, 8vw, 4rem);
   font-weight: 700;
@@ -221,21 +222,41 @@
   font-weight: 500;
   text-align: center;
 }
+.main .subtitle {
+  line-height: 1.5rem;
+  font-size: 16px;
+  max-width: 50ch;
+  margin: 0 auto;
+  font-weight: 300;
+  color: rgb(150, 150, 150);
+}
+.main h3 {
+  margin-bottom: 1vh;
+}
+.main i {
+  font-size: 100px;
+  color: rgb(250, 200, 0);
+  transition: transform 200ms ease-in, color 200ms ease-in;
+  margin-bottom: 2vh;
+}
 .main .section {
   margin: 2vw auto;
 }
 .main .section .header {
   font-size: clamp(2.5rem, 8vw, 4rem);
-  font-weight: 400;
-  background-color: rgb(150, 150, 150);
-  color: white;
-  padding: 0.25vw;
+  text-align: center;
+  font-weight: 700;
+  color: rgb(60, 72, 88);
+  margin-bottom: 1vh;
 }
 .main .section .content {
+  margin-bottom: 1.5vh;
+  border-radius: 10%;
   display: flex;
   background-color: lightgrey;
 }
 .main .section .content img {
+  border-radius: 10%;
   width: clamp(20rem, 42.5vw, 25rem);
   height: auto;
 }

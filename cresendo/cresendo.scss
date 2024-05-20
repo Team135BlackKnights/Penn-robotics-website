@@ -27,6 +27,7 @@
       padding-top: 18vh;
       font-size: $cover;
       
+      
       .title-image {
         border-radius: 2vw;
         // Minimum value, speed of getting to minimum value, maximum value
@@ -45,7 +46,7 @@
       border-radius: 1vw;
       font-weight: 400;
       font-size: clamp($body, 3vw, $subheader);
-      margin-top: 16vh;
+      margin-top: 5vh;
 
       a {
         background-color: $decoration;

@@ -63,12 +63,22 @@
 }
 
 .main {
+  
   margin: 2vw auto;
   width: clamp(0rem, 85vw, 50rem);
   font-size: $subtitle;
   color: $secondary;
   font-weight: 500;
   text-align: center;
+  .separator {
+      
+    width: 60%; /* Width of the line */
+    height: 1px; /* Thickness of the line */
+    background-color: #000; /* Color of the line */
+    margin: 20px 0; /* Adjust vertical spacing as needed */
+    margin-left: 20%;         /* Adjust this value to move it right */
+
+  }
 
   .title {
     font-size: $title;
@@ -95,6 +105,10 @@
     
   }
   .section {
+
+
+
+
 
     .videos {
       display: flex;
@@ -128,14 +142,16 @@
     }
 
     .content {
-      border-radius: 2vw;
       display: flex;
+      justify-content: center;  /* Center horizontally */
+      align-items: center; 
+      border-radius: 2vw;
       background-color: $trans-secondary;
 
       img {
         border-radius: 2vw;
         align-self: center;
-        width: clamp(15rem, 85vw / 1.8, 50rem / 1.8);
+        width: clamp(15rem, 30vw / 1.8, 50rem / 1.8);
         height: auto;
       }
       .hover-enlargeable {
@@ -284,7 +300,7 @@
     display: flex;
     justify-content: center;
     gap: 10vw;
-
+    
     img {
       max-width: 100%;
       height: auto;
@@ -315,7 +331,7 @@
 
 @media (max-width: 720px) {
   .landing {
-    min-height: 80vh;
+    min-height: 35vh;
   }
 
   .current-events {
@@ -343,7 +359,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 700px) {
   .landing {
     background-attachment: scroll;
     .navbar {

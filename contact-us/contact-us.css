@@ -209,7 +209,7 @@
 }
 .landing .hero .title {
   padding-top: 18vh;
-  font-size: clamp(3rem, 10vw, 7.5rem);
+  font-size: 80px;
 }
 .landing .hero .typed-title {
   margin-top: 1vh;
@@ -247,6 +247,10 @@
 .main .content {
   display: flex;
   justify-content: space-evenly;
+}
+.main .content a {
+  text-decoration: none;
+  color: #000000;
 }
 .main .content .separator {
   width: 100%; /* Width of the line */

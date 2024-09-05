@@ -79,7 +79,7 @@
 
     .title {
       padding-top: 18vh;
-      font-size: $cover;
+      font-size: 80px;
     }
 
     .typed-title {
@@ -122,6 +122,11 @@
   }
 
   .content {
+    a{
+      text-decoration: none;
+      color: #000000;
+    }
+    
     .separator {
       width: 100%; /* Width of the line */
       height: 1px; /* Thickness of the line */

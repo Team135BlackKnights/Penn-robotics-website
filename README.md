@@ -38,11 +38,25 @@ That looks pretty ugly, right? Exactly. That's why we use **CSS**, more specific
 
 The big things you need to learn about SCSS:
 
-- SCSS Properties
+**- SCSS Properties
 - Nesting
 - Media Queries
+**
+If you can understand these three things you will have a very good grasp on what you need to do. Again, I suggest tutorials.
 
-If you can understand  these three things you will have a very good grasp on what you need to do. Again, I suggest tutorials.
+Quick Explanation:
+- **SSS Properties** are what make the website look good, example of these is like "color: #ffffff;" (changes color of the embed to white) or "margin-top: 50px;" (pushes the element 50 pixels down from whatever is   above it)
+
+- **Nesting** is like the structure of SCSS, it's how you code an exampe of this is:
+
+.example-container{
+  color: #000000; // Changes color of the bigger section to black.
+  .example-item{
+    color: #ffffff; // Changes the color of the thing **within** the bigger section to white.
+  }
+}
+
+- **Media Queries** allow you to change how the website looks on smaller devices. Imagine if your website showed a very large line of text, if you wanted to make it so that on phones (smaller devices) are able to see the text properly, you could lower how wide the text looks just on smaller devices. I suggest watching [this](https://www.youtube.com/watch?v=yU7jJ3NbPdA).
 
 Also, this [Sass guide](https://sass-lang.com/guide) further explains these features.
 
@@ -85,7 +99,7 @@ Once you are in VS Code click on the "extensions" button on the left of your scr
 - Google Cloud Platform (sort of, read further)
 
 Instead of Google Domains, we are using [Cloudflare as our domain registrar](https://www.cloudflare.com/products/registrar/).
-Instead of Google Cloud Platform, to host the website we are using [Cloudflare Pages](https://pages.cloudflare.com/) **Keep reading further into API**
+Instead of Google Cloud Platform, to host the website we are using [Cloudflare Pages](https://pages.cloudflare.com/) **eep reading further into API**
 
 ## 6. API
 

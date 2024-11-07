@@ -48,14 +48,14 @@ Quick Explanation:
 - **SSS Properties** are what make the website look good, example of these is like "color: #ffffff;" (changes color of the embed to white) or "margin-top: 50px;" (pushes the element 50 pixels down from whatever is   above it)
 
 - **Nesting** is like the structure of SCSS, it's how you code an exampe of this is:
-
+```
 .example-container{
   color: #000000; // Changes color of the bigger section to black.
   .example-item{
     color: #ffffff; // Changes the color of the thing **within** the bigger section to white.
   }
 }
-
+```
 - **Media Queries** allow you to change how the website looks on smaller devices. Imagine if your website showed a very large line of text, if you wanted to make it so that on phones (smaller devices) are able to see the text properly, you could lower how wide the text looks just on smaller devices. I suggest watching [this](https://www.youtube.com/watch?v=yU7jJ3NbPdA).
 
 Also, this [Sass guide](https://sass-lang.com/guide) further explains these features.

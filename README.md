@@ -3,14 +3,14 @@
 </h1>
 
 <p align="center">
-  The base iteration of pennrobotics.org built with HTML, SCSS, and JS, and hosted on Google Cloud Platform
+  The base iteration of pennrobotics.org built with HTML, SCSS, and JS, and hosted on Cloudflare, backend on Google Cloud VM instance.
 </p>
 
 <img src="landing.png" alt="landing" />
 
 ## Important
 
-If you chose to edit this website, please do not push the changes to this directory, as just in case everything hits the fan this directory will be working 100% of the time.
+If you choose to edit this website, please do not push the changes to this directory, as just in case everything hits the fan this directory will be working 100% of the time.
 
 ## 1. Documentation Outline
 
@@ -18,42 +18,35 @@ This documentation is aimed at future members of Penn Robotics looking to mainta
 
 ## 2. Public Forking and Use
 
-This website is open source, licensed under the MIT License. Feel free to use this code towards other projects and fork this repository, but please give me proper credit by linking back to [Arda Kurama](https://ardakurama.com).
+This website is open-source and licensed under the MIT License. You're welcome to make any modifications, but please remember to credit the original work and acknowledge that your contributions build upon an existing project. The previous students who did work/are working on maintaining this project are Aydin Kurama & [Arda Kurama](https://ardakurama.com/) (Graduated)
 
 ## 3. Web Development Guide
 
-This section of documentation will outline the educational process I underwent while self learning web development.
+This section of the documentation will underline the suggested way to learn web development.
 
-### The Odin Project
+It sounds cliche but tutorials are super helpful. I suggest watching [this html guide](https://www.youtube.com/watch?v=PlxWf493en4&ab_channel=freeCodeCamp.org) and these CSS guides: [Video 1](https://www.youtube.com/watch?v=OEV8gMkCHXQ&ab_channel=Fireship) and [Video 2](https://www.youtube.com/watch?v=1PnVor36_40). These will take you at most an hour to go through and will help you understand how to read the code. You have a full repository of changes to review, so you can always see how the website was previously built and try to replicate it. A lot of this comes down to practice, so don’t get discouraged!
 
-I would recommend beginning with [The Odin Project](https://www.theodinproject.com). The Odin Project houses a series of very approachable and comprehensive lessons on HTML, CSS, JS, and other web development concepts.
+Website development is an insanely good skill to have for your future (and looks good on college apps), whatever you are learning is worth it.
 
-Of their Foundations Course, I took:
+### Coding Basics
 
-- Lessons 1-5 of Introduction
-- Lessons 1-2 of Prerequisites
-- Lessons 1-7 of HTML Foundations
-- Lessons 1-4 of CSS Foundations
-- Lessons 1-5 of Flexbox
-- Lesson 1 of JavaScript Basics
+The text you see on websites is **all done** by HTML. HTML is what controls the text on the screen you could very well make an entire website just by using HTML/
 
-I would also recommend finishing JavaScript Basics and previewing their other courses.
+The problem with just using HTML is that the website will look extremely ugly, it will look like this !(example of html website)[https://www.quicksprout.com/wp-content/uploads/2024/01/html-website-example-fefes-blog.jpeg]
 
-> Also, when I say I “took” these lessons, I didn’t just skim each page and read the headlines. I extensively understood every concept on each page. I also completed all of the assignments, answered all of the knowledge check questions, read all of the additional resources, and completed all of the practice questions. The first Foundations lesson explains this process further.
+That looks pretty ugly, right? Exactly. That's why we use **CSS**, more specifically, for the Penn Robotics website we use **SCSS**, they are practically the same thing SCSS is a sub-processor of CSS so it makes it easier.
 
-### SCSS Basics
+The big things you need to learn about SCSS:
 
-From there, I learned more about SCSS, a preprocessor for CSS. The majority of styling for this project was done in SCSS.
-
-The major SCSS features I used were:
-
-- Variables
+- SCSS Properties
 - Nesting
-- Partials
+- Media Queries
 
-This [Sass guide](https://sass-lang.com/guide) further explains these features.
+If you can understand  these three things you will have a very good grasp on what you need to do. Again, I suggest tutorials.
 
-## 4. Quickstart Guide
+Also, this [Sass guide](https://sass-lang.com/guide) further explains these features.
+
+## 4. Quickstart Guide - IMPORTANT
 
 These various applications and softwares must be installed to properly access and edit this project.
 
@@ -66,9 +59,9 @@ This project is stored in GitHub. Install [GitHub Desktop](https://desktop.githu
 
 ### Visual Studio Code
 
-My default text editor (mentioned at the bottom of the tutorial above) is VS Code. Install [VS Code](https://code.visualstudio.com/).
+The best text editor (mentioned at the bottom of the tutorial above) is 100% VS Code. Install [VS Code](https://code.visualstudio.com/).
 
-Once inside VS Code, you will also need the following extensions:
+**READ THIS** Once inside VS Code, you will also need the following extensions:
 
 - GitLens — Git supercharged
 - HTML CSS Support
@@ -78,15 +71,44 @@ Once inside VS Code, you will also need the following extensions:
 - Prettier - Code formatter
 - Project Manager
 
+Without these extensions, the project will not look or function as best as it could function.
+
+Once you are in VS Code click on the "extensions" button on the left of your screen, then just search the extension names and install.
+
 ## 5. Hosting Information
 
-This website is hosted on Google Cloud Platform (GCP) under the website-specific email pennroboticswebsite@gmail.com. This email is connected to Email, Google Cloud Platform, Google Domains, Google Search Engine, and Font Awesome. Do not use it for non-website related tasks. Ask Mr. Marsh for its password.
+~~This website is hosted on Google Cloud Platform (GCP) under the website-specific email pennroboticswebsite@gmail.com. This email is connected to Email, Google Cloud Platform, Google Domains, Google Search Engine, and Font Awesome. Do not use it for non-website related tasks. Ask Mr. Marsh for its password.~~
 
-- Use Google Cloud Platform to update the website. More information on this below.
-- Use Google Domains to edit and view Domain Registration and edit DNS records.
-- Use Google Search Engine to manage SEO, view current Google indexing/crawling, and view website analytics.
+**^^^** The text above is striked through as the website is currently hosted on Cloudflare with the same email. The email is still connected to everything it was previously linked to but the following are no longer in **active use:**
 
-I followed [this guide](https://cloud.google.com/storage/docs/hosting-static-website) for hosting this project with GCP. If the host breaks or needs updating, re-follow this guide.
+- Google Domains
+- Google Cloud Platform (sort of, read further)
+
+Instead of Google Domains, we are using [Cloudflare as our domain registrar](https://www.cloudflare.com/products/registrar/).
+Instead of Google Cloud Platform, to host the website we are using [Cloudflare Pages](https://pages.cloudflare.com/) **Keep reading further into API**
+
+## 6. API
+
+When the website was originally created, there was no backend API, I **highly** suggest [watching this](https://www.youtube.com/watch?v=ByGJQzlzxQg) to understand what an API is. To put it bluntly, the API allows the website to FETCH information which means it can dynamically update the website without changing any of the code, so if you wanted to change what the title of the website is without completely re-uploading all the code, you could do that with an API. 
+
+To add this API to the website we moved to Cloudflare so the actual files of the website are hosted on Cloudflare Pages, but the API is hosted on Google Cloud Platform, specifically, it is a [Compute Engine](https://cloud.google.com/products/compute?hl=en) (like a virtual machine) instance. So we are still using Google Cloud Platform, but for a different reason.
+
+## 7. Editing the Website
+
+First, test the build on your local machine and make sure it actually **works**, test everything.
+
+- Use Google Cloud Platform to update the API code.
+- Use Cloudflare for everything else like: Website Hosting, DNS Records, Domain Registration
+- Use Google Search Engine to manage SEO, view current Google indexing/crawling, and view website analytics *though Cloudflare does have built-in analytics*.
+
+1. **To edit the Cloudflare Pages** (the website's files) go the [Cloudflare Dashboard](https://dash.cloudflare.com/). Using the same pennroboticswebsite@gmail.com email as mentioned before.
+2. Click on the search button "Go To" and type **Workers & Pages**, once you are there click on penn-robotics. Once you are there, you will see all the previous deployments.
+   
+  **If you ever mess anything up you can *always* rollback to a previous deployment (version) by clicking on the three dots of that deployment that you want to rollback to, then clicking "Rollback to this deployment" **IF YOU DO THIS, YOU *MIGHT* NEED TO CHANGE THE API CODE TO ENSURE THE VERSIONS ARE COMPATIBLE** check to see if the version that you are rolling back to uses a different version of the API.
+   
+3. Now that you are in workers & pages, click on "Create Deployment" in the upper-righthand corner of your screen and simply drag and drop all of the files. **Crucial: Make sure there are no "git" files/folders like "gitattributes"**. You can choose to push that deployment straight to production (which means it is the public, real version of the website), or you can push to preview, which will NOT mess with the real website and allows you to check your work.
+4. DONE! The website's code is updated.
+
 
 ## 6. Resources
 
@@ -104,10 +126,11 @@ The website as I am leaving it will be permanently stored in this GitHub reposit
 
 1. Fork this repository
 2. Make the edits
-3. Upload the edited files to the Google Cloud Platform Bucket. **Website updates will not show unless uploaded to the GCP Bucket.**
+3. Upload the edited files to Cloudflare Pages. **Website updates will not show unless uploaded to Cloudflare Pages.**
 
 Future members can use any GitHub account to make a project fork, and none of these forked repositories will be linked to the project. Make forks as needed, but try to keep everything organized.
 
-As a fallback, if the website ever falls into an unrepairable position, copy the files in this GitHub repository into the GCP Bucket, and the website will return to how it was when I left it.
+As a fallback, if the website ever falls into an unrepairable position, copy the files in this GitHub repository into the Cloudflare Pages, and the website will return to an older, but working version.
 
-Good luck Penn Robotics! If you ever have a large problem with this project, contact me at ardakurama@gmail.com.
+Good luck Penn Robotics! If you ever have a large problem with this project, contact one of the previous website developers. Most Recent Developer: aydinkurama@gmail.com Least Recent Developer: ardakurama@gmail.com
+

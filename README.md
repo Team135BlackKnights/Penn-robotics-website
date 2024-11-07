@@ -30,9 +30,9 @@ Website development is an insanely good skill to have for your future (and looks
 
 ### Coding Basics
 
-The text you see on websites is **all done** by HTML. HTML is what controls the text on the screen you could very well make an entire website just by using HTML/
+The text you see on websites is **all done** by HTML. HTML is what controls the text on the screen you could very well make an entire website just by using HTML.
 
-The problem with just using HTML is that the website will look extremely ugly, it will look like this !(example of html website)[https://www.quicksprout.com/wp-content/uploads/2024/01/html-website-example-fefes-blog.jpeg]
+The problem with just using HTML is that the website will look extremely ugly, it will look like this ![example of html website](https://www.quicksprout.com/wp-content/uploads/2024/01/html-website-example-fefes-blog.jpeg)
 
 That looks pretty ugly, right? Exactly. That's why we use **CSS**, more specifically, for the Penn Robotics website we use **SCSS**, they are practically the same thing SCSS is a sub-processor of CSS so it makes it easier.
 

@@ -2,10 +2,12 @@ import json
 import logging
 from flask import Flask, jsonify, request, redirect
 from flask_cors import CORS
-from logging import FileHandler
 import os
-
-SCHOOL_FILE = 'school_name.json'
+from logging import FileHandler
+import sqlite3
+import sys
+from databaseMain import *
+from auth import *
 
 current_directory = os.path.dirname(__file__)
 log_file_path = os.path.join(current_directory, 'api.log')
@@ -27,27 +29,12 @@ flask_logger.addHandler(api_handler)
 
 flask_logger.propagate = False
 
-def get_school_name():
-    try:
-        with open(SCHOOL_FILE, 'r') as file:
-            data = json.load(file)
-            return data.get('school_name', 'Default School Name')
-    except FileNotFoundError:
-        api_logger.warning(f"{SCHOOL_FILE} not found. Returning default school name.")
-        return 'Default School Name'
 
-# Function to update the school name in the file
-def update_school_name(new_name):
-    with open(SCHOOL_FILE, 'w') as file:
-        json.dump({'school_name': new_name}, file)
-    api_logger.info(f"School name updated to: {new_name}")
 
-# Create and configure the Flask app
 def create_app():
     app = Flask(__name__)
-    CORS(app)  # Enable Cross-Origin Resource Sharing
+    CORS(app)
 
-    # Error handler for rate limiting or other common errors
     @app.errorhandler(429)
     def rate_limit_handler(e):
         return jsonify(error="Too many requests. You are being rate limited."), 429
@@ -57,32 +44,44 @@ def create_app():
         api_logger.error(f"Internal server error: {e}")
         return jsonify(error="An unexpected error occurred. Please try again later."), 500
 
-    # Home route
     @app.route('/', methods=['GET'])
     def home():
         return "Hello, World! This is the School API. Welcome!"
+    
+    @app.route('/post-la-post', methods=['POST'])
+    def make_post():
+        auth_header = request.headers.get('Authorization')
 
-    # Get school name route
-    @app.route('/api/school-name', methods=['GET'])
-    def get_school_name_route():
-        school_name = get_school_name()
-        return jsonify({'school_name': school_name})
+        if not auth_header or auth_header != f"Bearer {AUTH_TOKEN}":
+            return jsonify(error="Unauthorized"), 401
 
-    # Update school name route
-    @app.route('/api/update-school-name', methods=['POST'])
-    def update_school_name_route():
         data = request.get_json()
-        new_school_name = data.get('school_name')
-        
-        if new_school_name:
-            update_school_name(new_school_name)
-            return jsonify({'message': 'School name updated successfully!'}), 200
-        else:
-            return jsonify({'message': 'No school name provided!'}), 400
+
+        title = data.get('title')
+        content = data.get('content')
+        date = data.get('date', None)
+        author = data.get('author', None)
+        footer = data.get('footer', None)
+        image = data.get('image', None)
+        file = data.get('file', None)
+        video = data.get('video', None)
+
+        make_a_post(title, content, date, author, footer, image, file, video)
+
+        return jsonify(message="Post created successfully."), 201        
+    
+    @app.route('/get-posts', methods=['GET'])
+    def return_posts():
+        post_list = get_posts()
+        return jsonify(posts=post_list)
 
     return app
+        
 
-# Run the app
+
 if __name__ == '__main__':
     app = create_app()
     app.run(debug=True, use_reloader=False)
+
+    
+

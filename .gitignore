@@ -1,3 +1,7 @@
 
 *.db
 api/auth.py
+api/database_api.db
+api/api.log
+*.db
+/api/__pycache__

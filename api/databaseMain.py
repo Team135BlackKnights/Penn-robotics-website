@@ -67,5 +67,15 @@ def get_posts():
         post_list.append(post_data)
     return post_list
 
+# deletes the post associated with the ID
+def delete_post(post_id):
+    conn = sqlite3.connect(database_path)
+    c = conn.cursor()
+    
+    c.execute("DELETE FROM posts_content WHERE id = ?", (post_id,))
+    
+    conn.commit()
+    conn.close()
+
 conn.commit()
 conn.close()

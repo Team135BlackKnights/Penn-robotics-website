@@ -48,7 +48,7 @@ def create_app():
     def home():
         return "Hello, World! This is the School API. Welcome!"
     
-    @app.route('/post-la-post', methods=['POST'])
+    @app.route('/make-post', methods=['POST'])
     def make_post():
         auth_header = request.headers.get('Authorization')
 
@@ -70,6 +70,16 @@ def create_app():
 
         return jsonify(message="Post created successfully."), 201        
     
+    @app.route('/delete/<int:post_id>', methods=['DELETE'])
+    def delete_post_route(post_id):
+        auth_header = request.headers.get('Authorization')
+
+        if not auth_header or auth_header != f"Bearer {AUTH_TOKEN}":
+            return jsonify(error="Unauthorized"), 401
+
+        delete_post(post_id)
+        return {"message": f"Post {post_id} deleted successfully"}
+
     @app.route('/get-posts', methods=['GET'])
     def return_posts():
         post_list = get_posts()

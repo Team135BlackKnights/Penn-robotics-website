@@ -7,15 +7,32 @@ function fetchPosts() {
         .then(response => response.json())
         .then(data => {
             const postContainer = document.querySelector('.posts-location');
-            
-            const sortedPosts = data.posts.sort((a, b) => b.id - a.id);
 
-            sortedPosts.forEach(post => {
-                const newPostContainer = createPostContainer(post);
-                postContainer.appendChild(newPostContainer);
-            });
+            // Check if there are no posts or an empty response
+            if (!data.posts || data.posts.length === 0) {
+                const noPostsMessage = document.createElement('div');
+                noPostsMessage.classList.add('no-posts-message');
+                noPostsMessage.textContent = "The posts were unable to load, please try again later.";
+                postContainer.appendChild(noPostsMessage);
+            } else {
+                // Sort and display posts if they exist
+                const sortedPosts = data.posts.sort((a, b) => b.id - a.id);
+                sortedPosts.forEach(post => {
+                    const newPostContainer = createPostContainer(post);
+                    postContainer.appendChild(newPostContainer);
+                });
+            }
         })
-        .catch(error => console.error('Error fetching posts:', error));
+        .catch(error => {
+            console.error('Error fetching posts:', error);
+
+            // Display "Can't find any posts." message if API call fails
+            const postContainer = document.querySelector('.posts-location');
+            const noPostsMessage = document.createElement('div');
+            noPostsMessage.classList.add('no-posts-message');
+            noPostsMessage.textContent = "Can't find any posts.";
+            postContainer.appendChild(noPostsMessage);
+        });
 }
 
 function createPostContainer(post) {
@@ -38,7 +55,12 @@ function createPostContainer(post) {
 
     const postAuthor = document.createElement('div');
     postAuthor.classList.add('post-author');
-    postAuthor.textContent = `By ${post.author || 'Unknown Author'}`;
+    
+    if (post.author) {
+        postAuthor.textContent = `By ${post.author}`;
+    } else {
+        postAuthor.textContent = '';
+    }
 
     postDateAuthorContainer.appendChild(postDate);
     postDateAuthorContainer.appendChild(postAuthor);
@@ -61,7 +83,9 @@ function createPostContainer(post) {
 
     const postFooter = document.createElement('div');
     postFooter.classList.add('post-footer');
-    postFooter.textContent = post.footer || 'No footer available';
+    postFooter.textContent = post.footer 
+        ? `${post.footer} | Post ID: ${post.id}` 
+        : `Penn Robotics | Post ID: ${post.id}`;
 
     postSection.appendChild(postTitle);
     postSection.appendChild(postDateAuthorContainer);

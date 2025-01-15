@@ -86,8 +86,8 @@
     }
 
     .post-footer {
-        font-size: 14px;
-        color: #666;
+        font-size: 12px;
+        color: #999;
         margin-top: 2vh;
     }
 
@@ -96,6 +96,19 @@
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 10px;
         align-items: center; 
+    }
+
+    .no-posts-message {
+        font-size: 20px;
+        line-height: 1.6;
+        color: #999;
+
+        margin-bottom: 20vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        
     }
     
     .post-image img {

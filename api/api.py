@@ -8,6 +8,7 @@ import sqlite3
 import sys
 from databaseMain import *
 from auth import *
+from datetime import datetime
 
 current_directory = os.path.dirname(__file__)
 log_file_path = os.path.join(current_directory, 'api.log')
@@ -46,7 +47,7 @@ def create_app():
 
     @app.route('/', methods=['GET'])
     def home():
-        return "Hello, World! This is the School API. Welcome!"
+        return "Penn High School Robotics API."
     
     @app.route('/make-post', methods=['POST'])
     def make_post():
@@ -58,8 +59,10 @@ def create_app():
         data = request.get_json()
 
         title = data.get('title')
-        content = data.get('content')
-        date = data.get('date', None)
+        content = data.get('content_body')
+
+        # Auto make date
+        date = ("Published " + datetime.now().strftime('%m/%d/%Y'))
         author = data.get('author', None)
         footer = data.get('footer', None)
         image = data.get('image', None)
@@ -68,8 +71,32 @@ def create_app():
 
         make_a_post(title, content, date, author, footer, image, file, video)
 
-        return jsonify(message="Post created successfully."), 201        
+        return jsonify(message="Post created successfully.", date=date), 201       
     
+    @app.route('/edit-post', methods=['POST'])
+    def edit_post_api():
+        auth_header = request.headers.get('Authorization')
+
+        if not auth_header or auth_header != f"Bearer {AUTH_TOKEN}":
+            return jsonify(error="Unauthorized"), 401
+
+        data = request.get_json()
+        post_id = data.get('id')
+
+        if not post_id:
+            return jsonify(error="Post ID is required"), 400
+
+        updates = {key: value for key, value in data.items() if key != 'id' and value is not None}
+
+        result = edit_post(post_id, updates)
+
+        if "not found" in result:
+            return jsonify(error=result), 404
+        elif "No fields" in result:
+            return jsonify(error=result), 400
+        else:
+            return jsonify(message=result), 200
+
     @app.route('/delete/<int:post_id>', methods=['DELETE'])
     def delete_post_route(post_id):
         auth_header = request.headers.get('Authorization')
@@ -77,16 +104,15 @@ def create_app():
         if not auth_header or auth_header != f"Bearer {AUTH_TOKEN}":
             return jsonify(error="Unauthorized"), 401
 
-        delete_post(post_id)
-        return {"message": f"Post {post_id} deleted successfully"}
+        deleted = delete_post(post_id)
+        return deleted
 
     @app.route('/get-posts', methods=['GET'])
     def return_posts():
         post_list = get_posts()
         return jsonify(posts=post_list)
-
+    
     return app
-        
 
 
 if __name__ == '__main__':

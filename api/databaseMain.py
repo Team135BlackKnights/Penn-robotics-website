@@ -67,15 +67,66 @@ def get_posts():
         post_list.append(post_data)
     return post_list
 
-# deletes the post associated with the ID
+def edit_post(post_id, updates):
+    """
+    Updates a post in the database based on the provided fields.
+    
+    :param post_id: ID of the post to update
+    :param updates: Dictionary of fields to update and their new values
+    :return: A message indicating success or failure
+    """
+    
+    if not updates:
+        return "No fields provided to update"
+
+    set_clause = ", ".join([f"{key} = ?" for key in updates.keys()])
+    query = f"UPDATE posts_content SET {set_clause} WHERE id = ?"
+
+    conn = sqlite3.connect(database_path)
+    c = conn.cursor()
+
+    c.execute("SELECT 1 FROM posts_content WHERE id = ?", (post_id,))
+    post_exists = c.fetchone()
+
+    if not post_exists:
+        conn.close()
+        return f"Post with ID {post_id} not found"
+
+    c.execute(query, (*updates.values(), post_id))
+    conn.commit()
+    conn.close()
+
+    return f"Post {post_id} updated successfully"
+
 def delete_post(post_id):
     conn = sqlite3.connect(database_path)
     c = conn.cursor()
-    
+
+    c.execute("SELECT 1 FROM posts_content WHERE id = ?", (post_id,))
+    post_exists = c.fetchone()
+
+    if not post_exists:
+        conn.close()
+        return {"message": f"Post {post_id} not found"}, 404
+
     c.execute("DELETE FROM posts_content WHERE id = ?", (post_id,))
     
+    c.execute("""
+        UPDATE posts_content
+        SET id = id - 1
+        WHERE id > ?
+    """, (post_id,))
+
+    conn.commit()
+
+    c.execute("SELECT MAX(id) FROM posts_content")
+    max_id = c.fetchone()[0] or 0
+    c.execute(f"UPDATE sqlite_sequence SET seq = ? WHERE name = 'posts_content'", (max_id,))
+
     conn.commit()
     conn.close()
+
+    return {"message": f"Post {post_id} deleted successfully"}, 200
 
 conn.commit()
 conn.close()

@@ -262,8 +262,8 @@ body .post-content-body {
   margin-bottom: 1.5rem;
 }
 body .post-footer {
-  font-size: 14px;
-  color: #666;
+  font-size: 12px;
+  color: #999;
   margin-top: 2vh;
 }
 body .post-images-container {
@@ -271,6 +271,16 @@ body .post-images-container {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 10px;
   align-items: center;
+}
+body .no-posts-message {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #999;
+  margin-bottom: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 body .post-image img {
   border-radius: 8px;

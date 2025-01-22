@@ -83,6 +83,29 @@
         font-size: 16px;
         line-height: 1.6;
         margin-bottom: 1.5rem;
+        strong {
+            font-weight: bold;
+        }
+        
+        a {
+            color: rgb(57, 57, 240);
+            text-decoration: underline;
+        
+            &:hover {
+                text-decoration: none;
+            }
+        }
+        ul {
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+        
+        li {
+            margin-left: 10px;
+            margin-bottom: 6px;
+            margin-top: 6px;
+
+        }
     }
 
     .post-footer {

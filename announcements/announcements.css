@@ -260,6 +260,7 @@ body .post-content-body {
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 1.5rem;
+  white-space: pre-line; /* Ensure newlines and breaks are respected */
 }
 body .post-content-body strong {
   font-weight: bold;
@@ -271,25 +272,27 @@ body .post-content-body a {
 body .post-content-body a:hover {
   text-decoration: none;
 }
+body .post-content-body h3 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: -20px;
+  margin-left: -3px;
+}
 body .post-content-body ul {
   padding-left: 20px;
   list-style-type: disc;
+  margin: 0;
 }
 body .post-content-body li {
   margin-left: 10px;
-  margin-bottom: 6px;
-  margin-top: 6px;
+  margin-bottom: -10px;
+  margin-top: -10px;
 }
 body .post-footer {
   font-size: 12px;
   color: #999;
   margin-top: 2vh;
-}
-body .post-images-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
-  align-items: center;
 }
 body .no-posts-message {
   font-size: 20px;
@@ -301,13 +304,26 @@ body .no-posts-message {
   align-items: center;
   text-align: center;
 }
+body .post-images-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+body .post-image {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  overflow: hidden;
+  max-width: 100%;
+}
 body .post-image img {
   border-radius: 8px;
-  width: 100%;
+  max-width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-  aspect-ratio: 1/1; /* Ensures square cropping */
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 body .post-file,
 body .post-video {

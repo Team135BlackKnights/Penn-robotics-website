@@ -33,7 +33,6 @@ function fetchPosts() {
         });
 }
 
-
 function createPostContainer(post) {
     const postContainer = document.createElement('div');
     postContainer.classList.add('post-container');
@@ -63,6 +62,20 @@ function createPostContainer(post) {
     postContentBody.classList.add('post-content-body');
     postContentBody.innerHTML = parseMarkdown(post.content_body || 'No content available.');
 
+    const postImagesContainer = document.createElement('div');
+    postImagesContainer.classList.add('post-images-container');
+    
+    if (post.image) {
+        const postImageContainer = document.createElement('div');
+        postImageContainer.classList.add('post-image');
+
+        const postImage = document.createElement('img');
+        postImage.src = post.image;
+
+        postImageContainer.appendChild(postImage);
+        postImagesContainer.appendChild(postImageContainer);
+    }
+
     const postFooter = document.createElement('div');
     postFooter.classList.add('post-footer');
     postFooter.textContent = post.footer
@@ -72,6 +85,7 @@ function createPostContainer(post) {
     postSection.appendChild(postTitle);
     postSection.appendChild(postDateAuthorContainer);
     postSection.appendChild(postContentBody);
+    postSection.appendChild(postImagesContainer);
     postSection.appendChild(postFooter);
 
     postContainer.appendChild(postSection);
@@ -81,13 +95,20 @@ function createPostContainer(post) {
 
 // Custom Markdown Parser
 function parseMarkdown(content) {
+    // Convert bold text
     content = content.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
+    // Convert links
     content = content.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank">$1</a>');
 
-    content = content.replace(/(^|\n)- (.*?)(?=\n|$)/g, '$1<li>$2</li>');
+    // Convert markdown list items to <li> tags
+    content = content.replace(/^-\s+(.*?)(?=\n|$)/gm, '<li>$1</li>'); // This matches list items
 
-    content = content.replace(/(<li>.*?<\/li>)/g, '<ul>$1</ul>');
+    // Wrap all list items in a <ul> tag
+    content = content.replace(/(<li>.*?<\/li>)/g, '<ul>$&</ul>');
+
+    content = content.replace(/^# (.*?)$/gm, '<h3>$1</h3>');
+
 
     return content;
 }

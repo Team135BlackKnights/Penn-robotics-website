@@ -98,6 +98,43 @@ def edit_post(post_id, updates):
 
     return f"Post {post_id} updated successfully"
 
+def get_post_by_id(post_id):
+    """
+    Fetch a post by its ID from the database.
+    
+    :param post_id: ID of the post to fetch
+    :return: A dictionary containing the post data, or None if not found
+    """
+    conn = sqlite3.connect(database_path)
+    c = conn.cursor()
+
+    c.execute('''
+        SELECT id, title, content_body, date, author, footer, image, file, video
+        FROM posts_content
+        WHERE id = ?
+    ''', (post_id,))
+
+    post = c.fetchone()
+    conn.close()
+
+    if not post:
+        return None
+
+    # Convert the result to a dictionary
+    post_dict = {
+        "id": post[0],
+        "title": post[1],
+        "content_body": post[2],
+        "date": post[3],
+        "author": post[4],
+        "footer": post[5],
+        "image": post[6],
+        "file": post[7],
+        "video": post[8]
+    }
+
+    return post_dict
+
 def delete_post(post_id):
     conn = sqlite3.connect(database_path)
     c = conn.cursor()

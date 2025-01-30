@@ -35,6 +35,10 @@ flask_logger.addHandler(api_handler)
 flask_logger.propagate = False
 
 
+UPLOAD_FOLDER = 'uploads'
+if not os.path.exists(UPLOAD_FOLDER):
+    os.makedirs(UPLOAD_FOLDER)
+
 
 def create_app():
     app = Flask(__name__)
@@ -78,6 +82,7 @@ def create_app():
             return jsonify(message="Accepted"), 200  # Successful login message
         else:
             return jsonify(error="Invalid credentials"), 401  # Unauthorized
+        
     @app.route('/make-post', methods=['POST'])
     def make_post():
         auth_header = request.headers.get('Authorization')
@@ -85,22 +90,44 @@ def create_app():
         if not auth_header or auth_header != f"Bearer {AUTH_TOKEN}":
             return jsonify(error="Unauthorized"), 401
 
-        data = request.get_json()
+        title = request.form.get('title')
+        content = request.form.get('content_body')
+        author = request.form.get('author', None)
+        footer = request.form.get('footer', None)
+        image = request.files.get('image')
 
-        title = data.get('title')
-        content = data.get('content_body')
+        image_path = None
+        if image:
+            image_path = os.path.join(UPLOAD_FOLDER, image.filename)
+            image.save(image_path)
 
         date = ("Published " + datetime.now().strftime('%m/%d/%Y'))
-        author = data.get('author', None)
-        footer = data.get('footer', None)
-        image = data.get('image', None)
-        file = data.get('file', None)
-        video = data.get('video', None)
-
-        make_a_post(title, content, date, author, footer, image, file, video)
+        make_a_post(title, content, date, author, footer, image_path, None, None)
 
         return jsonify(message="Post created successfully.", date=date), 201
+    @app.route('/get-post/<int:post_id>', methods=['GET'])
+    def get_post(post_id):
+        """
+        Fetch a post by its ID and return the post data, including the image URL.
+        """
+        auth_header = request.headers.get('Authorization')
 
+        if not auth_header or auth_header != f"Bearer {AUTH_TOKEN}":
+            return jsonify(error="Unauthorized"), 401
+
+        post = get_post_by_id(post_id)  # Fetch the post by ID
+
+        if not post:
+            return jsonify(error="Post not found"), 404
+
+        # Assuming 'image_path' is where the image is saved, return the image URL as well
+        image_url = None
+        if post.get('image_path'):
+            image_url = f"/{UPLOAD_FOLDER}/{os.path.basename(post['image_path'])}"
+
+        # Add image_url to the response data
+        post['image_url'] = image_url
+        return jsonify(post), 200
     @app.route('/edit-post', methods=['POST'])
     def edit_post_api():
         auth_header = request.headers.get('Authorization')
@@ -108,13 +135,22 @@ def create_app():
         if not auth_header or auth_header != f"Bearer {AUTH_TOKEN}":
             return jsonify(error="Unauthorized"), 401
 
-        data = request.get_json()
-        post_id = data.get('id')
-
+        post_id = request.form.get('id')
         if not post_id:
             return jsonify(error="Post ID is required"), 400
 
-        updates = {key: value for key, value in data.items() if key != 'id' and value is not None}
+        updates = {
+            'title': request.form.get('title'),
+            'content_body': request.form.get('content_body'),
+            'author': request.form.get('author'),
+            'footer': request.form.get('footer')
+        }
+
+        image = request.files.get('image')
+        if image:
+            image_path = os.path.join(UPLOAD_FOLDER, image.filename)
+            image.save(image_path)
+            updates['image'] = image_path
 
         result = edit_post(post_id, updates)
 

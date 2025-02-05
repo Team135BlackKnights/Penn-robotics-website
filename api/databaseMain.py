@@ -42,11 +42,11 @@ def make_a_post(title, content, date=None, author=None, footer=None, image=None,
     conn.commit()
     conn.close()
     
-def get_posts():
+def get_posts(offset=0, limit=5):
     conn = sqlite3.connect(database_path)
     c = conn.cursor()
 
-    c.execute("SELECT * FROM posts_content")
+    c.execute("SELECT * FROM posts_content ORDER BY id DESC LIMIT ? OFFSET ?", (limit, offset))
     posts = c.fetchall()
     
     conn.close()

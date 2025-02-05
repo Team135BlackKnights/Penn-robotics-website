@@ -15,7 +15,7 @@ document.getElementById('make-post-form').addEventListener('submit', function (e
     formData.append('footer', footer);
     if (image) formData.append('image', image);
 
-    fetch('http://127.0.0.1:5000/make-post', {
+    fetch('https://api.pennrobotics.org/make-post', {
         method: 'POST',
         headers: {
             'Authorization': 'Bearer website135'
@@ -43,7 +43,7 @@ document.getElementById('fetch-post').addEventListener('click', function () {
     }
 
     // Fetch the post data from the API
-    fetch(`http://127.0.0.1:5000/get-post/${postId}`, {
+    fetch(`https://api.pennrobotics.org/get-post/${postId}`, {
         method: 'GET',
         headers: {
             'Authorization': 'Bearer website135'
@@ -60,14 +60,24 @@ document.getElementById('fetch-post').addEventListener('click', function () {
             document.getElementById('edit-author').value = data.author || ''; // Optional
             document.getElementById('edit-footer').value = data.footer || ''; // Optional
 
-            // Show the current image if available
-            const imageElement = document.getElementById('current-image');
-            if (data.image_url) {
-                imageElement.style.display = 'block';
-                imageElement.src = data.image_url; // Set the source to the image URL from the API
+            // Update the post image preview if an image URL is returned
+            if (data.image) {
+                const postImagePreview = document.getElementById('edit-post-image-preview');
+                postImagePreview.src = data.image; // Set the src attribute of the existing img element
+                postImagePreview.style.display = 'block'; // Ensure the image is visible
+                
+                let currentImageText = document.getElementById('edit-post-form');
+                if (!currentImageText) {
+                    currentImageText = document.createElement('p');
+                    currentImageText.className = 'current-image-text';
+                    currentImageText.textContent = 'Current Image:';
+                    document.getElementById('edit-post-form').insertBefore(currentImageText, postImagePreview); // Insert text before the image
+                }
             } else {
-                imageElement.style.display = 'none'; // Hide if no image is available
+                const postImagePreview = document.getElementById('edit-post-image-preview');
+                postImagePreview.style.display = 'none'; // Hide the image if no URL is provided
             }
+        
 
             // Show the edit fields and the "Edit Post" button
             document.getElementById('edit-fields').style.display = 'block';
@@ -102,7 +112,7 @@ document.getElementById('edit-post-form').addEventListener('submit', function (e
     // Only append image if the user selected a new one
     if (image) formData.append('image', image);
 
-    fetch('http://127.0.0.1:5000/edit-post', {
+    fetch('https://api.pennrobotics.org/edit-post', {
         method: 'POST',
         headers: {
             'Authorization': 'Bearer website135'
@@ -129,7 +139,7 @@ document.getElementById('delete-post-form').addEventListener('submit', function 
 
     const postId = document.getElementById('delete-id').value;
 
-    fetch(`http://127.0.0.1:5000/delete/${postId}`, {  // Fixed template literal
+    fetch(`https://api.pennrobotics.org/delete/${postId}`, {  // Fixed template literal
         method: 'DELETE',
         headers: {
             'Authorization': 'Bearer website135'

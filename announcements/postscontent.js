@@ -1,18 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetchPosts();
+    let currentPage = 1;
+    let isLoading = false;
+
+    fetchPosts(currentPage);
+
+    window.addEventListener('scroll', () => {
+        if (isLoading) return;
+
+        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+        if (scrollTop + clientHeight >= scrollHeight - 5) {
+            isLoading = true;
+            currentPage++;
+            fetchPosts(currentPage);
+        }
+    });
 });
 
-function fetchPosts() {
-    fetch('http://localhost:5000/get-posts')
+function fetchPosts(page) {
+    fetch(`https://api.pennrobotics.org/get-posts?page=${page}&limit=5`)
         .then(response => response.json())
         .then(data => {
             const postContainer = document.querySelector('.posts-location');
 
             if (!data.posts || data.posts.length === 0) {
-                const noPostsMessage = document.createElement('div');
-                noPostsMessage.classList.add('no-posts-message');
-                noPostsMessage.textContent = "The posts were unable to load, please try again later.";
-                postContainer.appendChild(noPostsMessage);
+                if (page === 1) {
+                    const noPostsMessage = document.createElement('div');
+                    noPostsMessage.classList.add('no-posts-message');
+                    noPostsMessage.textContent = "The posts were unable to load, please try again later.";
+                    postContainer.appendChild(noPostsMessage);
+                }
             } else {
                 const sortedPosts = data.posts.sort((a, b) => b.id - a.id);
                 sortedPosts.forEach(post => {
@@ -20,6 +36,7 @@ function fetchPosts() {
                     postContainer.appendChild(newPostContainer);
                 });
             }
+            isLoading = false;
         })
         .catch(error => {
             console.error('Error fetching posts:', error);
@@ -30,6 +47,7 @@ function fetchPosts() {
             noPostsMessage.classList.add('no-posts-message');
             noPostsMessage.textContent = "Can't find any posts.";
             postContainer.appendChild(noPostsMessage);
+            isLoading = false;
         });
 }
 
@@ -108,7 +126,6 @@ function parseMarkdown(content) {
     content = content.replace(/(<li>.*?<\/li>)/g, '<ul>$&</ul>');
 
     content = content.replace(/^# (.*?)$/gm, '<h3>$1</h3>');
-
 
     return content;
 }

@@ -61,25 +61,30 @@
                 <label for="edit-id">Post ID</label>
                 <input type="number" id="edit-id" required>
                 <button type="button" id="fetch-post">Fetch Post</button>
-
+        
                 <div id="edit-fields" style="display: none;">
-                    <label for="edit-title">Title *</label>
+                    <label for="edit-title">Title</label>
                     <input type="text" id="edit-title">
-
-                    <label for="edit-content">Content *</label>
+        
+                    <label for="edit-content">Content</label>
                     <textarea id="edit-content"></textarea>
-
+        
                     <label for="edit-author">Author</label>
                     <input type="text" id="edit-author">
-
+        
                     <label for="edit-footer">Footer</label>
                     <input type="text" id="edit-footer">
+        
+                    <!-- Post Image Container -->
+                    <p class="current-image-text">Current Image:</p>
 
-                    <label for="edit-image">Upload Image</label>
+                    <div class="post-image">
+                        <img src="" alt="Post Image" id="edit-post-image-preview">
+                    </div>
+        
+                    <label for="edit-image">New Image</label>
                     <input type="file" id="edit-image" accept="image/*">
-                    <img id="current-image" src="" alt="Current Post Image" style="max-width: 200px; display: none;">
-
-
+        
                     <button type="submit" id="edit-post-btn">Edit Post</button>
                 </div>
             </form>

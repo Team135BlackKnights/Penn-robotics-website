@@ -34,7 +34,6 @@ flask_logger.addHandler(api_handler)
 
 flask_logger.propagate = False
 
-
 UPLOAD_FOLDER = 'uploads'
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
@@ -42,7 +41,7 @@ if not os.path.exists(UPLOAD_FOLDER):
 
 def create_app():
     app = Flask(__name__)
-    CORS(app, origins=["http://127.0.0.1:5500", "http://127.0.0.1:5000"], supports_credentials=True)
+    CORS(app, origins=["https://pennrobotics.org"], supports_credentials=True)
     app.secret_key = os.urandom(24)  # Secret key for sessions
 
     @app.errorhandler(429)
@@ -119,14 +118,6 @@ def create_app():
 
         if not post:
             return jsonify(error="Post not found"), 404
-
-        # Assuming 'image_path' is where the image is saved, return the image URL as well
-        image_url = None
-        if post.get('image_path'):
-            image_url = f"/{UPLOAD_FOLDER}/{os.path.basename(post['image_path'])}"
-
-        # Add image_url to the response data
-        post['image_url'] = image_url
         return jsonify(post), 200
     @app.route('/edit-post', methods=['POST'])
     def edit_post_api():
@@ -162,7 +153,6 @@ def create_app():
             return jsonify(message=result), 200
 
 
-
     @app.route('/delete/<int:post_id>', methods=['DELETE'])
     def delete_post_route(post_id):
         auth_header = request.headers.get('Authorization')
@@ -175,7 +165,10 @@ def create_app():
 
     @app.route('/get-posts', methods=['GET'])
     def return_posts():
-        post_list = get_posts()
+        page = request.args.get('page', default=1, type=int)
+        limit = request.args.get('limit', default=5, type=int)
+        offset = (page - 1) * limit
+        post_list = get_posts(offset, limit)
         return jsonify(posts=post_list)
 
     return app
@@ -183,4 +176,4 @@ def create_app():
 
 if __name__ == '__main__':
     app = create_app()
-    app.run(debug=True, use_reloader=False)
+    app.run(host='0.0.0.0', port=5000, debug=True, use_reloader=False)

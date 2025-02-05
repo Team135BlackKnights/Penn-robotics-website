@@ -98,6 +98,29 @@ button {
         font-weight: bold;
     }
 
+    .current-image-text{
+        color: $secondary;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .post-image {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        overflow: hidden;
+        max-width: 100%;
+    }
+    
+    .post-image img {
+        border-radius: 8px;
+        margin-bottom: 15px;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        
+    }
+
     input, textarea {
         padding: 10px;
         margin-bottom: 15px;

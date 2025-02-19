@@ -106,7 +106,7 @@
 
     <script>
         // Check if the user is logged in when loading the page
-        fetch('http://127.0.0.1:5000/check-login', {
+        fetch('https://api.pennrobotics.org/check-login', {
             credentials: 'include'
         })
         .then(response => response.json())

@@ -14,20 +14,19 @@ document.getElementById('make-post-form').addEventListener('submit', function (e
     formData.append('author', author);
     formData.append('footer', footer);
     if (image) formData.append('image', image);
-
     fetch('https://api.pennrobotics.org/make-post', {
         method: 'POST',
-        headers: {
-            'Authorization': 'Bearer website135'
-        },
+        credentials: 'include',
         body: formData
     })
     .then(response => response.json())
     .then(data => {
         if (data.message === "Post created successfully.") {
             document.getElementById('message').textContent = "Post created successfully!";
+            alert(data.message);
         } else {
             document.getElementById('message').textContent = "Error creating post.";
+            alert("Error creating post.");
         }
     })
     .catch(error => console.error('Error:', error));
@@ -45,9 +44,8 @@ document.getElementById('fetch-post').addEventListener('click', function () {
     // Fetch the post data from the API
     fetch(`https://api.pennrobotics.org/get-post/${postId}`, {
         method: 'GET',
-        headers: {
-            'Authorization': 'Bearer website135'
-        }
+        credentials: 'include'
+
     })
     .then(response => response.json())
     .then(data => {
@@ -114,15 +112,15 @@ document.getElementById('edit-post-form').addEventListener('submit', function (e
 
     fetch('https://api.pennrobotics.org/edit-post', {
         method: 'POST',
-        headers: {
-            'Authorization': 'Bearer website135'
-        },
+        credentials: 'include',
+
         body: formData
     })
     .then(response => response.json())
     .then(data => {
         if (data.message) {
             document.getElementById('message').textContent = data.message;
+            alert(data.message);
         } else {
             document.getElementById('message').textContent = data.error || "Error editing post.";
         }
@@ -141,14 +139,15 @@ document.getElementById('delete-post-form').addEventListener('submit', function 
 
     fetch(`https://api.pennrobotics.org/delete/${postId}`, {  // Fixed template literal
         method: 'DELETE',
-        headers: {
-            'Authorization': 'Bearer website135'
-        }
+        credentials: 'include'
+
     })
     .then(response => response.json())
     .then(data => {
         if (data.message) {
             document.getElementById('message').textContent = data.message;
+            alert(data.message);
+
         } else {
             document.getElementById('message').textContent = data.error || "Error deleting post.";
         }

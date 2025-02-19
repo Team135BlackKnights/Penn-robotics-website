@@ -13,6 +13,7 @@ from databaseMain import *
 from auth import *
 from datetime import datetime, timedelta
 from flask import session, redirect, url_for
+from flask import send_from_directory
 
 
 current_directory = os.path.dirname(__file__)
@@ -74,8 +75,8 @@ def create_app():
         username = data.get('username')
         password = data.get('password')
 
-        # Check credentials (admin and website135)
-        if username == 'admin' and password == AUTH_TOKEN:
+        # Check credentials (AUTH_USER and AUTH_TOKEN)
+        if username == AUTH_USER and password == AUTH_TOKEN:
             session['logged_in'] = True  # Set session
             session['login_time'] = datetime.now(timezone.utc)
             return jsonify(message="Accepted"), 200  # Successful login message
@@ -84,9 +85,7 @@ def create_app():
         
     @app.route('/make-post', methods=['POST'])
     def make_post():
-        auth_header = request.headers.get('Authorization')
-
-        if not auth_header or auth_header != f"Bearer {AUTH_TOKEN}":
+        if not session.get('logged_in'):
             return jsonify(error="Unauthorized"), 401
 
         title = request.form.get('title')
@@ -109,9 +108,7 @@ def create_app():
         """
         Fetch a post by its ID and return the post data, including the image URL.
         """
-        auth_header = request.headers.get('Authorization')
-
-        if not auth_header or auth_header != f"Bearer {AUTH_TOKEN}":
+        if not session.get('logged_in'):
             return jsonify(error="Unauthorized"), 401
 
         post = get_post_by_id(post_id)  # Fetch the post by ID
@@ -121,9 +118,7 @@ def create_app():
         return jsonify(post), 200
     @app.route('/edit-post', methods=['POST'])
     def edit_post_api():
-        auth_header = request.headers.get('Authorization')
-
-        if not auth_header or auth_header != f"Bearer {AUTH_TOKEN}":
+        if not session.get('logged_in'):
             return jsonify(error="Unauthorized"), 401
 
         post_id = request.form.get('id')
@@ -152,12 +147,14 @@ def create_app():
         else:
             return jsonify(message=result), 200
 
+    @app.route('/uploads/<path:filename>')
+    def uploaded_file(filename):
+        return send_from_directory(UPLOAD_FOLDER, filename)
+
 
     @app.route('/delete/<int:post_id>', methods=['DELETE'])
     def delete_post_route(post_id):
-        auth_header = request.headers.get('Authorization')
-
-        if not auth_header or auth_header != f"Bearer {AUTH_TOKEN}":
+        if not session.get('logged_in'):
             return jsonify(error="Unauthorized"), 401
 
         deleted = delete_post(post_id)

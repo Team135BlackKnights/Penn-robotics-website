@@ -53,6 +53,11 @@ def get_posts(offset=0, limit=5):
 
     post_list = []
     for post in posts:
+        image_url = None
+        if post[6]:
+            filename = os.path.basename(post[6])
+            image_url = f"https://api.pennrobotics.org/uploads/{filename}"
+            
         post_data = {
             "id": post[0],
             "title": post[1],
@@ -60,7 +65,7 @@ def get_posts(offset=0, limit=5):
             "content_body": post[3],
             "author": post[4],
             "footer": post[5],
-            "image": post[6],
+            "image": image_url,
             "file": post[7],
             "video": post[8]
         }
@@ -99,12 +104,6 @@ def edit_post(post_id, updates):
     return f"Post {post_id} updated successfully"
 
 def get_post_by_id(post_id):
-    """
-    Fetch a post by its ID from the database.
-    
-    :param post_id: ID of the post to fetch
-    :return: A dictionary containing the post data, or None if not found
-    """
     conn = sqlite3.connect(database_path)
     c = conn.cursor()
 
@@ -120,7 +119,13 @@ def get_post_by_id(post_id):
     if not post:
         return None
 
-    # Convert the result to a dictionary
+    # If an image exists, return a fully qualified URL.
+    image_url = None
+    if post[6]:
+        # Extract the filename from the stored path and build the full URL.
+        filename = os.path.basename(post[6])
+        image_url = f"https://api.pennrobotics.org/uploads/{filename}"
+
     post_dict = {
         "id": post[0],
         "title": post[1],
@@ -128,7 +133,7 @@ def get_post_by_id(post_id):
         "date": post[3],
         "author": post[4],
         "footer": post[5],
-        "image": post[6],
+        "image": image_url,
         "file": post[7],
         "video": post[8]
     }

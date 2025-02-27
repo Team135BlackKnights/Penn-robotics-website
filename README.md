@@ -38,14 +38,14 @@ That looks pretty ugly, right? Exactly. That's why we use **CSS**, more specific
 
 The big things you need to learn about SCSS:
 
-**- SCSS Properties
+**- SCSS Properties**
 - Nesting
 - Media Queries
-**
+
 If you can understand these three things you will have a very good grasp on what you need to do. Again, I suggest tutorials.
 
 Quick Explanation:
-- **SSS Properties** are what make the website look good, example of these is like "color: #ffffff;" (changes color of the embed to white) or "margin-top: 50px;" (pushes the element 50 pixels down from whatever is   above it)
+- **SCSS Properties** are what make the website look good, example of these is like "color: #ffffff;" (changes color of the embed to white) or "margin-top: 50px;" (pushes the element 50 pixels down from whatever is   above it)
 
 - **Nesting** is like the structure of SCSS, it's how you code an exampe of this is:
 ```

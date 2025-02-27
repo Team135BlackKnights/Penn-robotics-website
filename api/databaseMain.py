@@ -152,18 +152,6 @@ def delete_post(post_id):
         return {"message": f"Post {post_id} not found"}, 404
 
     c.execute("DELETE FROM posts_content WHERE id = ?", (post_id,))
-    
-    c.execute("""
-        UPDATE posts_content
-        SET id = id - 1
-        WHERE id > ?
-    """, (post_id,))
-
-    conn.commit()
-
-    c.execute("SELECT MAX(id) FROM posts_content")
-    max_id = c.fetchone()[0] or 0
-    c.execute(f"UPDATE sqlite_sequence SET seq = ? WHERE name = 'posts_content'", (max_id,))
 
     conn.commit()
     conn.close()

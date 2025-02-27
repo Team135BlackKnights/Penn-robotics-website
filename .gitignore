@@ -7,3 +7,5 @@ api/api.log
 /api/__pycache__
 api/api.log
 *.db
+uploads/Screenshot 2023-11-16 162730.png
+*.pyc

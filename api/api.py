@@ -108,9 +108,6 @@ def create_app():
         """
         Fetch a post by its ID and return the post data, including the image URL.
         """
-        if not session.get('logged_in'):
-            return jsonify(error="Unauthorized"), 401
-
         post = get_post_by_id(post_id)  # Fetch the post by ID
 
         if not post:

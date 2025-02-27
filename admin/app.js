@@ -107,7 +107,6 @@ document.getElementById('edit-post-form').addEventListener('submit', function (e
     formData.append('author', author);
     formData.append('footer', footer);
 
-    // Only append image if the user selected a new one
     if (image) formData.append('image', image);
 
     fetch('https://api.pennrobotics.org/edit-post', {
@@ -131,13 +130,12 @@ document.getElementById('edit-post-form').addEventListener('submit', function (e
     });
 });
 
-// Delete Post Form Submission
 document.getElementById('delete-post-form').addEventListener('submit', function (event) {
     event.preventDefault();
 
     const postId = document.getElementById('delete-id').value;
 
-    fetch(`https://api.pennrobotics.org/delete/${postId}`, {  // Fixed template literal
+    fetch(`https://api.pennrobotics.org/delete/${postId}`, {
         method: 'DELETE',
         credentials: 'include'
 

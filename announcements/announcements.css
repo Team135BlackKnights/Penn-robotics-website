@@ -90,7 +90,7 @@
   background-color: white;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1250px) {
   .navbar {
     justify-content: space-between;
     padding: 0 8vw;
@@ -288,6 +288,44 @@ body .post-content-body li {
   margin-left: 10px;
   margin-bottom: -10px;
   margin-top: -10px;
+}
+body .share-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+body .share-button:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+body .share-button svg {
+  width: 24px;
+  height: 24px;
+  fill: grey;
+}
+body .copy-tooltip {
+  position: absolute;
+  bottom: 120%;
+  right: 50%;
+  transform: translateX(50%) translateY(10px);
+  background: rgb(71, 69, 69);
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+body .copy-tooltip.show {
+  opacity: 1;
+  transform: translateX(50%) translateY(0);
 }
 body .post-footer {
   font-size: 12px;

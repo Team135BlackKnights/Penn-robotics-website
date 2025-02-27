@@ -1,6 +1,6 @@
-@import "../variables";
-@import "../navbar";
-@import "../footer";
+@import "../../variables";
+@import "../../navbar";
+@import "../../footer";
 
 * {
     margin: 0;
@@ -119,6 +119,7 @@
             margin-top: -10px;
         }
     }
+    
     .share-button {
         position: absolute;
         bottom: 10px;
@@ -232,10 +233,10 @@
             }
 
             .button {
-                border-radius: 1vw;
+                border-radius: 8px;
                 font-weight: 400;
                 font-size: clamp($body, 3vw, $subheader);
-                margin-top: 16vh;
+                margin-top: 6vh;
 
                 a {
                     background-color: $decoration;
@@ -273,7 +274,7 @@
         .landing{
             .hero{
                 .title{
-                    font-size: 40px;
+                    font-size: 50px;
                     padding-top: 23vh;
                 }
             }

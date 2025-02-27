@@ -56,7 +56,7 @@ def create_app():
 
     @app.route('/', methods=['GET'])
     def home():
-        return "Penn High School Robotics API."
+        return "Penn High School Robotics Website API."
     @app.route('/check-login', methods=['GET'])
     def check_login():
         if 'logged_in' in session and session['logged_in']:

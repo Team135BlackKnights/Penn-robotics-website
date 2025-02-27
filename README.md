@@ -99,7 +99,7 @@ Once you are in VS Code click on the "extensions" button on the left of your scr
 - Google Cloud Platform (sort of, read further)
 
 Instead of Google Domains, we are using [Cloudflare as our domain registrar](https://www.cloudflare.com/products/registrar/).
-Instead of Google Cloud Platform, to host the website we are using [Cloudflare Pages](https://pages.cloudflare.com/) **eep reading further into API**
+Instead of Google Cloud Platform, to host the website we are using [Cloudflare Pages](https://pages.cloudflare.com/) **(Keep reading further into API)**
 
 ## 6. API
 
@@ -114,6 +114,7 @@ First, test the build on your local machine and make sure it actually **works**,
 - Use Google Cloud Platform to update the API code.
 - Use Cloudflare for everything else like: Website Hosting, DNS Records, Domain Registration
 - Use Google Search Engine to manage SEO, view current Google indexing/crawling, and view website analytics *though Cloudflare does have built-in analytics*.
+- For detailed analytics, [PostHog](https://us.posthog.com/project/133003) has been installed to the website. [Posthog](https://us.posthog.com/project/133003) allows you to see detailed metrics about how users interact with the site.
 
 1. **To edit the Cloudflare Pages** (the website's files) go the [Cloudflare Dashboard](https://dash.cloudflare.com/). Using the same pennroboticswebsite@gmail.com email as mentioned before.
 2. Click on the search button "Go To" and type **Workers & Pages**, once you are there click on penn-robotics. Once you are there, you will see all the previous deployments.

@@ -42,7 +42,7 @@ if not os.path.exists(UPLOAD_FOLDER):
 
 def create_app():
     app = Flask(__name__)
-    CORS(app, origins=["https://pennrobotics.org"], supports_credentials=True)
+    CORS(app, origins=["https://pennrobotics.org", "http://127.0.0.1:5500"], supports_credentials=True)
     app.secret_key = os.urandom(24)  # Secret key for sessions
 
     @app.errorhandler(429)

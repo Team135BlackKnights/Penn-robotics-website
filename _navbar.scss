@@ -6,13 +6,11 @@
   justify-content: center;
   align-items: center;
   background-color: $background;
-  overflow: hidden;
+  overflow: visible;
 
-
-  .icons { 
+  .icons {
     display: flex;
     gap: 2vw;
-    
 
     i {
       font-size: $body * 2;
@@ -49,10 +47,6 @@
   }
 
   .nav-menu {
-    /* Makes the logo to left However there is an issue where the logo is included with the other text items so it don't center properly
-     flex: 1; /* Allow growth to fill remaining space */
-    /* justify-content:  center; /* Center menu items within remaining space */
-
     display: flex;
     gap: 2vw;
     align-items: center;
@@ -75,7 +69,8 @@
         top: 31px;
         left: 1px;
       }
-
+    }
+    .nav-item:not(.dropdown) {
       &:hover::after {
         width: 100%;
       }
@@ -95,6 +90,84 @@
         box-shadow: 0px 2px 10px 1px $decoration;
       }
     }
+
+    .dropdown {
+      position: relative;
+      cursor: pointer;
+    
+      .dropdown-title {
+        display: block;
+        padding: 0.5rem 1rem;
+        position: relative;
+    
+        &::after {
+          content: "";
+          display: inline-block;
+          width: 0.7em;
+          height: 0.7em;
+          margin-left: 0.5rem;
+          background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23ffffff' d='M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z'/%3E%3C/svg%3E") no-repeat center center;
+          background-size: contain;
+          transition: transform 300ms ease;
+        }
+      }
+    
+      &:hover .dropdown-title::after {
+        transform: rotate(180deg);
+      }
+    
+      .dropdown-menu {
+        position: absolute;
+        top: 156%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-10px);
+        opacity: 0;
+        visibility: hidden;
+        background-color: $background;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        min-width: 150px;
+        text-align: center;
+        flex-direction: column;
+        z-index: -20;
+        transition: opacity 300ms ease, transform 300ms ease, visibility 300ms ease;
+        margin-top: 0;
+    
+        a {
+          display: block;
+          padding: 0.5rem 1rem;
+          color: $primary;
+          text-decoration: none;
+          transition: background 200ms ease-in;
+    
+          &:hover {
+            background-color: rgba($primary, 0.1);
+          }
+        }
+      }
+    
+      &:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+      }
+    
+      &:hover {
+        .dropdown-title {
+          position: relative;
+        }
+    
+        .dropdown-title::before {
+          content: "";
+          position: absolute;
+          top: -22px;
+          left: 0;
+          right: 0;
+          bottom: -22px;
+          z-index: -1;
+        }
+      }
+    }
+    }
   }
 
   .hamburger {
@@ -105,71 +178,98 @@
       width: 50px;
       height: 6px;
       margin: 10px auto;
-      -webkit-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out;
       background-color: $primary;
     }
   }
-}
 
-@media (max-width: 1250px) {
-  .navbar {
-    justify-content: space-between;
-    padding: 0 8vw;
 
-    .nav-menu {
-      position: fixed;
-      right: -100%;
-      top: 95px;
-      flex-direction: column;
-      background-color: $background;
-      width: 100%;
-      text-align: center;
-      transition: 0.3s;
-
-      .nav-item {
-        padding: 1rem 8vw;
-
-        &::after {
-          display: none;
-        }
-
-        &:hover {
-          font-weight: 600;
-        }
-      }
-
-      #donate {
-        padding: 1rem 0;
+  @media (max-width: 1250px) {
+    .navbar {
+      justify-content: space-between;
+      padding: 0 8vw;
+  
+      .nav-menu {
+        position: fixed;
+        right: -100%;
+        top: 95px;
+        flex-direction: column;
+        background-color: $background;
         width: 100%;
-        border-radius: 0;
-        background-color: $trans-dec;
+        text-align: center;
+        transition: 0.3s;
+  
+        .nav-item {
+          padding: 1rem 8vw;
+          &::after {
+            display: none;
+          }
+          &:hover {
+            font-weight: 600;
+          }
+        }
+  
+        #donate {
+          padding: 1rem 0;
+          width: 100%;
+          border-radius: 0;
+          background-color: $trans-dec;
+  
+          &:hover {
+            box-shadow: 0px 2px 10px 1px $trans-dec;
+          }
+        }
+  
+        .dropdown {
+          width: 100%;
+          text-align: center;
+          &:hover{
+            .dropdown-menu{
+              max-height: none; 
+            }
+          }
+          .dropdown-menu {
+            transition: max-height 0.3s ease;
+            font-weight: 300;
+            position: relative;
+            z-index: 0;
+            width: 100%;
+            background-color: transparent;
+            text-align: center;
+            flex-direction: column;
+            max-height: 0;
+            a {
+              &:hover {
+                font-weight: 600;
 
-        &:hover {
-          box-shadow: 0px 2px 10px 1px $trans-dec;
+                background-color: transparent;
+              }
+            }
+          }
+  
         }
       }
-    }
-
-    .nav-menu.active {
-      right: 0;
-    }
-
-    .hamburger {
-      display: block;
-      cursor: pointer;
-    }
-
-    .hamburger.active .bar:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(1) {
-      transform: translateY(16px) rotate(45deg);
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-      transform: translateY(-16px) rotate(-45deg);
+  
+      .nav-menu.active {
+        right: 0;
+      }
+  
+      .hamburger {
+        display: block;
+        cursor: pointer;
+      }
+  
+      .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+      }
+  
+      .hamburger.active .bar:nth-child(1) {
+        transform: translateY(16px) rotate(45deg);
+      }
+  
+      .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-16px) rotate(-45deg);
+      }
     }
   }
-}
+  

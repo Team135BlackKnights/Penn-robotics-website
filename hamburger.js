@@ -10,7 +10,9 @@ function mobileMenu() {
   navMenu.classList.toggle("active");
 }
 
-function closeMenu() {
-  hamburger.classList.remove("active");
-  navMenu.classList.remove("active");
+function closeMenu(event) {
+  if (!event.target.closest('.dropdown')) {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+  }
 }

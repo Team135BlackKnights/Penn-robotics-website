@@ -8,7 +8,7 @@
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
-  overflow: hidden;
+  overflow: visible;
 }
 .navbar .icons {
   display: flex;
@@ -38,9 +38,6 @@
   border: 1px solid black;
 }
 .navbar .nav-menu {
-  /* Makes the logo to left However there is an issue where the logo is included with the other text items so it don't center properly
-   flex: 1; /* Allow growth to fill remaining space */
-  /* justify-content:  center; /* Center menu items within remaining space */
   display: flex;
   gap: 2vw;
   align-items: center;
@@ -63,7 +60,7 @@
   top: 31px;
   left: 1px;
 }
-.navbar .nav-menu .nav-item:hover::after {
+.navbar .nav-menu .nav-item:not(.dropdown):hover::after {
   width: 100%;
 }
 .navbar .nav-menu #donate {
@@ -78,10 +75,76 @@
 .navbar .nav-menu #donate:hover {
   box-shadow: 0px 2px 10px 1px rgb(250, 200, 0);
 }
-.navbar .hamburger {
+.navbar .nav-menu .dropdown {
+  position: relative;
+  cursor: pointer;
+}
+.navbar .nav-menu .dropdown .dropdown-title {
+  display: block;
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+.navbar .nav-menu .dropdown .dropdown-title::after {
+  content: "";
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  margin-left: 0.5rem;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23ffffff' d='M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z'/%3E%3C/svg%3E") no-repeat center center;
+  background-size: contain;
+  transition: transform 300ms ease;
+}
+.navbar .nav-menu .dropdown:hover .dropdown-title::after {
+  transform: rotate(180deg);
+}
+.navbar .nav-menu .dropdown .dropdown-menu {
+  position: absolute;
+  top: 156%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  opacity: 0;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+  text-align: center;
+  flex-direction: column;
+  z-index: -20;
+  transition: opacity 300ms ease, transform 300ms ease, visibility 300ms ease;
+  margin-top: 0;
+}
+.navbar .nav-menu .dropdown .dropdown-menu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: white;
+  text-decoration: none;
+  transition: background 200ms ease-in;
+}
+.navbar .nav-menu .dropdown .dropdown-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.navbar .nav-menu .dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.navbar .nav-menu .dropdown:hover .dropdown-title {
+  position: relative;
+}
+.navbar .nav-menu .dropdown:hover .dropdown-title::before {
+  content: "";
+  position: absolute;
+  top: -22px;
+  left: 0;
+  right: 0;
+  bottom: -22px;
+  z-index: -1;
+}
+
+.hamburger {
   display: none;
 }
-.navbar .hamburger .bar {
+.hamburger .bar {
   display: block;
   width: 50px;
   height: 6px;
@@ -122,6 +185,28 @@
   }
   .navbar .nav-menu #donate:hover {
     box-shadow: 0px 2px 10px 1px rgba(250, 200, 0, 0.8);
+  }
+  .navbar .nav-menu .dropdown {
+    width: 100%;
+    text-align: center;
+  }
+  .navbar .nav-menu .dropdown:hover .dropdown-menu {
+    max-height: none;
+  }
+  .navbar .nav-menu .dropdown .dropdown-menu {
+    transition: max-height 0.3s ease;
+    font-weight: 300;
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    background-color: transparent;
+    text-align: center;
+    flex-direction: column;
+    max-height: 0;
+  }
+  .navbar .nav-menu .dropdown .dropdown-menu a:hover {
+    font-weight: 600;
+    background-color: transparent;
   }
   .navbar .nav-menu.active {
     right: 0;

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function fetchPost(postId) {
-    fetch(`https://api.pennrobotics.org/get-post/${postId}`)
+    fetch(`http://127.0.0.1:5000//get-post/${postId}`)
         .then(response => response.json())
         .then(data => {
             if (data.error) {

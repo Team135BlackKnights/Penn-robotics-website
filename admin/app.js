@@ -14,7 +14,7 @@ document.getElementById('make-post-form').addEventListener('submit', function (e
     formData.append('author', author);
     formData.append('footer', footer);
     if (image) formData.append('image', image);
-    fetch('http://127.0.0.1:5000/make-post', {
+    fetch('https://api.pennrobotics.org/make-post', {
         method: 'POST',
         credentials: 'include',
         body: formData
@@ -42,7 +42,7 @@ document.getElementById('fetch-post').addEventListener('click', function () {
     }
 
     // Fetch the post data from the API
-    fetch(`http://127.0.0.1:5000/get-post/${postId}`, {
+    fetch(`https://api.pennrobotics.org/get-post/${postId}`, {
         method: 'GET',
         credentials: 'include'
 
@@ -109,7 +109,7 @@ document.getElementById('edit-post-form').addEventListener('submit', function (e
 
     if (image) formData.append('image', image);
 
-    fetch('http://127.0.0.1:5000/edit-post', {
+    fetch('https://api.pennrobotics.org/edit-post', {
         method: 'POST',
         credentials: 'include',
 
@@ -135,7 +135,7 @@ document.getElementById('delete-post-form').addEventListener('submit', function 
 
     const postId = document.getElementById('delete-id').value;
 
-    fetch(`http://127.0.0.1:5000/delete/${postId}`, {
+    fetch(`https://api.pennrobotics.org/delete/${postId}`, {
         method: 'DELETE',
         credentials: 'include'
 

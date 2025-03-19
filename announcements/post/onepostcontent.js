@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function fetchPost(postId) {
-    fetch(`http://127.0.0.1:5000//get-post/${postId}`)
+    fetch(`https://api.pennrobotics.org/get-post/${postId}`)
         .then(response => response.json())
         .then(data => {
             if (data.error) {
@@ -46,6 +46,10 @@ function getContentSnippet(content) {
     return snippet + (words.length > 15 ? ' ...' : '');
 }
 function displayErrorMessage(message) {
+    if (message === "Post not found") {
+        window.location.href = "../post404.html";
+        return;
+    }
     const postContainer = document.querySelector('.posts-location');
     const errorMessage = document.createElement('div');
     errorMessage.classList.add('error-message');

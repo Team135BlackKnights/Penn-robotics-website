@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function fetchPosts(page) {
-    fetch(`http://127.0.0.1:5000/get-posts?page=${page}&limit=5`)
+    fetch(`https://api.pennrobotics.org/get-posts?page=${page}&limit=5`)
         .then(response => response.json())
         .then(data => {
             const postContainer = document.querySelector('.posts-location');

@@ -272,4 +272,16 @@
       }
     }
   }
+  @media(max-width: 500px){
+    .navbar{
+      .nav-menu{
+        .dropdown{
+          max-width: 100%;
+          .dropdown-menu{
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
   

@@ -226,6 +226,14 @@
     transform: translateY(-16px) rotate(-45deg);
   }
 }
+@media (max-width: 500px) {
+  .navbar .nav-menu .dropdown {
+    max-width: 100%;
+  }
+  .navbar .nav-menu .dropdown .dropdown-menu {
+    max-width: 100%;
+  }
+}
 .footer {
   display: flex;
   flex-direction: column;

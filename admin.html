@@ -37,8 +37,11 @@
         <script src="swiper.js" defer></script>
     </head>
 <body>
+    <h1 class="main-title">Penn Robotics Admin Control Panel</h1>
+
     <div class="container">
-        <h1>Penn Robotics Post Management</h1>
+
+        <h1><a href="announcements.html" target="_blank">Announcements Page</a> Post Management</h1>
         <!-- Make Post Form -->
         <div class="form-container">
             <h2>Create Post</h2>
@@ -108,13 +111,27 @@
                 <button type="submit" id="delete-btn">Delete Post</button>
             </form>
         </div>
+        <h1>Processes</h1>
+        <div class="form-container">
+            <h2>API Logs</h2>
+            <pre id="logs-container" class="logs-display"></pre>
+            <button id="fetch-logs">Refresh Logs</button>
+            <button id="download-logs">Download Logs</button>
+            <button id="reset-logs">Delete & Reset Logs</button>
+        </div>
+        
 
-        <div id="message"></div>
     </div>
 
+
+    
+    <!-- Check if the user is logged in when loading the page -->
     <script>
-        // Check if the user is logged in when loading the page
-        fetch('https://api.pennrobotics.org/check-login', {
+        // See if local build or production build
+        const isLocal = window.location.hostname === '127.0.0.1' && window.location.port === '5500';
+        const baseUrl = isLocal ? 'http://127.0.0.1:5000' : 'https://api.pennrobotics.org';
+
+        fetch(`${baseUrl}/check-login`, {
             credentials: 'include'
         })
         .then(response => response.json())

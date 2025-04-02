@@ -1,6 +1,6 @@
 import json
 import logging
-from flask import Flask, jsonify, request, redirect
+from flask import Flask, jsonify, request, redirect, send_file
 from flask_cors import CORS
 import os
 from logging import FileHandler
@@ -164,6 +164,40 @@ def create_app():
         offset = (page - 1) * limit
         post_list = get_posts(offset, limit)
         return jsonify(posts=post_list)
+    
+    @app.route('/get-logs', methods=['GET'])
+    def get_logs():
+        if not session.get('logged_in'):
+            return jsonify(error="Unauthorized"), 401
+
+        try:
+            with open(log_file_path, 'r') as log_file:
+                logs = log_file.readlines()
+            return jsonify(logs=logs)
+        except Exception as e:
+            return jsonify(error=f"Error reading logs: {str(e)}"), 500
+
+    @app.route('/download-logs', methods=['GET'])
+    def download_logs():
+        if not session.get('logged_in'):
+            return jsonify(error="Unauthorized"), 401
+
+        try:
+            return send_file(log_file_path, as_attachment=True)
+        except Exception as e:
+            return jsonify(error=f"Error downloading logs: {str(e)}"), 500
+
+
+    @app.route('/reset-logs', methods=['POST'])
+    def reset_logs():
+        if not session.get('logged_in'):
+            return jsonify(error="Unauthorized"), 401
+
+        try:
+            open(log_file_path, 'w').close()  # Clears the log file
+            return jsonify(message="Logs have been reset.")
+        except Exception as e:
+            return jsonify(error=f"Error resetting logs: {str(e)}"), 500
 
     return app
 

@@ -8,17 +8,17 @@
 
 body {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
-  font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center everything horizontally */
+  justify-content: center; /* Keep content at the top */
   min-height: 100vh;
   padding: 20px;
 }
 
 .container {
-  margin-top: 50px;
+  margin-top: 30px;
   max-width: 800px;
   width: 100%;
   padding: 20px;
@@ -27,6 +27,14 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   min-height: 100px;
   overflow: auto;
+}
+
+h1.main-title {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 2.6rem;
+  font-weight: bold;
+  width: 100%;
 }
 
 h1 {
@@ -70,6 +78,7 @@ button {
   background-color: #007bff;
   color: white;
   border: none;
+  width: 100%;
   border-radius: 8px;
   cursor: pointer;
   font-family: inherit;
@@ -81,6 +90,29 @@ button:hover {
 }
 
 #delete-btn {
+  background: rgb(224, 55, 55);
+}
+
+.logs-display {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border: 1px solid #ccc;
+  max-height: 300px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  margin-bottom: 15px;
+}
+
+#fetch-logs {
+  margin-bottom: 3px;
+}
+
+#download-logs {
+  background: rgb(75, 224, 55);
+  margin-bottom: 3px;
+}
+
+#reset-logs {
   background: rgb(224, 55, 55);
 }
 

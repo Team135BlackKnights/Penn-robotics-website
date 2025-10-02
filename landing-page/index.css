@@ -78,9 +78,10 @@
 .navbar .nav-menu .dropdown {
   position: relative;
   cursor: pointer;
+  display: inline-block; /* <-- parent width follows the title */
 }
 .navbar .nav-menu .dropdown .dropdown-title {
-  display: block;
+  display: inline-block; /* size follows the text */
   padding: 0.5rem 1rem;
   position: relative;
 }
@@ -99,19 +100,21 @@
 }
 .navbar .nav-menu .dropdown .dropdown-menu {
   position: absolute;
-  top: 156%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-10px);
+  top: calc(100% + 25px); /* just below the title */
+  left: 0; /* align with the title's left edge */
+  transform: translateY(-10px); /* initial animation offset */
   opacity: 0;
   visibility: hidden;
   background-color: rgba(0, 0, 0, 0.5);
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  min-width: 150px;
+  width: 100%; /* <-- same width as the .dropdown (title) */
+  min-width: 0; /* remove the hard min width */
   text-align: center;
   flex-direction: column;
-  z-index: -20;
+  z-index: 999; /* ensure it sits above other elements */
   transition: opacity 300ms ease, transform 300ms ease, visibility 300ms ease;
   margin-top: 0;
+  box-sizing: border-box; /* include padding in width measurement */
 }
 .navbar .nav-menu .dropdown .dropdown-menu a {
   display: block;
@@ -119,14 +122,13 @@
   color: white;
   text-decoration: none;
   transition: background 200ms ease-in;
-}
-.navbar .nav-menu .dropdown .dropdown-menu a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  white-space: normal; /* allows wrapping if a menu item is wider */
+  overflow-wrap: anywhere; /* break long URLs if needed */
 }
 .navbar .nav-menu .dropdown:hover .dropdown-menu {
   opacity: 1;
   visibility: visible;
-  transform: translateX(-50%) translateY(0);
+  transform: translateY(0);
 }
 .navbar .nav-menu .dropdown:hover .dropdown-title {
   position: relative;
@@ -153,7 +155,7 @@
   background-color: white;
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1300px) {
   .navbar {
     justify-content: space-between;
     padding: 0 8vw;
@@ -389,7 +391,7 @@
 }
 
 .landing {
-  background-image: url("/landing-page/media/main-background-2.webp");
+  background-image: url("/landing-page/media/main-background-3.webp");
   background-position: center;
   background-attachment: fixed;
   background-size: cover;

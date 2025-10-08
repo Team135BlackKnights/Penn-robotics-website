@@ -298,13 +298,17 @@
   background-blend-mode: soft-light;
 }
 .landing .hero {
-  padding-top: 6vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center horizontally */
+  justify-content: center; /* center vertically */
+  min-height: 50vh; /* make hero fill viewport height */
+  text-align: center;
 }
 .landing .hero .title {
   color: white;
   font-size: clamp(2.5rem, 8vw, 4rem);
   font-weight: 700;
-  text-align: center;
   padding: clamp(4rem, 10vw, 6rem) 0;
 }
 .landing .hero .donateHeader {
@@ -316,11 +320,10 @@
   background-color: rgb(250, 200, 0);
   padding: 12px 2px;
   border-radius: 6px;
-  margin: 0 auto;
+  margin-top: -2rem;
   text-align: center;
   width: 200px;
-  position: relative;
-  bottom: 4vh;
+  transition: box-shadow 0.3s ease;
 }
 .landing .hero .donateHeader::after {
   display: none;
@@ -344,6 +347,57 @@
   margin-left: 2rem;
 }
 
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+}
+.button-container .button-section {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+}
+.button-container .button-section h3 {
+  color: rgb(60, 72, 88);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.button-container .button-section .btn {
+  padding: 12px 0px;
+  width: 150px;
+  background-color: rgb(250, 200, 0);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+.button-container .button-section .btn:hover {
+  box-shadow: 0px 2px 10px 1px rgb(250, 200, 0);
+  transform: translateY(-2px);
+}
+.button-container .button-section p {
+  margin-top: 1rem;
+  color: rgb(60, 72, 88);
+  line-height: 1.6;
+  font-weight: 300;
+}
+.button-container .button-section strong {
+  font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .button-container .button-section {
+    width: 100%;
+  }
+}
 @media (max-width: 720px) {
   .main {
     width: 400px;

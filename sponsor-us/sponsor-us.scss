@@ -21,9 +21,9 @@
   .hero {
     display: flex;
     flex-direction: column;
-    align-items: center; /* center horizontally */
-    justify-content: center; /* center vertically */
-    min-height: 50vh; /* make hero fill viewport height */
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
     text-align: center;
 
     .title {
@@ -59,7 +59,7 @@
 }
 
 .main {
-  width: clamp(40rem, 85vw, 50rem);
+  width: clamp(20rem, 85vw, 50rem);
   margin: 4rem auto;
   font-size: $subtitle;
   color: $secondary;
@@ -79,7 +79,7 @@
   justify-content: space-between;
   gap: 2rem;
   margin: 3rem 0;
-  flex-wrap: wrap; // allows stacking on smaller screens
+  flex-wrap: wrap;
 
   .button-section {
     flex: 1;
@@ -92,8 +92,10 @@
       margin-bottom: 1rem;
     }
 
+    /* make .btn work for anchors and buttons */
     .btn {
-      padding: 12px 0px;
+      display: inline-block;
+      padding: 12px 0;
       width: 150px;
       background-color: $decoration;
       color: $primary;
@@ -101,12 +103,23 @@
       border-radius: 6px;
       font-size: $subheader;
       cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      line-height: 1;
       transition: box-shadow 0.3s ease, transform 0.2s ease;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
 
-      &:hover {
-        box-shadow: 0px 2px 10px 1px $decoration;
-        transform: translateY(-2px);
-      }
+    .btn:hover {
+      box-shadow: 0px 2px 10px 1px $decoration;
+      transform: translateY(-2px);
+    }
+
+    .btn:focus {
+      outline: 3px solid rgba(0, 0, 0, 0.08);
+      outline-offset: 2px;
     }
 
     p {
@@ -115,26 +128,28 @@
       line-height: 1.6;
       font-weight: 300;
     }
-    strong{
+
+    strong {
       font-weight: 700;
     }
   }
 }
 
+/* Consolidated media queries */
 @media (max-width: 720px) {
   .button-container {
     flex-direction: column;
     align-items: center;
-
-    .button-section {
-      width: 100%;
-    }
   }
-}
 
-@media (max-width: 720px) {
+  .button-section {
+    width: 100%;
+  }
+
   .main {
-    width: 400px;
+    width: 100%;
+    max-width: 40rem;
+    padding: 0 1rem;
   }
 }
 
@@ -155,6 +170,8 @@
   }
 
   .main {
-    width: 300px;
+    width: 100%;
+    max-width: 22rem;
+    padding: 0 1rem;
   }
 }

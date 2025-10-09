@@ -300,9 +300,9 @@
 .landing .hero {
   display: flex;
   flex-direction: column;
-  align-items: center; /* center horizontally */
-  justify-content: center; /* center vertically */
-  min-height: 50vh; /* make hero fill viewport height */
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
   text-align: center;
 }
 .landing .hero .title {
@@ -333,7 +333,7 @@
 }
 
 .main {
-  width: clamp(40rem, 85vw, 50rem);
+  width: clamp(20rem, 85vw, 50rem);
   margin: 4rem auto;
   font-size: clamp(16px, 3vw, 18px);
   color: rgb(60, 72, 88);
@@ -358,6 +358,7 @@
   flex: 1;
   min-width: 250px;
   text-align: center;
+  /* make .btn work for anchors and buttons */
 }
 .button-container .button-section h3 {
   color: rgb(60, 72, 88);
@@ -365,7 +366,8 @@
   margin-bottom: 1rem;
 }
 .button-container .button-section .btn {
-  padding: 12px 0px;
+  display: inline-block;
+  padding: 12px 0;
   width: 150px;
   background-color: rgb(250, 200, 0);
   color: white;
@@ -373,11 +375,21 @@
   border-radius: 6px;
   font-size: 24px;
   cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1;
   transition: box-shadow 0.3s ease, transform 0.2s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .button-container .button-section .btn:hover {
   box-shadow: 0px 2px 10px 1px rgb(250, 200, 0);
   transform: translateY(-2px);
+}
+.button-container .button-section .btn:focus {
+  outline: 3px solid rgba(0, 0, 0, 0.08);
+  outline-offset: 2px;
 }
 .button-container .button-section p {
   margin-top: 1rem;
@@ -389,18 +401,19 @@
   font-weight: 700;
 }
 
+/* Consolidated media queries */
 @media (max-width: 720px) {
   .button-container {
     flex-direction: column;
     align-items: center;
   }
-  .button-container .button-section {
+  .button-section {
     width: 100%;
   }
-}
-@media (max-width: 720px) {
   .main {
-    width: 400px;
+    width: 100%;
+    max-width: 40rem;
+    padding: 0 1rem;
   }
 }
 @media (max-width: 480px) {
@@ -415,6 +428,8 @@
     margin-top: 2rem;
   }
   .main {
-    width: 300px;
+    width: 100%;
+    max-width: 22rem;
+    padding: 0 1rem;
   }
 }/*# sourceMappingURL=sponsor-us.css.map */

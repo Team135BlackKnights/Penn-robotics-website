@@ -500,6 +500,18 @@
   transform: translateY(-7px) scale(1.1);
   color: rgb(250, 225, 12);
 }
+
+.fa-gear,
+.svg-inline--fa.fa-gear {
+  display: inline-block;
+  transform-origin: center center;
+  transition: transform 220ms cubic-bezier(.2,.9,.2,1), color 150ms ease-in;
+}
+.fa-gear:hover,
+.svg-inline--fa.fa-gear:hover {
+  transform: translateY(-6px) rotate(90deg) scale(1.05) !important;
+  color: rgb(250, 200, 0) !important;
+  
 .main .content h3 {
   margin-top: 1rem;
   margin-bottom: 1rem;

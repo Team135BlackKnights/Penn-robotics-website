@@ -511,7 +511,7 @@
 .svg-inline--fa.fa-gear:hover {
   transform: translateY(-6px) rotate(90deg) scale(1.05) !important;
   color: rgb(255, 221, 84) !important;
-  
+}
 .main .content h3 {
   margin-top: 1rem;
   margin-bottom: 1rem;

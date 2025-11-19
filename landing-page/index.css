@@ -289,6 +289,18 @@
   font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
+.fa-gear,
+.svg-inline--fa.fa-gear {
+  display: inline-block;
+  transform-origin: center center;
+  transition: transform 400ms ease, color 180ms ease-in !important;
+}
+.fa-gear:hover,
+.svg-inline--fa.fa-gear:hover {
+  transform: translateY(-6px) rotate(90deg) scale(1.05) !important;
+  color: rgb(255, 221, 84) !important;
+}
+
 .popup {
   display: none;
   position: fixed;

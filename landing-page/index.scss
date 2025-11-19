@@ -9,7 +9,17 @@
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   // border: 1px solid red;
 }
+.fa-gear,
+.svg-inline--fa.fa-gear {
+  display: inline-block;
+  transform-origin: center center;
+  transition: transform 400ms ease, color 180ms ease-in !important;
 
+  &:hover {
+    transform: translateY(-6px) rotate(90deg) scale(1.05) !important;
+    color: rgb(255, 221, 84) !important;
+  }
+}
 .popup {
     display: none;
     position: fixed ;

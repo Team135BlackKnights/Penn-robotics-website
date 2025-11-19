@@ -145,7 +145,8 @@ button:hover {
   margin-bottom: 15px;
   max-width: 100%;
   height: auto;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 #edit-fields input, #edit-fields textarea {
   padding: 10px;

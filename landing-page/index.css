@@ -289,6 +289,18 @@
   font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
+.fa-gear,
+.svg-inline--fa.fa-gear {
+  display: inline-block;
+  transform-origin: center center;
+  transition: transform 400ms ease, color 180ms ease-in !important;
+}
+.fa-gear:hover,
+.svg-inline--fa.fa-gear:hover {
+  transform: translateY(-6px) rotate(90deg) scale(1.05) !important;
+  color: rgb(255, 221, 84) !important;
+}
+
 .popup {
   display: none;
   position: fixed;
@@ -499,18 +511,6 @@
 .main .content i:hover {
   transform: translateY(-7px) scale(1.1);
   color: rgb(250, 225, 12);
-}
-
-.fa-gear,
-.svg-inline--fa.fa-gear {
-  display: inline-block;
-  transform-origin: center center;
-  transition: transform 220ms cubic-bezier(.2,.9,.2,1), color 150ms ease-in;
-}
-.fa-gear:hover,
-.svg-inline--fa.fa-gear:hover {
-  transform: translateY(-6px) rotate(90deg) scale(1.05) !important;
-  color: rgb(255, 221, 84) !important;
 }
 .main .content h3 {
   margin-top: 1rem;

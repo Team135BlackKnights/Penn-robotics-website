@@ -1,53 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
-/* Site-wide fluid variables for ultra-wide monitor support */
-:root {
-  --site-max-width: clamp(1000px, 60vw, 1800px);
-  --site-padding: clamp(16px, 2.5vw, 64px);
-  --fluid-type-min: 16px;
-  --fluid-type-max: 20px;
-  --content-max-ch: 80ch;
-}
-
-/* Make layout content centered and constrained on very wide screens while keeping full-bleed backgrounds */
-/* Targets common section children; tweak selectors if you add wrappers */
-.landing .hero .title,
-.landing .hero .typed-title,
-.main .content,
-.sponsors .container,
-.quote-section .title,
-.footer .content,
-.team-container {
-  max-width: var(--site-max-width);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 0; /* outer sections already get site padding below */
-}
-
-/* Add horizontal padding to full-width sections so content doesn't touch the edges on small screens */
-.landing .hero,
-.main,
-.sponsors,
-.quote-section,
-.footer {
-  padding-left: var(--site-padding);
-  padding-right: var(--site-padding);
-  box-sizing: border-box;
-}
-
-/* Fluid base font-size */
-html { font-size: clamp(var(--fluid-type-min), 1.6vw, var(--fluid-type-max)); }
-
-/* Optional tweaks for very large viewports */
-@media (min-width: 1600px) {
-  :root { --site-max-width: calc(var(--site-max-width) + 200px); }
-}
-@media (min-width: 2100px) {
-  :root {
-    --site-max-width: 2000px;
-    --site-padding: clamp(24px, 3vw, 120px);
-  }
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
 .navbar {
   position: fixed;
   width: 100%;
@@ -330,6 +284,61 @@ html { font-size: clamp(var(--fluid-type-min), 1.6vw, var(--fluid-type-max)); }
   color: white;
 }
 
+/* Google font imports (moved here so site-wide CSS vars live in SCSS)
+   These were previously in the compiled CSS; keeping them here avoids
+   duplicating the same runtime rules in both CSS and SCSS. */
+/* Site-wide fluid variables for ultra-wide monitor support (CSS custom properties)
+   Keeping these as custom properties so they are available at runtime in the browser. */
+:root {
+  --site-max-width: clamp(1000px, 60vw, 1800px);
+  --site-padding: clamp(16px, 2.5vw, 64px);
+  --fluid-type-min: 16px;
+  --fluid-type-max: 20px;
+  --content-max-ch: 80ch;
+}
+
+/* Constrain main content within a comfortable max-width on ultra-wide screens */
+.landing .hero .title,
+.landing .hero .typed-title,
+.main .content,
+.ponsors .container,
+.quote-section .title,
+.footer .content,
+.team-container {
+  max-width: var(--site-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0; /* outer sections already get site padding below */
+}
+
+/* Add horizontal padding to full-bleed sections */
+.landing .hero,
+.main,
+.sponsors,
+.quote-section,
+.footer {
+  padding-left: var(--site-padding);
+  padding-right: var(--site-padding);
+  box-sizing: border-box;
+}
+
+/* Fluid base font-size */
+html {
+  font-size: clamp(var(--fluid-type-min), 1.6vw, var(--fluid-type-max));
+}
+
+/* Optional tweaks for very large viewports */
+@media (min-width: 1600px) {
+  :root {
+    --site-max-width: calc(var(--site-max-width) + 200px);
+  }
+}
+@media (min-width: 2100px) {
+  :root {
+    --site-max-width: 2000px;
+    --site-padding: clamp(24px, 3vw, 120px);
+  }
+}
 * {
   margin: 0;
   padding: 0;

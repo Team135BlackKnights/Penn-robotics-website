@@ -1,0 +1,18 @@
+{
+  "landing.hero": {
+    "label": "Landing Hero Background",
+    "apply": "background",
+    "default": "/landing-page/media/hero-default.webp",
+    "description": "Large homepage hero background",
+    "allowed": ["image/png", "image/jpeg", "image/webp"],
+    "max_size": 5242880
+  },
+  "header.logo": {
+    "label": "Header Logo",
+    "apply": "src",
+    "default": "/landing-page/media/logo-default.webp",
+    "description": "Small site header logo",
+    "allowed": ["image/png", "image/webp"],
+    "max_size": 2097152
+  }
+}

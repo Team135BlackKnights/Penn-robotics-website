@@ -579,8 +579,9 @@ html {
   font-size: 16px;
   max-width: 50ch;
   margin: 0 auto;
-  font-weight: 300;
+  font-weight: 1000000000;
   color: rgb(150, 150, 150);
+  text-align: left;
 }
 
 .quote-section {

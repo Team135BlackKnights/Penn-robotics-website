@@ -39,6 +39,7 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
     <script src="swiper.js" defer></script>
+    <script src="/focus-arrow.js" defer></script>
   </head>
   <body>
     <div class="navbar">
@@ -115,6 +116,8 @@
             </p>
             <p>Support Penn Robotics by Donating Today!</p>
           </div>
+    
+              <!-- Focus arrow behavior moved to global files (focus-arrow.js & focus-arrow.scss) -->
           <span id="typed"></span>
         </div>
         <!--
@@ -204,7 +207,7 @@
          >
        </div>  
     </div>
-    <div class="quote-section">
+    <div class="quote-section" data-image-slot="quote.section">
       <div class="title">
         "Our mission is to create a new generation of problem solvers and to
         inspire young minds through diverse experiences."

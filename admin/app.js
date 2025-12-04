@@ -295,6 +295,20 @@ function createImageSlotWidget(key, meta) {
     keyText.textContent = `Key: ${key}`;
     slot.appendChild(keyText);
 
+    // Link to view the image target on the live site (opens page and focuses this slot)
+    if (meta && meta.page) {
+        const viewLink = document.createElement('a');
+        viewLink.className = 'image-slot-link';
+        // Use a hash param so the target page can find the slot and highlight it
+        viewLink.href = `${meta.page}#focus=${encodeURIComponent(key)}`;
+        viewLink.target = '_blank';
+        viewLink.rel = 'noopener noreferrer';
+        viewLink.textContent = 'View on site';
+        viewLink.style.display = 'inline-block';
+        viewLink.style.marginTop = '6px';
+        slot.appendChild(viewLink);
+    }
+
     if (meta.description) {
         const desc = document.createElement('p');
         desc.className = 'image-slot-desc';
@@ -307,7 +321,15 @@ function createImageSlotWidget(key, meta) {
     preview.alt = `${key} preview`;
     preview.style.maxWidth = '300px';
     preview.style.display = 'none';
+    preview.style.cursor = 'zoom-in';
     slot.appendChild(preview);
+
+    // Drop hint overlay (shown when dragging files over the slot)
+    const dropHint = document.createElement('div');
+    dropHint.className = 'image-drop-hint';
+    dropHint.textContent = 'Drop image here';
+    dropHint.style.display = 'none';
+    slot.appendChild(dropHint);
 
     const fileInput = document.createElement('input');
     fileInput.type = 'file';
@@ -319,6 +341,12 @@ function createImageSlotWidget(key, meta) {
     uploadBtn.type = 'button';
     uploadBtn.textContent = 'Upload';
     slot.appendChild(uploadBtn);
+
+    const resetBtn = document.createElement('button');
+    resetBtn.type = 'button';
+    resetBtn.textContent = 'Reset to default';
+    resetBtn.style.marginLeft = '8px';
+    slot.appendChild(resetBtn);
 
     const status = document.createElement('div');
     status.className = 'image-slot-status';
@@ -413,6 +441,89 @@ function createImageSlotWidget(key, meta) {
         reader.readAsDataURL(f);
     });
 
+    // Drag & drop support: highlight slot when dragging files and accept drop to set file input
+    function isFileDrag(e) {
+        try {
+            const types = e.dataTransfer && e.dataTransfer.types;
+            if (!types) return false;
+            // Chrome/Edge: contains 'Files', Firefox may include 'application/x-moz-file'
+            return Array.from(types).some(t => t === 'Files' || t === 'files' || t.includes && t.includes('Files'));
+        } catch (err) {
+            return false;
+        }
+    }
+
+    function showDragOver() {
+        slot.classList.add('drag-over');
+        dropHint.style.display = 'flex';
+    }
+
+    function clearDragOver() {
+        slot.classList.remove('drag-over');
+        dropHint.style.display = 'none';
+    }
+
+    // Handle drop: set file input (if possible) and preview
+    function handleDrop(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const files = (e.dataTransfer && e.dataTransfer.files) || [];
+        if (!files || files.length === 0) return clearDragOver();
+        const f = files[0];
+
+        // Try to set fileInput.files via DataTransfer if supported
+        try {
+            const dt = new DataTransfer();
+            dt.items.add(f);
+            fileInput.files = dt.files;
+        } catch (err) {
+            // Setting files may not be supported in some browsers; fall back to only previewing
+            console.warn('Could not set file input programmatically:', err);
+        }
+
+        // Show preview immediately
+        const reader = new FileReader();
+        reader.onload = function (ev) {
+            preview.src = ev.target.result;
+            preview.style.display = 'block';
+        };
+        reader.readAsDataURL(f);
+
+        // Optionally, focus upload button for quick upload
+        uploadBtn.focus();
+
+        clearDragOver();
+    }
+
+    // Drag events
+    slot.addEventListener('dragenter', function (e) {
+        if (isFileDrag(e)) {
+            e.preventDefault();
+            showDragOver();
+        }
+    });
+    slot.addEventListener('dragover', function (e) {
+        if (isFileDrag(e)) {
+            e.preventDefault();
+            e.dataTransfer.dropEffect = 'copy';
+            showDragOver();
+        }
+    });
+    slot.addEventListener('dragleave', function (e) {
+        // If leaving the slot entirely, clear highlight
+        const rect = slot.getBoundingClientRect();
+        const x = e.clientX, y = e.clientY;
+        if (x < rect.left || x > rect.right || y < rect.top || y > rect.bottom) clearDragOver();
+    });
+    slot.addEventListener('dragend', function (e) { clearDragOver(); });
+    slot.addEventListener('drop', handleDrop);
+
+    // Open lightbox when clicking the preview
+    preview.addEventListener('click', function (e) {
+        if (!preview.src) return;
+        openImageLightbox(preview.src, meta.label || key);
+    });
+
     uploadBtn.addEventListener('click', function () {
         const f = fileInput.files[0];
         if (!f) {
@@ -442,6 +553,32 @@ function createImageSlotWidget(key, meta) {
         .catch(err => {
             console.error('Upload error:', err);
             status.textContent = 'Upload error.';
+        });
+    });
+
+    resetBtn.addEventListener('click', function () {
+        if (!confirm(`Reset ${key} to default? This will remove the uploaded image.`)) return;
+        status.textContent = 'Resetting...';
+        const fd = new FormData();
+        fd.append('key', key);
+        fetch(`${baseUrl}/delete-image`, {
+            method: 'POST',
+            credentials: 'include',
+            body: fd
+        })
+        .then(resp => resp.json())
+        .then(data => {
+            if (data && data.message) {
+                status.textContent = 'Reset to default';
+                // reload this slot preview by re-rendering all slots
+                renderImageSlots();
+            } else {
+                status.textContent = data.error || 'Reset failed';
+            }
+        })
+        .catch(err => {
+            console.error('Error resetting image mapping:', err);
+            status.textContent = 'Reset error';
         });
     });
 
@@ -486,4 +623,63 @@ if (document.readyState === 'loading') {
 } else {
     // DOM already ready (script appended late) — run now
     renderImageSlots();
+}
+
+// --------------------
+// Image Lightbox Helper
+// --------------------
+function openImageLightbox(src, title) {
+    // Avoid duplicates
+    if (document.querySelector('.image-lightbox')) return;
+
+    const overlay = document.createElement('div');
+    overlay.className = 'image-lightbox';
+
+    const content = document.createElement('div');
+    content.className = 'image-lightbox-content';
+
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = title || '';
+    img.className = 'image-lightbox-img';
+
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'image-lightbox-close';
+    closeBtn.type = 'button';
+    closeBtn.setAttribute('aria-label', 'Close image');
+    // Inline SVG close icon for crisp rendering and styling control
+    closeBtn.innerHTML = `
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+            <path d="M6 6 L18 18 M6 18 L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+        </svg>
+    `;
+
+    content.appendChild(closeBtn);
+    content.appendChild(img);
+    overlay.appendChild(content);
+    document.body.appendChild(overlay);
+
+    // show (allow CSS transitions)
+    requestAnimationFrame(() => overlay.classList.add('visible'));
+
+    function close() {
+        overlay.classList.remove('visible');
+        overlay.addEventListener('transitionend', () => overlay.remove(), { once: true });
+    }
+
+    // click outside content closes
+    overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) close();
+    });
+
+    closeBtn.addEventListener('click', close);
+
+    // ESC closes
+    function onKey(e) {
+        if (e.key === 'Escape') {
+            close();
+            document.removeEventListener('keydown', onKey);
+        }
+    }
+    document.addEventListener('keydown', onKey);
 }

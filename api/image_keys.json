@@ -3,6 +3,7 @@
     "label": "Landing Hero Background",
     "apply": "background",
     "default": "/landing-page/media/main-background.webp",
+    "page": "/index.html",
     "description": "Large homepage hero background",
     "allowed": ["image/png", "image/jpeg", "image/webp"],
     "max_size": 5242880
@@ -11,8 +12,18 @@
     "label": "Header Logo",
     "apply": "src",
     "default": "/landing-page/media/phm-logo.webp",
+    "page": "/index.html",
     "description": "Small site header logo",
     "allowed": ["image/png", "image/webp"],
     "max_size": 2097152
+  },
+  "quote.section": {
+    "label": "Quote Section Background",
+    "apply": "background",
+    "default": "/landing-page/media/quote-background.webp",
+    "page": "/index.html",
+    "description": "Background for the quote section",
+    "allowed": ["image/png", "image/jpeg", "image/webp"],
+    "max_size": 5242880
   }
 }

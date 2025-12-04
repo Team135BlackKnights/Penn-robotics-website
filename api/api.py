@@ -1,7 +1,7 @@
 import json
 import logging
 from flask import Flask, jsonify, request, redirect, send_file
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 import os
 from logging import FileHandler
 import sqlite3
@@ -179,6 +179,7 @@ def create_app():
             return {}
 
     @app.route('/image-keys', methods=['GET'])
+    @cross_origin(origins=["http://127.0.0.1:5500", "https://pennrobotics.org"], supports_credentials=True)
     def image_keys():
         api_logger.info(f"/image-keys requested from {request.remote_addr}")
         keys = load_image_keys()
@@ -255,9 +256,8 @@ def create_app():
         except Exception as e:
             api_logger.error(f"Error saving uploaded image: {e}")
             return jsonify(error=str(e)), 500
-
-
     @app.route('/get-image', methods=['GET'])
+    @cross_origin(origins=["http://127.0.0.1:5500", "https://pennrobotics.org"], supports_credentials=True)
     def get_image():
         key = request.args.get('key')
         api_logger.info(f"/get-image called from {request.remote_addr} with key={key}")
@@ -316,6 +316,46 @@ def create_app():
         else:
             api_logger.info(f"/get-image unexpected default type for key={key}: {type(default)}")
             return jsonify(error="Invalid default image configuration"), 500
+
+    @app.route('/delete-image', methods=['POST'])
+    @cross_origin(origins=["http://127.0.0.1:5500", "https://pennrobotics.org"], supports_credentials=True)
+    def delete_image():
+        if not session.get('logged_in'):
+            api_logger.info('/delete-image unauthorized request')
+            return jsonify(error="Unauthorized"), 401
+
+        key = request.form.get('key') or request.args.get('key')
+        api_logger.info(f"/delete-image called from {request.remote_addr} for key={key}")
+        if not key:
+            api_logger.info('/delete-image missing key')
+            return jsonify(error="Missing 'key' field"), 400
+
+        keys = load_image_keys()
+        if key not in keys:
+            api_logger.info(f"/delete-image unknown key: {key}")
+            return jsonify(error="Unknown key"), 400
+
+        # attempt to remove file on disk if exists
+        mapping = get_image_mapping(key)
+        try:
+            if mapping and mapping.get('filename'):
+                try:
+                    if os.path.exists(mapping['filename']):
+                        os.remove(mapping['filename'])
+                        api_logger.info(f"/delete-image removed file {mapping['filename']} for key={key}")
+                except Exception as e:
+                    api_logger.error(f"/delete-image error removing file {mapping.get('filename')}: {e}")
+        except Exception:
+            pass
+
+        # delete DB mapping
+        try:
+            delete_image_mapping(key)
+            api_logger.info(f"/delete-image deleted mapping for key={key}")
+            return jsonify(message="Image mapping deleted", key=key), 200
+        except Exception as e:
+            api_logger.error(f"/delete-image failed to delete mapping for key={key}: {e}")
+            return jsonify(error=str(e)), 500
 
 
     @app.route('/delete/<int:post_id>', methods=['DELETE'])

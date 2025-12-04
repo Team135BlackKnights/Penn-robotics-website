@@ -324,15 +324,79 @@ function createImageSlotWidget(key, meta) {
     status.className = 'image-slot-status';
     slot.appendChild(status);
 
-    // Load current image for this key
+    // Helper: try a list of candidate URLs until one successfully loads into the preview
+    function tryLoadCandidates(candidates, onSuccess, onAllFailed) {
+        if (!candidates || candidates.length === 0) {
+            if (onAllFailed) onAllFailed();
+            return;
+        }
+        const candidate = candidates.shift();
+        console.log(`Trying image candidate for key=${key}: ${candidate}`);
+        const img = new Image();
+        img.onload = function () {
+            onSuccess(candidate);
+        };
+        img.onerror = function () {
+            // try next
+            tryLoadCandidates(candidates, onSuccess, onAllFailed);
+        };
+        img.src = candidate;
+    }
+
+    // Load current image for this key. Show uploaded image if present, otherwise try defaults from several hosts.
     fetch(`${baseUrl}/get-image?key=${encodeURIComponent(key)}`, { credentials: 'include' })
         .then(resp => resp.json())
         .then(data => {
+            const candidates = [];
+
             if (data && data.url) {
-                preview.src = data.url;
-                preview.style.display = 'block';
+                // server provided a URL (may be uploaded or default); try it first
+                candidates.push(data.url);
             }
-        }).catch(() => {/* ignore current image fetch errors */});
+
+            // client-side meta.default from image_keys.json (could be relative)
+            const def = meta && meta.default;
+            if (def) {
+                // normalize: try forms in order: as-is, frontend dev host, window.origin, API baseUrl
+                if (typeof def === 'string') {
+                    candidates.push(def);
+                    // ensure leading slash
+                    const path = def.startsWith('/') ? def : '/' + def;
+                    // front-end dev server
+                    candidates.push(`http://127.0.0.1:5500${path}`);
+                    // current page origin (works when serving front-end from same origin)
+                    candidates.push(`${window.location.origin}${path}`);
+                    // API host (may serve static files under same path)
+                    candidates.push(`${baseUrl}${path}`);
+                }
+            }
+
+            // Remove duplicates while preserving order
+            const seen = new Set();
+            const uniq = candidates.filter(c => {
+                if (!c) return false;
+                if (seen.has(c)) return false;
+                seen.add(c);
+                return true;
+            });
+
+            tryLoadCandidates(uniq.slice(), function (successUrl) {
+                preview.src = successUrl;
+                preview.style.display = 'block';
+                if (data && data.version) {
+                    status.textContent = 'Using uploaded image';
+                } else {
+                    status.textContent = 'Using default image (no upload yet)';
+                }
+                console.log(`Image loaded for key=${key} from ${successUrl}`);
+            }, function () {
+                console.warn(`All candidate image URLs failed for key=${key}`);
+                status.textContent = 'No image available (failed to load)';
+            });
+        }).catch((err) => {
+            console.error('Error fetching current image for key', key, err);
+            status.textContent = 'Error loading image metadata';
+        });
 
     fileInput.addEventListener('change', function (e) {
         const f = e.target.files[0];

@@ -84,10 +84,15 @@ The best text editor (mentioned at the bottom of the tutorial above) is 100% VS 
 - Live Server
 - Prettier - Code formatter
 - Project Manager
+- Live Share
 
 Without these extensions, the project will not look or function as best as it could function.
 
 Once you are in VS Code click on the "extensions" button on the left of your screen, then just search the extension names and install.
+
+## 4a. How To Use Live Share
+- Should appear in bottom left of screen.
+- Will add rest later
 
 ## 5. Hosting Information
 

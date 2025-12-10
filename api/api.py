@@ -9,6 +9,8 @@ from flask import make_response
 from datetime import datetime, timezone
 from werkzeug.utils import secure_filename
 import uuid
+from PIL import Image
+import io
 
 import sys
 from databaseMain import *
@@ -40,6 +42,72 @@ flask_logger.propagate = False
 UPLOAD_FOLDER = 'uploads'
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
+
+
+def compress_image(file_bytes, mimetype, quality=85, max_dimension=2400):
+    """
+    Compress image with high quality while reducing file size.
+    - quality: 85 gives excellent quality with good compression (1-100)
+    - max_dimension: resize if width or height exceed this (maintains aspect ratio)
+    Returns: compressed bytes, output mimetype
+    """
+    try:
+        img = Image.open(io.BytesIO(file_bytes))
+        
+        # Convert RGBA to RGB for JPEG (preserve transparency for PNG/WebP)
+        original_mode = img.mode
+        if mimetype == 'image/jpeg' and img.mode in ('RGBA', 'LA', 'P'):
+            # Create white background for JPEG
+            rgb_img = Image.new('RGB', img.size, (255, 255, 255))
+            if img.mode == 'P':
+                img = img.convert('RGBA')
+            rgb_img.paste(img, mask=img.split()[-1] if img.mode in ('RGBA', 'LA') else None)
+            img = rgb_img
+        
+        # Resize if too large (maintains aspect ratio)
+        width, height = img.size
+        if width > max_dimension or height > max_dimension:
+            if width > height:
+                new_width = max_dimension
+                new_height = int(height * (max_dimension / width))
+            else:
+                new_height = max_dimension
+                new_width = int(width * (max_dimension / height))
+            img = img.resize((new_width, new_height), Image.Resampling.LANCZOS)
+        
+        # Compress and save to bytes
+        output = io.BytesIO()
+        
+        # Choose output format based on input (prefer WebP for best compression/quality ratio)
+        if mimetype in ['image/png', 'image/webp'] and original_mode in ('RGBA', 'LA'):
+            # Preserve transparency - use PNG or WebP
+            if mimetype == 'image/webp' or 'webp' in mimetype:
+                img.save(output, format='WEBP', quality=quality, method=6)
+                output_mime = 'image/webp'
+            else:
+                img.save(output, format='PNG', optimize=True, compress_level=9)
+                output_mime = 'image/png'
+        elif mimetype == 'image/gif':
+            # Preserve GIF (don't compress animated gifs)
+            output = io.BytesIO(file_bytes)
+            output_mime = 'image/gif'
+        elif mimetype == 'image/svg+xml':
+            # Don't compress SVG
+            output = io.BytesIO(file_bytes)
+            output_mime = 'image/svg+xml'
+        else:
+            # JPEG or other formats - use high-quality JPEG compression
+            if img.mode not in ('RGB', 'L'):
+                img = img.convert('RGB')
+            img.save(output, format='JPEG', quality=quality, optimize=True)
+            output_mime = 'image/jpeg'
+        
+        output.seek(0)
+        return output.read(), output_mime
+    except Exception as e:
+        # If compression fails, return original
+        api_logger.warning(f"Image compression failed: {e}, returning original")
+        return file_bytes, mimetype
 
 
 def create_app():
@@ -218,9 +286,9 @@ def create_app():
 
         try:
             file_bytes = image.read()
-            size = len(file_bytes)
-            api_logger.info(f"/upload-image file size={size} bytes; max_size={max_size}")
-            if size > max_size:
+            original_size = len(file_bytes)
+            api_logger.info(f"/upload-image original file size={original_size} bytes; max_size={max_size}")
+            if original_size > max_size:
                 api_logger.info("/upload-image file too large")
                 return jsonify(error=f"File too large (max {max_size} bytes)"), 400
             mimetype = image.mimetype or 'application/octet-stream'
@@ -229,6 +297,12 @@ def create_app():
                 api_logger.info(f"/upload-image invalid mime: {mimetype}")
                 return jsonify(error=f"Invalid file type: {mimetype}"), 400
 
+            # Compress image (high quality, reasonable size)
+            compressed_bytes, output_mime = compress_image(file_bytes, mimetype, quality=85, max_dimension=2400)
+            compressed_size = len(compressed_bytes)
+            compression_ratio = (1 - compressed_size / original_size) * 100 if original_size > 0 else 0
+            api_logger.info(f"/upload-image compressed: {original_size} -> {compressed_size} bytes ({compression_ratio:.1f}% reduction)")
+
             filename = secure_filename(image.filename)
             if not filename:
                 api_logger.info("/upload-image invalid filename after secure_filename")
@@ -236,12 +310,12 @@ def create_app():
             unique_name = f"{uuid.uuid4().hex}_{filename}"
             save_path = os.path.join(UPLOAD_FOLDER, unique_name)
             with open(save_path, 'wb') as f:
-                f.write(file_bytes)
+                f.write(compressed_bytes)
 
             api_logger.info(f"/upload-image saved file to {save_path}")
 
-            # store mapping in DB
-            version = set_image_mapping(key, save_path, mimetype)
+            # store mapping in DB (use output_mime in case format changed during compression)
+            version = set_image_mapping(key, save_path, output_mime)
             api_logger.info(f"/upload-image updated DB mapping for key={key} with version={version}")
 
             # build returned URL (frontend dev server for local hosts)

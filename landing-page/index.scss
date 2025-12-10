@@ -407,6 +407,43 @@ button {
   }
 }
 
+/* Demo 2x2 grid of squares
+   Place HTML like:
+     <div class="grid-demo">
+       <div class="container">
+         <div class="square">1</div>
+         <div class="square">2</div>
+         <div class="square">3</div>
+         <div class="square">4</div>
+       </div>
+     </div>
+   Note: `.container` is used elsewhere (e.g. sponsors). We scope it under
+   `.grid-demo` to avoid collisions with existing rules.
+*/
+.grid-demo {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    gap: 0;
+
+    .square {
+      border: 2px solid black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      &:nth-child(1) { background: red; }
+      &:nth-child(2) { background: blue; }
+      &:nth-child(3) { background: green; }
+      &:nth-child(4) { background: yellow; }
+    }
+  }
+}
+
 
 
 

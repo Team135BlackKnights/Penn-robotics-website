@@ -1,6 +1,6 @@
 // Focus arrow global SCSS
 .image-focus-arrow {
-  position: fixed;
+  position: absolute; // absolute so top/left values (calculated with window.scrollY) work correctly
   top: 0;
   left: 0;
   pointer-events: none;

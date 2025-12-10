@@ -39,22 +39,6 @@
   var currentArrow = null;
   var isAutoScrolling = false;
 
-  document.addEventListener('DOMContentLoaded', function () {
-    var selector = safeSelectorForKey(key);
-    var el = document.querySelector(selector);
-    if (!el) return;
-
-    // Scroll element into view (center)
-    try { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) { el.scrollIntoView(); }
-    // Scroll element into view (center) and mark that we're auto-scrolling
-    try { 
-      isAutoScrolling = true;
-      el.scrollIntoView({ behavior: 'smooth', block: 'center' }); 
-    } catch (e) { 
-      el.scrollIntoView();
-    }
-    // ensure the auto-scroll flag clears after a short delay
-    setTimeout(function () { isAutoScrolling = false; }, SCROLL_DELAY + 120);
   function onAnyInteraction(e) {
     // Only dismiss on explicit user clicks or keydown. Ignore scrolls.
     if (e && e.type === 'click') { removeArrow(currentArrow); return; }
@@ -62,6 +46,22 @@
     // otherwise ignore (no-op)
   }
 
+  document.addEventListener('DOMContentLoaded', function () {
+    var selector = safeSelectorForKey(key);
+    var el = document.querySelector(selector);
+    if (!el) return;
+
+    // Scroll element into view (center) and mark that we're auto-scrolling
+    isAutoScrolling = true;
+    try { 
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' }); 
+    } catch (e) { 
+      el.scrollIntoView();
+    }
+    // ensure the auto-scroll flag clears after sufficient delay for smooth scroll to complete
+    setTimeout(function () { isAutoScrolling = false; }, SCROLL_DELAY + 400);
+
+    // Wait longer for smooth scroll to complete before calculating arrow position
     setTimeout(function () {
       var rect = el.getBoundingClientRect();
       var vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
@@ -83,10 +83,10 @@
       var top;
       var rotation = 0;
       if (placeBelow) {
-        top = window.scrollY + rect.bottom + GAP;
+        top = window.scrollY + rect.bottom + GAP + EXTRA_NUDGE;
         rotation = 0; // pointing up
       } else {
-        top = window.scrollY + rect.top - svgH - GAP;
+        top = window.scrollY + rect.top - svgH - GAP - EXTRA_NUDGE;
         rotation = 180; // pointing down
       }
 
@@ -108,18 +108,13 @@
       var arrow = document.createElement('div');
       arrow.className = 'image-focus-arrow';
       // Inline fallbacks to ensure visibility even if SCSS isn't loaded
-      arrow.style.position = arrow.style.position || 'fixed';
-      arrow.style.pointerEvents = 'none';
-      arrow.style.zIndex = arrow.style.zIndex || '2200';
-      arrow.style.transition = arrow.style.transition || 'opacity 160ms ease';
-      arrow.style.opacity = '1';
-      // Ensure rotation uses center as transform origin so arrow stays where expected
-      arrow.style.transformOrigin = '50% 50%';
-      // Ensure the arrow is positioned even if SCSS hasn't been compiled yet
-      arrow.style.position = arrow.style.position || 'fixed';
+      // IMPORTANT: use 'absolute' not 'fixed' because top is calculated with window.scrollY
+      arrow.style.position = 'absolute';
       arrow.style.pointerEvents = 'none';
       arrow.style.zIndex = '2200';
       arrow.style.transition = 'opacity 160ms ease';
+      arrow.style.opacity = '1';
+      arrow.style.transformOrigin = '50% 50%';
 
       // Provided SVG (points up naturally). Keep fill/stroke as red by default; CSS can override via fill/currentColor.
       var svgMarkup = '\n<svg fill="#ff0000" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-2.43 -2.43 65.59 65.59" xml:space="preserve">\n  <polygon points="30.366,0 0.625,29.735 17.998,29.735 18.003,60.731 42.733,60.729 42.733,29.735 60.107,29.735 "></polygon>\n</svg>\n';
@@ -172,9 +167,9 @@
         window.scrollBy({ top: delta, left: 0, behavior: 'smooth' });
         setTimeout(function () {
           var newRect = el.getBoundingClientRect();
-          var newTop = placeBelow ? (window.scrollY + newRect.bottom + GAP) : (window.scrollY + newRect.top - svgH - GAP);
-          // ensure small gap
-          if (placeBelow) newTop -= EXTRA_NUDGE; else newTop += EXTRA_NUDGE;
+          var newTop = placeBelow 
+            ? (window.scrollY + newRect.bottom + GAP + EXTRA_NUDGE) 
+            : (window.scrollY + newRect.top - svgH - GAP - EXTRA_NUDGE);
           finalizePlacement(newTop);
           // clear auto-scrolling marker shortly after placement
           setTimeout(function () { isAutoScrolling = false; }, 150);
@@ -183,6 +178,6 @@
         finalizePlacement(desiredTop);
       }
 
-    }, 300);
+    }, 600); // Increased from 300ms to 600ms to ensure smooth scroll completes
   });
 })();

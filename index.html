@@ -40,6 +40,7 @@
 
     <script src="swiper.js" defer></script>
     <script src="/focus-arrow.js" defer></script>
+    <script src="image-slot-loader.js" defer></script>
   </head>
   <body>
     <div class="navbar">
@@ -559,42 +560,5 @@
       </div>
     </div>
   </body>
-  <script>
-    // Determine API host (local dev vs production)
-    const isLocal = window.location.hostname === '127.0.0.1' && window.location.port === '5500';
-    const baseUrl = isLocal ? 'http://127.0.0.1:5000' : 'https://api.pennrobotics.org';
-
-    function applySlotToElement(el, url, applyMode) {
-      if (!el || !url) return;
-      if (applyMode === 'src' && el.tagName === 'IMG') {
-        el.src = url;
-      } else {
-        el.style.backgroundImage = `url('${url}')`;
-        el.style.backgroundSize = 'cover';
-        el.style.backgroundPosition = 'center';
-      }
-    }
-
-    // Load images for elements that declare a data-image-slot
-    window.addEventListener('load', function () {
-      const elems = document.querySelectorAll('[data-image-slot]');
-      if (!elems || elems.length === 0) return;
-
-      elems.forEach(el => {
-        const key = el.getAttribute('data-image-slot');
-        if (!key) return;
-        fetch(`${baseUrl}/get-image?key=${encodeURIComponent(key)}`)
-          .then(r => r.json())
-          .then(data => {
-            if (data && data.url) {
-              // apply using optional apply mode in data (client-side will use default rules)
-              // default: if element is IMG -> src, otherwise background
-              const applyMode = (el.tagName === 'IMG') ? 'src' : 'background';
-              applySlotToElement(el, data.url, applyMode);
-            }
-          })
-          .catch(err => console.warn('Error fetching image for', key, err));
-      });
-    });
-  </script>
+  <!-- image-slot-loader.js moves inline behavior to a separate file -->
 </html>

@@ -346,6 +346,40 @@ html {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
+#typed-strings {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+#typed-strings * {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+}
+
+.main::before,
+.main::after {
+  content: "" !important;
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.main > div::before,
+.main > div::after {
+  content: "" !important;
+  display: none !important;
+}
+
 .fa-gear,
 .svg-inline--fa.fa-gear {
   display: inline-block;
@@ -489,7 +523,7 @@ html {
   text-align: center;
 }
 .landing .hero .title {
-  padding-top: 36vh;
+  padding-top: 15vh;
   font-size: clamp(3rem, 10vw, 7.5rem);
 }
 .landing .hero .typed-title {
@@ -537,9 +571,15 @@ html {
 }
 
 .main {
+  margin-top: -5vh;
+  counter-reset: none !important;
   text-align: center;
   padding: 10vw;
   background-color: white;
+}
+.main::before, .main::after {
+  content: "" !important;
+  display: none !important;
 }
 .main .crescendo {
   border-radius: 1vw; /* You can adjust the radius to your preference */
@@ -549,6 +589,10 @@ html {
   font-size: clamp(2.5rem, 8vw, 4rem);
   font-weight: 700;
   color: rgb(60, 72, 88);
+}
+.main .title::before, .main .title::after {
+  content: "" !important;
+  display: none !important;
 }
 .main .subtitle {
   font-size: clamp(16px, 3vw, 18px);
@@ -574,6 +618,10 @@ html {
 .main .content {
   display: flex;
   justify-content: space-evenly;
+}
+.main .content .section::before {
+  display: none !important;
+  content: "" !important;
 }
 .main .content i {
   font-size: 100px;

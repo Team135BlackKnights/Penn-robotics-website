@@ -64,6 +64,40 @@ html { font-size: clamp(var(--fluid-type-min), 1.6vw, var(--fluid-type-max)); }
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   // border: 1px solid red;
 }
+
+#typed-strings {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+#typed-strings * {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+}
+
+.main::before,
+.main::after {
+  content: "" !important;
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.main > div::before,
+.main > div::after {
+  content: "" !important;
+  display: none !important;
+}
 .fa-gear,
 .svg-inline--fa.fa-gear {
   display: inline-block;
@@ -214,7 +248,7 @@ button {
     text-align: center;
 
     .title {
-      padding-top: 36vh;
+      padding-top: 15vh;
       font-size: $cover;
     }
 
@@ -268,6 +302,14 @@ button {
   }
 }
 .main {
+  margin-top: -5vh;
+  counter-reset: none !important;
+
+  &::before,
+  &::after {
+    content: "" !important;
+    display: none !important;
+  }
 
   .crescendo {
     border-radius: 1vw; /* You can adjust the radius to your preference */
@@ -281,6 +323,12 @@ button {
     font-size: $title;
     font-weight: 700;
     color: $secondary;
+
+    &::before,
+    &::after {
+      content: "" !important;
+      display: none !important;
+    }
   }
 
   .subtitle {
@@ -314,6 +362,13 @@ button {
   .content {
     display: flex;
     justify-content: space-evenly;
+
+    .section {
+      &::before {
+        display: none !important;
+        content: "" !important;
+      }
+    }
 
     i {
       font-size: $icon;

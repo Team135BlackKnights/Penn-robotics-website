@@ -1,7 +1,53 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/* Site-wide fluid variables for ultra-wide monitor support */
+:root {
+  --site-max-width: clamp(1000px, 60vw, 1800px);
+  --site-padding: clamp(16px, 2.5vw, 64px);
+  --fluid-type-min: 16px;
+  --fluid-type-max: 20px;
+  --content-max-ch: 80ch;
+}
+
+/* Make layout content centered and constrained on very wide screens while keeping full-bleed backgrounds */
+/* Targets common section children; tweak selectors if you add wrappers */
+.landing .hero .title,
+.landing .hero .typed-title,
+.main .content,
+.sponsors .container,
+.quote-section .title,
+.footer .content,
+.team-container {
+  max-width: var(--site-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0; /* outer sections already get site padding below */
+}
+
+/* Add horizontal padding to full-width sections so content doesn't touch the edges on small screens */
+.landing .hero,
+.main,
+.sponsors,
+.quote-section,
+.footer {
+  padding-left: var(--site-padding);
+  padding-right: var(--site-padding);
+  box-sizing: border-box;
+}
+
+/* Fluid base font-size */
+html { font-size: clamp(var(--fluid-type-min), 1.6vw, var(--fluid-type-max)); }
+
+/* Optional tweaks for very large viewports */
+@media (min-width: 1600px) {
+  :root { --site-max-width: calc(var(--site-max-width) + 200px); }
+}
+@media (min-width: 2100px) {
+  :root {
+    --site-max-width: 2000px;
+    --site-padding: clamp(24px, 3vw, 120px);
+  }
+}
 .navbar {
   position: fixed;
   width: 100%;
@@ -18,7 +64,7 @@
 }
 .navbar .icons i {
   font-size: 32px;
-  color: rgb(250, 250, 250);
+  color: white;
   transition: transform 100ms ease-in, color 100ms ease-in;
 }
 .navbar .icons i:hover {
@@ -31,7 +77,7 @@
   margin: 3px 2vw 0 0;
 }
 .navbar .icons a .home:hover {
-  border: 1px solid rgb(250, 250, 250);
+  border: 1px solid white;
 }
 .navbar .icons a .invert {
   filter: invert(1);
@@ -48,7 +94,7 @@
 .navbar .nav-menu .nav-item {
   text-decoration: none;
   position: relative;
-  color: rgb(250, 250, 250);
+  color: white;
   font-size: 24px;
   font-weight: 300;
 }
@@ -57,7 +103,7 @@
   width: 0%;
   height: 1px;
   transition: width 200ms ease-in;
-  background-color: rgb(250, 250, 250);
+  background-color: white;
   position: absolute;
   top: 31px;
   left: 1px;
@@ -121,7 +167,7 @@
 .navbar .nav-menu .dropdown .dropdown-menu a {
   display: block;
   padding: 0.5rem 1rem;
-  color: rgb(250, 250, 250);
+  color: white;
   text-decoration: none;
   transition: background 200ms ease-in;
   white-space: normal; /* allows wrapping if a menu item is wider */
@@ -154,7 +200,7 @@
   height: 6px;
   margin: 10px auto;
   transition: all 0.3s ease-in-out;
-  background-color: rgb(250, 250, 250);
+  background-color: white;
 }
 
 @media (max-width: 1300px) {
@@ -244,7 +290,7 @@
   text-align: center;
   padding: 2rem 1rem;
   background-color: rgb(60, 72, 88);
-  color: rgb(250, 250, 250);
+  color: white;
   font-size: 18px;
   margin-top: 2vw;
 }
@@ -258,7 +304,7 @@
   gap: 1.5rem;
 }
 .footer .content a {
-  color: rgb(250, 250, 250);
+  color: white;
   font-size: 48px;
 }
 .footer .content a i {
@@ -281,103 +327,14 @@
 }
 .footer .copywrite .name:hover {
   background-color: rgb(250, 200, 0);
-  color: rgb(250, 250, 250);
+  color: white;
 }
 
-/* Google font imports (moved here so site-wide CSS vars live in SCSS)
-   These were previously in the compiled CSS; keeping them here avoids
-   duplicating the same runtime rules in both CSS and SCSS. */
-/* Site-wide fluid variables for ultra-wide monitor support (CSS custom properties)
-   Keeping these as custom properties so they are available at runtime in the browser. */
-:root {
-  --site-max-width: clamp(1000px, 60vw, 1800px);
-  --site-padding: clamp(16px, 2.5vw, 64px);
-  --fluid-type-min: 16px;
-  --fluid-type-max: 20px;
-  --content-max-ch: 80ch;
-}
-
-/* Constrain main content within a comfortable max-width on ultra-wide screens */
-.landing .hero .title,
-.landing .hero .typed-title,
-.main .content,
-.ponsors .container,
-.quote-section .title,
-.footer .content,
-.team-container {
-  max-width: var(--site-max-width);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 0; /* outer sections already get site padding below */
-}
-
-/* Add horizontal padding to full-bleed sections */
-.landing .hero,
-.main,
-.sponsors,
-.quote-section,
-.footer {
-  padding-left: var(--site-padding);
-  padding-right: var(--site-padding);
-  box-sizing: border-box;
-}
-
-/* Fluid base font-size */
-html {
-  font-size: clamp(var(--fluid-type-min), 1.6vw, var(--fluid-type-max));
-}
-
-/* Optional tweaks for very large viewports */
-@media (min-width: 1600px) {
-  :root {
-    --site-max-width: calc(var(--site-max-width) + 200px);
-  }
-}
-@media (min-width: 2100px) {
-  :root {
-    --site-max-width: 2000px;
-    --site-padding: clamp(24px, 3vw, 120px);
-  }
-}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
-}
-
-#typed-strings {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  width: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: none !important;
-  overflow: hidden !important;
-  position: absolute !important;
-  top: -9999px !important;
-  left: -9999px !important;
-}
-
-#typed-strings * {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  width: 0 !important;
-}
-
-.main::before,
-.main::after {
-  content: "" !important;
-  display: none !important;
-  visibility: hidden !important;
-}
-
-.main > div::before,
-.main > div::after {
-  content: "" !important;
-  display: none !important;
 }
 
 .fa-gear,
@@ -403,18 +360,14 @@ html {
   z-index: 999;
 }
 .popup .popup-content {
-  margin-right: 10px;
-  margin-left: 10px;
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-53%, -20%);
   background-color: rgb(255, 255, 255);
-  padding: 2vh 2vh 2vh 2vh;
-  padding-top: 4vh;
+  padding: 2vh;
   border-radius: 3vh;
   text-align: center;
-  overflow: hidden;
 }
 .popup .popup-content p {
   padding-top: 2.3vh;
@@ -431,52 +384,41 @@ html {
   font-weight: 700;
   color: rgb(60, 72, 88);
   margin-bottom: -1rem;
-  padding-left: 70px;
-  padding-right: 70px;
 }
 .popup .popup-content .button {
   border-radius: 1vw;
   font-weight: 400;
   font-size: clamp(16px, 3vw, 24px);
   margin-top: 6vh;
-  margin-bottom: 20px;
 }
 .popup .popup-content .button a {
   background-color: rgb(250, 200, 0);
   text-decoration: none;
   color: white;
-  padding: 15px 25px;
+  padding: 25px;
 }
 .popup .popup-content .button a:hover {
   box-shadow: 0px 2px 10px 1px rgb(250, 200, 0);
 }
 .popup .popup-content #close-popup {
-  position: absolute;
-  top: 0px;
-  right: 0px;
+  position: relative;
   font-family: sans-serif;
   font-weight: 600;
   font-size: 40px;
   background-color: rgb(250, 225, 12);
   color: rgb(0, 0, 0);
+  transform: translate(70%, -470%);
   border: none;
-  padding: 0;
-  width: 50px;
-  height: 50px;
+  padding: 2vh vh;
   cursor: pointer;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  line-height: 1;
+  border-radius: 5vh;
 }
 .popup button {
   align-self: center;
   display: block;
   margin: 0 0 0 auto;
   font-size: 36px;
-  color: rgb(250, 250, 250);
+  color: white;
   background: rgb(250, 200, 0);
   border-radius: 100%;
   width: 50px;
@@ -498,7 +440,7 @@ html {
   display: block;
   margin: 0 0 0 auto;
   font-size: 36px;
-  color: rgb(250, 250, 250);
+  color: white;
   background: rgb(250, 200, 0);
   border-radius: 100%;
   width: 50px;
@@ -519,11 +461,11 @@ html {
 }
 .landing .hero {
   font-weight: 700;
-  color: rgb(250, 250, 250);
+  color: white;
   text-align: center;
 }
 .landing .hero .title {
-  padding-top: 15vh;
+  padding-top: 36vh;
   font-size: clamp(3rem, 10vw, 7.5rem);
 }
 .landing .hero .typed-title {
@@ -563,7 +505,7 @@ html {
 .button a {
   background-color: rgb(250, 200, 0);
   text-decoration: none;
-  color: rgb(250, 250, 250);
+  color: white;
   padding: 25px;
 }
 .button a:hover {
@@ -571,15 +513,9 @@ html {
 }
 
 .main {
-  margin-top: -5vh;
-  counter-reset: none !important;
   text-align: center;
   padding: 10vw;
-  background-color: rgb(250, 250, 250);
-}
-.main::before, .main::after {
-  content: "" !important;
-  display: none !important;
+  background-color: white;
 }
 .main .crescendo {
   border-radius: 1vw; /* You can adjust the radius to your preference */
@@ -589,10 +525,6 @@ html {
   font-size: clamp(2.5rem, 8vw, 4rem);
   font-weight: 700;
   color: rgb(60, 72, 88);
-}
-.main .title::before, .main .title::after {
-  content: "" !important;
-  display: none !important;
 }
 .main .subtitle {
   font-size: clamp(16px, 3vw, 18px);
@@ -619,10 +551,6 @@ html {
   display: flex;
   justify-content: space-evenly;
 }
-.main .content .section::before {
-  display: none !important;
-  content: "" !important;
-}
 .main .content i {
   font-size: 100px;
   color: rgb(250, 200, 0);
@@ -642,9 +570,8 @@ html {
   font-size: 16px;
   max-width: 50ch;
   margin: 0 auto;
-  font-weight: 1000000000;
+  font-weight: 300;
   color: rgb(150, 150, 150);
-  text-align: left;
 }
 
 .quote-section {
@@ -658,8 +585,8 @@ html {
 .quote-section .title {
   font-size: clamp(24px, 3vw, 40px);
   font-weight: 700;
-  color: rgb(250, 250, 250);
-  border-left: 5px solid rgb(250, 250, 250);
+  color: white;
+  border-left: 5px solid white;
   width: min(1600px, 90%);
   margin: 0 auto;
   padding: 1em 2em;
@@ -670,7 +597,7 @@ html {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-color: rgb(250, 250, 250);
+  background-color: white;
   background-blend-mode: soft-light;
   padding: 2vw 0;
 }
@@ -712,6 +639,9 @@ html {
     width: 100%;
     top: 0%;
   }
+  .popup .popup-content #close-popup {
+    transform: translate(60%, -470%);
+  }
 }
 @media (max-width: 1020px) {
   .becomesponsor {
@@ -724,6 +654,9 @@ html {
   .popup .popup-content {
     left: 40%;
     transform: translate(-30%, -20%);
+  }
+  .popup .popup-content #close-popup {
+    transform: translate(60%, -470%);
   }
 }
 @media (max-width: 852px) {
@@ -738,17 +671,32 @@ html {
     left: 30%;
     transform: translate(-17%, -20%);
   }
+  .popup .popup-content #close-popup {
+    transform: translate(60%, -470%);
+  }
 }
 @media (max-width: 720px) {
   .popup {
     width: 100%;
     top: 0%;
   }
+  .popup .popup-content #close-popup {
+    transform: translate(60%, -470%);
+  }
   .popup img {
     width: 400px;
   }
   .landing {
     min-height: 80vh;
+  }
+}
+@media (max-width: 720px) {
+  .popup {
+    width: 100%;
+    top: 0%;
+  }
+  .popup .popup-content #close-popup {
+    transform: translate(60%, -470%);
   }
 }
 @media (max-width: 480px) {
@@ -780,7 +728,7 @@ html {
     background-attachment: scroll;
   }
   .quote-section .title {
-    border: 5px solid rgb(250, 250, 250);
+    border: 5px solid white;
   }
   .contact-us .content {
     flex-direction: column;
@@ -799,6 +747,9 @@ html {
     left: 20%;
     transform: translate(-7%, -20%);
   }
+  .popup .popup-content #close-popup {
+    transform: translate(60%, -440%);
+  }
 }
 @media (max-width: 428px) {
   .popup {
@@ -808,6 +759,9 @@ html {
   .popup .popup-content {
     left: 10%;
     transform: translate(-5%, -20%);
+  }
+  .popup .popup-content #close-popup {
+    transform: translate(60%, -430%);
   }
 }
 @media (max-width: 382px) {
@@ -819,6 +773,9 @@ html {
     left: 0%;
     transform: translate(0%, -20%);
   }
+  .popup .popup-content #close-popup {
+    transform: translate(50%, -440%);
+  }
 }
 @media (max-width: 345px) {
   .popup {
@@ -828,6 +785,9 @@ html {
   .popup .popup-content {
     left: -10%;
     transform: translate(5%, -20%);
+  }
+  .popup .popup-content #close-popup {
+    transform: translate(20%, -440%);
   }
 }
 @media (max-width: 316px) {
@@ -839,11 +799,17 @@ html {
     left: -11%;
     transform: translate(5%, -21%);
   }
+  .popup .popup-content #close-popup {
+    transform: translate(30%, -550%);
+  }
 }
 @media (max-height: 900px) {
   .popup {
     width: 100%;
     top: 0%;
+  }
+  .popup .popup-content #close-popup {
+    transform: translate(60%, -420%);
   }
 }
 @media (max-height: 750px) {
@@ -851,98 +817,16 @@ html {
     width: 100%;
     top: 0%;
   }
+  .popup .popup-content #close-popup {
+    transform: translate(60%, -380%);
+  }
 }
 @media (max-height: 520px) {
   .popup {
     width: 100%;
     top: 0%;
   }
-}
-/* Grid and Box Styling for FLL, FTC, FRC */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin: 2rem 0;
-}
-
-.box {
-  background-color: #f5f5f7;
-  padding: 40px;
-  text-align: center;
-  border-radius: 12px;
-}
-.box a {
-  display: block;
-  margin-bottom: 1rem;
-}
-.box a i {
-  font-size: 100px;
-  color: rgb(250, 200, 0);
-  transition: transform 100ms ease-in, color 100ms ease-in;
-  animation: gearPulse 2s ease-in-out infinite;
-}
-.box a i:hover {
-  transform: translateY(-2px) scale(1.05);
-  color: rgb(250, 225, 12);
-}
-.box h2 {
-  font-size: clamp(24px, 3vw, 40px);
-  color: rgb(60, 72, 88);
-  margin: 1rem 0;
-}
-.box p {
-  color: rgb(100, 100, 100);
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-/* Responsive Grid for Smaller Screens */
-@media (max-width: 1300px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
-@keyframes gearPulse {
-  0% {
-    color: rgb(250, 200, 0);
-  }
-  50% {
-    color: rgb(250, 225, 12);
-  }
-  100% {
-    color: rgb(250, 200, 0);
-  }
-}
-/* Team Grid Styling - 2 Columns */
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  margin: 2rem 0;
-}
-
-.team-box {
-  background-color: #f5f5f7;
-  padding: 40px;
-  text-align: center;
-  border-radius: 12px;
-}
-.team-box h2 {
-  font-size: clamp(24px, 3vw, 40px);
-  color: rgb(60, 72, 88);
-  margin: 0 0 1rem 0;
-}
-.team-box p {
-  color: rgb(100, 100, 100);
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-/* Responsive Team Grid for Smaller Screens */
-@media (max-width: 1300px) {
-  .team-grid {
-    grid-template-columns: 1fr;
+  .popup .popup-content #close-popup {
+    transform: translate(60%, -340%);
   }
 }/*# sourceMappingURL=index.css.map */

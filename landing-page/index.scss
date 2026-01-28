@@ -2,12 +2,101 @@
 @import "../navbar";
 @import "../footer";
 
+/* Google font imports (moved here so site-wide CSS vars live in SCSS)
+   These were previously in the compiled CSS; keeping them here avoids
+   duplicating the same runtime rules in both CSS and SCSS. */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* Site-wide fluid variables for ultra-wide monitor support (CSS custom properties)
+   Keeping these as custom properties so they are available at runtime in the browser. */
+:root {
+  --site-max-width: clamp(1000px, 60vw, 1800px);
+  --site-padding: clamp(16px, 2.5vw, 64px);
+  --fluid-type-min: 16px;
+  --fluid-type-max: 20px;
+  --content-max-ch: 80ch;
+}
+
+/* Constrain main content within a comfortable max-width on ultra-wide screens */
+.landing .hero .title,
+.landing .hero .typed-title,
+.main .content,
+.ponsors .container,
+.quote-section .title,
+.footer .content,
+.team-container {
+  max-width: var(--site-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0; /* outer sections already get site padding below */
+}
+
+/* Add horizontal padding to full-bleed sections */
+.landing .hero,
+.main,
+.sponsors,
+.quote-section,
+.footer {
+  padding-left: var(--site-padding);
+  padding-right: var(--site-padding);
+  box-sizing: border-box;
+}
+
+/* Fluid base font-size */
+html { font-size: clamp(var(--fluid-type-min), 1.6vw, var(--fluid-type-max)); }
+
+/* Optional tweaks for very large viewports */
+@media (min-width: 1600px) {
+  :root { --site-max-width: calc(var(--site-max-width) + 200px); }
+}
+@media (min-width: 2100px) {
+  :root {
+    --site-max-width: 2000px;
+    --site-padding: clamp(24px, 3vw, 120px);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   // border: 1px solid red;
+}
+
+#typed-strings {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+#typed-strings * {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+}
+
+.main::before,
+.main::after {
+  content: "" !important;
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.main > div::before,
+.main > div::after {
+  content: "" !important;
+  display: none !important;
 }
 .fa-gear,
 .svg-inline--fa.fa-gear {
@@ -31,6 +120,9 @@
     z-index: 999;
 
     .popup-content {
+          margin-right: 10px;
+          margin-left: 10px;
+
       p {
         padding-top: 2.3vh;
         line-height: 1.5rem;
@@ -45,15 +137,19 @@
         left: 50%;
         transform: translate(-53%, -20%);
         background-color: rgb(255, 255, 255);
-        padding: 2vh;
+        padding: 2vh 2vh 2vh 2vh;
+        padding-top: 4vh;
         border-radius: 3vh;
         text-align: center;
+        overflow: hidden;
         .title {
           font-size: $title;
           text-align: center;
           font-weight: 700;
           color: $secondary;
           margin-bottom: -1rem;
+          padding-left: 70px;
+          padding-right: 70px;
         }
         .button {
           
@@ -61,31 +157,40 @@
           font-weight: 400;
           font-size: clamp($body, 3vw, $subheader);
           margin-top: 6vh;
+          margin-bottom: 20px;
           a {
             
             background-color: $decoration;
             text-decoration: none;
             color: $primary;
-            padding: 25px;
+            padding: 15px 25px;
         
             &:hover {
               box-shadow: 0px 2px 10px 1px $decoration;
             }
           }
         }
+        
         #close-popup {
-            position: relative;
+            position: absolute;
+            top: 0px;
+            right: 0px;
             font-family: sans-serif;
-            font-weight:600;
-            font-size:40px;
-            background-color: $light-dec
-            ;
+            font-weight: 600;
+            font-size: 40px;
+            background-color: $light-dec;
             color: rgb(0, 0, 0);
-            transform: translate(70%, -470%);
             border: none;
-            padding: 2vh vh;
+            padding: 0;
+            width: 50px;
+            height: 50px;
             cursor: pointer;
-            border-radius: 5vh;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            line-height: 1;
         }
     }
 
@@ -143,7 +248,7 @@ button {
     text-align: center;
 
     .title {
-      padding-top: 36vh;
+      padding-top: 15vh;
       font-size: $cover;
     }
 
@@ -197,6 +302,14 @@ button {
   }
 }
 .main {
+  margin-top: -5vh;
+  counter-reset: none !important;
+
+  &::before,
+  &::after {
+    content: "" !important;
+    display: none !important;
+  }
 
   .crescendo {
     border-radius: 1vw; /* You can adjust the radius to your preference */
@@ -210,6 +323,12 @@ button {
     font-size: $title;
     font-weight: 700;
     color: $secondary;
+
+    &::before,
+    &::after {
+      content: "" !important;
+      display: none !important;
+    }
   }
 
   .subtitle {
@@ -244,6 +363,13 @@ button {
     display: flex;
     justify-content: space-evenly;
 
+    .section {
+      &::before {
+        display: none !important;
+        content: "" !important;
+      }
+    }
+
     i {
       font-size: $icon;
       color: $decoration;
@@ -266,8 +392,9 @@ button {
       font-size: $body;
       max-width: 50ch;
       margin: 0 auto;
-      font-weight: 300;
+      font-weight: 1000000000;
       color: $tertiary;
+      text-align: left;
     }
   }
 }
@@ -353,16 +480,10 @@ button {
 
 
 
-
 @media (max-width: 1060px) {
   .popup {
     width: 100%;
     top:0%;
-    .popup-content{
-      #close-popup{
-        transform: translate(60%, -470%);
-      }
-    }
   }
 }
 
@@ -376,9 +497,6 @@ button {
     .popup-content{
       left: 40%;
       transform: translate(-30%, -20%);
-      #close-popup{
-        transform: translate(60%, -470%);
-      }
     }
   }
 }
@@ -393,9 +511,6 @@ button {
     .popup-content{
       left: 30%;
       transform: translate(-17%, -20%);
-      #close-popup{
-        transform: translate(60%, -470%);
-      }
     }
   }
 }
@@ -403,11 +518,6 @@ button {
   .popup {
     width: 100%;
     top:0%;
-    .popup-content{
-      #close-popup{
-        transform: translate(60%, -470%);
-      }
-    }
     img {
       width: 400px;
     }
@@ -417,18 +527,6 @@ button {
   }
 }
 
-@media (max-width: 720px) {
-
-  .popup {
-    width: 100%;
-    top:0%;
-    .popup-content{
-      #close-popup{
-        transform: translate(60%, -470%);
-      }
-    }
-  }
-}
 
 @media (max-width: 480px) {
   .popup {
@@ -491,31 +589,23 @@ button {
 
 
 @media (max-width: 486px) {
-
   .popup {
     width: 100%;
     top:0%;
     .popup-content{
       left: 20%;
       transform: translate(-7%, -20%);
-      #close-popup{
-        transform: translate(60%, -440%);
-      }
     }
   }
 }
 
 @media (max-width: 428px) {
-
   .popup {
     width: 100%;
     top:0%;
     .popup-content{
       left: 10%;
       transform: translate(-5%, -20%);
-      #close-popup{
-        transform: translate(60%, -430%);
-      }
     }
   }
 }
@@ -527,9 +617,6 @@ button {
     .popup-content{
       left: 0%;
       transform: translate(0%, -20%);
-      #close-popup{
-        transform: translate(50%, -440%);
-      }
     }
   }
 }
@@ -541,9 +628,6 @@ button {
     .popup-content{
       left: -10%;
       transform: translate(5%, -20%);
-      #close-popup{
-        transform: translate(20%, -440%);
-      }
     }
   }
 }
@@ -555,9 +639,6 @@ button {
     .popup-content{
       left: -11%;
       transform: translate(5%, -21%);
-      #close-popup{
-        transform: translate(30%, -550%);
-      }
     }
   }
 }
@@ -565,11 +646,6 @@ button {
   .popup {
     width: 100%;
     top:0%;
-    .popup-content{
-      #close-popup{
-        transform: translate(60%, -420%);
-      }
-    }
   }
 }
 
@@ -577,27 +653,110 @@ button {
   .popup {
     width: 100%;
     top:0%;
-    .popup-content{
-      #close-popup{
-        transform: translate(60%, -380%);
-      }
-    }
   }
 }
 @media (max-height: 520px) {
-
   .popup {
     width: 100%;
     top:0%;
-    .popup-content{
-      #close-popup{
-        transform: translate(60%, -340%);
-      }
-    }
   }
 }
 
+/* Grid and Box Styling for FLL, FTC, FRC */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 2rem 0;
+}
 
+.box {
+  background-color: #f5f5f7;
+  padding: 40px;
+  text-align: center;
+  border-radius: 12px;
 
+  a {
+    display: block;
+    margin-bottom: 1rem;
 
+    i {
+      font-size: $icon;
+      color: $decoration;
+      transition: transform 100ms ease-in, color 100ms ease-in;
+      animation: gearPulse 2s ease-in-out infinite;
+
+      &:hover {
+        transform: translateY(-2px) scale(1.05);
+        color: $light-dec;
+      }
+    }
+  }
+
+  h2 {
+    font-size: $header;
+    color: $secondary;
+    margin: 1rem 0;
+  }
+
+  p {
+    color: $heavy_body_text;
+    font-size: $body;
+    line-height: 1.6;
+  }
+}
+
+/* Responsive Grid for Smaller Screens */
+@media (max-width: 1300px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes gearPulse {
+  0% {
+    color: $decoration;
+  }
+  50% {
+    color: $light-dec;
+  }
+  100% {
+    color: $decoration;
+  }
+}
+
+/* Team Grid Styling - 2 Columns */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin: 2rem 0;
+}
+
+.team-box {
+  background-color: #f5f5f7;
+  padding: 40px;
+  text-align: center;
+  border-radius: 12px;
+
+  h2 {
+    font-size: $header;
+    color: $secondary;
+    margin: 0 0 1rem 0;
+  }
+
+  p {
+    color: $heavy_body_text;
+    font-size: $body;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Responsive Team Grid for Smaller Screens */
+@media (max-width: 1300px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
 

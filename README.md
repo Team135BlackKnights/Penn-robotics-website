@@ -18,7 +18,7 @@ This documentation is aimed at future members of Penn Robotics looking to mainta
 
 ## 2. Public Forking and Use
 
-This website is open-source and licensed under the MIT License. You're welcome to make any modifications, but please remember to credit the original work and acknowledge that your contributions build upon an existing project. The previous students who did work/are working on maintaining this project are Aydin Kurama & [Arda Kurama](https://ardakurama.com/) (Graduated)
+This website is open-source and licensed under the MIT License. You're welcome to make any modifications, but please remember to credit the original work and acknowledge that your contributions build upon an existing project. The previous students who did work/are working on maintaining this project are Aydin Kurama, [Arda Kurama](https://ardakurama.com/) (Graduated), Vihaan Shah, and Abhijay Masetty.
 
 ## 3. Web Development Guide
 

@@ -18,7 +18,7 @@
 }
 .navbar .icons i {
   font-size: 32px;
-  color: white;
+  color: rgb(250, 250, 250);
   transition: transform 100ms ease-in, color 100ms ease-in;
 }
 .navbar .icons i:hover {
@@ -31,7 +31,7 @@
   margin: 3px 2vw 0 0;
 }
 .navbar .icons a .home:hover {
-  border: 1px solid white;
+  border: 1px solid rgb(250, 250, 250);
 }
 .navbar .icons a .invert {
   filter: invert(1);
@@ -48,7 +48,7 @@
 .navbar .nav-menu .nav-item {
   text-decoration: none;
   position: relative;
-  color: white;
+  color: rgb(250, 250, 250);
   font-size: 24px;
   font-weight: 300;
 }
@@ -57,7 +57,7 @@
   width: 0%;
   height: 1px;
   transition: width 200ms ease-in;
-  background-color: white;
+  background-color: rgb(250, 250, 250);
   position: absolute;
   top: 31px;
   left: 1px;
@@ -121,7 +121,7 @@
 .navbar .nav-menu .dropdown .dropdown-menu a {
   display: block;
   padding: 0.5rem 1rem;
-  color: white;
+  color: rgb(250, 250, 250);
   text-decoration: none;
   transition: background 200ms ease-in;
   white-space: normal; /* allows wrapping if a menu item is wider */
@@ -154,7 +154,7 @@
   height: 6px;
   margin: 10px auto;
   transition: all 0.3s ease-in-out;
-  background-color: white;
+  background-color: rgb(250, 250, 250);
 }
 
 @media (max-width: 1300px) {
@@ -244,7 +244,7 @@
   text-align: center;
   padding: 2rem 1rem;
   background-color: rgb(60, 72, 88);
-  color: white;
+  color: rgb(250, 250, 250);
   font-size: 18px;
   margin-top: 2vw;
 }
@@ -258,7 +258,7 @@
   gap: 1.5rem;
 }
 .footer .content a {
-  color: white;
+  color: rgb(250, 250, 250);
   font-size: 48px;
 }
 .footer .content a i {
@@ -281,7 +281,7 @@
 }
 .footer .copywrite .name:hover {
   background-color: rgb(250, 200, 0);
-  color: white;
+  color: rgb(250, 250, 250);
 }
 
 /* Google font imports (moved here so site-wide CSS vars live in SCSS)
@@ -476,7 +476,7 @@ html {
   display: block;
   margin: 0 0 0 auto;
   font-size: 36px;
-  color: white;
+  color: rgb(250, 250, 250);
   background: rgb(250, 200, 0);
   border-radius: 100%;
   width: 50px;
@@ -498,7 +498,7 @@ html {
   display: block;
   margin: 0 0 0 auto;
   font-size: 36px;
-  color: white;
+  color: rgb(250, 250, 250);
   background: rgb(250, 200, 0);
   border-radius: 100%;
   width: 50px;
@@ -519,7 +519,7 @@ html {
 }
 .landing .hero {
   font-weight: 700;
-  color: white;
+  color: rgb(250, 250, 250);
   text-align: center;
 }
 .landing .hero .title {
@@ -563,7 +563,7 @@ html {
 .button a {
   background-color: rgb(250, 200, 0);
   text-decoration: none;
-  color: white;
+  color: rgb(250, 250, 250);
   padding: 25px;
 }
 .button a:hover {
@@ -575,7 +575,7 @@ html {
   counter-reset: none !important;
   text-align: center;
   padding: 10vw;
-  background-color: white;
+  background-color: rgb(250, 250, 250);
 }
 .main::before, .main::after {
   content: "" !important;
@@ -658,8 +658,8 @@ html {
 .quote-section .title {
   font-size: clamp(24px, 3vw, 40px);
   font-weight: 700;
-  color: white;
-  border-left: 5px solid white;
+  color: rgb(250, 250, 250);
+  border-left: 5px solid rgb(250, 250, 250);
   width: min(1600px, 90%);
   margin: 0 auto;
   padding: 1em 2em;
@@ -670,7 +670,7 @@ html {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-color: white;
+  background-color: rgb(250, 250, 250);
   background-blend-mode: soft-light;
   padding: 2vw 0;
 }
@@ -780,7 +780,7 @@ html {
     background-attachment: scroll;
   }
   .quote-section .title {
-    border: 5px solid white;
+    border: 5px solid rgb(250, 250, 250);
   }
   .contact-us .content {
     flex-direction: column;

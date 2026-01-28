@@ -312,14 +312,16 @@
 }
 
 /* Add horizontal padding to full-bleed sections */
-.landing .hero,
-.main,
-.sponsors,
-.quote-section,
-.footer {
-  padding-left: var(--site-padding);
-  padding-right: var(--site-padding);
-  box-sizing: border-box;
+.landing .hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: inherit;
+  font-weight: 700;
+  color: rgb(250, 250, 250);
+  text-align: center;
+}
 }
 
 /* Fluid base font-size */
@@ -444,7 +446,7 @@ html {
 .popup .popup-content .button a {
   background-color: rgb(250, 200, 0);
   text-decoration: none;
-  color: white;
+  color: rgb(250, 250, 250);
   padding: 15px 25px;
 }
 .popup .popup-content .button a:hover {
@@ -523,8 +525,16 @@ html {
   text-align: center;
 }
 .landing .hero .title {
-  padding-top: 15vh;
+  padding-top: 0;
   font-size: clamp(3rem, 10vw, 7.5rem);
+}
+
+/* Ensure the hero title is centered horizontally */
+.landing .hero .title {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 .landing .hero .typed-title {
   margin-top: 1vh;

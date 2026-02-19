@@ -363,9 +363,6 @@
   color: rgb(60, 72, 88);
   margin-top: 2.5vh;
 }
-.main .section {
-  margin: 2vw auto;
-}
 .main .section .videos {
   display: flex;
   justify-content: center;
@@ -381,6 +378,9 @@
 .main .section .videos .video iframe {
   width: 42.6667vw;
   height: 24vw;
+}
+.main .section {
+  margin: 2vw auto;
 }
 .main .section .header {
   border-radius: 2vw;

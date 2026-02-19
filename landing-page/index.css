@@ -312,16 +312,14 @@
 }
 
 /* Add horizontal padding to full-bleed sections */
-.landing .hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: inherit;
-  font-weight: 700;
-  color: rgb(250, 250, 250);
-  text-align: center;
-}
+.landing .hero,
+.main,
+.sponsors,
+.quote-section,
+.footer {
+  padding-left: var(--site-padding);
+  padding-right: var(--site-padding);
+  box-sizing: border-box;
 }
 
 /* Fluid base font-size */
@@ -407,6 +405,17 @@ html {
 .popup .popup-content {
   margin-right: 10px;
   margin-left: 10px;
+}
+.popup .popup-content p {
+  padding-top: 2.3vh;
+  line-height: 1.5rem;
+  font-size: 20px;
+  max-width: 50ch;
+  margin: 0 auto;
+  font-weight: 400;
+  color: rgb(150, 150, 150);
+}
+.popup .popup-content {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -417,15 +426,6 @@ html {
   border-radius: 3vh;
   text-align: center;
   overflow: hidden;
-}
-.popup .popup-content p {
-  padding-top: 2.3vh;
-  line-height: 1.5rem;
-  font-size: 20px;
-  max-width: 50ch;
-  margin: 0 auto;
-  font-weight: 400;
-  color: rgb(150, 150, 150);
 }
 .popup .popup-content .title {
   font-size: clamp(2.5rem, 8vw, 4rem);
@@ -525,16 +525,8 @@ html {
   text-align: center;
 }
 .landing .hero .title {
-  padding-top: 0;
+  padding-top: 15vh;
   font-size: clamp(3rem, 10vw, 7.5rem);
-}
-
-/* Ensure the hero title is centered horizontally */
-.landing .hero .title {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
 }
 .landing .hero .typed-title {
   margin-top: 1vh;
@@ -583,9 +575,6 @@ html {
 .main {
   margin-top: -5vh;
   counter-reset: none !important;
-  text-align: center;
-  padding: 10vw;
-  background-color: rgb(250, 250, 250);
 }
 .main::before, .main::after {
   content: "" !important;
@@ -595,6 +584,11 @@ html {
   border-radius: 1vw; /* You can adjust the radius to your preference */
   overflow: hidden; /* Ensures the border-radius is applied to the image content */
 }
+.main {
+  text-align: center;
+  padding: 10vw;
+  background-color: rgb(250, 250, 250);
+}
 .main .title {
   font-size: clamp(2.5rem, 8vw, 4rem);
   font-weight: 700;
@@ -603,11 +597,6 @@ html {
 .main .title::before, .main .title::after {
   content: "" !important;
   display: none !important;
-}
-.main .subtitle {
-  font-size: clamp(16px, 3vw, 18px);
-  margin: 1vh 10vw 5vh;
-  color: rgb(150, 150, 150);
 }
 .main .subtitle .videos {
   display: flex;
@@ -624,6 +613,11 @@ html {
 .main .subtitle .videos .video iframe {
   width: 42.6667vw;
   height: 24vw;
+}
+.main .subtitle {
+  font-size: clamp(16px, 3vw, 18px);
+  margin: 1vh 10vw 5vh;
+  color: rgb(150, 150, 150);
 }
 .main .content {
   display: flex;

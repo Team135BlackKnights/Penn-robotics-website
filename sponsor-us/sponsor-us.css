@@ -358,12 +358,14 @@
   flex: 1;
   min-width: 250px;
   text-align: center;
-  /* make .btn work for anchors and buttons */
 }
 .button-container .button-section h3 {
   color: rgb(60, 72, 88);
   font-size: 2rem;
   margin-bottom: 1rem;
+}
+.button-container .button-section {
+  /* make .btn work for anchors and buttons */
 }
 .button-container .button-section .btn {
   display: inline-block;

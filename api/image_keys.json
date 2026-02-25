@@ -6,7 +6,7 @@
     "page": "/index.html",
     "description": "Large homepage hero background",
     "allowed": ["image/png", "image/jpeg", "image/webp"],
-    "max_size": 52428800
+    "max_size": 524288000
   },
   "quote.section": {
     "label": "Quote Section Background",
@@ -15,7 +15,7 @@
     "page": "/index.html",
     "description": "Background for the quote section",
     "allowed": ["image/png", "image/jpeg", "image/webp"],
-    "max_size": 5242880
+    "max_size": 524288000
   },
   "team135.hero": {
     "label": "Team 135 Hero Background",
@@ -24,7 +24,7 @@
     "page": "/team-135.html",
     "description": "Large hero background for the Team 135 page",
     "allowed": ["image/png", "image/jpeg", "image/webp"],
-    "max_size": 5242880
+    "max_size": 524288000
   },
   "team328.hero": {
     "label": "Team 328 Hero Background",
@@ -33,6 +33,24 @@
     "page": "/team-328.html",
     "description": "Large hero background for the Team 328 page",
     "allowed": ["image/png", "image/jpeg", "image/webp"],
-    "max_size": 5242880
+    "max_size": 524288000
+  },
+  "contactus.hero": {
+    "label": "Contact Us Hero Background",
+    "apply": "background",
+    "default": "/contact-us/Media/contact_us_bckgn.webp",
+    "page": "/contact-us.html",
+    "description": "Hero background for the Contact Us page",
+    "allowed": ["image/png", "image/jpeg", "image/webp"],
+    "max_size": 524288000
+  },
+  "sponsorus.hero": {
+    "label": "Sponsor Us Hero Background",
+    "apply": "background",
+    "default": "/sponsor-us/main-background.webp",
+    "page": "/sponsor-us.html",
+    "description": "Hero background for the Sponsor Us page",
+    "allowed": ["image/png", "image/jpeg", "image/webp"],
+    "max_size": 524288000
   }
 }

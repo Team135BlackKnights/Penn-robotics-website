@@ -289,7 +289,6 @@
 }
 
 .landing {
-  background-image: url("/contact-us/Media/contact_us_bckgn.webp");
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
@@ -339,10 +338,6 @@
   margin-bottom: 4vh;
   color: rgb(60, 72, 88);
 }
-.main .content {
-  display: flex;
-  justify-content: space-evenly;
-}
 .main .content a {
   text-decoration: none;
   color: #000000;
@@ -355,6 +350,10 @@
 }
 .main .content .link {
   margin-bottom: 0vh;
+}
+.main .content {
+  display: flex;
+  justify-content: space-evenly;
 }
 .main .content img {
   margin-top: 3vh;

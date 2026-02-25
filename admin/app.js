@@ -286,6 +286,7 @@ function createImageSlotWidget(key, meta) {
 
     const slot = document.createElement('div');
     slot.className = 'image-slot';
+    if (meta && meta.page) slot.setAttribute('data-slot-page', meta.page);
     const title = document.createElement('h3');
     title.textContent = meta.label || key;
     slot.appendChild(title);
@@ -605,11 +606,215 @@ function renderImageSlots() {
                 return;
             }
             Object.entries(keys).forEach(([k, v]) => createImageSlotWidget(k, v || {}));
+            initImageSlotSearch();
         })
         .catch(err => {
             console.error('Error loading image keys:', err);
             showImageSlotsError('Failed to load image slots. Check server and login.');
         });
+}
+
+// --- Image Slot Search + Filter ---
+
+// Active filter state
+var _slotFilters = { pages: [], statuses: [] };
+
+function applySlotFilters() {
+    var searchInput = document.getElementById('image-slot-search');
+    var container = document.getElementById('image-slots-container');
+    if (!container) return;
+
+    var query = (searchInput ? searchInput.value.trim().toLowerCase() : '');
+    var terms = query ? query.split(/\s+/).filter(Boolean) : [];
+    var slots = Array.from(container.querySelectorAll('.image-slot'));
+
+    var hasAnyFilter = terms.length > 0 || _slotFilters.pages.length > 0 || _slotFilters.statuses.length > 0;
+
+    if (!hasAnyFilter) {
+        slots.forEach(function (s) { s.style.display = ''; s.style.order = ''; });
+        container.style.display = '';
+        renderActiveFilterTags();
+        return;
+    }
+
+    container.style.display = 'flex';
+    container.style.flexDirection = 'column';
+
+    slots.forEach(function (slot) {
+        var dominated = false;
+
+        // --- Page filter ---
+        if (_slotFilters.pages.length > 0) {
+            var slotPage = slot.getAttribute('data-slot-page') || '';
+            if (_slotFilters.pages.indexOf(slotPage) === -1) dominated = true;
+        }
+
+        // --- Status filter ---
+        if (!dominated && _slotFilters.statuses.length > 0) {
+            var statusEl = slot.querySelector('.image-slot-status');
+            var statusText = (statusEl ? statusEl.textContent : '').toLowerCase();
+            var isUploaded = statusText.indexOf('uploaded') !== -1 || statusText.indexOf('upload successful') !== -1;
+            var isDefault = !isUploaded;
+            var passStatus = false;
+            if (_slotFilters.statuses.indexOf('uploaded') !== -1 && isUploaded) passStatus = true;
+            if (_slotFilters.statuses.indexOf('default') !== -1 && isDefault) passStatus = true;
+            if (!passStatus) dominated = true;
+        }
+
+        // --- Search terms ---
+        if (!dominated && terms.length > 0) {
+            var pieces = [];
+            var h3 = slot.querySelector('h3');
+            if (h3) pieces.push(h3.textContent);
+            var keyEl = slot.querySelector('.image-slot-key');
+            if (keyEl) pieces.push(keyEl.textContent);
+            var descEl = slot.querySelector('.image-slot-desc');
+            if (descEl) pieces.push(descEl.textContent);
+            var linkEl = slot.querySelector('.image-slot-link');
+            if (linkEl) { pieces.push(linkEl.textContent); pieces.push(linkEl.href); }
+            var statusEl2 = slot.querySelector('.image-slot-status');
+            if (statusEl2) pieces.push(statusEl2.textContent);
+            var previewEl = slot.querySelector('.image-slot-preview');
+            if (previewEl && previewEl.src) pieces.push(previewEl.src);
+            var haystack = pieces.join(' ').toLowerCase();
+            var matches = terms.every(function (t) { return haystack.indexOf(t) !== -1; });
+            if (!matches) dominated = true;
+        }
+
+        slot.style.display = dominated ? 'none' : '';
+        slot.style.order = dominated ? '1' : '0';
+    });
+
+    renderActiveFilterTags();
+}
+
+function renderActiveFilterTags() {
+    var container = document.getElementById('active-filters');
+    if (!container) return;
+    container.innerHTML = '';
+
+    _slotFilters.pages.forEach(function (page) {
+        var tag = document.createElement('span');
+        tag.className = 'filter-tag';
+        tag.innerHTML = '<i class="fa-solid fa-file"></i> ' + page + ' <button data-type="page" data-value="' + page + '">&times;</button>';
+        container.appendChild(tag);
+    });
+
+    _slotFilters.statuses.forEach(function (status) {
+        var tag = document.createElement('span');
+        tag.className = 'filter-tag';
+        var label = status === 'uploaded' ? 'Uploaded' : 'Default';
+        tag.innerHTML = '<i class="fa-solid fa-circle-info"></i> ' + label + ' <button data-type="status" data-value="' + status + '">&times;</button>';
+        container.appendChild(tag);
+    });
+
+    // Attach remove handlers
+    container.querySelectorAll('.filter-tag button').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var type = btn.getAttribute('data-type');
+            var value = btn.getAttribute('data-value');
+            if (type === 'page') {
+                _slotFilters.pages = _slotFilters.pages.filter(function (p) { return p !== value; });
+                // Uncheck corresponding checkbox
+                var cb = document.querySelector('.filter-page-cb[value="' + CSS.escape(value) + '"]');
+                if (cb) cb.checked = false;
+            } else if (type === 'status') {
+                _slotFilters.statuses = _slotFilters.statuses.filter(function (s) { return s !== value; });
+                var cb = document.querySelector('.filter-status-cb[value="' + CSS.escape(value) + '"]');
+                if (cb) cb.checked = false;
+            }
+            applySlotFilters();
+        });
+    });
+}
+
+function buildPageFilterOptions() {
+    var container = document.getElementById('filter-page-options');
+    if (!container) return;
+    container.innerHTML = '';
+
+    // Collect unique pages from rendered slots
+    var pages = [];
+    document.querySelectorAll('.image-slot[data-slot-page]').forEach(function (slot) {
+        var p = slot.getAttribute('data-slot-page');
+        if (p && pages.indexOf(p) === -1) pages.push(p);
+    });
+    pages.sort();
+
+    pages.forEach(function (page) {
+        var label = document.createElement('label');
+        var cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.className = 'filter-page-cb';
+        cb.value = page;
+        cb.addEventListener('change', function () {
+            if (cb.checked) {
+                if (_slotFilters.pages.indexOf(page) === -1) _slotFilters.pages.push(page);
+            } else {
+                _slotFilters.pages = _slotFilters.pages.filter(function (p) { return p !== page; });
+            }
+            applySlotFilters();
+        });
+        label.appendChild(cb);
+        // Friendly display name
+        var displayName = page.replace(/^\//, '').replace(/\.html$/, '') || 'index';
+        label.appendChild(document.createTextNode(' ' + displayName));
+        container.appendChild(label);
+    });
+}
+
+function initImageSlotSearch() {
+    var searchInput = document.getElementById('image-slot-search');
+    var filterBtn = document.getElementById('filter-toggle-btn');
+    var filterDropdown = document.getElementById('filter-dropdown');
+    var clearBtn = document.getElementById('filter-clear-btn');
+
+    // Search input
+    if (searchInput) {
+        searchInput.removeEventListener('input', searchInput._slotSearchHandler);
+        searchInput._slotSearchHandler = function () { applySlotFilters(); };
+        searchInput.addEventListener('input', searchInput._slotSearchHandler);
+    }
+
+    // Filter toggle
+    if (filterBtn && filterDropdown) {
+        filterBtn.onclick = function (e) {
+            e.stopPropagation();
+            var visible = filterDropdown.style.display !== 'none';
+            filterDropdown.style.display = visible ? 'none' : 'block';
+        };
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function (e) {
+            if (!filterDropdown.contains(e.target) && e.target !== filterBtn && !filterBtn.contains(e.target)) {
+                filterDropdown.style.display = 'none';
+            }
+        });
+    }
+
+    // Status checkboxes
+    document.querySelectorAll('.filter-status-cb').forEach(function (cb) {
+        cb.addEventListener('change', function () {
+            if (cb.checked) {
+                if (_slotFilters.statuses.indexOf(cb.value) === -1) _slotFilters.statuses.push(cb.value);
+            } else {
+                _slotFilters.statuses = _slotFilters.statuses.filter(function (s) { return s !== cb.value; });
+            }
+            applySlotFilters();
+        });
+    });
+
+    // Clear all
+    if (clearBtn) {
+        clearBtn.onclick = function () {
+            _slotFilters = { pages: [], statuses: [] };
+            document.querySelectorAll('.filter-page-cb, .filter-status-cb').forEach(function (cb) { cb.checked = false; });
+            if (searchInput) searchInput.value = '';
+            applySlotFilters();
+        };
+    }
+
+    // Build page filter checkboxes from rendered slot data
+    buildPageFilterOptions();
 }
 
 // Kick off rendering when admin script loads (after check-login appended script)

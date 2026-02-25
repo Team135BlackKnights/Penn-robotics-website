@@ -122,6 +122,29 @@
         <!-- Image Slots (dynamically populated from image_keys.json) -->
         <div class="form-container" id="image-slots-wrapper">
             <h2>Image Slots</h2>
+            <div class="slot-toolbar">
+                <input type="text" id="image-slot-search" placeholder="Search image slots..." autocomplete="off" />
+                <div class="filter-wrapper">
+                    <button type="button" id="filter-toggle-btn" class="filter-btn" title="Filter">
+                        <i class="fa-solid fa-filter"></i> Filter
+                    </button>
+                    <div id="filter-dropdown" class="filter-dropdown" style="display:none;">
+                        <div class="filter-group">
+                            <div class="filter-group-title">Page</div>
+                            <div id="filter-page-options"></div>
+                        </div>
+                        <div class="filter-group">
+                            <div class="filter-group-title">Status</div>
+                            <label><input type="checkbox" class="filter-status-cb" value="uploaded" /> Uploaded</label>
+                            <label><input type="checkbox" class="filter-status-cb" value="default" /> Default (no upload)</label>
+                        </div>
+                        <div class="filter-actions">
+                            <button type="button" id="filter-clear-btn">Clear Filters</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="active-filters"></div>
             <div id="image-slots-container">
                 <!-- JS will populate upload widgets here based on /image-keys -->
             </div>

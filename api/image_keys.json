@@ -6,16 +6,7 @@
     "page": "/index.html",
     "description": "Large homepage hero background",
     "allowed": ["image/png", "image/jpeg", "image/webp"],
-    "max_size": 5242880
-  },
-  "header.logo": {
-    "label": "Header Logo",
-    "apply": "src",
-    "default": "/landing-page/media/phm-logo.webp",
-    "page": "/index.html",
-    "description": "Small site header logo",
-    "allowed": ["image/png", "image/webp"],
-    "max_size": 2097152
+    "max_size": 52428800
   },
   "quote.section": {
     "label": "Quote Section Background",
@@ -23,6 +14,24 @@
     "default": "/landing-page/media/quote-background.webp",
     "page": "/index.html",
     "description": "Background for the quote section",
+    "allowed": ["image/png", "image/jpeg", "image/webp"],
+    "max_size": 5242880
+  },
+  "team135.hero": {
+    "label": "Team 135 Hero Background",
+    "apply": "background",
+    "default": "/team-135/media/team135-background-2.webp",
+    "page": "/team-135.html",
+    "description": "Large hero background for the Team 135 page",
+    "allowed": ["image/png", "image/jpeg", "image/webp"],
+    "max_size": 5242880
+  },
+  "team328.hero": {
+    "label": "Team 328 Hero Background",
+    "apply": "background",
+    "default": "/328-page/Media/328-Background-Main.webp",
+    "page": "/team-328.html",
+    "description": "Large hero background for the Team 328 page",
     "allowed": ["image/png", "image/jpeg", "image/webp"],
     "max_size": 5242880
   }

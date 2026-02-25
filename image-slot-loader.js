@@ -1,11 +1,16 @@
 // image-slot-loader.js
 // Loads images for elements that declare `data-image-slot`.
-// Enhanced debug + flexible API host detection.
+// Optimised: DOMContentLoaded, parallel fetches, browser caching, fade-in.
 
 (function () {
   'use strict';
 
   const DEFAULT_API_HOST = 'https://api.pennrobotics.org';
+
+  // ── Slot elements start hidden so the CSS default image is never visible
+  //    before the dynamic image arrives. A short timeout guarantees fallback
+  //    visibility even if the API is unreachable.
+  var REVEAL_TIMEOUT_MS = 1200; // max ms to wait before showing default
 
   function detectBaseUrl() {
     if (window.IMAGE_SLOT_API_BASE) {
@@ -13,53 +18,64 @@
     }
     const host = window.location.hostname || '';
     const port = window.location.port || '';
-    // If running on a common dev host, point to local backend
     if (host === '127.0.0.1' || host === 'localhost' || host === '0.0.0.0' || host.startsWith('192.168.') || port === '5500') {
       return 'http://127.0.0.1:5000';
     }
-    // Otherwise use production API host
     return DEFAULT_API_HOST;
   }
 
   const baseUrl = detectBaseUrl();
   console.debug('image-slot-loader: baseUrl =', baseUrl);
 
+  // ── Inject a tiny style rule so slot elements start invisible and fade in.
+  //    This avoids the flash of the CSS-default background before the API
+  //    image is applied.
+  (function injectHideStyle() {
+    var style = document.createElement('style');
+    style.textContent =
+      '[data-image-slot]{opacity:0;transition:opacity .18s ease}' +
+      '[data-image-slot].slot-ready{opacity:1}';
+    document.head.appendChild(style);
+  })();
+
+  function revealElement(el) {
+    if (el && !el.classList.contains('slot-ready')) {
+      el.classList.add('slot-ready');
+    }
+  }
+
   function applySlotToElement(el, url, applyMode) {
     if (!el || !url) return;
     const tag = (el.tagName || '').toUpperCase();
-    
+
     if (applyMode === 'src' && tag === 'IMG') {
-      // Direct IMG element: replace src
       el.src = url;
     } else if (tag === 'IMG') {
-      // IMG element but background mode requested: apply as background (unusual but allowed)
       el.style.backgroundImage = `url('${url}')`;
       el.style.backgroundSize = 'cover';
       el.style.backgroundPosition = 'center';
     } else {
-      // Non-IMG element: check if it contains IMG children that would conflict
       const childImages = el.querySelectorAll('img');
       if (childImages.length > 0) {
-        // If the element contains images, replace the first child image's src instead of using background
-        // This prevents "stacking" where both the child image and background are visible
         childImages[0].src = url;
-        // Hide any additional child images to avoid confusion
         for (let i = 1; i < childImages.length; i++) {
           childImages[i].style.display = 'none';
         }
       } else {
-        // No child images: safe to apply as background
         el.style.backgroundImage = `url('${url}')`;
         el.style.backgroundSize = 'cover';
         el.style.backgroundPosition = 'center';
       }
     }
+
+    // Reveal immediately after applying the dynamic image
+    revealElement(el);
   }
 
   function fetchImageForKey(key) {
     const url = `${baseUrl}/get-image?key=${encodeURIComponent(key)}`;
     console.debug('image-slot-loader: fetching', url);
-    return fetch(url, { cache: 'no-cache' })
+    return fetch(url)                     // let browser cache normally
       .then(r => {
         if (!r.ok) throw new Error('HTTP ' + r.status);
         return r.json();
@@ -71,40 +87,67 @@
   }
 
   function loadImageKeys() {
-    return fetch('./api/image_keys.json', { cache: 'no-cache' })
+    return fetch('./api/image_keys.json')  // let browser cache normally
       .then(r => r.ok ? r.json() : null)
       .catch(() => null);
   }
 
-  function loadSlots(imageKeysMap) {
-    const elems = document.querySelectorAll('[data-image-slot]');
-    console.debug('image-slot-loader: found elements with data-image-slot:', elems.length);
+  // ── Run on DOMContentLoaded (much earlier than window.load).
+  //    Fetch image_keys.json and all per-slot API calls in parallel.
+  document.addEventListener('DOMContentLoaded', function () {
+    console.debug('image-slot-loader: DOM ready — starting slot load');
+
+    // Start both fetches at the same time
+    var keysPromise = loadImageKeys();
+    // We can query the DOM immediately since DOMContentLoaded has fired
+    var elems = document.querySelectorAll('[data-image-slot]');
     if (!elems || elems.length === 0) return;
 
-    elems.forEach(el => {
-      const key = el.getAttribute('data-image-slot');
+    // Begin per-slot API fetches NOW (don't wait for image_keys.json).
+    // image_keys.json is only needed for applyMode metadata and the
+    // default fallback URL; we resolve it in parallel and merge later.
+    var slotEntries = [];
+    elems.forEach(function (el) {
+      var key = el.getAttribute('data-image-slot');
       if (!key) return;
-      console.debug('image-slot-loader: loading key', key, 'for element', el);
+      slotEntries.push({ el: el, key: key, imgPromise: fetchImageForKey(key) });
+    });
 
-      const meta = imageKeysMap && imageKeysMap[key];
-      const defaultApplyMode = (el.tagName && el.tagName.toUpperCase() === 'IMG') ? 'src' : 'background';
-      const applyMode = (meta && meta.applyMode) ? meta.applyMode : defaultApplyMode;
+    keysPromise.then(function (imageKeysMap) {
+      slotEntries.forEach(function (entry) {
+        var meta = imageKeysMap && imageKeysMap[entry.key];
+        var defaultApplyMode = (entry.el.tagName && entry.el.tagName.toUpperCase() === 'IMG') ? 'src' : 'background';
+        var applyMode = (meta && meta.applyMode) ? meta.applyMode : defaultApplyMode;
+        var defaultUrl = (meta && meta.default) ? meta.default : null;
 
-      fetchImageForKey(key).then(data => {
-        if (data && data.url) {
-          console.debug('image-slot-loader: applying', data.url, 'to', key, 'mode=', applyMode);
-          applySlotToElement(el, data.url, applyMode);
-        } else {
-          console.debug('image-slot-loader: no image returned for', key);
-        }
+        // Safety timeout: if the API hasn't responded, apply the default
+        // image from image_keys.json so the section isn't blank.
+        var fallbackTimer = setTimeout(function () {
+          console.debug('image-slot-loader: timeout for', entry.key, '— applying default');
+          if (defaultUrl) {
+            applySlotToElement(entry.el, defaultUrl, applyMode);
+          } else {
+            revealElement(entry.el);
+          }
+        }, REVEAL_TIMEOUT_MS);
+
+        entry.imgPromise.then(function (data) {
+          clearTimeout(fallbackTimer);
+          if (data && data.url) {
+            console.debug('image-slot-loader: applying', data.url, 'to', entry.key, 'mode=', applyMode);
+            applySlotToElement(entry.el, data.url, applyMode);
+          } else {
+            // No uploaded image — use the default from image_keys.json
+            console.debug('image-slot-loader: no image returned for', entry.key, '— applying default');
+            if (defaultUrl) {
+              applySlotToElement(entry.el, defaultUrl, applyMode);
+            } else {
+              revealElement(entry.el);
+            }
+          }
+        });
       });
     });
-  }
-
-  // Run after load. If you need to override base url in dev, set window.IMAGE_SLOT_API_BASE
-  window.addEventListener('load', function () {
-    console.debug('image-slot-loader: page loaded — starting slot load');
-    loadImageKeys().then(map => loadSlots(map));
   });
 
 })();

@@ -520,16 +520,26 @@ html {
   min-height: 90vh;
 }
 .landing .hero {
+  /* make hero a flex container so children (title + typed text) are centered both
+     horizontally and vertically on top of the background image */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-weight: 700;
   color: rgb(250, 250, 250);
   text-align: center;
+  /* occupy full viewport height so centering works as expected */
+  min-height: 90vh;
 }
 .landing .hero .title {
-  padding-top: 15vh;
+  /* remove extra top padding now that flex centering handles vertical placement */
+  margin: 0;
   font-size: clamp(3rem, 10vw, 7.5rem);
 }
 .landing .hero .typed-title {
-  margin-top: 1vh;
+  /* small gap between title and typed lines; flex container handles centering */
+  margin-top: 0.5vh;
   font-weight: 400;
   font-size: clamp(16px, 3vw, 18px);
 }

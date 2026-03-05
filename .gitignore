@@ -2,3 +2,4 @@
 *.db
 *.log
 api/api.log
+/api/__pycache__

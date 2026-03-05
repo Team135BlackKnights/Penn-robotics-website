@@ -8,4 +8,8 @@ subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'flask'])
 
 subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'flask-cors'])
 
+subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'Pillow'])
+
+
+
 

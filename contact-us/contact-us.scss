@@ -64,7 +64,7 @@
 
 
 .landing {
-  background-image: url("/contact-us/Media/contact_us_bckgn.webp");
+  // background-image removed — managed by image-slot-loader.js via data-image-slot
   background-position: center;
   background-attachment: fixed;
   background-size: cover;

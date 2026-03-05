@@ -18,6 +18,7 @@
       content="Home of all Penn High School affiliated FIRST Robotics programs."
     />
     <link rel="canonical" href="https://pennrobotics.org" />
+    <link rel="preconnect" href="https://api.pennrobotics.org" crossorigin />
     <link rel="stylesheet" href="/landing-page/index.css" />
     <script src="popup.js" defer></script>
     <script src="hamburger.js" defer></script>
@@ -39,6 +40,8 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
     <script src="swiper.js" defer></script>
+    <script src="/focus-arrow.js" defer></script>
+    <script src="image-slot-loader.js" defer></script>
   </head>
   <body>
     <div class="navbar">
@@ -101,7 +104,7 @@
         <button id="close-popup">X</button>
     </div>
 </div>
-    <div class="landing">
+    <div class="landing" data-image-slot="landing.hero">
       <div class="hero">
         <div class="title">Penn Robotics</div>
         <div class="typed-title">
@@ -115,6 +118,8 @@
             </p>
             <p>Support Penn Robotics by Donating Today!</p>
           </div>
+    
+              <!-- Focus arrow behavior moved to global files (focus-arrow.js & focus-arrow.scss) -->
           <span id="typed"></span>
         </div>
         <!--
@@ -126,7 +131,7 @@
         -->
       </div>
     </div>
-    <div class="main">
+    <div class="main" >
       <div class="title">FIRST Robotics</div>
       <div class="subtitle">
         Penn High School provides FRC (FIRST Robotics Challenge) for all
@@ -202,7 +207,7 @@
          >
        </div>  
     </div>
-    <div class="quote-section">
+    <div class="quote-section" data-image-slot="quote.section">
       <div class="title">
         "Our mission is to create a new generation of problem solvers and to
         inspire young minds through diverse experiences."
@@ -595,6 +600,7 @@
       </div>
     </div>
   </body>
+  <!-- image-slot-loader.js moves inline behavior to a separate file -->
 </html>
 <!-- Integrate Later
 <div class="FLL-Subdivison">

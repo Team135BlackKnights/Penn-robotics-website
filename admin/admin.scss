@@ -26,7 +26,10 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     min-height: 100px; // Allow container to grow
-    overflow: auto; // Handle overflow content
+    /* Allow absolutely-positioned children (filter dropdown) to escape the container
+       while still allowing vertical scroll for inner content where needed. */
+    overflow-x: visible;
+    overflow-y: auto;
 }
 
 h1.main-title {
@@ -99,11 +102,47 @@ button {
 .logs-display {
     background-color: #f4f4f4;
     padding: 10px;
+    /* leave space for the overlay scroll button so content isn't obscured */
+    padding-bottom: 56px;
     border: 1px solid #ccc;
     max-height: 300px;
     overflow-y: auto;
     white-space: pre-wrap;
     margin-bottom: 15px;
+}
+
+/* Wrapper to position the overlay button relative to the logs area */
+.logs-wrapper {
+    position: relative;
+}
+
+/* Scroll-to-bottom overlay button */
+#scroll-bottom-btn {
+    position: absolute;
+    bottom: 12px;
+    right: 20px;
+    z-index: 50;
+    display: none; /* shown/hidden by JS */
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: #007bff;
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+#scroll-bottom-btn:hover {
+    background: #0056b3;
+}
+
+#scroll-bottom-btn i {
+    line-height: 1;
 }
 
 #fetch-logs{
@@ -176,4 +215,668 @@ button {
     text-align: center;
     margin-top: 20px;
     font-size: 1.2rem;
+}
+
+/* Image slot layout and buttons */
+.image-slot {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.image-slot .image-slot-preview {
+    /* Fill the slot width and scale down when the slot narrows */
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Slot header: title left, view link right */
+.image-slot .slot-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+.image-slot .slot-header h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    flex: 1 1 0;
+    min-width: 0; /* allow flex children to shrink correctly */
+}
+.image-slot .slot-header .image-slot-link {
+    margin: 0;
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap; /* keep icon and text on one line */
+    flex: 0 0 auto; /* don't allow the link to shrink and wrap */
+}
+
+/* Give the header link a bit more breathing room */
+.image-slot .slot-header .image-slot-link i {
+    margin-right: 8px; /* reduced gap for balance */
+}
+.image-slot .slot-header .image-slot-link {
+    padding: 8px 12px; /* internal padding for the pill */
+}
+
+/* Icon spacing for buttons where icons are used */
+.form-container button i,
+.image-slot .buttons-row button i,
+.image-slots-header-btns button i,
+.filter-btn i,
+.filter-actions button i {
+    margin-right: 6px;
+}
+
+/* Style the second button in the slot (Reset to default) to match #reset-logs */
+.image-slot button + button {
+    background: rgb(224, 55, 55);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    margin-left: 0 !important;
+}
+
+.image-slot button + button:hover {
+    background: #b93b3b;
+}
+
+/* View on site link styling */
+.image-slot-link {
+    display: inline-block;
+    padding: 6px 10px;
+    background: #007bff;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    margin-left: 0;
+}
+.image-slot-link:hover {
+    background: #0056b3;
+}
+
+/* Toolbar: search + filter side by side */
+.slot-toolbar {
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+    margin-bottom: 12px;
+}
+
+#image-slot-search {
+    flex: 1;
+    padding: 10px 14px 10px 40px; /* accommodate left icon */
+    font-size: 15px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.15s ease;
+    &:focus {
+        border-color: #007bff;
+    }
+}
+
+/* Search input wrapper with inline icon */
+.search-input-wrap {
+    position: relative;
+    flex: 1 1 auto;
+}
+.search-input-wrap .search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: -7px;
+    color: #6b7280;
+    pointer-events: none;
+    font-size: 0.95rem;
+}
+
+.filter-wrapper {
+    position: relative;
+}
+
+.filter-btn {
+    width: auto;
+    /* Match vertical size of the search input */
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    background: #f0f4ff;
+    color: #1a56db;
+    border: 2px solid #c4d4fb;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    transition: background 0.15s ease, border-color 0.15s ease;
+
+    &:hover {
+        background: #dce8ff;
+        border-color: #1a56db;
+    }
+
+    &:focus {
+        outline: 3px solid rgba(26,86,219,0.12);
+    }
+}
+
+    .filter-dropdown {
+    position: absolute;
+    top: calc(100% + 6px);
+    /* prefer aligning under the left edge of the button wrapper; constrain so it never
+       exceeds the viewport (prevents horizontal page scroll / clipping) */
+    left: 0;
+    right: auto;
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+    padding: 14px 16px;
+    z-index: 100;
+    min-width: 200px;
+    /* don't allow it to be wider than viewport minus some gutter */
+    max-width: calc(100vw - 40px);
+    box-sizing: border-box;
+    max-height: 60vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+    .filter-group {
+    margin-bottom: 12px;
+    &:last-of-type {
+        margin-bottom: 8px;
+    }
+}
+
+.filter-group-title {
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+.filter-dropdown label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* keep checkbox and label together on the left */
+    gap: 10px;
+    padding: 6px 0;
+    font-size: 14px;
+    cursor: pointer;
+    line-height: 1.2;
+    white-space: normal; /* allow wrapping for long page names */
+}
+
+.filter-dropdown label input[type="checkbox"] {
+    margin: 0;
+    flex-shrink: 0;
+    order: 0;
+    width: 16px;
+    height: 16px;
+    accent-color: #007bff;
+}
+
+.filter-actions {
+    border-top: 1px solid #eee;
+    padding-top: 8px;
+    text-align: right;
+    button {
+        font-size: 13px;
+        background: none;
+        border: none;
+        color: #007bff;
+        cursor: pointer;
+        font-weight: 600;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/* Active filter tags */
+#active-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.filter-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    font-size: 13px;
+    background: #e8f0fe;
+    color: #1a56db;
+    border-radius: 12px;
+    i {
+        font-size: 11px;
+    }
+    button {
+        background: none;
+        border: none;
+        color: #1a56db;
+        font-size: 15px;
+        line-height: 1;
+        cursor: pointer;
+        padding: 0 2px;
+        &:hover {
+            color: #c00;
+        }
+    }
+}
+
+/* Container: show slots two-per-row on wide screens, stack to one-per-row on smaller screens */
+#image-slots-container {
+    display: grid;
+    /* allow columns to shrink below their content width when necessary */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+@media (max-width: 800px) {
+    #image-slots-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Make buttons sit side-by-side when there's space */
+.image-slot .buttons-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* prevent buttons or other children from forcing the slot to be wider than the grid column */
+.image-slot,
+.image-slot .buttons-row,
+.image-slot .buttons-row > * {
+    min-width: 0;
+}
+
+/* Ensure buttons inside image slots don't expand to full width (global button rule sets width:100%) */
+.image-slot .buttons-row button,
+.image-slot > button {
+    width: auto;
+    padding: 8px 12px;
+    white-space: nowrap;
+    align-self: center;
+}
+
+/* Make image previews taller and preserve aspect while filling area to avoid looking tiny next to controls */
+.image-slot .image-slot-preview {
+    max-height: 180px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Lightbox styles */
+.image-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 180ms ease;
+}
+.image-lightbox.visible {
+    opacity: 1;
+}
+.image-lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.image-lightbox-img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 6px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+.image-lightbox-close {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    background: rgba(255,255,255,0.9);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.image-lightbox-close:hover { background: white; }
+/* Svg icon inside close button */
+.image-lightbox-close svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+.image-lightbox-close { color: #333; }
+
+.image-slots-header-btns {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.how-to-btn--green {
+    background: #f0fff4;
+    color: #1a7a3c;
+    border-color: #b7e4c7;
+
+    &:hover {
+        background: #d4f5e1;
+        border-color: #1a7a3c;
+    }
+}
+
+/* Image Slots section header with inline help button */
+.image-slots-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 12px;
+
+    h2 {
+        margin-bottom: 0;
+    }
+}
+
+.how-to-btn {
+    width: auto;
+    padding: 7px 14px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    background: #f0f4ff;
+    color: #1a56db;
+    border: 2px solid #c4d4fb;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.15s ease, border-color 0.15s ease;
+
+    &:hover {
+        background: #dce8ff;
+        border-color: #1a56db;
+    }
+}
+
+/* How-to modal overlay */
+.how-to-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 3000;
+    padding: 40px 20px 20px;
+    overflow-y: auto;
+}
+
+.how-to-modal-content {
+    position: relative;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    max-width: 680px;
+    width: 100%;
+    padding: 32px 32px 28px;
+    box-sizing: border-box;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+
+    h2 {
+        color: $secondary;
+        margin-bottom: 8px;
+        font-size: 1.4rem;
+    }
+}
+
+.how-to-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: none;
+    background: #f0f0f0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: background 0.15s ease;
+
+    &:hover {
+        background: #e0e0e0;
+    }
+
+    svg {
+        display: block;
+        color: #333;
+    }
+}
+
+.how-to-intro {
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 0.97rem;
+    line-height: 1.5;
+}
+
+.how-to-steps {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+    counter-reset: step-counter;
+
+    > li {
+        display: flex;
+        gap: 14px;
+        margin-bottom: 24px;
+        counter-increment: step-counter;
+
+        &::before {
+            content: counter(step-counter);
+            min-width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #007bff;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+    }
+
+    // Content column next to the number badge
+    .step-body {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        min-width: 0;
+    }
+
+    strong {
+        display: block;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #111;
+        line-height: 1.3;
+    }
+
+    p {
+        margin: 0;
+        color: #444;
+        font-size: 0.95rem;
+        line-height: 1.55;
+    }
+
+    ul {
+        margin: 4px 0 0 4px;
+        padding-left: 18px;
+        li {
+            margin-bottom: 4px;
+            font-size: 0.93rem;
+            color: #444;
+            line-height: 1.4;
+        }
+    }
+}
+
+.how-to-steps pre {
+    background: #f4f6fb;
+    border: 1px solid #dde3f0;
+    border-radius: 7px;
+    padding: 12px 14px;
+    margin: 8px 0 0;
+    overflow-x: auto;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.how-to-steps code {
+    font-family: 'Consolas', 'Fira Code', monospace;
+    font-size: 0.85rem;
+    color: #1a56db;
+    background: #f0f4ff;
+    padding: 1px 5px;
+    border-radius: 4px;
+}
+
+.how-to-steps pre code {
+    color: #222;
+    background: none;
+    padding: 0;
+}
+
+.how-to-tip {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 16px;
+    background: #fffbe6;
+    border: 1px solid #ffe58f;
+    border-radius: 8px;
+    font-size: 0.92rem;
+    color: #7a5700;
+    line-height: 1.4;
+
+    i {
+        margin-top: 2px;
+        color: #f0a500;
+        flex-shrink: 0;
+    }
+}
+
+/* Ensure slot looks like a card */
+.image-slot {
+    padding: 12px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+/* allow grid children to shrink when needed */
+.image-slot {
+    min-width: 0;
+}
+
+/* Drag-and-drop visual state */
+.image-slot {
+    position: relative;
+    transition: transform 120ms ease, box-shadow 120ms ease;
+}
+.image-slot.drag-over {
+    transform: scale(1.03);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    z-index: 50;
+}
+.image-drop-hint {
+    position: absolute;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: rgba(0,0,0,0.5);
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    pointer-events: none;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+}
+.image-slot.drag-over .image-drop-hint {
+    display: flex;
+}
+.image-slot.drag-over .image-slot-preview {
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+
+/* Deprecated post-management styling: visually grey out and make read-only */
+.deprecated-section {
+    opacity: 0.55;
+    pointer-events: none; /* disable interactions inside */
+    filter: grayscale(25%);
+    transition: opacity 160ms ease;
+    position: relative;
+    padding-top: 10px;
+}
+.deprecated-section .deprecated-banner {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+.deprecated-section input,
+.deprecated-section textarea,
+.deprecated-section button {
+    cursor: not-allowed;
+    opacity: 0.9;
 }

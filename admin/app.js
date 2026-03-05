@@ -1,4 +1,32 @@
 
+// If the post-management section has been marked deprecated, disable its UI and prevent submissions.
+(function () {
+    const postSec = document.getElementById('post-management-section');
+    if (postSec && postSec.classList.contains('deprecated-section')) {
+        // disable inputs/controls so the UI is visually and functionally read-only
+        postSec.querySelectorAll('input, textarea, button, select').forEach(el => {
+            try { el.disabled = true; } catch (e) {}
+            el.setAttribute && el.setAttribute('aria-disabled', 'true');
+        });
+
+        // prevent any form submissions or button actions as a safety net
+        postSec.querySelectorAll('form').forEach(f => {
+            f.addEventListener('submit', function (e) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                return false;
+            }, { capture: true });
+        });
+        postSec.querySelectorAll('button').forEach(b => {
+            b.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                return false;
+            }, { capture: true });
+        });
+    }
+})();
+
 // Make Post Form Submission
 document.getElementById('make-post-form').addEventListener('submit', function (event) {
     event.preventDefault();
@@ -202,10 +230,14 @@ document.getElementById('fetch-logs').addEventListener('click', fetchLogs);
 })();
 
 document.getElementById('download-logs').addEventListener('click', function () {
+    const proceed = confirm("Download logs? The file may contain sensitive information. Continue?");
+    if (!proceed) return;
     window.location.href = `${baseUrl}/download-logs`;
 });
 
 document.getElementById('reset-logs').addEventListener('click', function () {
+    const proceed = confirm("Are you sure you want to delete and reset all logs? This action cannot be undone.");
+    if (!proceed) return;
     fetch(`${baseUrl}/reset-logs`, {
         method: 'POST',
         credentials: 'include'

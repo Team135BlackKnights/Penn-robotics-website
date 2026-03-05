@@ -781,3 +781,28 @@ button {
     transform: scale(1.02);
     opacity: 0.9;
 }
+
+/* Deprecated post-management styling: visually grey out and make read-only */
+.deprecated-section {
+    opacity: 0.55;
+    pointer-events: none; /* disable interactions inside */
+    filter: grayscale(25%);
+    transition: opacity 160ms ease;
+    position: relative;
+    padding-top: 10px;
+}
+.deprecated-section .deprecated-banner {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+.deprecated-section input,
+.deprecated-section textarea,
+.deprecated-section button {
+    cursor: not-allowed;
+    opacity: 0.9;
+}

@@ -72,7 +72,7 @@
                             <label><input type="checkbox" class="filter-status-cb" value="default" /> Default (no upload)</label>
                         </div>
                         <div class="filter-actions">
-                            <button type="button" id="filter-clear-btn">Clear Filters</button>
+                            <button type="button" id="filter-clear-btn"><i class="fa-solid fa-xmark"></i> Clear Filters</button>
                         </div>
                     </div>
                 </div>
@@ -91,9 +91,9 @@
                     <pre id="logs-container" class="logs-display"></pre>
                     <button id="scroll-bottom-btn" type="button" title="Jump to newest logs"><i class="fa-solid fa-arrow-down"></i></button>
                 </div>
-                <button id="fetch-logs">Refresh Logs</button>
-                <button id="download-logs">Download Logs</button>
-                <button id="reset-logs">Delete & Reset Logs</button>
+                <button id="fetch-logs"><i class="fa-solid fa-rotate-right"></i> Refresh Logs</button>
+                <button id="download-logs"><i class="fa-solid fa-download"></i> Download Logs</button>
+                <button id="reset-logs"><i class="fa-solid fa-trash"></i> Delete & Reset Logs</button>
         </div>
 
         <!-- Announcements Post Management (deprecated, moved to bottom and greyed out) -->
@@ -120,7 +120,7 @@
                     <label for="image">Upload Image (Optional)</label>
                     <input type="file" id="image" accept="image/*">
 
-                    <button type="submit">Create Post</button>
+                    <button type="submit"><i class="fa-solid fa-plus"></i> Create Post</button>
                 </form>
             </div>
 
@@ -130,7 +130,7 @@
                 <form id="edit-post-form" enctype="multipart/form-data">
                     <label for="edit-id">Post ID</label>
                     <input type="number" id="edit-id" required>
-                    <button type="button" id="fetch-post">Fetch Post</button>
+                    <button type="button" id="fetch-post"><i class="fa-solid fa-magnifying-glass"></i> Fetch Post</button>
             
                     <div id="edit-fields" style="display: none;">
                         <label for="edit-title">Title *</label>
@@ -155,7 +155,7 @@
                         <label for="edit-image">New Image</label>
                         <input type="file" id="edit-image" accept="image/*">
             
-                        <button type="submit" id="edit-post-btn">Edit Post</button>
+                        <button type="submit" id="edit-post-btn"><i class="fa-solid fa-pen-to-square"></i> Edit Post</button>
                     </div>
                 </form>
             </div>
@@ -167,7 +167,7 @@
                     <label for="delete-id">Post ID</label>
                     <input type="number" id="delete-id" required>
 
-                    <button type="submit" id="delete-btn">Delete Post</button>
+                    <button type="submit" id="delete-btn"><i class="fa-solid fa-trash"></i> Delete Post</button>
                 </form>
             </div>
         </div>

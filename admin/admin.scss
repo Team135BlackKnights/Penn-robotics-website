@@ -234,6 +234,46 @@ button {
     border-radius: 8px;
 }
 
+/* Slot header: title left, view link right */
+.image-slot .slot-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+.image-slot .slot-header h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    flex: 1 1 0;
+    min-width: 0; /* allow flex children to shrink correctly */
+}
+.image-slot .slot-header .image-slot-link {
+    margin: 0;
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap; /* keep icon and text on one line */
+    flex: 0 0 auto; /* don't allow the link to shrink and wrap */
+}
+
+/* Give the header link a bit more breathing room */
+.image-slot .slot-header .image-slot-link i {
+    margin-right: 8px; /* reduced gap for balance */
+}
+.image-slot .slot-header .image-slot-link {
+    padding: 8px 12px; /* internal padding for the pill */
+}
+
+/* Icon spacing for buttons where icons are used */
+.form-container button i,
+.image-slot .buttons-row button i,
+.image-slots-header-btns button i,
+.filter-btn i,
+.filter-actions button i {
+    margin-right: 6px;
+}
+
 /* Style the second button in the slot (Reset to default) to match #reset-logs */
 .image-slot button + button {
     background: rgb(224, 55, 55);
@@ -454,6 +494,24 @@ button {
 .image-slot .buttons-row,
 .image-slot .buttons-row > * {
     min-width: 0;
+}
+
+/* Ensure buttons inside image slots don't expand to full width (global button rule sets width:100%) */
+.image-slot .buttons-row button,
+.image-slot > button {
+    width: auto;
+    padding: 8px 12px;
+    white-space: nowrap;
+    align-self: center;
+}
+
+/* Make image previews taller and preserve aspect while filling area to avoid looking tiny next to controls */
+.image-slot .image-slot-preview {
+    max-height: 180px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
 }
 
 /* Lightbox styles */

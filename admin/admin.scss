@@ -26,7 +26,10 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     min-height: 100px; // Allow container to grow
-    overflow: auto; // Handle overflow content
+    /* Allow absolutely-positioned children (filter dropdown) to escape the container
+       while still allowing vertical scroll for inner content where needed. */
+    overflow-x: visible;
+    overflow-y: auto;
 }
 
 h1.main-title {
@@ -99,11 +102,47 @@ button {
 .logs-display {
     background-color: #f4f4f4;
     padding: 10px;
+    /* leave space for the overlay scroll button so content isn't obscured */
+    padding-bottom: 56px;
     border: 1px solid #ccc;
     max-height: 300px;
     overflow-y: auto;
     white-space: pre-wrap;
     margin-bottom: 15px;
+}
+
+/* Wrapper to position the overlay button relative to the logs area */
+.logs-wrapper {
+    position: relative;
+}
+
+/* Scroll-to-bottom overlay button */
+#scroll-bottom-btn {
+    position: absolute;
+    bottom: 12px;
+    right: 20px;
+    z-index: 50;
+    display: none; /* shown/hidden by JS */
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: #007bff;
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+#scroll-bottom-btn:hover {
+    background: #0056b3;
+}
+
+#scroll-bottom-btn i {
+    line-height: 1;
 }
 
 #fetch-logs{
@@ -253,41 +292,55 @@ button {
 }
 
 .filter-btn {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 10px 16px;
-    font-size: 14px;
+    width: auto;
+    /* Match vertical size of the search input */
+    padding: 10px 14px;
+    font-size: 0.95rem;
     font-weight: 600;
-    background: #f0f0f0;
-    border: 2px solid #ccc;
+    background: #f0f4ff;
+    color: #1a56db;
+    border: 2px solid #c4d4fb;
     border-radius: 6px;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     white-space: nowrap;
     transition: background 0.15s ease, border-color 0.15s ease;
+
     &:hover {
-        background: #e2e2e2;
-        border-color: #999;
+        background: #dce8ff;
+        border-color: #1a56db;
+    }
+
+    &:focus {
+        outline: 3px solid rgba(26,86,219,0.12);
     }
 }
 
-.filter-dropdown {
+    .filter-dropdown {
     position: absolute;
     top: calc(100% + 6px);
-    right: 0;
+    /* prefer aligning under the left edge of the button wrapper; constrain so it never
+       exceeds the viewport (prevents horizontal page scroll / clipping) */
+    left: 0;
+    right: auto;
     background: #fff;
     border: 2px solid #ccc;
     border-radius: 8px;
     box-shadow: 0 6px 24px rgba(0,0,0,0.15);
     padding: 14px 16px;
     z-index: 100;
-    min-width: 220px;
-    max-height: 360px;
+    min-width: 200px;
+    /* don't allow it to be wider than viewport minus some gutter */
+    max-width: calc(100vw - 40px);
+    box-sizing: border-box;
+    max-height: 60vh;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
-.filter-group {
+    .filter-group {
     margin-bottom: 12px;
     &:last-of-type {
         margin-bottom: 8px;
@@ -306,17 +359,22 @@ button {
 .filter-dropdown label {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 5px 0;
+    justify-content: flex-start; /* keep checkbox and label together on the left */
+    gap: 10px;
+    padding: 6px 0;
     font-size: 14px;
     cursor: pointer;
-    line-height: 1;
-    white-space: nowrap;
-    input[type="checkbox"] {
-        margin: 0 0 0 10px;
-        flex-shrink: 0;
-        order: 2;
-    }
+    line-height: 1.2;
+    white-space: normal; /* allow wrapping for long page names */
+}
+
+.filter-dropdown label input[type="checkbox"] {
+    margin: 0;
+    flex-shrink: 0;
+    order: 0;
+    width: 16px;
+    height: 16px;
+    accent-color: #007bff;
 }
 
 .filter-actions {
@@ -451,6 +509,233 @@ button {
     display: block;
 }
 .image-lightbox-close { color: #333; }
+
+.image-slots-header-btns {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.how-to-btn--green {
+    background: #f0fff4;
+    color: #1a7a3c;
+    border-color: #b7e4c7;
+
+    &:hover {
+        background: #d4f5e1;
+        border-color: #1a7a3c;
+    }
+}
+
+/* Image Slots section header with inline help button */
+.image-slots-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 12px;
+
+    h2 {
+        margin-bottom: 0;
+    }
+}
+
+.how-to-btn {
+    width: auto;
+    padding: 7px 14px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    background: #f0f4ff;
+    color: #1a56db;
+    border: 2px solid #c4d4fb;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.15s ease, border-color 0.15s ease;
+
+    &:hover {
+        background: #dce8ff;
+        border-color: #1a56db;
+    }
+}
+
+/* How-to modal overlay */
+.how-to-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 3000;
+    padding: 40px 20px 20px;
+    overflow-y: auto;
+}
+
+.how-to-modal-content {
+    position: relative;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    max-width: 680px;
+    width: 100%;
+    padding: 32px 32px 28px;
+    box-sizing: border-box;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+
+    h2 {
+        color: $secondary;
+        margin-bottom: 8px;
+        font-size: 1.4rem;
+    }
+}
+
+.how-to-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: none;
+    background: #f0f0f0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: background 0.15s ease;
+
+    &:hover {
+        background: #e0e0e0;
+    }
+
+    svg {
+        display: block;
+        color: #333;
+    }
+}
+
+.how-to-intro {
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 0.97rem;
+    line-height: 1.5;
+}
+
+.how-to-steps {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+    counter-reset: step-counter;
+
+    > li {
+        display: flex;
+        gap: 14px;
+        margin-bottom: 24px;
+        counter-increment: step-counter;
+
+        &::before {
+            content: counter(step-counter);
+            min-width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #007bff;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+    }
+
+    // Content column next to the number badge
+    .step-body {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        min-width: 0;
+    }
+
+    strong {
+        display: block;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #111;
+        line-height: 1.3;
+    }
+
+    p {
+        margin: 0;
+        color: #444;
+        font-size: 0.95rem;
+        line-height: 1.55;
+    }
+
+    ul {
+        margin: 4px 0 0 4px;
+        padding-left: 18px;
+        li {
+            margin-bottom: 4px;
+            font-size: 0.93rem;
+            color: #444;
+            line-height: 1.4;
+        }
+    }
+}
+
+.how-to-steps pre {
+    background: #f4f6fb;
+    border: 1px solid #dde3f0;
+    border-radius: 7px;
+    padding: 12px 14px;
+    margin: 8px 0 0;
+    overflow-x: auto;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.how-to-steps code {
+    font-family: 'Consolas', 'Fira Code', monospace;
+    font-size: 0.85rem;
+    color: #1a56db;
+    background: #f0f4ff;
+    padding: 1px 5px;
+    border-radius: 4px;
+}
+
+.how-to-steps pre code {
+    color: #222;
+    background: none;
+    padding: 0;
+}
+
+.how-to-tip {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 16px;
+    background: #fffbe6;
+    border: 1px solid #ffe58f;
+    border-radius: 8px;
+    font-size: 0.92rem;
+    color: #7a5700;
+    line-height: 1.4;
+
+    i {
+        margin-top: 2px;
+        color: #f0a500;
+        flex-shrink: 0;
+    }
+}
 
 /* Ensure slot looks like a card */
 .image-slot {

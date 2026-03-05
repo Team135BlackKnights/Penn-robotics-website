@@ -114,14 +114,27 @@
         <h1>Processes</h1>
         <div class="form-container">
             <h2>API Logs</h2>
-            <pre id="logs-container" class="logs-display"></pre>
-            <button id="fetch-logs">Refresh Logs</button>
-            <button id="download-logs">Download Logs</button>
-            <button id="reset-logs">Delete & Reset Logs</button>
+                <div class="logs-wrapper">
+                    <pre id="logs-container" class="logs-display"></pre>
+                    <button id="scroll-bottom-btn" type="button" title="Jump to newest logs"><i class="fa-solid fa-arrow-down"></i></button>
+                </div>
+                <button id="fetch-logs">Refresh Logs</button>
+                <button id="download-logs">Download Logs</button>
+                <button id="reset-logs">Delete & Reset Logs</button>
         </div>
         <!-- Image Slots (dynamically populated from image_keys.json) -->
         <div class="form-container" id="image-slots-wrapper">
-            <h2>Image Slots</h2>
+            <div class="image-slots-header">
+                <h2>Image Slots</h2>
+                <div class="image-slots-header-btns">
+                    <button type="button" id="how-to-use-btn" class="how-to-btn how-to-btn--green" title="How do I use the Image Slots section?">
+                        <i class="fa-solid fa-book-open"></i> How to use this
+                    </button>
+                    <button type="button" id="how-to-dynamic-btn" class="how-to-btn" title="How do I add more dynamic images?">
+                        <i class="fa-solid fa-circle-question"></i> How to add an image slot
+                    </button>
+                </div>
+            </div>
             <div class="slot-toolbar">
                 <input type="text" id="image-slot-search" placeholder="Search image slots..." autocomplete="off" />
                 <div class="filter-wrapper">
@@ -155,6 +168,119 @@
 
 
     
+    <!-- How-to modal: using the Image Slots dashboard -->
+    <div id="how-to-use-modal" class="how-to-modal" role="dialog" aria-modal="true" aria-labelledby="how-to-use-modal-title" style="display:none;">
+        <div class="how-to-modal-content">
+            <button type="button" class="how-to-modal-close" id="how-to-use-modal-close" aria-label="Close">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6 L18 18 M6 18 L18 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>
+            </button>
+            <h2 id="how-to-use-modal-title">How to Use Image Slots</h2>
+            <p class="how-to-intro">Image Slots let you swap out photos and backgrounds on the live website without touching any code. Here's everything you need to know.</p>
+
+            <ol class="how-to-steps">
+                <li><div class="step-body">
+                    <strong>Find the image you want to change</strong>
+                    <p>Each card in this section represents one image on the site. The card title tells you what it is (e.g. <em>"Landing Hero Background"</em>) and a small preview shows the current image.</p>
+                </div></li>
+                <li><div class="step-body">
+                    <strong>Upload a new image</strong>
+                    <p>Click <strong>Choose File</strong> (or drag &amp; drop an image file directly onto the card), then click <strong>Upload</strong>. The new image goes live on the website immediately.</p>
+                    <p>Accepted formats are listed on each card. Keep file sizes reasonable — very large files will slow the page down for visitors.</p>
+                </div></li>
+                <li><div class="step-body">
+                    <strong>Preview before you commit</strong>
+                    <p>After selecting a file, a small preview appears on the card so you can check it looks right before hitting Upload.</p>
+                    <p>You can also click any existing preview image to open it full-size in a lightbox.</p>
+                </div></li>
+                <li><div class="step-body">
+                    <strong>Undo / Reset to default</strong>
+                    <p>Click the red <strong>Reset to default</strong> button on a card to remove your uploaded image and go back to the original built-in image. This cannot be undone, so make sure you have a copy if you want to keep your upload.</p>
+                </div></li>
+                <li><div class="step-body">
+                    <strong>Finding a specific slot</strong>
+                    <p>Use the <strong>Search</strong> box to type any part of the slot name or description. Use the <strong>Filter</strong> button to narrow down by which page the image is on, or whether it has been uploaded or is still the default.</p>
+                </div></li>
+                <li><div class="step-body">
+                    <strong>View the image in context</strong>
+                    <p>Each card has a <strong>View on site</strong> link that opens the relevant page and scrolls directly to where that image appears, so you can see it in context.</p>
+                </div></li>
+            </ol>
+
+            <div class="how-to-tip">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span>Changes take effect immediately on the live site — no need to refresh or redeploy anything. Just upload and you're done.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- How-to modal for adding dynamic image slots -->
+    <div id="how-to-modal" class="how-to-modal" role="dialog" aria-modal="true" aria-labelledby="how-to-modal-title" style="display:none;">
+        <div class="how-to-modal-content">
+            <button type="button" class="how-to-modal-close" id="how-to-modal-close" aria-label="Close">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6 L18 18 M6 18 L18 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>
+            </button>
+            <h2 id="how-to-modal-title">How to Add a Dynamic Image Slot</h2>
+            <p class="how-to-intro">Dynamic image slots let you upload/swap images for any element on any page straight from this admin panel — no code deploys needed.</p>
+
+            <ol class="how-to-steps">
+                <li><div class="step-body">
+                    <strong>Pick a unique key</strong>
+                    <p>Keys follow the pattern <code>pagename.sectionname</code>, e.g. <code>outreach.hero</code>. Keep them lowercase with dots or hyphens only.</p>
+                    <p class="explain">What this does: the key is the identifier both the website and the admin panel use to refer to the same image. Think of it as a label the code looks up when it needs to fetch or display that image.</p>
+                </div></li>
+                <li><div class="step-body">
+                    <strong>Add the key to <code>api/image_keys.json</code></strong>
+                    <p>Add one entry inside the top-level JSON object:</p>
+                    <pre><code>"outreach.hero": {
+  "label": "Outreach Hero Background",
+  "apply": "background",
+  "default": "/outreach/media/default.webp",
+  "page": "/outreach.html",
+  "description": "Hero background for the Outreach page",
+  "allowed": ["image/png", "image/jpeg", "image/webp"],
+  "max_size": 524288000
+}</code></pre>
+                    <ul>
+                        <li><code>label</code> — friendly name shown in this dashboard</li>
+                        <li><code>apply</code> — <code>"background"</code> sets it as a CSS background; <code>"src"</code> sets it on an <code>&lt;img&gt;</code> tag's <code>src</code></li>
+                        <li><code>default</code> — fallback path used when no image has been uploaded yet</li>
+                        <li><code>page</code> — which page this slot lives on (for filtering here in the dashboard)</li>
+                        <li><code>allowed</code> — MIME types accepted for upload</li>
+                    </ul>
+                    <p class="explain">What this does: the JSON entry supplies metadata the loader and admin UI use — the loader uses <code>default</code> when no upload exists, and the admin UI uses <code>label</code>, <code>page</code>, and <code>allowed</code> to render the upload card and enforce restrictions.</p>
+                </div></li>
+                <li><div class="step-body">
+                    <strong>Add the <code>data-image-slot</code> attribute to the HTML element</strong>
+                    <p>On whichever <code>&lt;div&gt;</code>, <code>&lt;section&gt;</code>, or <code>&lt;img&gt;</code> should show the dynamic image, add:</p>
+                    <pre><code>&lt;div class="landing" data-image-slot="outreach.hero"&gt;</code></pre>
+                    <p class="explain">What this does: the page element tells <code>image-slot-loader.js</code> which key it needs. On page load the loader scans for elements with <code>data-image-slot</code>, then asks the API for that key's current image and applies it to the element.</p>
+                </div></li>
+                <li><div class="step-body">
+                    <strong>Include <code>image-slot-loader.js</code> in the page's <code>&lt;head&gt;</code></strong>
+                    <p>If it's not already there, add:</p>
+                    <pre><code>&lt;script src="image-slot-loader.js" defer&gt;&lt;/script&gt;</code></pre>
+                    <p class="explain">What this does: the loader runs early (on DOMContentLoaded). It fetches <code>api/image_keys.json</code> for metadata and makes per-slot API calls to <code>/get-image?key=...</code>. When a response contains an uploaded image URL the loader applies it (or it falls back to the <code>default</code> entry).</p>
+                </div></li>
+                <li><div class="step-body">
+                    <strong>Remove any hardcoded <code>background-image</code> from the element's SCSS/CSS</strong>
+                    <p>The loader will apply the image dynamically, so any static <code>background-image</code> on that selector will conflict. Comment it out and leave a note:</p>
+                    <pre><code>// background-image removed — managed by image-slot-loader.js via data-image-slot</code></pre>
+                    <p class="explain">What this does: if a CSS rule sets a static background, the loader's dynamic image can be hidden underneath or create visual glitches. Removing the static image ensures the loader's image is what visitors see.</p>
+                </div></li>
+                <li><div class="step-body">
+                    <strong>Done!</strong>
+                    <p>Reload this dashboard — the new slot will appear here in the Image Slots section. Upload an image and it will go live immediately.</p>
+                    <p class="explain">What happens next: the admin UI requests the list of image keys from the server, finds your new entry, and creates a card for it. When you upload an image from that card the admin sends it to the API, which stores it and returns a URL — the site (and the loader) then serve that uploaded image instead of the default.</p>
+                </div></li>
+            </ol>
+
+            <div class="how-to-tip">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span>The loader starts elements invisible and fades them in once the image loads, so there's never a flash of the default CSS background.</span>
+            </div>
+        </div>
+    </div>
+
     <!-- Check if the user is logged in when loading the page -->
     <script>
         // See if local build or production build

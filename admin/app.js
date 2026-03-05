@@ -171,6 +171,36 @@ document.getElementById('fetch-logs').addEventListener('click', fetchLogs);
 
 //fetchLogs();
 
+// Scroll-to-bottom button behavior for logs
+(function () {
+    const logsContainer = document.getElementById('logs-container');
+    const scrollBtn = document.getElementById('scroll-bottom-btn');
+    if (!logsContainer || !scrollBtn) return;
+
+    function updateScrollBtnVisibility() {
+        // Show the button only when content overflows and the user is not already at the bottom
+        const canScroll = logsContainer.scrollHeight > logsContainer.clientHeight + 4;
+        const atBottom = (logsContainer.scrollHeight - logsContainer.scrollTop - logsContainer.clientHeight) <= 6;
+        scrollBtn.style.display = (canScroll && !atBottom) ? 'flex' : 'none';
+    }
+
+    // Click -> jump to bottom
+    scrollBtn.addEventListener('click', function () {
+        logsContainer.scrollTop = logsContainer.scrollHeight;
+        updateScrollBtnVisibility();
+    });
+
+    // Toggle visibility when user scrolls
+    logsContainer.addEventListener('scroll', updateScrollBtnVisibility);
+
+    // When logs content changes (e.g. after fetch), update visibility
+    const mo = new MutationObserver(updateScrollBtnVisibility);
+    mo.observe(logsContainer, { childList: true, characterData: true, subtree: true });
+
+    // Initial check after short delay to let existing content layout
+    setTimeout(updateScrollBtnVisibility, 100);
+})();
+
 document.getElementById('download-logs').addEventListener('click', function () {
     window.location.href = `${baseUrl}/download-logs`;
 });
@@ -776,19 +806,53 @@ function initImageSlotSearch() {
         searchInput.addEventListener('input', searchInput._slotSearchHandler);
     }
 
-    // Filter toggle
+    // Filter toggle: position dropdown as fixed so it won't cause page horizontal scroll
     if (filterBtn && filterDropdown) {
+        // helper to position dropdown inside viewport near the button
+        function positionFilterDropdown() {
+            var rect = filterBtn.getBoundingClientRect();
+            // ensure visible for measurement
+            filterDropdown.style.display = 'block';
+            filterDropdown.style.position = 'fixed';
+            filterDropdown.style.boxSizing = 'border-box';
+            filterDropdown.style.maxWidth = 'calc(100vw - 40px)';
+
+            // measure width after display
+            var ddw = filterDropdown.offsetWidth || Math.min(320, window.innerWidth - 40);
+            var vw = window.innerWidth;
+            var left = rect.left;
+            // keep a 20px gutter from viewport edges
+            var gutter = 20;
+            if (left + ddw > vw - gutter) left = Math.max(gutter, vw - ddw - gutter);
+            if (left < gutter) left = gutter;
+
+            filterDropdown.style.left = left + 'px';
+            filterDropdown.style.top = (rect.bottom + 6) + 'px';
+        }
+
         filterBtn.onclick = function (e) {
             e.stopPropagation();
-            var visible = filterDropdown.style.display !== 'none';
-            filterDropdown.style.display = visible ? 'none' : 'block';
+            var isVisible = filterDropdown.style.display === 'block';
+            if (isVisible) {
+                filterDropdown.style.display = 'none';
+            } else {
+                // show then position
+                filterDropdown.style.display = 'block';
+                filterDropdown.style.position = 'fixed';
+                positionFilterDropdown();
+            }
         };
+
         // Close dropdown when clicking outside
         document.addEventListener('click', function (e) {
             if (!filterDropdown.contains(e.target) && e.target !== filterBtn && !filterBtn.contains(e.target)) {
                 filterDropdown.style.display = 'none';
             }
         });
+
+        // Reposition on resize/scroll (use capture for scroll to catch container scrolling)
+        window.addEventListener('resize', function () { if (filterDropdown.style.display === 'block') positionFilterDropdown(); });
+        window.addEventListener('scroll', function () { if (filterDropdown.style.display === 'block') positionFilterDropdown(); }, true);
     }
 
     // Status checkboxes
@@ -816,6 +880,40 @@ function initImageSlotSearch() {
     // Build page filter checkboxes from rendered slot data
     buildPageFilterOptions();
 }
+
+// ----------------------------------------
+// How-to modal: explain adding dynamic image slots
+// ----------------------------------------
+(function () {
+    function wireModal(modalId, openBtnId, closeBtnId) {
+        var modal = document.getElementById(modalId);
+        var openBtn = document.getElementById(openBtnId);
+        var closeBtn = document.getElementById(closeBtnId);
+        if (!modal || !openBtn) return;
+
+        function openModal() {
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            if (closeBtn) closeBtn.focus();
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+            openBtn.focus();
+        }
+
+        openBtn.addEventListener('click', openModal);
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
+        });
+    }
+
+    wireModal('how-to-modal',     'how-to-dynamic-btn', 'how-to-modal-close');
+    wireModal('how-to-use-modal', 'how-to-use-btn',     'how-to-use-modal-close');
+})();
 
 // Kick off rendering when admin script loads (after check-login appended script)
 // If this script is appended dynamically after DOMContentLoaded, call immediately.

@@ -402,15 +402,6 @@ html {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
 }
-.popup .popup-content p {
-  padding-top: 2.3vh;
-  line-height: 1.5rem;
-  font-size: 20px;
-  max-width: 50ch;
-  margin: 0 auto;
-  font-weight: 400;
-  color: rgb(150, 150, 150);
-}
 .popup .popup-content {
   margin-right: 10px;
   margin-left: 10px;
@@ -525,31 +516,25 @@ html {
   background-size: cover;
   background-color: rgba(0, 0, 0, 0.5);
   background-blend-mode: soft-light;
-  min-height: 90vh;
-}
-.landing .hero {
-  /* make hero a flex container so children (title + typed text) are centered both
-     horizontally and vertically on top of the background image */
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.landing .hero {
   font-weight: 700;
   color: rgb(250, 250, 250);
   text-align: center;
-  /* occupy full viewport height so centering works as expected */
-  min-height: 90vh;
 }
 .landing .hero .title {
-  /* remove extra top padding now that flex centering handles vertical placement */
-  margin: 0;
   font-size: clamp(3rem, 10vw, 7.5rem);
+  text-align: center;
 }
 .landing .hero .typed-title {
-  /* small gap between title and typed lines; flex container handles centering */
-  margin-top: 0.5vh;
+  margin-top: 2rem;
   font-weight: 400;
   font-size: clamp(16px, 3vw, 18px);
+  text-align: center;
 }
 
 .team-container {
@@ -590,10 +575,6 @@ html {
   box-shadow: 0px 2px 10px 1px rgb(250, 200, 0);
 }
 
-.main .crescendo {
-  border-radius: 1vw; /* You can adjust the radius to your preference */
-  overflow: hidden; /* Ensures the border-radius is applied to the image content */
-}
 .main {
   margin-top: -5vh;
   counter-reset: none !important;

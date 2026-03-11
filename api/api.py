@@ -374,9 +374,12 @@ def create_app():
             api_logger.info(f"/get-image no default available for key={key}")
             return jsonify(error="No image mapping or default available"), 404
 
-        # If default is a relative path, convert to absolute URL depending on environment
+        # If default is a relative path, convert to absolute URL depending on environment.
+        # For production fallbacks we want the frontend host (pennrobotics.org),
+        # not the API host. Allow overriding via `FRONTEND_BASE` env var if needed.
         if isinstance(default, str):
             url = default
+            frontend_base = os.environ.get('FRONTEND_BASE', 'https://pennrobotics.org')
             if default.startswith('http://') or default.startswith('https://'):
                 url = default
             elif default.startswith('/'):
@@ -384,14 +387,14 @@ def create_app():
                 if host.startswith('127.0.0.1') or host.startswith('localhost'):
                     url = f"http://127.0.0.1:5500{default}"
                 else:
-                    url = request.host_url.rstrip('/') + default
+                    url = frontend_base.rstrip('/') + default
             else:
                 # relative path without leading slash; treat as relative to web root
                 host = request.host or ''
                 if host.startswith('127.0.0.1') or host.startswith('localhost'):
                     url = f"http://127.0.0.1:5500/{default}"
                 else:
-                    url = request.host_url.rstrip('/') + f"/{default}"
+                    url = frontend_base.rstrip('/') + f"/{default}"
 
             api_logger.info(f"/get-image returning default url for key={key}: {url}")
             return jsonify(url=url, key=key, version=None)

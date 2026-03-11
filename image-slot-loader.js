@@ -13,12 +13,9 @@
   var REVEAL_TIMEOUT_MS = 1200; // max ms to wait before showing default
 
   function detectBaseUrl() {
-    if (window.IMAGE_SLOT_API_BASE) {
-      return window.IMAGE_SLOT_API_BASE;
-    }
+    // Auto-detect: use local API when running from localhost, otherwise production API
     const host = window.location.hostname || '';
-    const port = window.location.port || '';
-    if (host === '127.0.0.1' || host === 'localhost' || host === '0.0.0.0' || host.startsWith('192.168.') || port === '5500') {
+    if (host === '127.0.0.1' || host === 'localhost' || host === '0.0.0.0' || host.startsWith('192.168.')) {
       return 'http://127.0.0.1:5000';
     }
     return DEFAULT_API_HOST;

@@ -7955,3 +7955,1714 @@
 2026-03-05 16:06:12,690 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
 2026-03-05 16:06:12,691 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
 2026-03-05 16:06:12,691 - INFO - 127.0.0.1 - - [05/Mar/2026 16:06:12] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 15:41:32,045 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.102.128.124:5000
+2026-03-11 15:41:32,046 - INFO - [33mPress CTRL+C to quit[0m
+2026-03-11 15:41:33,782 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 15:41:33,783 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:41:33,783 - INFO - Loaded 6 image keys
+2026-03-11 15:41:33,784 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 15:41:33,784 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 15:41:33,784 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:41:33,785 - INFO - Loaded 6 image keys
+2026-03-11 15:41:33,785 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 15:41:33,785 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 15:41:33,785 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 15:41:33,785 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 15:41:33,786 - INFO - 127.0.0.1 - - [11/Mar/2026 15:41:33] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 15:41:33,786 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 15:41:33,786 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 15:41:33,786 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 15:41:33,787 - INFO - 127.0.0.1 - - [11/Mar/2026 15:41:33] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 15:41:34,028 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 15:41:34,029 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:41:34,030 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 15:41:34,030 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:41:34,030 - INFO - Loaded 6 image keys
+2026-03-11 15:41:34,030 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 15:41:34,031 - INFO - Loaded 6 image keys
+2026-03-11 15:41:34,031 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 15:41:34,031 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 15:41:34,031 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 15:41:34,031 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 15:41:34,032 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 15:41:34,032 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 15:41:34,032 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 15:41:34,032 - INFO - 127.0.0.1 - - [11/Mar/2026 15:41:34] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 15:41:34,033 - INFO - 127.0.0.1 - - [11/Mar/2026 15:41:34] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 15:41:36,609 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 15:41:36,609 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:41:36,609 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 15:41:36,610 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:41:36,610 - INFO - Loaded 6 image keys
+2026-03-11 15:41:36,610 - INFO - Loaded 6 image keys
+2026-03-11 15:41:36,610 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 15:41:36,610 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 15:41:36,611 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 15:41:36,611 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 15:41:36,611 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 15:41:36,611 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 15:41:36,611 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 15:41:36,612 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 15:41:36,612 - INFO - 127.0.0.1 - - [11/Mar/2026 15:41:36] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 15:41:36,612 - INFO - 127.0.0.1 - - [11/Mar/2026 15:41:36] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 15:41:39,894 - INFO - /check-login called from 127.0.0.1; session keys=[]
+2026-03-11 15:41:39,894 - INFO - 127.0.0.1 - - [11/Mar/2026 15:41:39] "GET /check-login HTTP/1.1" 200 -
+2026-03-11 15:41:44,683 - INFO - 127.0.0.1 - - [11/Mar/2026 15:41:44] "OPTIONS /login HTTP/1.1" 200 -
+2026-03-11 15:41:44,685 - INFO - /login attempt for username=Admin from 127.0.0.1
+2026-03-11 15:41:44,687 - INFO - 127.0.0.1 - - [11/Mar/2026 15:41:44] "POST /login HTTP/1.1" 200 -
+2026-03-11 15:41:44,721 - INFO - /check-login called from 127.0.0.1; session keys=['logged_in', 'login_time']
+2026-03-11 15:41:44,721 - INFO - 127.0.0.1 - - [11/Mar/2026 15:41:44] "GET /check-login HTTP/1.1" 200 -
+2026-03-11 15:41:44,760 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 15:41:44,760 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:41:44,761 - INFO - /image-keys requested from 127.0.0.1
+2026-03-11 15:41:44,761 - INFO - Loaded 6 image keys
+2026-03-11 15:41:44,761 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:41:44,761 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 15:41:44,761 - INFO - Loaded 6 image keys
+2026-03-11 15:41:44,761 - INFO - /image-keys returning 6 keys
+2026-03-11 15:41:44,761 - INFO - 127.0.0.1 - - [11/Mar/2026 15:41:44] "GET /image-keys HTTP/1.1" 200 -
+2026-03-11 15:41:44,762 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 15:41:44,762 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 15:41:44,762 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 15:41:44,762 - INFO - 127.0.0.1 - - [11/Mar/2026 15:41:44] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 15:41:44,766 - INFO - /get-image called from 127.0.0.1 with key=contactus.hero
+2026-03-11 15:41:44,766 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:41:44,767 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 15:41:44,767 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:41:44,768 - INFO - Loaded 6 image keys
+2026-03-11 15:41:44,768 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 15:41:44,768 - INFO - get_image_mapping called for key=contactus.hero
+2026-03-11 15:41:44,768 - INFO - Loaded 6 image keys
+2026-03-11 15:41:44,768 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:41:44,769 - INFO - /get-image called from 127.0.0.1 with key=sponsorus.hero
+2026-03-11 15:41:44,769 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 15:41:44,770 - INFO - /get-image called from 127.0.0.1 with key=team135.hero
+2026-03-11 15:41:44,770 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:41:44,770 - INFO - get_image_mapping: no mapping found for key=contactus.hero
+2026-03-11 15:41:44,771 - INFO - /get-image called from 127.0.0.1 with key=team328.hero
+2026-03-11 15:41:44,771 - INFO - Loaded 6 image keys
+2026-03-11 15:41:44,771 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:41:44,771 - INFO - /get-image no mapping for key=contactus.hero; default defined as: /contact-us/Media/contact_us_bckgn.webp
+2026-03-11 15:41:44,771 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:41:44,771 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 15:41:44,771 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 15:41:44,771 - INFO - Loaded 6 image keys
+2026-03-11 15:41:44,771 - INFO - /get-image returning default url for key=contactus.hero: http://127.0.0.1:5500/contact-us/Media/contact_us_bckgn.webp
+2026-03-11 15:41:44,772 - INFO - Loaded 6 image keys
+2026-03-11 15:41:44,772 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 15:41:44,772 - INFO - Loaded 6 image keys
+2026-03-11 15:41:44,772 - INFO - get_image_mapping called for key=sponsorus.hero
+2026-03-11 15:41:44,772 - INFO - 127.0.0.1 - - [11/Mar/2026 15:41:44] "GET /get-image?key=contactus.hero HTTP/1.1" 200 -
+2026-03-11 15:41:44,772 - INFO - get_image_mapping called for key=team135.hero
+2026-03-11 15:41:44,772 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 15:41:44,772 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 15:41:44,772 - INFO - get_image_mapping called for key=team328.hero
+2026-03-11 15:41:44,773 - INFO - 127.0.0.1 - - [11/Mar/2026 15:41:44] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 15:41:44,773 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 15:41:44,773 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 15:41:44,773 - INFO - 127.0.0.1 - - [11/Mar/2026 15:41:44] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 15:41:44,774 - INFO - get_image_mapping: no mapping found for key=sponsorus.hero
+2026-03-11 15:41:44,774 - INFO - get_image_mapping: no mapping found for key=team328.hero
+2026-03-11 15:41:44,774 - INFO - /get-image no mapping for key=sponsorus.hero; default defined as: /sponsor-us/main-background.webp
+2026-03-11 15:41:44,775 - INFO - /get-image no mapping for key=team328.hero; default defined as: /328-page/Media/328-Background-Main.webp
+2026-03-11 15:41:44,775 - INFO - get_image_mapping: no mapping found for key=team135.hero
+2026-03-11 15:41:44,775 - INFO - /get-image returning default url for key=sponsorus.hero: http://127.0.0.1:5500/sponsor-us/main-background.webp
+2026-03-11 15:41:44,775 - INFO - /get-image returning default url for key=team328.hero: http://127.0.0.1:5500/328-page/Media/328-Background-Main.webp
+2026-03-11 15:41:44,775 - INFO - /get-image no mapping for key=team135.hero; default defined as: /team-135/media/team135-background-2.webp
+2026-03-11 15:41:44,776 - INFO - 127.0.0.1 - - [11/Mar/2026 15:41:44] "GET /get-image?key=sponsorus.hero HTTP/1.1" 200 -
+2026-03-11 15:41:44,776 - INFO - 127.0.0.1 - - [11/Mar/2026 15:41:44] "GET /get-image?key=team328.hero HTTP/1.1" 200 -
+2026-03-11 15:41:44,776 - INFO - /get-image returning default url for key=team135.hero: http://127.0.0.1:5500/team-135/media/team135-background-2.webp
+2026-03-11 15:41:44,777 - INFO - 127.0.0.1 - - [11/Mar/2026 15:41:44] "GET /get-image?key=team135.hero HTTP/1.1" 200 -
+2026-03-11 15:45:38,963 - INFO - /check-login called from 127.0.0.1; session keys=['logged_in', 'login_time']
+2026-03-11 15:45:38,963 - INFO - 127.0.0.1 - - [11/Mar/2026 15:45:38] "GET /check-login HTTP/1.1" 200 -
+2026-03-11 15:45:39,036 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 15:45:39,036 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:45:39,037 - INFO - /image-keys requested from 127.0.0.1
+2026-03-11 15:45:39,037 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:45:39,037 - INFO - Loaded 6 image keys
+2026-03-11 15:45:39,037 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 15:45:39,037 - INFO - Loaded 6 image keys
+2026-03-11 15:45:39,037 - INFO - /image-keys returning 6 keys
+2026-03-11 15:45:39,038 - INFO - 127.0.0.1 - - [11/Mar/2026 15:45:39] "GET /image-keys HTTP/1.1" 200 -
+2026-03-11 15:45:39,038 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 15:45:39,038 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 15:45:39,038 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 15:45:39,038 - INFO - 127.0.0.1 - - [11/Mar/2026 15:45:39] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 15:45:39,042 - INFO - /get-image called from 127.0.0.1 with key=contactus.hero
+2026-03-11 15:45:39,042 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:45:39,042 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 15:45:39,042 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:45:39,043 - INFO - Loaded 6 image keys
+2026-03-11 15:45:39,043 - INFO - Loaded 6 image keys
+2026-03-11 15:45:39,043 - INFO - get_image_mapping called for key=contactus.hero
+2026-03-11 15:45:39,043 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 15:45:39,043 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 15:45:39,044 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:45:39,044 - INFO - /get-image called from 127.0.0.1 with key=sponsorus.hero
+2026-03-11 15:45:39,044 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:45:39,045 - INFO - /get-image called from 127.0.0.1 with key=team135.hero
+2026-03-11 15:45:39,045 - INFO - get_image_mapping: no mapping found for key=contactus.hero
+2026-03-11 15:45:39,045 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 15:45:39,045 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:45:39,045 - INFO - Loaded 6 image keys
+2026-03-11 15:45:39,046 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 15:45:39,046 - INFO - /get-image no mapping for key=contactus.hero; default defined as: /contact-us/Media/contact_us_bckgn.webp
+2026-03-11 15:45:39,046 - INFO - Loaded 6 image keys
+2026-03-11 15:45:39,046 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 15:45:39,046 - INFO - /get-image called from 127.0.0.1 with key=team328.hero
+2026-03-11 15:45:39,046 - INFO - /get-image returning default url for key=contactus.hero: http://127.0.0.1:5500/contact-us/Media/contact_us_bckgn.webp
+2026-03-11 15:45:39,046 - INFO - get_image_mapping called for key=sponsorus.hero
+2026-03-11 15:45:39,046 - INFO - Loaded 6 image keys
+2026-03-11 15:45:39,047 - INFO - get_image_mapping called for key=team135.hero
+2026-03-11 15:45:39,046 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:45:39,047 - INFO - 127.0.0.1 - - [11/Mar/2026 15:45:39] "GET /get-image?key=contactus.hero HTTP/1.1" 200 -
+2026-03-11 15:45:39,047 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 15:45:39,046 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 15:45:39,047 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 15:45:39,047 - INFO - 127.0.0.1 - - [11/Mar/2026 15:45:39] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 15:45:39,047 - INFO - Loaded 6 image keys
+2026-03-11 15:45:39,047 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 15:45:39,047 - INFO - get_image_mapping: no mapping found for key=sponsorus.hero
+2026-03-11 15:45:39,048 - INFO - get_image_mapping: no mapping found for key=team135.hero
+2026-03-11 15:45:39,048 - INFO - get_image_mapping called for key=team328.hero
+2026-03-11 15:45:39,048 - INFO - 127.0.0.1 - - [11/Mar/2026 15:45:39] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 15:45:39,048 - INFO - /get-image no mapping for key=sponsorus.hero; default defined as: /sponsor-us/main-background.webp
+2026-03-11 15:45:39,049 - INFO - /get-image no mapping for key=team135.hero; default defined as: /team-135/media/team135-background-2.webp
+2026-03-11 15:45:39,049 - INFO - /get-image returning default url for key=sponsorus.hero: http://127.0.0.1:5500/sponsor-us/main-background.webp
+2026-03-11 15:45:39,049 - INFO - /get-image returning default url for key=team135.hero: http://127.0.0.1:5500/team-135/media/team135-background-2.webp
+2026-03-11 15:45:39,049 - INFO - get_image_mapping: no mapping found for key=team328.hero
+2026-03-11 15:45:39,050 - INFO - 127.0.0.1 - - [11/Mar/2026 15:45:39] "GET /get-image?key=sponsorus.hero HTTP/1.1" 200 -
+2026-03-11 15:45:39,050 - INFO - 127.0.0.1 - - [11/Mar/2026 15:45:39] "GET /get-image?key=team135.hero HTTP/1.1" 200 -
+2026-03-11 15:45:39,050 - INFO - /get-image no mapping for key=team328.hero; default defined as: /328-page/Media/328-Background-Main.webp
+2026-03-11 15:45:39,051 - INFO - /get-image returning default url for key=team328.hero: http://127.0.0.1:5500/328-page/Media/328-Background-Main.webp
+2026-03-11 15:45:39,051 - INFO - 127.0.0.1 - - [11/Mar/2026 15:45:39] "GET /get-image?key=team328.hero HTTP/1.1" 200 -
+2026-03-11 15:48:43,355 - INFO - /check-login called from 127.0.0.1; session keys=['logged_in', 'login_time']
+2026-03-11 15:48:43,356 - INFO - 127.0.0.1 - - [11/Mar/2026 15:48:43] "GET /check-login HTTP/1.1" 200 -
+2026-03-11 15:48:43,401 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 15:48:43,402 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:48:43,402 - INFO - Loaded 6 image keys
+2026-03-11 15:48:43,402 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 15:48:43,403 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 15:48:43,403 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 15:48:43,403 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 15:48:43,403 - INFO - 127.0.0.1 - - [11/Mar/2026 15:48:43] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 15:48:43,404 - INFO - /image-keys requested from 127.0.0.1
+2026-03-11 15:48:43,404 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:48:43,405 - INFO - Loaded 6 image keys
+2026-03-11 15:48:43,408 - INFO - /image-keys returning 6 keys
+2026-03-11 15:48:43,409 - INFO - 127.0.0.1 - - [11/Mar/2026 15:48:43] "GET /image-keys HTTP/1.1" 200 -
+2026-03-11 15:48:43,413 - INFO - /get-image called from 127.0.0.1 with key=contactus.hero
+2026-03-11 15:48:43,415 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:48:43,416 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 15:48:43,417 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:48:43,418 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 15:48:43,419 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:48:43,420 - INFO - Loaded 6 image keys
+2026-03-11 15:48:43,420 - INFO - get_image_mapping called for key=contactus.hero
+2026-03-11 15:48:43,422 - INFO - /get-image called from 127.0.0.1 with key=sponsorus.hero
+2026-03-11 15:48:43,423 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:48:43,423 - INFO - Loaded 6 image keys
+2026-03-11 15:48:43,423 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 15:48:43,424 - INFO - Loaded 6 image keys
+2026-03-11 15:48:43,424 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 15:48:43,426 - INFO - Loaded 6 image keys
+2026-03-11 15:48:43,426 - INFO - get_image_mapping called for key=sponsorus.hero
+2026-03-11 15:48:43,428 - INFO - /get-image called from 127.0.0.1 with key=team135.hero
+2026-03-11 15:48:43,428 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:48:43,429 - INFO - get_image_mapping: no mapping found for key=contactus.hero
+2026-03-11 15:48:43,429 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 15:48:43,429 - INFO - /get-image no mapping for key=contactus.hero; default defined as: /contact-us/Media/contact_us_bckgn.webp
+2026-03-11 15:48:43,430 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 15:48:43,430 - INFO - get_image_mapping: no mapping found for key=sponsorus.hero
+2026-03-11 15:48:43,433 - INFO - /get-image no mapping for key=sponsorus.hero; default defined as: /sponsor-us/main-background.webp
+2026-03-11 15:48:43,432 - INFO - /get-image called from 127.0.0.1 with key=team328.hero
+2026-03-11 15:48:43,433 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:48:43,432 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 15:48:43,433 - INFO - Loaded 6 image keys
+2026-03-11 15:48:43,433 - INFO - /get-image returning default url for key=sponsorus.hero: http://127.0.0.1:5500/sponsor-us/main-background.webp
+2026-03-11 15:48:43,432 - INFO - /get-image returning default url for key=contactus.hero: http://127.0.0.1:5500/contact-us/Media/contact_us_bckgn.webp
+2026-03-11 15:48:43,435 - INFO - 127.0.0.1 - - [11/Mar/2026 15:48:43] "GET /get-image?key=contactus.hero HTTP/1.1" 200 -
+2026-03-11 15:48:43,434 - INFO - 127.0.0.1 - - [11/Mar/2026 15:48:43] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 15:48:43,434 - INFO - get_image_mapping called for key=team135.hero
+2026-03-11 15:48:43,434 - INFO - 127.0.0.1 - - [11/Mar/2026 15:48:43] "GET /get-image?key=sponsorus.hero HTTP/1.1" 200 -
+2026-03-11 15:48:43,434 - INFO - Loaded 6 image keys
+2026-03-11 15:48:43,432 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 15:48:43,441 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 15:48:43,440 - INFO - get_image_mapping called for key=team328.hero
+2026-03-11 15:48:43,442 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 15:48:43,443 - INFO - 127.0.0.1 - - [11/Mar/2026 15:48:43] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 15:48:43,443 - INFO - get_image_mapping: no mapping found for key=team135.hero
+2026-03-11 15:48:43,443 - INFO - /get-image no mapping for key=team135.hero; default defined as: /team-135/media/team135-background-2.webp
+2026-03-11 15:48:43,443 - INFO - /get-image returning default url for key=team135.hero: http://127.0.0.1:5500/team-135/media/team135-background-2.webp
+2026-03-11 15:48:43,446 - INFO - get_image_mapping: no mapping found for key=team328.hero
+2026-03-11 15:48:43,447 - INFO - /get-image no mapping for key=team328.hero; default defined as: /328-page/Media/328-Background-Main.webp
+2026-03-11 15:48:43,447 - INFO - /get-image returning default url for key=team328.hero: http://127.0.0.1:5500/328-page/Media/328-Background-Main.webp
+2026-03-11 15:48:43,447 - INFO - 127.0.0.1 - - [11/Mar/2026 15:48:43] "GET /get-image?key=team328.hero HTTP/1.1" 200 -
+2026-03-11 15:48:43,447 - INFO - 127.0.0.1 - - [11/Mar/2026 15:48:43] "GET /get-image?key=team135.hero HTTP/1.1" 200 -
+2026-03-11 15:48:43,680 - INFO - /check-login called from 127.0.0.1; session keys=['logged_in', 'login_time']
+2026-03-11 15:48:43,681 - INFO - 127.0.0.1 - - [11/Mar/2026 15:48:43] "GET /check-login HTTP/1.1" 200 -
+2026-03-11 15:48:43,728 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 15:48:43,728 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:48:43,729 - INFO - /image-keys requested from 127.0.0.1
+2026-03-11 15:48:43,729 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:48:43,730 - INFO - Loaded 6 image keys
+2026-03-11 15:48:43,730 - INFO - /image-keys returning 6 keys
+2026-03-11 15:48:43,731 - INFO - 127.0.0.1 - - [11/Mar/2026 15:48:43] "GET /image-keys HTTP/1.1" 200 -
+2026-03-11 15:48:43,731 - INFO - Loaded 6 image keys
+2026-03-11 15:48:43,732 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 15:48:43,735 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 15:48:43,736 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 15:48:43,736 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 15:48:43,737 - INFO - 127.0.0.1 - - [11/Mar/2026 15:48:43] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 15:48:43,738 - INFO - /get-image called from 127.0.0.1 with key=contactus.hero
+2026-03-11 15:48:43,738 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:48:43,739 - INFO - Loaded 6 image keys
+2026-03-11 15:48:43,739 - INFO - get_image_mapping called for key=contactus.hero
+2026-03-11 15:48:43,740 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 15:48:43,742 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:48:43,742 - INFO - /get-image called from 127.0.0.1 with key=sponsorus.hero
+2026-03-11 15:48:43,743 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:48:43,743 - INFO - get_image_mapping: no mapping found for key=contactus.hero
+2026-03-11 15:48:43,743 - INFO - /get-image no mapping for key=contactus.hero; default defined as: /contact-us/Media/contact_us_bckgn.webp
+2026-03-11 15:48:43,744 - INFO - /get-image returning default url for key=contactus.hero: http://127.0.0.1:5500/contact-us/Media/contact_us_bckgn.webp
+2026-03-11 15:48:43,744 - INFO - 127.0.0.1 - - [11/Mar/2026 15:48:43] "GET /get-image?key=contactus.hero HTTP/1.1" 200 -
+2026-03-11 15:48:43,744 - INFO - Loaded 6 image keys
+2026-03-11 15:48:43,744 - INFO - get_image_mapping called for key=sponsorus.hero
+2026-03-11 15:48:43,745 - INFO - /get-image called from 127.0.0.1 with key=team135.hero
+2026-03-11 15:48:43,745 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:48:43,745 - INFO - Loaded 6 image keys
+2026-03-11 15:48:43,746 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 15:48:43,748 - INFO - /get-image called from 127.0.0.1 with key=team328.hero
+2026-03-11 15:48:43,748 - INFO - get_image_mapping: no mapping found for key=sponsorus.hero
+2026-03-11 15:48:43,748 - INFO - Loaded 6 image keys
+2026-03-11 15:48:43,750 - INFO - get_image_mapping called for key=team135.hero
+2026-03-11 15:48:43,748 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:48:43,749 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 15:48:43,750 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 15:48:43,748 - INFO - /get-image no mapping for key=sponsorus.hero; default defined as: /sponsor-us/main-background.webp
+2026-03-11 15:48:43,750 - INFO - /get-image returning default url for key=sponsorus.hero: http://127.0.0.1:5500/sponsor-us/main-background.webp
+2026-03-11 15:48:43,750 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:48:43,751 - INFO - Loaded 6 image keys
+2026-03-11 15:48:43,750 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 15:48:43,751 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 15:48:43,751 - INFO - get_image_mapping: no mapping found for key=team135.hero
+2026-03-11 15:48:43,752 - INFO - /get-image no mapping for key=team135.hero; default defined as: /team-135/media/team135-background-2.webp
+2026-03-11 15:48:43,750 - INFO - Loaded 6 image keys
+2026-03-11 15:48:43,752 - INFO - get_image_mapping called for key=team328.hero
+2026-03-11 15:48:43,752 - INFO - 127.0.0.1 - - [11/Mar/2026 15:48:43] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 15:48:43,751 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 15:48:43,752 - INFO - /get-image returning default url for key=team135.hero: http://127.0.0.1:5500/team-135/media/team135-background-2.webp
+2026-03-11 15:48:43,751 - INFO - 127.0.0.1 - - [11/Mar/2026 15:48:43] "GET /get-image?key=sponsorus.hero HTTP/1.1" 200 -
+2026-03-11 15:48:43,753 - INFO - get_image_mapping: no mapping found for key=team328.hero
+2026-03-11 15:48:43,754 - INFO - 127.0.0.1 - - [11/Mar/2026 15:48:43] "GET /get-image?key=team135.hero HTTP/1.1" 200 -
+2026-03-11 15:48:43,754 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 15:48:43,755 - INFO - /get-image no mapping for key=team328.hero; default defined as: /328-page/Media/328-Background-Main.webp
+2026-03-11 15:48:43,755 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 15:48:43,756 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 15:48:43,756 - INFO - /get-image returning default url for key=team328.hero: http://127.0.0.1:5500/328-page/Media/328-Background-Main.webp
+2026-03-11 15:48:43,756 - INFO - 127.0.0.1 - - [11/Mar/2026 15:48:43] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 15:48:43,758 - INFO - 127.0.0.1 - - [11/Mar/2026 15:48:43] "GET /get-image?key=team328.hero HTTP/1.1" 200 -
+2026-03-11 15:49:05,880 - INFO - /get-image called from 127.0.0.1 with key=team135.hero
+2026-03-11 15:49:05,881 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:05,881 - INFO - Loaded 6 image keys
+2026-03-11 15:49:05,881 - INFO - get_image_mapping called for key=team135.hero
+2026-03-11 15:49:05,882 - INFO - get_image_mapping: no mapping found for key=team135.hero
+2026-03-11 15:49:05,882 - INFO - /get-image no mapping for key=team135.hero; default defined as: /team-135/media/team135-background-2.webp
+2026-03-11 15:49:05,882 - INFO - /get-image returning default url for key=team135.hero: http://127.0.0.1:5500/team-135/media/team135-background-2.webp
+2026-03-11 15:49:05,883 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:05] "GET /get-image?key=team135.hero HTTP/1.1" 200 -
+2026-03-11 15:49:09,490 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 15:49:09,490 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:09,491 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 15:49:09,491 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:09,491 - INFO - Loaded 6 image keys
+2026-03-11 15:49:09,491 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 15:49:09,492 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 15:49:09,492 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 15:49:09,492 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 15:49:09,492 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:09] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 15:49:09,493 - INFO - Loaded 6 image keys
+2026-03-11 15:49:09,493 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 15:49:09,493 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 15:49:09,493 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 15:49:09,493 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 15:49:09,494 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:09] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 15:49:15,018 - INFO - /upload-image called from 127.0.0.1
+2026-03-11 15:49:15,020 - INFO - /upload-image params: key=landing.hero, image_present=True
+2026-03-11 15:49:15,020 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:15,020 - INFO - Loaded 6 image keys
+2026-03-11 15:49:15,020 - INFO - /upload-image original file size=135622 bytes; max_size=524288000
+2026-03-11 15:49:15,021 - INFO - /upload-image mimetype=image/jpeg
+2026-03-11 15:49:15,080 - INFO - /upload-image compressed: 135622 -> 140491 bytes (-3.6% reduction)
+2026-03-11 15:49:15,082 - INFO - /upload-image saved file to uploads\478af785fcc34a988255ea564f77caba_contact_us_bckgn.jpg
+2026-03-11 15:49:15,083 - INFO - set_image_mapping called for key=landing.hero filename=uploads\478af785fcc34a988255ea564f77caba_contact_us_bckgn.jpg
+2026-03-11 15:49:15,085 - INFO - set_image_mapping created key=landing.hero version=1
+2026-03-11 15:49:15,094 - INFO - /upload-image updated DB mapping for key=landing.hero with version=1
+2026-03-11 15:49:15,094 - INFO - Image uploaded for key=landing.hero: uploads\478af785fcc34a988255ea564f77caba_contact_us_bckgn.jpg -> http://127.0.0.1:5500/uploads/478af785fcc34a988255ea564f77caba_contact_us_bckgn.jpg
+2026-03-11 15:49:15,095 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:15] "[35m[1mPOST /upload-image HTTP/1.1[0m" 201 -
+2026-03-11 15:49:15,298 - INFO - /check-login called from 127.0.0.1; session keys=['logged_in', 'login_time']
+2026-03-11 15:49:15,299 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:15] "GET /check-login HTTP/1.1" 200 -
+2026-03-11 15:49:15,319 - INFO - /get-image called from 127.0.0.1 with key=team135.hero
+2026-03-11 15:49:15,319 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:15,319 - INFO - Loaded 6 image keys
+2026-03-11 15:49:15,319 - INFO - get_image_mapping called for key=team135.hero
+2026-03-11 15:49:15,321 - INFO - get_image_mapping: no mapping found for key=team135.hero
+2026-03-11 15:49:15,321 - INFO - /get-image no mapping for key=team135.hero; default defined as: /team-135/media/team135-background-2.webp
+2026-03-11 15:49:15,321 - INFO - /get-image returning default url for key=team135.hero: http://127.0.0.1:5500/team-135/media/team135-background-2.webp
+2026-03-11 15:49:15,321 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:15] "GET /get-image?key=team135.hero HTTP/1.1" 200 -
+2026-03-11 15:49:15,337 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 15:49:15,338 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:15,338 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 15:49:15,338 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:15,339 - INFO - Loaded 6 image keys
+2026-03-11 15:49:15,339 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 15:49:15,339 - INFO - Loaded 6 image keys
+2026-03-11 15:49:15,339 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 15:49:15,340 - INFO - get_image_mapping returning for key=landing.hero: {'filename': 'uploads\\478af785fcc34a988255ea564f77caba_contact_us_bckgn.jpg', 'mime': 'image/jpeg', 'uploaded_at': '2026-03-11T19:49:15.083849', 'version': 1}
+2026-03-11 15:49:15,340 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 15:49:15,340 - INFO - /get-image returning mapped url for key=landing.hero: http://127.0.0.1:5500/uploads/478af785fcc34a988255ea564f77caba_contact_us_bckgn.jpg?v=1 (version=1)
+2026-03-11 15:49:15,340 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 15:49:15,341 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:15] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 15:49:15,341 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 15:49:15,341 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:15] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 15:49:15,350 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 15:49:15,350 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:15,351 - INFO - Loaded 6 image keys
+2026-03-11 15:49:15,351 - INFO - /image-keys requested from 127.0.0.1
+2026-03-11 15:49:15,351 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 15:49:15,352 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:15,352 - INFO - Loaded 6 image keys
+2026-03-11 15:49:15,352 - INFO - /image-keys returning 6 keys
+2026-03-11 15:49:15,352 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:15] "GET /image-keys HTTP/1.1" 200 -
+2026-03-11 15:49:15,353 - INFO - get_image_mapping returning for key=landing.hero: {'filename': 'uploads\\478af785fcc34a988255ea564f77caba_contact_us_bckgn.jpg', 'mime': 'image/jpeg', 'uploaded_at': '2026-03-11T19:49:15.083849', 'version': 1}
+2026-03-11 15:49:15,353 - INFO - /get-image returning mapped url for key=landing.hero: http://127.0.0.1:5500/uploads/478af785fcc34a988255ea564f77caba_contact_us_bckgn.jpg?v=1 (version=1)
+2026-03-11 15:49:15,353 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:15] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 15:49:15,359 - INFO - /get-image called from 127.0.0.1 with key=contactus.hero
+2026-03-11 15:49:15,359 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:15,360 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 15:49:15,360 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:15,361 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 15:49:15,361 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:15,362 - INFO - Loaded 6 image keys
+2026-03-11 15:49:15,362 - INFO - get_image_mapping called for key=contactus.hero
+2026-03-11 15:49:15,362 - INFO - /get-image called from 127.0.0.1 with key=sponsorus.hero
+2026-03-11 15:49:15,362 - INFO - Loaded 6 image keys
+2026-03-11 15:49:15,363 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:15,364 - INFO - /get-image called from 127.0.0.1 with key=team135.hero
+2026-03-11 15:49:15,364 - INFO - Loaded 6 image keys
+2026-03-11 15:49:15,364 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 15:49:15,365 - INFO - /get-image called from 127.0.0.1 with key=team328.hero
+2026-03-11 15:49:15,365 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:15,365 - INFO - get_image_mapping: no mapping found for key=contactus.hero
+2026-03-11 15:49:15,365 - INFO - Loaded 6 image keys
+2026-03-11 15:49:15,365 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 15:49:15,366 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:15,366 - INFO - /get-image no mapping for key=contactus.hero; default defined as: /contact-us/Media/contact_us_bckgn.webp
+2026-03-11 15:49:15,366 - INFO - get_image_mapping called for key=sponsorus.hero
+2026-03-11 15:49:15,366 - INFO - Loaded 6 image keys
+2026-03-11 15:49:15,367 - INFO - get_image_mapping returning for key=landing.hero: {'filename': 'uploads\\478af785fcc34a988255ea564f77caba_contact_us_bckgn.jpg', 'mime': 'image/jpeg', 'uploaded_at': '2026-03-11T19:49:15.083849', 'version': 1}
+2026-03-11 15:49:15,367 - INFO - /get-image returning default url for key=contactus.hero: http://127.0.0.1:5500/contact-us/Media/contact_us_bckgn.webp
+2026-03-11 15:49:15,367 - INFO - get_image_mapping called for key=team135.hero
+2026-03-11 15:49:15,367 - INFO - Loaded 6 image keys
+2026-03-11 15:49:15,367 - INFO - /get-image returning mapped url for key=landing.hero: http://127.0.0.1:5500/uploads/478af785fcc34a988255ea564f77caba_contact_us_bckgn.jpg?v=1 (version=1)
+2026-03-11 15:49:15,367 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 15:49:15,368 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:15] "GET /get-image?key=contactus.hero HTTP/1.1" 200 -
+2026-03-11 15:49:15,368 - INFO - get_image_mapping called for key=team328.hero
+2026-03-11 15:49:15,368 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:15] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 15:49:15,368 - INFO - get_image_mapping: no mapping found for key=sponsorus.hero
+2026-03-11 15:49:15,368 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 15:49:15,369 - INFO - get_image_mapping: no mapping found for key=team135.hero
+2026-03-11 15:49:15,371 - INFO - /get-image no mapping for key=team135.hero; default defined as: /team-135/media/team135-background-2.webp
+2026-03-11 15:49:15,370 - INFO - get_image_mapping: no mapping found for key=team328.hero
+2026-03-11 15:49:15,372 - INFO - /get-image no mapping for key=team328.hero; default defined as: /328-page/Media/328-Background-Main.webp
+2026-03-11 15:49:15,371 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 15:49:15,371 - INFO - /get-image returning default url for key=team135.hero: http://127.0.0.1:5500/team-135/media/team135-background-2.webp
+2026-03-11 15:49:15,369 - INFO - /get-image no mapping for key=sponsorus.hero; default defined as: /sponsor-us/main-background.webp
+2026-03-11 15:49:15,372 - INFO - /get-image returning default url for key=team328.hero: http://127.0.0.1:5500/328-page/Media/328-Background-Main.webp
+2026-03-11 15:49:15,373 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:15] "GET /get-image?key=team328.hero HTTP/1.1" 200 -
+2026-03-11 15:49:15,373 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:15] "GET /get-image?key=team135.hero HTTP/1.1" 200 -
+2026-03-11 15:49:15,373 - INFO - /get-image returning default url for key=sponsorus.hero: http://127.0.0.1:5500/sponsor-us/main-background.webp
+2026-03-11 15:49:15,372 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:15] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 15:49:15,374 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:15] "GET /get-image?key=sponsorus.hero HTTP/1.1" 200 -
+2026-03-11 15:49:18,888 - INFO - /delete-image called from 127.0.0.1 for key=landing.hero
+2026-03-11 15:49:18,888 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:18,889 - INFO - Loaded 6 image keys
+2026-03-11 15:49:18,889 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 15:49:18,890 - INFO - get_image_mapping returning for key=landing.hero: {'filename': 'uploads\\478af785fcc34a988255ea564f77caba_contact_us_bckgn.jpg', 'mime': 'image/jpeg', 'uploaded_at': '2026-03-11T19:49:15.083849', 'version': 1}
+2026-03-11 15:49:18,890 - INFO - /delete-image removed file uploads\478af785fcc34a988255ea564f77caba_contact_us_bckgn.jpg for key=landing.hero
+2026-03-11 15:49:18,901 - INFO - /delete-image deleted mapping for key=landing.hero
+2026-03-11 15:49:18,901 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:18] "POST /delete-image HTTP/1.1" 200 -
+2026-03-11 15:49:18,905 - INFO - /image-keys requested from 127.0.0.1
+2026-03-11 15:49:18,905 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:18,906 - INFO - Loaded 6 image keys
+2026-03-11 15:49:18,906 - INFO - /image-keys returning 6 keys
+2026-03-11 15:49:18,906 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:18] "GET /image-keys HTTP/1.1" 200 -
+2026-03-11 15:49:18,910 - INFO - /get-image called from 127.0.0.1 with key=contactus.hero
+2026-03-11 15:49:18,911 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 15:49:18,911 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:18,912 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:18,912 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 15:49:18,914 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:18,914 - INFO - Loaded 6 image keys
+2026-03-11 15:49:18,914 - INFO - /get-image called from 127.0.0.1 with key=sponsorus.hero
+2026-03-11 15:49:18,914 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 15:49:18,913 - INFO - Loaded 6 image keys
+2026-03-11 15:49:18,917 - INFO - get_image_mapping called for key=contactus.hero
+2026-03-11 15:49:18,915 - INFO - Loaded 6 image keys
+2026-03-11 15:49:18,916 - INFO - /get-image called from 127.0.0.1 with key=team135.hero
+2026-03-11 15:49:18,917 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:18,915 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:18,917 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 15:49:18,917 - INFO - Loaded 6 image keys
+2026-03-11 15:49:18,918 - INFO - get_image_mapping called for key=team135.hero
+2026-03-11 15:49:18,918 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 15:49:18,918 - INFO - Loaded 6 image keys
+2026-03-11 15:49:18,919 - INFO - /get-image called from 127.0.0.1 with key=team328.hero
+2026-03-11 15:49:18,920 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:18,919 - INFO - get_image_mapping: no mapping found for key=contactus.hero
+2026-03-11 15:49:18,920 - INFO - get_image_mapping called for key=sponsorus.hero
+2026-03-11 15:49:18,921 - INFO - Loaded 6 image keys
+2026-03-11 15:49:18,921 - INFO - get_image_mapping called for key=team328.hero
+2026-03-11 15:49:18,920 - INFO - get_image_mapping: no mapping found for key=team135.hero
+2026-03-11 15:49:18,920 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 15:49:18,919 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 15:49:18,920 - INFO - /get-image no mapping for key=contactus.hero; default defined as: /contact-us/Media/contact_us_bckgn.webp
+2026-03-11 15:49:18,922 - INFO - /get-image returning default url for key=contactus.hero: http://127.0.0.1:5500/contact-us/Media/contact_us_bckgn.webp
+2026-03-11 15:49:18,921 - INFO - /get-image no mapping for key=team135.hero; default defined as: /team-135/media/team135-background-2.webp
+2026-03-11 15:49:18,922 - INFO - /get-image returning default url for key=team135.hero: http://127.0.0.1:5500/team-135/media/team135-background-2.webp
+2026-03-11 15:49:18,921 - INFO - get_image_mapping: no mapping found for key=sponsorus.hero
+2026-03-11 15:49:18,923 - INFO - /get-image no mapping for key=sponsorus.hero; default defined as: /sponsor-us/main-background.webp
+2026-03-11 15:49:18,923 - INFO - /get-image returning default url for key=sponsorus.hero: http://127.0.0.1:5500/sponsor-us/main-background.webp
+2026-03-11 15:49:18,922 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:18] "GET /get-image?key=contactus.hero HTTP/1.1" 200 -
+2026-03-11 15:49:18,922 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 15:49:18,924 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:18] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 15:49:18,922 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:18] "GET /get-image?key=team135.hero HTTP/1.1" 200 -
+2026-03-11 15:49:18,921 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 15:49:18,923 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:18] "GET /get-image?key=sponsorus.hero HTTP/1.1" 200 -
+2026-03-11 15:49:18,922 - INFO - get_image_mapping: no mapping found for key=team328.hero
+2026-03-11 15:49:18,925 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 15:49:18,926 - INFO - /get-image no mapping for key=team328.hero; default defined as: /328-page/Media/328-Background-Main.webp
+2026-03-11 15:49:18,927 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:18] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 15:49:18,927 - INFO - /get-image returning default url for key=team328.hero: http://127.0.0.1:5500/328-page/Media/328-Background-Main.webp
+2026-03-11 15:49:18,928 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:18] "GET /get-image?key=team328.hero HTTP/1.1" 200 -
+2026-03-11 15:49:19,164 - INFO - /check-login called from 127.0.0.1; session keys=['logged_in', 'login_time']
+2026-03-11 15:49:19,164 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:19] "GET /check-login HTTP/1.1" 200 -
+2026-03-11 15:49:19,215 - INFO - /get-image called from 127.0.0.1 with key=team135.hero
+2026-03-11 15:49:19,215 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:19,216 - INFO - Loaded 6 image keys
+2026-03-11 15:49:19,216 - INFO - get_image_mapping called for key=team135.hero
+2026-03-11 15:49:19,217 - INFO - get_image_mapping: no mapping found for key=team135.hero
+2026-03-11 15:49:19,217 - INFO - /get-image no mapping for key=team135.hero; default defined as: /team-135/media/team135-background-2.webp
+2026-03-11 15:49:19,217 - INFO - /get-image returning default url for key=team135.hero: http://127.0.0.1:5500/team-135/media/team135-background-2.webp
+2026-03-11 15:49:19,217 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:19] "GET /get-image?key=team135.hero HTTP/1.1" 200 -
+2026-03-11 15:49:19,229 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 15:49:19,230 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:19,230 - INFO - Loaded 6 image keys
+2026-03-11 15:49:19,230 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 15:49:19,232 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 15:49:19,233 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 15:49:19,233 - INFO - /image-keys requested from 127.0.0.1
+2026-03-11 15:49:19,233 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 15:49:19,233 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:19,234 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:19] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 15:49:19,234 - INFO - Loaded 6 image keys
+2026-03-11 15:49:19,234 - INFO - /image-keys returning 6 keys
+2026-03-11 15:49:19,235 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:19] "GET /image-keys HTTP/1.1" 200 -
+2026-03-11 15:49:19,240 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 15:49:19,240 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:19,241 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 15:49:19,241 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:19,241 - INFO - Loaded 6 image keys
+2026-03-11 15:49:19,242 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 15:49:19,242 - INFO - Loaded 6 image keys
+2026-03-11 15:49:19,242 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 15:49:19,243 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 15:49:19,243 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 15:49:19,243 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 15:49:19,243 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 15:49:19,243 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 15:49:19,243 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 15:49:19,243 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:19] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 15:49:19,244 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:19] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 15:49:19,245 - INFO - /get-image called from 127.0.0.1 with key=contactus.hero
+2026-03-11 15:49:19,246 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:19,247 - INFO - Loaded 6 image keys
+2026-03-11 15:49:19,248 - INFO - /get-image called from 127.0.0.1 with key=sponsorus.hero
+2026-03-11 15:49:19,249 - INFO - get_image_mapping called for key=contactus.hero
+2026-03-11 15:49:19,250 - INFO - /get-image called from 127.0.0.1 with key=team135.hero
+2026-03-11 15:49:19,250 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:19,252 - INFO - /get-image called from 127.0.0.1 with key=team328.hero
+2026-03-11 15:49:19,253 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:19,253 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 15:49:19,253 - INFO - get_image_mapping: no mapping found for key=contactus.hero
+2026-03-11 15:49:19,252 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:19,254 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 15:49:19,254 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:19,254 - INFO - Loaded 6 image keys
+2026-03-11 15:49:19,254 - INFO - Loaded 6 image keys
+2026-03-11 15:49:19,255 - INFO - /get-image no mapping for key=contactus.hero; default defined as: /contact-us/Media/contact_us_bckgn.webp
+2026-03-11 15:49:19,255 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:49:19,255 - INFO - get_image_mapping called for key=sponsorus.hero
+2026-03-11 15:49:19,255 - INFO - Loaded 6 image keys
+2026-03-11 15:49:19,256 - INFO - get_image_mapping called for key=team135.hero
+2026-03-11 15:49:19,255 - INFO - get_image_mapping called for key=team328.hero
+2026-03-11 15:49:19,255 - INFO - Loaded 6 image keys
+2026-03-11 15:49:19,256 - INFO - Loaded 6 image keys
+2026-03-11 15:49:19,255 - INFO - /get-image returning default url for key=contactus.hero: http://127.0.0.1:5500/contact-us/Media/contact_us_bckgn.webp
+2026-03-11 15:49:19,256 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 15:49:19,256 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 15:49:19,257 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:19] "GET /get-image?key=contactus.hero HTTP/1.1" 200 -
+2026-03-11 15:49:19,257 - INFO - get_image_mapping: no mapping found for key=sponsorus.hero
+2026-03-11 15:49:19,257 - INFO - get_image_mapping: no mapping found for key=team135.hero
+2026-03-11 15:49:19,258 - INFO - /get-image no mapping for key=team135.hero; default defined as: /team-135/media/team135-background-2.webp
+2026-03-11 15:49:19,258 - INFO - /get-image no mapping for key=sponsorus.hero; default defined as: /sponsor-us/main-background.webp
+2026-03-11 15:49:19,258 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 15:49:19,258 - INFO - get_image_mapping: no mapping found for key=team328.hero
+2026-03-11 15:49:19,259 - INFO - /get-image no mapping for key=team328.hero; default defined as: /328-page/Media/328-Background-Main.webp
+2026-03-11 15:49:19,259 - INFO - /get-image returning default url for key=team328.hero: http://127.0.0.1:5500/328-page/Media/328-Background-Main.webp
+2026-03-11 15:49:19,259 - INFO - /get-image returning default url for key=sponsorus.hero: http://127.0.0.1:5500/sponsor-us/main-background.webp
+2026-03-11 15:49:19,259 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 15:49:19,261 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 15:49:19,259 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 15:49:19,261 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 15:49:19,259 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:19] "GET /get-image?key=team328.hero HTTP/1.1" 200 -
+2026-03-11 15:49:19,258 - INFO - /get-image returning default url for key=team135.hero: http://127.0.0.1:5500/team-135/media/team135-background-2.webp
+2026-03-11 15:49:19,261 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:19] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 15:49:19,260 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:19] "GET /get-image?key=sponsorus.hero HTTP/1.1" 200 -
+2026-03-11 15:49:19,261 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 15:49:19,262 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:19] "GET /get-image?key=team135.hero HTTP/1.1" 200 -
+2026-03-11 15:49:19,262 - INFO - 127.0.0.1 - - [11/Mar/2026 15:49:19] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 15:52:36,822 - INFO - /check-login called from 127.0.0.1; session keys=['logged_in', 'login_time']
+2026-03-11 15:52:36,823 - INFO - 127.0.0.1 - - [11/Mar/2026 15:52:36] "GET /check-login HTTP/1.1" 200 -
+2026-03-11 15:52:36,837 - INFO - /get-image called from 127.0.0.1 with key=team135.hero
+2026-03-11 15:52:36,837 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:52:36,837 - INFO - Loaded 6 image keys
+2026-03-11 15:52:36,837 - INFO - get_image_mapping called for key=team135.hero
+2026-03-11 15:52:36,838 - INFO - get_image_mapping: no mapping found for key=team135.hero
+2026-03-11 15:52:36,838 - INFO - /get-image no mapping for key=team135.hero; default defined as: /team-135/media/team135-background-2.webp
+2026-03-11 15:52:36,838 - INFO - /get-image returning default url for key=team135.hero: http://127.0.0.1:5500/team-135/media/team135-background-2.webp
+2026-03-11 15:52:36,838 - INFO - 127.0.0.1 - - [11/Mar/2026 15:52:36] "GET /get-image?key=team135.hero HTTP/1.1" 200 -
+2026-03-11 15:52:36,945 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 15:52:36,945 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:52:36,945 - INFO - Loaded 6 image keys
+2026-03-11 15:52:36,945 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 15:52:36,946 - INFO - /image-keys requested from 127.0.0.1
+2026-03-11 15:52:36,946 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:52:36,946 - INFO - Loaded 6 image keys
+2026-03-11 15:52:36,946 - INFO - /image-keys returning 6 keys
+2026-03-11 15:52:36,947 - INFO - 127.0.0.1 - - [11/Mar/2026 15:52:36] "GET /image-keys HTTP/1.1" 200 -
+2026-03-11 15:52:36,947 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 15:52:36,947 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 15:52:36,947 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 15:52:36,947 - INFO - 127.0.0.1 - - [11/Mar/2026 15:52:36] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 15:52:36,962 - INFO - /get-image called from 127.0.0.1 with key=contactus.hero
+2026-03-11 15:52:36,962 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:52:36,963 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 15:52:36,963 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:52:36,964 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 15:52:36,964 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:52:36,965 - INFO - Loaded 6 image keys
+2026-03-11 15:52:36,965 - INFO - get_image_mapping called for key=contactus.hero
+2026-03-11 15:52:36,965 - INFO - /get-image called from 127.0.0.1 with key=sponsorus.hero
+2026-03-11 15:52:36,966 - INFO - Loaded 6 image keys
+2026-03-11 15:52:36,966 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:52:36,966 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 15:52:36,966 - INFO - Loaded 6 image keys
+2026-03-11 15:52:36,967 - INFO - /get-image called from 127.0.0.1 with key=team135.hero
+2026-03-11 15:52:36,967 - INFO - get_image_mapping: no mapping found for key=contactus.hero
+2026-03-11 15:52:36,968 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 15:52:36,968 - INFO - /get-image called from 127.0.0.1 with key=team328.hero
+2026-03-11 15:52:36,969 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:52:36,969 - INFO - Loaded 6 image keys
+2026-03-11 15:52:36,969 - INFO - /get-image no mapping for key=contactus.hero; default defined as: /contact-us/Media/contact_us_bckgn.webp
+2026-03-11 15:52:36,969 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 15:52:36,969 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:52:36,969 - INFO - get_image_mapping called for key=sponsorus.hero
+2026-03-11 15:52:36,969 - INFO - /get-image returning default url for key=contactus.hero: http://127.0.0.1:5500/contact-us/Media/contact_us_bckgn.webp
+2026-03-11 15:52:36,969 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 15:52:36,970 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 15:52:36,970 - INFO - 127.0.0.1 - - [11/Mar/2026 15:52:36] "GET /get-image?key=contactus.hero HTTP/1.1" 200 -
+2026-03-11 15:52:36,970 - INFO - Loaded 6 image keys
+2026-03-11 15:52:36,970 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 15:52:36,970 - INFO - Loaded 6 image keys
+2026-03-11 15:52:36,971 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 15:52:36,971 - INFO - get_image_mapping: no mapping found for key=sponsorus.hero
+2026-03-11 15:52:36,971 - INFO - get_image_mapping called for key=team135.hero
+2026-03-11 15:52:36,971 - INFO - 127.0.0.1 - - [11/Mar/2026 15:52:36] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 15:52:36,971 - INFO - get_image_mapping called for key=team328.hero
+2026-03-11 15:52:36,971 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 15:52:36,972 - INFO - /get-image no mapping for key=sponsorus.hero; default defined as: /sponsor-us/main-background.webp
+2026-03-11 15:52:36,972 - INFO - 127.0.0.1 - - [11/Mar/2026 15:52:36] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 15:52:36,973 - INFO - /get-image returning default url for key=sponsorus.hero: http://127.0.0.1:5500/sponsor-us/main-background.webp
+2026-03-11 15:52:36,973 - INFO - 127.0.0.1 - - [11/Mar/2026 15:52:36] "GET /get-image?key=sponsorus.hero HTTP/1.1" 200 -
+2026-03-11 15:52:36,974 - INFO - get_image_mapping: no mapping found for key=team135.hero
+2026-03-11 15:52:36,974 - INFO - /get-image no mapping for key=team135.hero; default defined as: /team-135/media/team135-background-2.webp
+2026-03-11 15:52:36,974 - INFO - get_image_mapping: no mapping found for key=team328.hero
+2026-03-11 15:52:36,974 - INFO - /get-image returning default url for key=team135.hero: http://127.0.0.1:5500/team-135/media/team135-background-2.webp
+2026-03-11 15:52:36,974 - INFO - /get-image no mapping for key=team328.hero; default defined as: /328-page/Media/328-Background-Main.webp
+2026-03-11 15:52:36,974 - INFO - 127.0.0.1 - - [11/Mar/2026 15:52:36] "GET /get-image?key=team135.hero HTTP/1.1" 200 -
+2026-03-11 15:52:36,975 - INFO - /get-image returning default url for key=team328.hero: http://127.0.0.1:5500/328-page/Media/328-Background-Main.webp
+2026-03-11 15:52:36,976 - INFO - 127.0.0.1 - - [11/Mar/2026 15:52:36] "GET /get-image?key=team328.hero HTTP/1.1" 200 -
+2026-03-11 15:53:19,842 - INFO - /get-image called from 127.0.0.1 with key=contactus.hero
+2026-03-11 15:53:19,842 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:53:19,842 - INFO - Loaded 6 image keys
+2026-03-11 15:53:19,842 - INFO - get_image_mapping called for key=contactus.hero
+2026-03-11 15:53:19,843 - INFO - get_image_mapping: no mapping found for key=contactus.hero
+2026-03-11 15:53:19,843 - INFO - /get-image no mapping for key=contactus.hero; default defined as: /contact-us/Media/contact_us_bckgn.webp
+2026-03-11 15:53:19,843 - INFO - /get-image returning default url for key=contactus.hero: http://127.0.0.1:5500/contact-us/Media/contact_us_bckgn.webp
+2026-03-11 15:53:19,843 - INFO - 127.0.0.1 - - [11/Mar/2026 15:53:19] "GET /get-image?key=contactus.hero HTTP/1.1" 200 -
+2026-03-11 15:53:21,086 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 15:53:21,086 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:53:21,087 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 15:53:21,087 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:53:21,087 - INFO - Loaded 6 image keys
+2026-03-11 15:53:21,087 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 15:53:21,087 - INFO - Loaded 6 image keys
+2026-03-11 15:53:21,087 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 15:53:21,088 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 15:53:21,088 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 15:53:21,088 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 15:53:21,088 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 15:53:21,088 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 15:53:21,088 - INFO - 127.0.0.1 - - [11/Mar/2026 15:53:21] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 15:53:21,089 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 15:53:21,089 - INFO - 127.0.0.1 - - [11/Mar/2026 15:53:21] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 15:58:07,198 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 15:58:07,198 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:58:07,199 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 15:58:07,199 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:58:07,199 - INFO - Loaded 6 image keys
+2026-03-11 15:58:07,199 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 15:58:07,199 - INFO - Loaded 6 image keys
+2026-03-11 15:58:07,199 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 15:58:07,200 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 15:58:07,200 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 15:58:07,200 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 15:58:07,200 - INFO - 127.0.0.1 - - [11/Mar/2026 15:58:07] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 15:58:07,200 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 15:58:07,200 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 15:58:07,200 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 15:58:07,201 - INFO - 127.0.0.1 - - [11/Mar/2026 15:58:07] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 15:58:39,675 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 15:58:39,675 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:58:39,676 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 15:58:39,676 - INFO - Loaded 6 image keys
+2026-03-11 15:58:39,676 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:58:39,676 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 15:58:39,676 - INFO - Loaded 6 image keys
+2026-03-11 15:58:39,676 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 15:58:39,677 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 15:58:39,677 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 15:58:39,677 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 15:58:39,677 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 15:58:39,677 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 15:58:39,677 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 15:58:39,677 - INFO - 127.0.0.1 - - [11/Mar/2026 15:58:39] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 15:58:39,678 - INFO - 127.0.0.1 - - [11/Mar/2026 15:58:39] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 15:59:19,314 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 15:59:19,314 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:59:19,314 - INFO - Loaded 6 image keys
+2026-03-11 15:59:19,315 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 15:59:19,315 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 15:59:19,315 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:59:19,316 - INFO - Loaded 6 image keys
+2026-03-11 15:59:19,316 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 15:59:19,316 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 15:59:19,316 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 15:59:19,316 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 15:59:19,316 - INFO - 127.0.0.1 - - [11/Mar/2026 15:59:19] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 15:59:19,317 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 15:59:19,317 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 15:59:19,317 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 15:59:19,317 - INFO - 127.0.0.1 - - [11/Mar/2026 15:59:19] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 15:59:33,133 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 15:59:33,133 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 15:59:33,133 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:59:33,133 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 15:59:33,134 - INFO - Loaded 6 image keys
+2026-03-11 15:59:33,134 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 15:59:33,134 - INFO - Loaded 6 image keys
+2026-03-11 15:59:33,134 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 15:59:33,135 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 15:59:33,135 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 15:59:33,135 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 15:59:33,135 - INFO - 127.0.0.1 - - [11/Mar/2026 15:59:33] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 15:59:33,135 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 15:59:33,135 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 15:59:33,135 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 15:59:33,136 - INFO - 127.0.0.1 - - [11/Mar/2026 15:59:33] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 16:00:24,068 - INFO - /check-login called from 127.0.0.1; session keys=['logged_in', 'login_time']
+2026-03-11 16:00:24,068 - INFO - 127.0.0.1 - - [11/Mar/2026 16:00:24] "GET /check-login HTTP/1.1" 200 -
+2026-03-11 16:00:26,804 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:00:26,805 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:00:26,805 - INFO - Loaded 6 image keys
+2026-03-11 16:00:26,806 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 16:00:26,806 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:00:26,806 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:00:26,806 - INFO - Loaded 6 image keys
+2026-03-11 16:00:26,806 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 16:00:26,806 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 16:00:26,806 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 16:00:26,806 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 16:00:26,807 - INFO - 127.0.0.1 - - [11/Mar/2026 16:00:26] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:00:26,807 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 16:00:26,807 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 16:00:26,807 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 16:00:26,807 - INFO - 127.0.0.1 - - [11/Mar/2026 16:00:26] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 16:01:27,343 - INFO - /check-login called from 127.0.0.1; session keys=['logged_in', 'login_time']
+2026-03-11 16:01:27,344 - INFO - 127.0.0.1 - - [11/Mar/2026 16:01:27] "GET /check-login HTTP/1.1" 200 -
+2026-03-11 16:01:27,424 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:01:27,424 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:01:27,424 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 16:01:27,424 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:01:27,425 - INFO - Loaded 6 image keys
+2026-03-11 16:01:27,425 - INFO - /image-keys requested from 127.0.0.1
+2026-03-11 16:01:27,425 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:01:27,425 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:01:27,425 - INFO - Loaded 6 image keys
+2026-03-11 16:01:27,425 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 16:01:27,426 - INFO - Loaded 6 image keys
+2026-03-11 16:01:27,426 - INFO - /image-keys returning 6 keys
+2026-03-11 16:01:27,426 - INFO - 127.0.0.1 - - [11/Mar/2026 16:01:27] "GET /image-keys HTTP/1.1" 200 -
+2026-03-11 16:01:27,426 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 16:01:27,426 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 16:01:27,426 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 16:01:27,426 - INFO - 127.0.0.1 - - [11/Mar/2026 16:01:27] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:01:27,426 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 16:01:27,426 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 16:01:27,427 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 16:01:27,427 - INFO - 127.0.0.1 - - [11/Mar/2026 16:01:27] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 16:01:27,430 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:01:27,430 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:01:27,430 - INFO - Loaded 6 image keys
+2026-03-11 16:01:27,430 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:01:27,431 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 16:01:27,431 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 16:01:27,431 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 16:01:27,431 - INFO - 127.0.0.1 - - [11/Mar/2026 16:01:27] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:01:27,474 - INFO - /get-image called from 127.0.0.1 with key=contactus.hero
+2026-03-11 16:01:27,474 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:01:27,474 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:01:27,474 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:01:27,474 - INFO - Loaded 6 image keys
+2026-03-11 16:01:27,475 - INFO - get_image_mapping called for key=contactus.hero
+2026-03-11 16:01:27,475 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 16:01:27,475 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:01:27,475 - INFO - Loaded 6 image keys
+2026-03-11 16:01:27,475 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:01:27,476 - INFO - /get-image called from 127.0.0.1 with key=sponsorus.hero
+2026-03-11 16:01:27,476 - INFO - get_image_mapping: no mapping found for key=contactus.hero
+2026-03-11 16:01:27,476 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:01:27,476 - INFO - Loaded 6 image keys
+2026-03-11 16:01:27,476 - INFO - /get-image no mapping for key=contactus.hero; default defined as: /contact-us/Media/contact_us_bckgn.webp
+2026-03-11 16:01:27,477 - INFO - /get-image called from 127.0.0.1 with key=team135.hero
+2026-03-11 16:01:27,478 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:01:27,477 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 16:01:27,477 - INFO - /get-image called from 127.0.0.1 with key=team328.hero
+2026-03-11 16:01:27,477 - INFO - /get-image returning default url for key=contactus.hero: http://127.0.0.1:5500/contact-us/Media/contact_us_bckgn.webp
+2026-03-11 16:01:27,477 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 16:01:27,478 - INFO - Loaded 6 image keys
+2026-03-11 16:01:27,478 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:01:27,478 - INFO - 127.0.0.1 - - [11/Mar/2026 16:01:27] "GET /get-image?key=contactus.hero HTTP/1.1" 200 -
+2026-03-11 16:01:27,478 - INFO - Loaded 6 image keys
+2026-03-11 16:01:27,478 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 16:01:27,478 - INFO - get_image_mapping called for key=sponsorus.hero
+2026-03-11 16:01:27,478 - INFO - get_image_mapping called for key=team135.hero
+2026-03-11 16:01:27,479 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 16:01:27,479 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 16:01:27,479 - INFO - Loaded 6 image keys
+2026-03-11 16:01:27,479 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 16:01:27,479 - INFO - 127.0.0.1 - - [11/Mar/2026 16:01:27] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:01:27,479 - INFO - get_image_mapping called for key=team328.hero
+2026-03-11 16:01:27,479 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 16:01:27,479 - INFO - get_image_mapping: no mapping found for key=sponsorus.hero
+2026-03-11 16:01:27,480 - INFO - get_image_mapping: no mapping found for key=team135.hero
+2026-03-11 16:01:27,480 - INFO - 127.0.0.1 - - [11/Mar/2026 16:01:27] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 16:01:27,480 - INFO - /get-image no mapping for key=sponsorus.hero; default defined as: /sponsor-us/main-background.webp
+2026-03-11 16:01:27,480 - INFO - /get-image no mapping for key=team135.hero; default defined as: /team-135/media/team135-background-2.webp
+2026-03-11 16:01:27,481 - INFO - get_image_mapping: no mapping found for key=team328.hero
+2026-03-11 16:01:27,481 - INFO - /get-image returning default url for key=sponsorus.hero: http://127.0.0.1:5500/sponsor-us/main-background.webp
+2026-03-11 16:01:27,481 - INFO - /get-image returning default url for key=team135.hero: http://127.0.0.1:5500/team-135/media/team135-background-2.webp
+2026-03-11 16:01:27,481 - INFO - /get-image no mapping for key=team328.hero; default defined as: /328-page/Media/328-Background-Main.webp
+2026-03-11 16:01:27,481 - INFO - 127.0.0.1 - - [11/Mar/2026 16:01:27] "GET /get-image?key=sponsorus.hero HTTP/1.1" 200 -
+2026-03-11 16:01:27,482 - INFO - 127.0.0.1 - - [11/Mar/2026 16:01:27] "GET /get-image?key=team135.hero HTTP/1.1" 200 -
+2026-03-11 16:01:27,482 - INFO - /get-image returning default url for key=team328.hero: http://127.0.0.1:5500/328-page/Media/328-Background-Main.webp
+2026-03-11 16:01:27,482 - INFO - 127.0.0.1 - - [11/Mar/2026 16:01:27] "GET /get-image?key=team328.hero HTTP/1.1" 200 -
+2026-03-11 16:02:20,053 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:02:20,054 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:20,054 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 16:02:20,054 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:20,054 - INFO - Loaded 6 image keys
+2026-03-11 16:02:20,054 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:02:20,054 - INFO - Loaded 6 image keys
+2026-03-11 16:02:20,054 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 16:02:20,055 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 16:02:20,055 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 16:02:20,055 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 16:02:20,055 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 16:02:20,055 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 16:02:20,055 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 16:02:20,055 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:20] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:02:20,056 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:20] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 16:02:24,262 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:02:24,262 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:24,263 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 16:02:24,264 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:24,264 - INFO - Loaded 6 image keys
+2026-03-11 16:02:24,264 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:02:24,264 - INFO - Loaded 6 image keys
+2026-03-11 16:02:24,264 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 16:02:24,264 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 16:02:24,264 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 16:02:24,264 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 16:02:24,264 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:24] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:02:24,265 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 16:02:24,265 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 16:02:24,265 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 16:02:24,265 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:24] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 16:02:28,022 - INFO - /check-login called from 127.0.0.1; session keys=['logged_in', 'login_time']
+2026-03-11 16:02:28,022 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:28] "GET /check-login HTTP/1.1" 200 -
+2026-03-11 16:02:28,071 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:02:28,071 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:28,071 - INFO - /image-keys requested from 127.0.0.1
+2026-03-11 16:02:28,072 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:28,072 - INFO - Loaded 6 image keys
+2026-03-11 16:02:28,072 - INFO - /image-keys returning 6 keys
+2026-03-11 16:02:28,072 - INFO - Loaded 6 image keys
+2026-03-11 16:02:28,072 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:28] "GET /image-keys HTTP/1.1" 200 -
+2026-03-11 16:02:28,072 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:02:28,073 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 16:02:28,073 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 16:02:28,073 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 16:02:28,073 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:28] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:02:28,081 - INFO - /get-image called from 127.0.0.1 with key=contactus.hero
+2026-03-11 16:02:28,081 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:28,082 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:02:28,082 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:28,082 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 16:02:28,083 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:28,083 - INFO - Loaded 6 image keys
+2026-03-11 16:02:28,083 - INFO - /get-image called from 127.0.0.1 with key=sponsorus.hero
+2026-03-11 16:02:28,083 - INFO - get_image_mapping called for key=contactus.hero
+2026-03-11 16:02:28,084 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:28,084 - INFO - Loaded 6 image keys
+2026-03-11 16:02:28,084 - INFO - /get-image called from 127.0.0.1 with key=team135.hero
+2026-03-11 16:02:28,084 - INFO - Loaded 6 image keys
+2026-03-11 16:02:28,084 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:02:28,085 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:28,085 - INFO - /get-image called from 127.0.0.1 with key=team328.hero
+2026-03-11 16:02:28,085 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 16:02:28,085 - INFO - Loaded 6 image keys
+2026-03-11 16:02:28,085 - INFO - get_image_mapping: no mapping found for key=contactus.hero
+2026-03-11 16:02:28,085 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:28,085 - INFO - get_image_mapping called for key=sponsorus.hero
+2026-03-11 16:02:28,086 - INFO - /get-image no mapping for key=contactus.hero; default defined as: /contact-us/Media/contact_us_bckgn.webp
+2026-03-11 16:02:28,086 - INFO - Loaded 6 image keys
+2026-03-11 16:02:28,086 - INFO - /get-image returning default url for key=contactus.hero: http://127.0.0.1:5500/contact-us/Media/contact_us_bckgn.webp
+2026-03-11 16:02:28,086 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 16:02:28,086 - INFO - get_image_mapping called for key=team135.hero
+2026-03-11 16:02:28,086 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:28] "GET /get-image?key=contactus.hero HTTP/1.1" 200 -
+2026-03-11 16:02:28,086 - INFO - Loaded 6 image keys
+2026-03-11 16:02:28,086 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 16:02:28,086 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 16:02:28,086 - INFO - get_image_mapping: no mapping found for key=sponsorus.hero
+2026-03-11 16:02:28,087 - INFO - get_image_mapping called for key=team328.hero
+2026-03-11 16:02:28,087 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 16:02:28,087 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 16:02:28,087 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 16:02:28,087 - INFO - get_image_mapping: no mapping found for key=team135.hero
+2026-03-11 16:02:28,087 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:28] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:02:28,087 - INFO - /get-image no mapping for key=sponsorus.hero; default defined as: /sponsor-us/main-background.webp
+2026-03-11 16:02:28,088 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:28] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 16:02:28,088 - INFO - /get-image no mapping for key=team135.hero; default defined as: /team-135/media/team135-background-2.webp
+2026-03-11 16:02:28,088 - INFO - get_image_mapping: no mapping found for key=team328.hero
+2026-03-11 16:02:28,088 - INFO - /get-image returning default url for key=sponsorus.hero: http://127.0.0.1:5500/sponsor-us/main-background.webp
+2026-03-11 16:02:28,089 - INFO - /get-image returning default url for key=team135.hero: http://127.0.0.1:5500/team-135/media/team135-background-2.webp
+2026-03-11 16:02:28,089 - INFO - /get-image no mapping for key=team328.hero; default defined as: /328-page/Media/328-Background-Main.webp
+2026-03-11 16:02:28,089 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:28] "GET /get-image?key=sponsorus.hero HTTP/1.1" 200 -
+2026-03-11 16:02:28,090 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:28] "GET /get-image?key=team135.hero HTTP/1.1" 200 -
+2026-03-11 16:02:28,090 - INFO - /get-image returning default url for key=team328.hero: http://127.0.0.1:5500/328-page/Media/328-Background-Main.webp
+2026-03-11 16:02:28,091 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:28] "GET /get-image?key=team328.hero HTTP/1.1" 200 -
+2026-03-11 16:02:30,553 - INFO - /upload-image called from 127.0.0.1
+2026-03-11 16:02:30,559 - INFO - /upload-image params: key=contactus.hero, image_present=True
+2026-03-11 16:02:30,559 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:30,559 - INFO - Loaded 6 image keys
+2026-03-11 16:02:30,560 - INFO - /upload-image original file size=2062798 bytes; max_size=524288000
+2026-03-11 16:02:30,560 - INFO - /upload-image mimetype=image/jpeg
+2026-03-11 16:02:30,787 - INFO - /upload-image compressed: 2062798 -> 578658 bytes (71.9% reduction)
+2026-03-11 16:02:30,788 - INFO - /upload-image saved file to uploads\ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg
+2026-03-11 16:02:30,788 - INFO - set_image_mapping called for key=contactus.hero filename=uploads\ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg
+2026-03-11 16:02:30,790 - INFO - set_image_mapping created key=contactus.hero version=1
+2026-03-11 16:02:30,796 - INFO - /upload-image updated DB mapping for key=contactus.hero with version=1
+2026-03-11 16:02:30,796 - INFO - Image uploaded for key=contactus.hero: uploads\ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg -> http://127.0.0.1:5500/uploads/ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg
+2026-03-11 16:02:30,798 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:30] "[35m[1mPOST /upload-image HTTP/1.1[0m" 201 -
+2026-03-11 16:02:30,968 - INFO - /check-login called from 127.0.0.1; session keys=['logged_in', 'login_time']
+2026-03-11 16:02:30,968 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:30] "GET /check-login HTTP/1.1" 200 -
+2026-03-11 16:02:31,033 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:02:31,034 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:31,034 - INFO - Loaded 6 image keys
+2026-03-11 16:02:31,034 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:02:31,034 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 16:02:31,035 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:31,035 - INFO - /image-keys requested from 127.0.0.1
+2026-03-11 16:02:31,035 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:31,036 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 16:02:31,036 - INFO - Loaded 6 image keys
+2026-03-11 16:02:31,036 - INFO - Loaded 6 image keys
+2026-03-11 16:02:31,036 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 16:02:31,036 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 16:02:31,036 - INFO - /image-keys returning 6 keys
+2026-03-11 16:02:31,036 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 16:02:31,036 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:31] "GET /image-keys HTTP/1.1" 200 -
+2026-03-11 16:02:31,036 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:31] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:02:31,037 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 16:02:31,037 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 16:02:31,037 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 16:02:31,037 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:31] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 16:02:31,039 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:02:31,039 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:31,040 - INFO - Loaded 6 image keys
+2026-03-11 16:02:31,040 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:02:31,040 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 16:02:31,040 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 16:02:31,040 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 16:02:31,040 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:31] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:02:31,076 - INFO - /get-image called from 127.0.0.1 with key=contactus.hero
+2026-03-11 16:02:31,077 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:31,077 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:02:31,077 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:31,078 - INFO - Loaded 6 image keys
+2026-03-11 16:02:31,078 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 16:02:31,079 - INFO - get_image_mapping called for key=contactus.hero
+2026-03-11 16:02:31,079 - INFO - Loaded 6 image keys
+2026-03-11 16:02:31,079 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:31,079 - INFO - /get-image called from 127.0.0.1 with key=sponsorus.hero
+2026-03-11 16:02:31,080 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:02:31,080 - INFO - /get-image called from 127.0.0.1 with key=team135.hero
+2026-03-11 16:02:31,080 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:31,081 - INFO - get_image_mapping returning for key=contactus.hero: {'filename': 'uploads\\ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg', 'mime': 'image/jpeg', 'uploaded_at': '2026-03-11T20:02:30.789136', 'version': 1}
+2026-03-11 16:02:31,081 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:31,081 - INFO - /get-image called from 127.0.0.1 with key=team328.hero
+2026-03-11 16:02:31,081 - INFO - Loaded 6 image keys
+2026-03-11 16:02:31,081 - INFO - /get-image returning mapped url for key=contactus.hero: http://127.0.0.1:5500/uploads/ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg?v=1 (version=1)
+2026-03-11 16:02:31,081 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:31,082 - INFO - Loaded 6 image keys
+2026-03-11 16:02:31,084 - INFO - get_image_mapping called for key=sponsorus.hero
+2026-03-11 16:02:31,082 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:31] "GET /get-image?key=contactus.hero HTTP/1.1" 200 -
+2026-03-11 16:02:31,082 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 16:02:31,082 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 16:02:31,084 - INFO - Loaded 6 image keys
+2026-03-11 16:02:31,085 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 16:02:31,085 - INFO - Loaded 6 image keys
+2026-03-11 16:02:31,085 - INFO - get_image_mapping called for key=team135.hero
+2026-03-11 16:02:31,085 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 16:02:31,085 - INFO - get_image_mapping called for key=team328.hero
+2026-03-11 16:02:31,085 - INFO - get_image_mapping: no mapping found for key=sponsorus.hero
+2026-03-11 16:02:31,086 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:31] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:02:31,086 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 16:02:31,086 - INFO - /get-image no mapping for key=sponsorus.hero; default defined as: /sponsor-us/main-background.webp
+2026-03-11 16:02:31,086 - INFO - get_image_mapping: no mapping found for key=team135.hero
+2026-03-11 16:02:31,086 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 16:02:31,086 - INFO - /get-image returning default url for key=sponsorus.hero: http://127.0.0.1:5500/sponsor-us/main-background.webp
+2026-03-11 16:02:31,086 - INFO - /get-image no mapping for key=team135.hero; default defined as: /team-135/media/team135-background-2.webp
+2026-03-11 16:02:31,087 - INFO - get_image_mapping: no mapping found for key=team328.hero
+2026-03-11 16:02:31,087 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 16:02:31,087 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:31] "GET /get-image?key=sponsorus.hero HTTP/1.1" 200 -
+2026-03-11 16:02:31,087 - INFO - /get-image returning default url for key=team135.hero: http://127.0.0.1:5500/team-135/media/team135-background-2.webp
+2026-03-11 16:02:31,087 - INFO - /get-image no mapping for key=team328.hero; default defined as: /328-page/Media/328-Background-Main.webp
+2026-03-11 16:02:31,087 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:31] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 16:02:31,088 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:31] "GET /get-image?key=team135.hero HTTP/1.1" 200 -
+2026-03-11 16:02:31,088 - INFO - /get-image returning default url for key=team328.hero: http://127.0.0.1:5500/328-page/Media/328-Background-Main.webp
+2026-03-11 16:02:31,088 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:31] "GET /get-image?key=team328.hero HTTP/1.1" 200 -
+2026-03-11 16:02:33,735 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:02:33,735 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:33,736 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 16:02:33,736 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:33,736 - INFO - Loaded 6 image keys
+2026-03-11 16:02:33,736 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:02:33,736 - INFO - Loaded 6 image keys
+2026-03-11 16:02:33,736 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 16:02:33,737 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 16:02:33,737 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 16:02:33,737 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 16:02:33,737 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 16:02:33,737 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 16:02:33,737 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 16:02:33,737 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:33] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 16:02:33,738 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:33] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:02:42,282 - INFO - /upload-image called from 127.0.0.1
+2026-03-11 16:02:42,286 - INFO - /upload-image params: key=landing.hero, image_present=True
+2026-03-11 16:02:42,286 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:42,286 - INFO - Loaded 6 image keys
+2026-03-11 16:02:42,286 - INFO - /upload-image original file size=578658 bytes; max_size=524288000
+2026-03-11 16:02:42,286 - INFO - /upload-image mimetype=image/jpeg
+2026-03-11 16:02:42,331 - INFO - /upload-image compressed: 578658 -> 578894 bytes (-0.0% reduction)
+2026-03-11 16:02:42,333 - INFO - /upload-image saved file to uploads\84758fb643ed467a97a692b0dd44b8b4_ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg
+2026-03-11 16:02:42,333 - INFO - set_image_mapping called for key=landing.hero filename=uploads\84758fb643ed467a97a692b0dd44b8b4_ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg
+2026-03-11 16:02:42,335 - INFO - set_image_mapping created key=landing.hero version=1
+2026-03-11 16:02:42,342 - INFO - /upload-image updated DB mapping for key=landing.hero with version=1
+2026-03-11 16:02:42,342 - INFO - Image uploaded for key=landing.hero: uploads\84758fb643ed467a97a692b0dd44b8b4_ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg -> http://127.0.0.1:5500/uploads/84758fb643ed467a97a692b0dd44b8b4_ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg
+2026-03-11 16:02:42,343 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:42] "[35m[1mPOST /upload-image HTTP/1.1[0m" 201 -
+2026-03-11 16:02:42,563 - INFO - /check-login called from 127.0.0.1; session keys=['logged_in', 'login_time']
+2026-03-11 16:02:42,563 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:42] "GET /check-login HTTP/1.1" 200 -
+2026-03-11 16:02:42,623 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:02:42,624 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:42,625 - INFO - /image-keys requested from 127.0.0.1
+2026-03-11 16:02:42,625 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:42,625 - INFO - Loaded 6 image keys
+2026-03-11 16:02:42,625 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:02:42,625 - INFO - Loaded 6 image keys
+2026-03-11 16:02:42,625 - INFO - /image-keys returning 6 keys
+2026-03-11 16:02:42,626 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:42] "GET /image-keys HTTP/1.1" 200 -
+2026-03-11 16:02:42,626 - INFO - get_image_mapping returning for key=landing.hero: {'filename': 'uploads\\84758fb643ed467a97a692b0dd44b8b4_ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg', 'mime': 'image/jpeg', 'uploaded_at': '2026-03-11T20:02:42.334082', 'version': 1}
+2026-03-11 16:02:42,626 - INFO - /get-image returning mapped url for key=landing.hero: http://127.0.0.1:5500/uploads/84758fb643ed467a97a692b0dd44b8b4_ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg?v=1 (version=1)
+2026-03-11 16:02:42,626 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:42] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:02:42,643 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:02:42,643 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:42,644 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 16:02:42,644 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:42,644 - INFO - Loaded 6 image keys
+2026-03-11 16:02:42,644 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:02:42,644 - INFO - Loaded 6 image keys
+2026-03-11 16:02:42,644 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 16:02:42,645 - INFO - get_image_mapping returning for key=landing.hero: {'filename': 'uploads\\84758fb643ed467a97a692b0dd44b8b4_ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg', 'mime': 'image/jpeg', 'uploaded_at': '2026-03-11T20:02:42.334082', 'version': 1}
+2026-03-11 16:02:42,645 - INFO - /get-image returning mapped url for key=landing.hero: http://127.0.0.1:5500/uploads/84758fb643ed467a97a692b0dd44b8b4_ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg?v=1 (version=1)
+2026-03-11 16:02:42,645 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:42] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:02:42,645 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 16:02:42,645 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 16:02:42,645 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 16:02:42,646 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:42] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 16:02:42,647 - INFO - /get-image called from 127.0.0.1 with key=contactus.hero
+2026-03-11 16:02:42,647 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:42,648 - INFO - Loaded 6 image keys
+2026-03-11 16:02:42,648 - INFO - get_image_mapping called for key=contactus.hero
+2026-03-11 16:02:42,649 - INFO - get_image_mapping returning for key=contactus.hero: {'filename': 'uploads\\ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg', 'mime': 'image/jpeg', 'uploaded_at': '2026-03-11T20:02:30.789136', 'version': 1}
+2026-03-11 16:02:42,649 - INFO - /get-image returning mapped url for key=contactus.hero: http://127.0.0.1:5500/uploads/ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg?v=1 (version=1)
+2026-03-11 16:02:42,649 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:42] "GET /get-image?key=contactus.hero HTTP/1.1" 200 -
+2026-03-11 16:02:42,650 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:02:42,650 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:42,651 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 16:02:42,651 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:42,651 - INFO - Loaded 6 image keys
+2026-03-11 16:02:42,652 - INFO - /get-image called from 127.0.0.1 with key=sponsorus.hero
+2026-03-11 16:02:42,652 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:02:42,652 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:42,653 - INFO - /get-image called from 127.0.0.1 with key=team135.hero
+2026-03-11 16:02:42,653 - INFO - Loaded 6 image keys
+2026-03-11 16:02:42,653 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:42,654 - INFO - /get-image called from 127.0.0.1 with key=team328.hero
+2026-03-11 16:02:42,654 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 16:02:42,654 - INFO - get_image_mapping returning for key=landing.hero: {'filename': 'uploads\\84758fb643ed467a97a692b0dd44b8b4_ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg', 'mime': 'image/jpeg', 'uploaded_at': '2026-03-11T20:02:42.334082', 'version': 1}
+2026-03-11 16:02:42,654 - INFO - Loaded 6 image keys
+2026-03-11 16:02:42,654 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:42,654 - INFO - /get-image returning mapped url for key=landing.hero: http://127.0.0.1:5500/uploads/84758fb643ed467a97a692b0dd44b8b4_ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg?v=1 (version=1)
+2026-03-11 16:02:42,654 - INFO - Loaded 6 image keys
+2026-03-11 16:02:42,654 - INFO - get_image_mapping called for key=sponsorus.hero
+2026-03-11 16:02:42,655 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:42] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:02:42,655 - INFO - get_image_mapping called for key=team135.hero
+2026-03-11 16:02:42,655 - INFO - Loaded 6 image keys
+2026-03-11 16:02:42,655 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 16:02:42,655 - INFO - get_image_mapping called for key=team328.hero
+2026-03-11 16:02:42,655 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 16:02:42,655 - INFO - get_image_mapping: no mapping found for key=sponsorus.hero
+2026-03-11 16:02:42,655 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 16:02:42,655 - INFO - get_image_mapping: no mapping found for key=team135.hero
+2026-03-11 16:02:42,655 - INFO - /get-image no mapping for key=sponsorus.hero; default defined as: /sponsor-us/main-background.webp
+2026-03-11 16:02:42,656 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:42] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 16:02:42,656 - INFO - /get-image no mapping for key=team135.hero; default defined as: /team-135/media/team135-background-2.webp
+2026-03-11 16:02:42,656 - INFO - get_image_mapping: no mapping found for key=team328.hero
+2026-03-11 16:02:42,656 - INFO - /get-image returning default url for key=sponsorus.hero: http://127.0.0.1:5500/sponsor-us/main-background.webp
+2026-03-11 16:02:42,656 - INFO - /get-image returning default url for key=team135.hero: http://127.0.0.1:5500/team-135/media/team135-background-2.webp
+2026-03-11 16:02:42,657 - INFO - /get-image no mapping for key=team328.hero; default defined as: /328-page/Media/328-Background-Main.webp
+2026-03-11 16:02:42,657 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:42] "GET /get-image?key=sponsorus.hero HTTP/1.1" 200 -
+2026-03-11 16:02:42,657 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:42] "GET /get-image?key=team135.hero HTTP/1.1" 200 -
+2026-03-11 16:02:42,657 - INFO - /get-image returning default url for key=team328.hero: http://127.0.0.1:5500/328-page/Media/328-Background-Main.webp
+2026-03-11 16:02:42,658 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:42] "GET /get-image?key=team328.hero HTTP/1.1" 200 -
+2026-03-11 16:02:44,449 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:02:44,449 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:44,450 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 16:02:44,450 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:44,450 - INFO - Loaded 6 image keys
+2026-03-11 16:02:44,450 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:02:44,450 - INFO - Loaded 6 image keys
+2026-03-11 16:02:44,451 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 16:02:44,451 - INFO - get_image_mapping returning for key=landing.hero: {'filename': 'uploads\\84758fb643ed467a97a692b0dd44b8b4_ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg', 'mime': 'image/jpeg', 'uploaded_at': '2026-03-11T20:02:42.334082', 'version': 1}
+2026-03-11 16:02:44,451 - INFO - /get-image returning mapped url for key=landing.hero: http://127.0.0.1:5500/uploads/84758fb643ed467a97a692b0dd44b8b4_ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg?v=1 (version=1)
+2026-03-11 16:02:44,451 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:44] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:02:44,451 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 16:02:44,451 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 16:02:44,451 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 16:02:44,452 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:44] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 16:02:47,202 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:02:47,202 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:47,203 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 16:02:47,203 - INFO - Loaded 6 image keys
+2026-03-11 16:02:47,203 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:47,203 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:02:47,204 - INFO - Loaded 6 image keys
+2026-03-11 16:02:47,204 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 16:02:47,204 - INFO - get_image_mapping returning for key=landing.hero: {'filename': 'uploads\\84758fb643ed467a97a692b0dd44b8b4_ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg', 'mime': 'image/jpeg', 'uploaded_at': '2026-03-11T20:02:42.334082', 'version': 1}
+2026-03-11 16:02:47,204 - INFO - /get-image returning mapped url for key=landing.hero: http://127.0.0.1:5500/uploads/84758fb643ed467a97a692b0dd44b8b4_ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg?v=1 (version=1)
+2026-03-11 16:02:47,204 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:47] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:02:47,204 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 16:02:47,204 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 16:02:47,204 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 16:02:47,205 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:47] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 16:02:48,907 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:02:48,907 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:48,908 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 16:02:48,908 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:48,908 - INFO - Loaded 6 image keys
+2026-03-11 16:02:48,908 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:02:48,908 - INFO - Loaded 6 image keys
+2026-03-11 16:02:48,908 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 16:02:48,909 - INFO - get_image_mapping returning for key=landing.hero: {'filename': 'uploads\\84758fb643ed467a97a692b0dd44b8b4_ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg', 'mime': 'image/jpeg', 'uploaded_at': '2026-03-11T20:02:42.334082', 'version': 1}
+2026-03-11 16:02:48,909 - INFO - /get-image returning mapped url for key=landing.hero: http://127.0.0.1:5500/uploads/84758fb643ed467a97a692b0dd44b8b4_ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg?v=1 (version=1)
+2026-03-11 16:02:48,909 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:48] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:02:48,909 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 16:02:48,909 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 16:02:48,909 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 16:02:48,909 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:48] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 16:02:49,656 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:02:49,656 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 16:02:49,656 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:49,656 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:49,657 - INFO - Loaded 6 image keys
+2026-03-11 16:02:49,657 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:02:49,657 - INFO - Loaded 6 image keys
+2026-03-11 16:02:49,657 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 16:02:49,657 - INFO - get_image_mapping returning for key=landing.hero: {'filename': 'uploads\\84758fb643ed467a97a692b0dd44b8b4_ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg', 'mime': 'image/jpeg', 'uploaded_at': '2026-03-11T20:02:42.334082', 'version': 1}
+2026-03-11 16:02:49,658 - INFO - /get-image returning mapped url for key=landing.hero: http://127.0.0.1:5500/uploads/84758fb643ed467a97a692b0dd44b8b4_ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg?v=1 (version=1)
+2026-03-11 16:02:49,658 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:49] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:02:49,658 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 16:02:49,658 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 16:02:49,658 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 16:02:49,658 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:49] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 16:02:50,084 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:02:50,084 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:50,085 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 16:02:50,085 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:50,085 - INFO - Loaded 6 image keys
+2026-03-11 16:02:50,086 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:02:50,086 - INFO - Loaded 6 image keys
+2026-03-11 16:02:50,086 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 16:02:50,086 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 16:02:50,086 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 16:02:50,086 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 16:02:50,086 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:50] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 16:02:50,087 - INFO - get_image_mapping returning for key=landing.hero: {'filename': 'uploads\\84758fb643ed467a97a692b0dd44b8b4_ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg', 'mime': 'image/jpeg', 'uploaded_at': '2026-03-11T20:02:42.334082', 'version': 1}
+2026-03-11 16:02:50,087 - INFO - /get-image returning mapped url for key=landing.hero: http://127.0.0.1:5500/uploads/84758fb643ed467a97a692b0dd44b8b4_ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg?v=1 (version=1)
+2026-03-11 16:02:50,087 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:50] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:02:50,357 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:02:50,357 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:50,357 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 16:02:50,358 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:50,358 - INFO - Loaded 6 image keys
+2026-03-11 16:02:50,358 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:02:50,358 - INFO - Loaded 6 image keys
+2026-03-11 16:02:50,358 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 16:02:50,358 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 16:02:50,358 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 16:02:50,358 - INFO - get_image_mapping returning for key=landing.hero: {'filename': 'uploads\\84758fb643ed467a97a692b0dd44b8b4_ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg', 'mime': 'image/jpeg', 'uploaded_at': '2026-03-11T20:02:42.334082', 'version': 1}
+2026-03-11 16:02:50,359 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 16:02:50,359 - INFO - /get-image returning mapped url for key=landing.hero: http://127.0.0.1:5500/uploads/84758fb643ed467a97a692b0dd44b8b4_ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg?v=1 (version=1)
+2026-03-11 16:02:50,359 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:50] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 16:02:50,359 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:50] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:02:52,860 - INFO - /delete-image called from 127.0.0.1 for key=landing.hero
+2026-03-11 16:02:52,861 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:52,861 - INFO - Loaded 6 image keys
+2026-03-11 16:02:52,861 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:02:52,862 - INFO - get_image_mapping returning for key=landing.hero: {'filename': 'uploads\\84758fb643ed467a97a692b0dd44b8b4_ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg', 'mime': 'image/jpeg', 'uploaded_at': '2026-03-11T20:02:42.334082', 'version': 1}
+2026-03-11 16:02:52,862 - INFO - /delete-image removed file uploads\84758fb643ed467a97a692b0dd44b8b4_ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg for key=landing.hero
+2026-03-11 16:02:52,881 - INFO - /delete-image deleted mapping for key=landing.hero
+2026-03-11 16:02:52,881 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:52] "POST /delete-image HTTP/1.1" 200 -
+2026-03-11 16:02:52,887 - INFO - /image-keys requested from 127.0.0.1
+2026-03-11 16:02:52,887 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:52,887 - INFO - Loaded 6 image keys
+2026-03-11 16:02:52,888 - INFO - /image-keys returning 6 keys
+2026-03-11 16:02:52,888 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:52] "GET /image-keys HTTP/1.1" 200 -
+2026-03-11 16:02:52,891 - INFO - /get-image called from 127.0.0.1 with key=contactus.hero
+2026-03-11 16:02:52,891 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:52,891 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:02:52,892 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:52,892 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 16:02:52,892 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:52,893 - INFO - /get-image called from 127.0.0.1 with key=sponsorus.hero
+2026-03-11 16:02:52,893 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:52,893 - INFO - Loaded 6 image keys
+2026-03-11 16:02:52,893 - INFO - Loaded 6 image keys
+2026-03-11 16:02:52,893 - INFO - get_image_mapping called for key=contactus.hero
+2026-03-11 16:02:52,894 - INFO - /get-image called from 127.0.0.1 with key=team135.hero
+2026-03-11 16:02:52,894 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:02:52,894 - INFO - Loaded 6 image keys
+2026-03-11 16:02:52,894 - INFO - Loaded 6 image keys
+2026-03-11 16:02:52,894 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:52,894 - INFO - /get-image called from 127.0.0.1 with key=team328.hero
+2026-03-11 16:02:52,895 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:52,894 - INFO - get_image_mapping called for key=sponsorus.hero
+2026-03-11 16:02:52,894 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 16:02:52,895 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 16:02:52,895 - INFO - get_image_mapping returning for key=contactus.hero: {'filename': 'uploads\\ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg', 'mime': 'image/jpeg', 'uploaded_at': '2026-03-11T20:02:30.789136', 'version': 1}
+2026-03-11 16:02:52,895 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 16:02:52,895 - INFO - Loaded 6 image keys
+2026-03-11 16:02:52,895 - INFO - /get-image returning mapped url for key=contactus.hero: http://127.0.0.1:5500/uploads/ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg?v=1 (version=1)
+2026-03-11 16:02:52,895 - INFO - Loaded 6 image keys
+2026-03-11 16:02:52,895 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 16:02:52,895 - INFO - get_image_mapping: no mapping found for key=sponsorus.hero
+2026-03-11 16:02:52,895 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 16:02:52,895 - INFO - get_image_mapping called for key=team135.hero
+2026-03-11 16:02:52,896 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:52] "GET /get-image?key=contactus.hero HTTP/1.1" 200 -
+2026-03-11 16:02:52,896 - INFO - get_image_mapping called for key=team328.hero
+2026-03-11 16:02:52,896 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:52] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:02:52,896 - INFO - /get-image no mapping for key=sponsorus.hero; default defined as: /sponsor-us/main-background.webp
+2026-03-11 16:02:52,896 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 16:02:52,896 - INFO - /get-image returning default url for key=sponsorus.hero: http://127.0.0.1:5500/sponsor-us/main-background.webp
+2026-03-11 16:02:52,896 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 16:02:52,897 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:52] "GET /get-image?key=sponsorus.hero HTTP/1.1" 200 -
+2026-03-11 16:02:52,897 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:52] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 16:02:52,897 - INFO - get_image_mapping: no mapping found for key=team135.hero
+2026-03-11 16:02:52,897 - INFO - get_image_mapping: no mapping found for key=team328.hero
+2026-03-11 16:02:52,898 - INFO - /get-image no mapping for key=team135.hero; default defined as: /team-135/media/team135-background-2.webp
+2026-03-11 16:02:52,899 - INFO - /get-image no mapping for key=team328.hero; default defined as: /328-page/Media/328-Background-Main.webp
+2026-03-11 16:02:52,899 - INFO - /get-image returning default url for key=team135.hero: http://127.0.0.1:5500/team-135/media/team135-background-2.webp
+2026-03-11 16:02:52,899 - INFO - /get-image returning default url for key=team328.hero: http://127.0.0.1:5500/328-page/Media/328-Background-Main.webp
+2026-03-11 16:02:52,900 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:52] "GET /get-image?key=team135.hero HTTP/1.1" 200 -
+2026-03-11 16:02:52,900 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:52] "GET /get-image?key=team328.hero HTTP/1.1" 200 -
+2026-03-11 16:02:53,126 - INFO - /check-login called from 127.0.0.1; session keys=['logged_in', 'login_time']
+2026-03-11 16:02:53,126 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:53] "GET /check-login HTTP/1.1" 200 -
+2026-03-11 16:02:53,189 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:02:53,189 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:53,189 - INFO - /image-keys requested from 127.0.0.1
+2026-03-11 16:02:53,190 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:53,190 - INFO - Loaded 6 image keys
+2026-03-11 16:02:53,190 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:02:53,190 - INFO - Loaded 6 image keys
+2026-03-11 16:02:53,190 - INFO - /image-keys returning 6 keys
+2026-03-11 16:02:53,190 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:53] "GET /image-keys HTTP/1.1" 200 -
+2026-03-11 16:02:53,191 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 16:02:53,191 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 16:02:53,191 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 16:02:53,191 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:53] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:02:53,192 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 16:02:53,192 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:53,194 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:02:53,194 - INFO - Loaded 6 image keys
+2026-03-11 16:02:53,194 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:53,194 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 16:02:53,194 - INFO - Loaded 6 image keys
+2026-03-11 16:02:53,194 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:02:53,195 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 16:02:53,195 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 16:02:53,195 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 16:02:53,195 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:53] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 16:02:53,195 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 16:02:53,195 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 16:02:53,195 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 16:02:53,195 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:53] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:02:53,233 - INFO - /get-image called from 127.0.0.1 with key=contactus.hero
+2026-03-11 16:02:53,233 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:53,234 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:02:53,234 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:53,235 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 16:02:53,235 - INFO - Loaded 6 image keys
+2026-03-11 16:02:53,235 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:53,235 - INFO - get_image_mapping called for key=contactus.hero
+2026-03-11 16:02:53,235 - INFO - Loaded 6 image keys
+2026-03-11 16:02:53,236 - INFO - /get-image called from 127.0.0.1 with key=sponsorus.hero
+2026-03-11 16:02:53,236 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:02:53,237 - INFO - /get-image called from 127.0.0.1 with key=team135.hero
+2026-03-11 16:02:53,237 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:53,237 - INFO - Loaded 6 image keys
+2026-03-11 16:02:53,237 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:53,237 - INFO - /get-image called from 127.0.0.1 with key=team328.hero
+2026-03-11 16:02:53,238 - INFO - get_image_mapping returning for key=contactus.hero: {'filename': 'uploads\\ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg', 'mime': 'image/jpeg', 'uploaded_at': '2026-03-11T20:02:30.789136', 'version': 1}
+2026-03-11 16:02:53,238 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 16:02:53,238 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:53,238 - INFO - Loaded 6 image keys
+2026-03-11 16:02:53,238 - INFO - get_image_mapping called for key=sponsorus.hero
+2026-03-11 16:02:53,238 - INFO - /get-image returning mapped url for key=contactus.hero: http://127.0.0.1:5500/uploads/ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg?v=1 (version=1)
+2026-03-11 16:02:53,238 - INFO - Loaded 6 image keys
+2026-03-11 16:02:53,238 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 16:02:53,238 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:53] "GET /get-image?key=contactus.hero HTTP/1.1" 200 -
+2026-03-11 16:02:53,238 - INFO - Loaded 6 image keys
+2026-03-11 16:02:53,239 - INFO - get_image_mapping called for key=team135.hero
+2026-03-11 16:02:53,239 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 16:02:53,239 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 16:02:53,239 - INFO - get_image_mapping called for key=team328.hero
+2026-03-11 16:02:53,239 - INFO - get_image_mapping: no mapping found for key=sponsorus.hero
+2026-03-11 16:02:53,239 - INFO - /get-image no mapping for key=sponsorus.hero; default defined as: /sponsor-us/main-background.webp
+2026-03-11 16:02:53,239 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 16:02:53,239 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 16:02:53,239 - INFO - /get-image returning default url for key=sponsorus.hero: http://127.0.0.1:5500/sponsor-us/main-background.webp
+2026-03-11 16:02:53,240 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:53] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:02:53,240 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 16:02:53,241 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:53] "GET /get-image?key=sponsorus.hero HTTP/1.1" 200 -
+2026-03-11 16:02:53,241 - INFO - get_image_mapping: no mapping found for key=team135.hero
+2026-03-11 16:02:53,241 - INFO - get_image_mapping: no mapping found for key=team328.hero
+2026-03-11 16:02:53,242 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:53] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 16:02:53,242 - INFO - /get-image no mapping for key=team135.hero; default defined as: /team-135/media/team135-background-2.webp
+2026-03-11 16:02:53,242 - INFO - /get-image no mapping for key=team328.hero; default defined as: /328-page/Media/328-Background-Main.webp
+2026-03-11 16:02:53,242 - INFO - /get-image returning default url for key=team135.hero: http://127.0.0.1:5500/team-135/media/team135-background-2.webp
+2026-03-11 16:02:53,243 - INFO - /get-image returning default url for key=team328.hero: http://127.0.0.1:5500/328-page/Media/328-Background-Main.webp
+2026-03-11 16:02:53,243 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:53] "GET /get-image?key=team135.hero HTTP/1.1" 200 -
+2026-03-11 16:02:53,244 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:53] "GET /get-image?key=team328.hero HTTP/1.1" 200 -
+2026-03-11 16:02:54,631 - INFO - /delete-image called from 127.0.0.1 for key=contactus.hero
+2026-03-11 16:02:54,631 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:54,632 - INFO - Loaded 6 image keys
+2026-03-11 16:02:54,632 - INFO - get_image_mapping called for key=contactus.hero
+2026-03-11 16:02:54,633 - INFO - get_image_mapping returning for key=contactus.hero: {'filename': 'uploads\\ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg', 'mime': 'image/jpeg', 'uploaded_at': '2026-03-11T20:02:30.789136', 'version': 1}
+2026-03-11 16:02:54,634 - INFO - /delete-image removed file uploads\ddd4a4945f5b4013ad12d1bc637178c0_main-background.jpg for key=contactus.hero
+2026-03-11 16:02:54,643 - INFO - /delete-image deleted mapping for key=contactus.hero
+2026-03-11 16:02:54,644 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:54] "POST /delete-image HTTP/1.1" 200 -
+2026-03-11 16:02:54,647 - INFO - /image-keys requested from 127.0.0.1
+2026-03-11 16:02:54,647 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:54,647 - INFO - Loaded 6 image keys
+2026-03-11 16:02:54,647 - INFO - /image-keys returning 6 keys
+2026-03-11 16:02:54,647 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:54] "GET /image-keys HTTP/1.1" 200 -
+2026-03-11 16:02:54,651 - INFO - /get-image called from 127.0.0.1 with key=contactus.hero
+2026-03-11 16:02:54,652 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:54,653 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:02:54,653 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:54,654 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 16:02:54,654 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:54,654 - INFO - Loaded 6 image keys
+2026-03-11 16:02:54,655 - INFO - Loaded 6 image keys
+2026-03-11 16:02:54,655 - INFO - /get-image called from 127.0.0.1 with key=sponsorus.hero
+2026-03-11 16:02:54,655 - INFO - get_image_mapping called for key=contactus.hero
+2026-03-11 16:02:54,655 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:02:54,655 - INFO - Loaded 6 image keys
+2026-03-11 16:02:54,656 - INFO - /get-image called from 127.0.0.1 with key=team135.hero
+2026-03-11 16:02:54,656 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:54,657 - INFO - /get-image called from 127.0.0.1 with key=team328.hero
+2026-03-11 16:02:54,658 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:54,657 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:54,657 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 16:02:54,658 - INFO - Loaded 6 image keys
+2026-03-11 16:02:54,658 - INFO - get_image_mapping called for key=sponsorus.hero
+2026-03-11 16:02:54,658 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 16:02:54,658 - INFO - get_image_mapping: no mapping found for key=contactus.hero
+2026-03-11 16:02:54,658 - INFO - Loaded 6 image keys
+2026-03-11 16:02:54,658 - INFO - Loaded 6 image keys
+2026-03-11 16:02:54,658 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 16:02:54,658 - INFO - /get-image no mapping for key=contactus.hero; default defined as: /contact-us/Media/contact_us_bckgn.webp
+2026-03-11 16:02:54,658 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 16:02:54,658 - INFO - get_image_mapping called for key=team135.hero
+2026-03-11 16:02:54,658 - INFO - get_image_mapping called for key=team328.hero
+2026-03-11 16:02:54,658 - INFO - get_image_mapping: no mapping found for key=sponsorus.hero
+2026-03-11 16:02:54,659 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 16:02:54,659 - INFO - /get-image returning default url for key=contactus.hero: http://127.0.0.1:5500/contact-us/Media/contact_us_bckgn.webp
+2026-03-11 16:02:54,659 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 16:02:54,659 - INFO - /get-image no mapping for key=sponsorus.hero; default defined as: /sponsor-us/main-background.webp
+2026-03-11 16:02:54,659 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:54] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:02:54,659 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:54] "GET /get-image?key=contactus.hero HTTP/1.1" 200 -
+2026-03-11 16:02:54,659 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 16:02:54,659 - INFO - /get-image returning default url for key=sponsorus.hero: http://127.0.0.1:5500/sponsor-us/main-background.webp
+2026-03-11 16:02:54,659 - INFO - get_image_mapping: no mapping found for key=team135.hero
+2026-03-11 16:02:54,660 - INFO - /get-image no mapping for key=team135.hero; default defined as: /team-135/media/team135-background-2.webp
+2026-03-11 16:02:54,660 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:54] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 16:02:54,660 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:54] "GET /get-image?key=sponsorus.hero HTTP/1.1" 200 -
+2026-03-11 16:02:54,659 - INFO - get_image_mapping: no mapping found for key=team328.hero
+2026-03-11 16:02:54,660 - INFO - /get-image returning default url for key=team135.hero: http://127.0.0.1:5500/team-135/media/team135-background-2.webp
+2026-03-11 16:02:54,660 - INFO - /get-image no mapping for key=team328.hero; default defined as: /328-page/Media/328-Background-Main.webp
+2026-03-11 16:02:54,661 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:54] "GET /get-image?key=team135.hero HTTP/1.1" 200 -
+2026-03-11 16:02:54,662 - INFO - /get-image returning default url for key=team328.hero: http://127.0.0.1:5500/328-page/Media/328-Background-Main.webp
+2026-03-11 16:02:54,662 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:54] "GET /get-image?key=team328.hero HTTP/1.1" 200 -
+2026-03-11 16:02:54,899 - INFO - /check-login called from 127.0.0.1; session keys=['logged_in', 'login_time']
+2026-03-11 16:02:54,900 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:54] "GET /check-login HTTP/1.1" 200 -
+2026-03-11 16:02:54,962 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:02:54,963 - INFO - /image-keys requested from 127.0.0.1
+2026-03-11 16:02:54,963 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:54,963 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:54,963 - INFO - Loaded 6 image keys
+2026-03-11 16:02:54,964 - INFO - /image-keys returning 6 keys
+2026-03-11 16:02:54,964 - INFO - Loaded 6 image keys
+2026-03-11 16:02:54,964 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:02:54,964 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:54] "GET /image-keys HTTP/1.1" 200 -
+2026-03-11 16:02:54,965 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 16:02:54,965 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 16:02:54,965 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 16:02:54,965 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:54] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:02:54,982 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:02:54,982 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:54,983 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 16:02:54,983 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:54,983 - INFO - Loaded 6 image keys
+2026-03-11 16:02:54,983 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:02:54,983 - INFO - Loaded 6 image keys
+2026-03-11 16:02:54,983 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 16:02:54,983 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 16:02:54,983 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 16:02:54,983 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 16:02:54,984 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:54] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:02:54,984 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 16:02:54,984 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 16:02:54,984 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 16:02:54,984 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:54] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 16:02:55,008 - INFO - /get-image called from 127.0.0.1 with key=contactus.hero
+2026-03-11 16:02:55,008 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:55,009 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:02:55,009 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:55,009 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 16:02:55,010 - INFO - Loaded 6 image keys
+2026-03-11 16:02:55,010 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:55,010 - INFO - /get-image called from 127.0.0.1 with key=sponsorus.hero
+2026-03-11 16:02:55,010 - INFO - get_image_mapping called for key=contactus.hero
+2026-03-11 16:02:55,010 - INFO - Loaded 6 image keys
+2026-03-11 16:02:55,011 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:02:55,011 - INFO - /get-image called from 127.0.0.1 with key=team135.hero
+2026-03-11 16:02:55,011 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:55,012 - INFO - /get-image called from 127.0.0.1 with key=team328.hero
+2026-03-11 16:02:55,012 - INFO - Loaded 6 image keys
+2026-03-11 16:02:55,012 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:55,012 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:02:55,012 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 16:02:55,013 - INFO - Loaded 6 image keys
+2026-03-11 16:02:55,013 - INFO - get_image_mapping: no mapping found for key=contactus.hero
+2026-03-11 16:02:55,013 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 16:02:55,013 - INFO - get_image_mapping called for key=sponsorus.hero
+2026-03-11 16:02:55,013 - INFO - Loaded 6 image keys
+2026-03-11 16:02:55,013 - INFO - /get-image no mapping for key=contactus.hero; default defined as: /contact-us/Media/contact_us_bckgn.webp
+2026-03-11 16:02:55,013 - INFO - Loaded 6 image keys
+2026-03-11 16:02:55,013 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 16:02:55,013 - INFO - get_image_mapping called for key=team135.hero
+2026-03-11 16:02:55,013 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 16:02:55,013 - INFO - /get-image returning default url for key=contactus.hero: http://127.0.0.1:5500/contact-us/Media/contact_us_bckgn.webp
+2026-03-11 16:02:55,013 - INFO - get_image_mapping called for key=team328.hero
+2026-03-11 16:02:55,013 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 16:02:55,013 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 16:02:55,014 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:55] "GET /get-image?key=contactus.hero HTTP/1.1" 200 -
+2026-03-11 16:02:55,014 - INFO - get_image_mapping: no mapping found for key=sponsorus.hero
+2026-03-11 16:02:55,014 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:55] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:02:55,014 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 16:02:55,014 - INFO - get_image_mapping: no mapping found for key=team135.hero
+2026-03-11 16:02:55,014 - INFO - /get-image no mapping for key=sponsorus.hero; default defined as: /sponsor-us/main-background.webp
+2026-03-11 16:02:55,015 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:55] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 16:02:55,015 - INFO - get_image_mapping: no mapping found for key=team328.hero
+2026-03-11 16:02:55,015 - INFO - /get-image no mapping for key=team135.hero; default defined as: /team-135/media/team135-background-2.webp
+2026-03-11 16:02:55,015 - INFO - /get-image returning default url for key=sponsorus.hero: http://127.0.0.1:5500/sponsor-us/main-background.webp
+2026-03-11 16:02:55,015 - INFO - /get-image no mapping for key=team328.hero; default defined as: /328-page/Media/328-Background-Main.webp
+2026-03-11 16:02:55,015 - INFO - /get-image returning default url for key=team135.hero: http://127.0.0.1:5500/team-135/media/team135-background-2.webp
+2026-03-11 16:02:55,016 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:55] "GET /get-image?key=sponsorus.hero HTTP/1.1" 200 -
+2026-03-11 16:02:55,017 - INFO - /get-image returning default url for key=team328.hero: http://127.0.0.1:5500/328-page/Media/328-Background-Main.webp
+2026-03-11 16:02:55,018 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:55] "GET /get-image?key=team135.hero HTTP/1.1" 200 -
+2026-03-11 16:02:55,018 - INFO - 127.0.0.1 - - [11/Mar/2026 16:02:55] "GET /get-image?key=team328.hero HTTP/1.1" 200 -
+2026-03-11 16:03:03,408 - INFO - /delete-image called from 127.0.0.1 for key=sponsorus.hero
+2026-03-11 16:03:03,408 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:03:03,408 - INFO - Loaded 6 image keys
+2026-03-11 16:03:03,409 - INFO - get_image_mapping called for key=sponsorus.hero
+2026-03-11 16:03:03,410 - INFO - get_image_mapping: no mapping found for key=sponsorus.hero
+2026-03-11 16:03:03,411 - INFO - /delete-image deleted mapping for key=sponsorus.hero
+2026-03-11 16:03:03,411 - INFO - 127.0.0.1 - - [11/Mar/2026 16:03:03] "POST /delete-image HTTP/1.1" 200 -
+2026-03-11 16:03:03,434 - INFO - /image-keys requested from 127.0.0.1
+2026-03-11 16:03:03,434 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:03:03,434 - INFO - Loaded 6 image keys
+2026-03-11 16:03:03,434 - INFO - /image-keys returning 6 keys
+2026-03-11 16:03:03,434 - INFO - 127.0.0.1 - - [11/Mar/2026 16:03:03] "GET /image-keys HTTP/1.1" 200 -
+2026-03-11 16:03:03,441 - INFO - /get-image called from 127.0.0.1 with key=contactus.hero
+2026-03-11 16:03:03,441 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:03:03,442 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:03:03,442 - INFO - Loaded 6 image keys
+2026-03-11 16:03:03,442 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:03:03,443 - INFO - get_image_mapping called for key=contactus.hero
+2026-03-11 16:03:03,444 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 16:03:03,444 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:03:03,444 - INFO - Loaded 6 image keys
+2026-03-11 16:03:03,444 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:03:03,445 - INFO - /get-image called from 127.0.0.1 with key=sponsorus.hero
+2026-03-11 16:03:03,445 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:03:03,446 - INFO - Loaded 6 image keys
+2026-03-11 16:03:03,446 - INFO - get_image_mapping: no mapping found for key=contactus.hero
+2026-03-11 16:03:03,446 - INFO - /get-image called from 127.0.0.1 with key=team135.hero
+2026-03-11 16:03:03,447 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 16:03:03,447 - INFO - /get-image no mapping for key=contactus.hero; default defined as: /contact-us/Media/contact_us_bckgn.webp
+2026-03-11 16:03:03,447 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 16:03:03,447 - INFO - Loaded 6 image keys
+2026-03-11 16:03:03,447 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:03:03,448 - INFO - /get-image called from 127.0.0.1 with key=team328.hero
+2026-03-11 16:03:03,448 - INFO - /get-image returning default url for key=contactus.hero: http://127.0.0.1:5500/contact-us/Media/contact_us_bckgn.webp
+2026-03-11 16:03:03,448 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 16:03:03,448 - INFO - get_image_mapping called for key=sponsorus.hero
+2026-03-11 16:03:03,448 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:03:03,448 - INFO - 127.0.0.1 - - [11/Mar/2026 16:03:03] "GET /get-image?key=contactus.hero HTTP/1.1" 200 -
+2026-03-11 16:03:03,448 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 16:03:03,449 - INFO - Loaded 6 image keys
+2026-03-11 16:03:03,449 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 16:03:03,449 - INFO - 127.0.0.1 - - [11/Mar/2026 16:03:03] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:03:03,449 - INFO - get_image_mapping called for key=team135.hero
+2026-03-11 16:03:03,450 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 16:03:03,450 - INFO - Loaded 6 image keys
+2026-03-11 16:03:03,450 - INFO - get_image_mapping: no mapping found for key=sponsorus.hero
+2026-03-11 16:03:03,450 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 16:03:03,450 - INFO - get_image_mapping called for key=team328.hero
+2026-03-11 16:03:03,451 - INFO - /get-image no mapping for key=sponsorus.hero; default defined as: /sponsor-us/main-background.webp
+2026-03-11 16:03:03,451 - INFO - 127.0.0.1 - - [11/Mar/2026 16:03:03] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 16:03:03,452 - INFO - /get-image returning default url for key=sponsorus.hero: http://127.0.0.1:5500/sponsor-us/main-background.webp
+2026-03-11 16:03:03,452 - INFO - get_image_mapping: no mapping found for key=team135.hero
+2026-03-11 16:03:03,453 - INFO - 127.0.0.1 - - [11/Mar/2026 16:03:03] "GET /get-image?key=sponsorus.hero HTTP/1.1" 200 -
+2026-03-11 16:03:03,453 - INFO - /get-image no mapping for key=team135.hero; default defined as: /team-135/media/team135-background-2.webp
+2026-03-11 16:03:03,454 - INFO - get_image_mapping: no mapping found for key=team328.hero
+2026-03-11 16:03:03,454 - INFO - /get-image returning default url for key=team135.hero: http://127.0.0.1:5500/team-135/media/team135-background-2.webp
+2026-03-11 16:03:03,454 - INFO - /get-image no mapping for key=team328.hero; default defined as: /328-page/Media/328-Background-Main.webp
+2026-03-11 16:03:03,454 - INFO - 127.0.0.1 - - [11/Mar/2026 16:03:03] "GET /get-image?key=team135.hero HTTP/1.1" 200 -
+2026-03-11 16:03:03,455 - INFO - /get-image returning default url for key=team328.hero: http://127.0.0.1:5500/328-page/Media/328-Background-Main.webp
+2026-03-11 16:03:03,456 - INFO - 127.0.0.1 - - [11/Mar/2026 16:03:03] "GET /get-image?key=team328.hero HTTP/1.1" 200 -
+2026-03-11 16:03:05,375 - INFO - /delete-image called from 127.0.0.1 for key=quote.section
+2026-03-11 16:03:05,375 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:03:05,376 - INFO - Loaded 6 image keys
+2026-03-11 16:03:05,376 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 16:03:05,377 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 16:03:05,378 - INFO - /delete-image deleted mapping for key=quote.section
+2026-03-11 16:03:05,379 - INFO - 127.0.0.1 - - [11/Mar/2026 16:03:05] "POST /delete-image HTTP/1.1" 200 -
+2026-03-11 16:03:05,382 - INFO - /image-keys requested from 127.0.0.1
+2026-03-11 16:03:05,382 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:03:05,383 - INFO - Loaded 6 image keys
+2026-03-11 16:03:05,383 - INFO - /image-keys returning 6 keys
+2026-03-11 16:03:05,383 - INFO - 127.0.0.1 - - [11/Mar/2026 16:03:05] "GET /image-keys HTTP/1.1" 200 -
+2026-03-11 16:03:05,388 - INFO - /get-image called from 127.0.0.1 with key=contactus.hero
+2026-03-11 16:03:05,388 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:03:05,388 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:03:05,389 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:03:05,389 - INFO - Loaded 6 image keys
+2026-03-11 16:03:05,389 - INFO - get_image_mapping called for key=contactus.hero
+2026-03-11 16:03:05,390 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 16:03:05,390 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:03:05,390 - INFO - Loaded 6 image keys
+2026-03-11 16:03:05,390 - INFO - /get-image called from 127.0.0.1 with key=sponsorus.hero
+2026-03-11 16:03:05,390 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:03:05,391 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:03:05,391 - INFO - /get-image called from 127.0.0.1 with key=team135.hero
+2026-03-11 16:03:05,391 - INFO - get_image_mapping: no mapping found for key=contactus.hero
+2026-03-11 16:03:05,392 - INFO - Loaded 6 image keys
+2026-03-11 16:03:05,392 - INFO - /get-image called from 127.0.0.1 with key=team328.hero
+2026-03-11 16:03:05,392 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:03:05,392 - INFO - /get-image no mapping for key=contactus.hero; default defined as: /contact-us/Media/contact_us_bckgn.webp
+2026-03-11 16:03:05,392 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 16:03:05,392 - INFO - Loaded 6 image keys
+2026-03-11 16:03:05,393 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 16:03:05,393 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:03:05,393 - INFO - /get-image returning default url for key=contactus.hero: http://127.0.0.1:5500/contact-us/Media/contact_us_bckgn.webp
+2026-03-11 16:03:05,393 - INFO - get_image_mapping called for key=sponsorus.hero
+2026-03-11 16:03:05,393 - INFO - Loaded 6 image keys
+2026-03-11 16:03:05,393 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 16:03:05,393 - INFO - 127.0.0.1 - - [11/Mar/2026 16:03:05] "GET /get-image?key=contactus.hero HTTP/1.1" 200 -
+2026-03-11 16:03:05,394 - INFO - get_image_mapping called for key=team135.hero
+2026-03-11 16:03:05,394 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 16:03:05,394 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 16:03:05,394 - INFO - Loaded 6 image keys
+2026-03-11 16:03:05,394 - INFO - get_image_mapping: no mapping found for key=sponsorus.hero
+2026-03-11 16:03:05,394 - INFO - 127.0.0.1 - - [11/Mar/2026 16:03:05] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:03:05,394 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 16:03:05,395 - INFO - get_image_mapping called for key=team328.hero
+2026-03-11 16:03:05,395 - INFO - /get-image no mapping for key=sponsorus.hero; default defined as: /sponsor-us/main-background.webp
+2026-03-11 16:03:05,395 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 16:03:05,395 - INFO - get_image_mapping: no mapping found for key=team135.hero
+2026-03-11 16:03:05,395 - INFO - /get-image returning default url for key=sponsorus.hero: http://127.0.0.1:5500/sponsor-us/main-background.webp
+2026-03-11 16:03:05,396 - INFO - 127.0.0.1 - - [11/Mar/2026 16:03:05] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 16:03:05,396 - INFO - /get-image no mapping for key=team135.hero; default defined as: /team-135/media/team135-background-2.webp
+2026-03-11 16:03:05,397 - INFO - 127.0.0.1 - - [11/Mar/2026 16:03:05] "GET /get-image?key=sponsorus.hero HTTP/1.1" 200 -
+2026-03-11 16:03:05,397 - INFO - /get-image returning default url for key=team135.hero: http://127.0.0.1:5500/team-135/media/team135-background-2.webp
+2026-03-11 16:03:05,397 - INFO - get_image_mapping: no mapping found for key=team328.hero
+2026-03-11 16:03:05,398 - INFO - 127.0.0.1 - - [11/Mar/2026 16:03:05] "GET /get-image?key=team135.hero HTTP/1.1" 200 -
+2026-03-11 16:03:05,398 - INFO - /get-image no mapping for key=team328.hero; default defined as: /328-page/Media/328-Background-Main.webp
+2026-03-11 16:03:05,398 - INFO - /get-image returning default url for key=team328.hero: http://127.0.0.1:5500/328-page/Media/328-Background-Main.webp
+2026-03-11 16:03:05,399 - INFO - 127.0.0.1 - - [11/Mar/2026 16:03:05] "GET /get-image?key=team328.hero HTTP/1.1" 200 -
+2026-03-11 16:04:26,229 - INFO - /check-login called from 127.0.0.1; session keys=['logged_in', 'login_time']
+2026-03-11 16:04:26,230 - INFO - 127.0.0.1 - - [11/Mar/2026 16:04:26] "GET /check-login HTTP/1.1" 200 -
+2026-03-11 16:04:30,066 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:04:30,066 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:04:30,067 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 16:04:30,067 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:04:30,067 - INFO - Loaded 6 image keys
+2026-03-11 16:04:30,067 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:04:30,068 - INFO - Loaded 6 image keys
+2026-03-11 16:04:30,068 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 16:04:30,068 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 16:04:30,068 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 16:04:30,068 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 16:04:30,069 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 16:04:30,069 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 16:04:30,069 - INFO - 127.0.0.1 - - [11/Mar/2026 16:04:30] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:04:30,069 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 16:04:30,070 - INFO - 127.0.0.1 - - [11/Mar/2026 16:04:30] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 16:04:31,456 - INFO - /get-image called from 127.0.0.1 with key=sponsorus.hero
+2026-03-11 16:04:31,456 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:04:31,456 - INFO - Loaded 6 image keys
+2026-03-11 16:04:31,456 - INFO - get_image_mapping called for key=sponsorus.hero
+2026-03-11 16:04:31,457 - INFO - get_image_mapping: no mapping found for key=sponsorus.hero
+2026-03-11 16:04:31,457 - INFO - /get-image no mapping for key=sponsorus.hero; default defined as: /sponsor-us/main-background.webp
+2026-03-11 16:04:31,457 - INFO - /get-image returning default url for key=sponsorus.hero: http://127.0.0.1:5500/sponsor-us/main-background.webp
+2026-03-11 16:04:31,457 - INFO - 127.0.0.1 - - [11/Mar/2026 16:04:31] "GET /get-image?key=sponsorus.hero HTTP/1.1" 200 -
+2026-03-11 16:04:32,962 - INFO - /get-image called from 127.0.0.1 with key=contactus.hero
+2026-03-11 16:04:32,962 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:04:32,963 - INFO - Loaded 6 image keys
+2026-03-11 16:04:32,963 - INFO - get_image_mapping called for key=contactus.hero
+2026-03-11 16:04:32,964 - INFO - get_image_mapping: no mapping found for key=contactus.hero
+2026-03-11 16:04:32,964 - INFO - /get-image no mapping for key=contactus.hero; default defined as: /contact-us/Media/contact_us_bckgn.webp
+2026-03-11 16:04:32,964 - INFO - /get-image returning default url for key=contactus.hero: http://127.0.0.1:5500/contact-us/Media/contact_us_bckgn.webp
+2026-03-11 16:04:32,964 - INFO - 127.0.0.1 - - [11/Mar/2026 16:04:32] "GET /get-image?key=contactus.hero HTTP/1.1" 200 -
+2026-03-11 16:04:33,446 - INFO - /get-image called from 127.0.0.1 with key=sponsorus.hero
+2026-03-11 16:04:33,446 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:04:33,446 - INFO - Loaded 6 image keys
+2026-03-11 16:04:33,446 - INFO - get_image_mapping called for key=sponsorus.hero
+2026-03-11 16:04:33,447 - INFO - get_image_mapping: no mapping found for key=sponsorus.hero
+2026-03-11 16:04:33,447 - INFO - /get-image no mapping for key=sponsorus.hero; default defined as: /sponsor-us/main-background.webp
+2026-03-11 16:04:33,447 - INFO - /get-image returning default url for key=sponsorus.hero: http://127.0.0.1:5500/sponsor-us/main-background.webp
+2026-03-11 16:04:33,447 - INFO - 127.0.0.1 - - [11/Mar/2026 16:04:33] "GET /get-image?key=sponsorus.hero HTTP/1.1" 200 -
+2026-03-11 16:04:34,383 - INFO - /get-image called from 127.0.0.1 with key=landing.hero
+2026-03-11 16:04:34,383 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:04:34,384 - INFO - /get-image called from 127.0.0.1 with key=quote.section
+2026-03-11 16:04:34,384 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:04:34,384 - INFO - Loaded 6 image keys
+2026-03-11 16:04:34,384 - INFO - get_image_mapping called for key=landing.hero
+2026-03-11 16:04:34,384 - INFO - Loaded 6 image keys
+2026-03-11 16:04:34,384 - INFO - get_image_mapping called for key=quote.section
+2026-03-11 16:04:34,385 - INFO - get_image_mapping: no mapping found for key=landing.hero
+2026-03-11 16:04:34,385 - INFO - get_image_mapping: no mapping found for key=quote.section
+2026-03-11 16:04:34,385 - INFO - /get-image no mapping for key=landing.hero; default defined as: /landing-page/media/main-background.webp
+2026-03-11 16:04:34,385 - INFO - /get-image no mapping for key=quote.section; default defined as: /landing-page/media/quote-background.webp
+2026-03-11 16:04:34,385 - INFO - /get-image returning default url for key=landing.hero: http://127.0.0.1:5500/landing-page/media/main-background.webp
+2026-03-11 16:04:34,385 - INFO - /get-image returning default url for key=quote.section: http://127.0.0.1:5500/landing-page/media/quote-background.webp
+2026-03-11 16:04:34,385 - INFO - 127.0.0.1 - - [11/Mar/2026 16:04:34] "GET /get-image?key=landing.hero HTTP/1.1" 200 -
+2026-03-11 16:04:34,386 - INFO - 127.0.0.1 - - [11/Mar/2026 16:04:34] "GET /get-image?key=quote.section HTTP/1.1" 200 -
+2026-03-11 16:04:35,353 - INFO - /get-image called from 127.0.0.1 with key=sponsorus.hero
+2026-03-11 16:04:35,353 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:04:35,353 - INFO - Loaded 6 image keys
+2026-03-11 16:04:35,354 - INFO - get_image_mapping called for key=sponsorus.hero
+2026-03-11 16:04:35,354 - INFO - get_image_mapping: no mapping found for key=sponsorus.hero
+2026-03-11 16:04:35,354 - INFO - /get-image no mapping for key=sponsorus.hero; default defined as: /sponsor-us/main-background.webp
+2026-03-11 16:04:35,354 - INFO - /get-image returning default url for key=sponsorus.hero: http://127.0.0.1:5500/sponsor-us/main-background.webp
+2026-03-11 16:04:35,354 - INFO - 127.0.0.1 - - [11/Mar/2026 16:04:35] "GET /get-image?key=sponsorus.hero HTTP/1.1" 200 -
+2026-03-11 16:12:24,283 - INFO - /get-image called from 127.0.0.1 with key=sponsorus.hero
+2026-03-11 16:12:24,283 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:12:24,284 - INFO - Loaded 6 image keys
+2026-03-11 16:12:24,284 - INFO - get_image_mapping called for key=sponsorus.hero
+2026-03-11 16:12:24,284 - INFO - get_image_mapping: no mapping found for key=sponsorus.hero
+2026-03-11 16:12:24,284 - INFO - /get-image no mapping for key=sponsorus.hero; default defined as: /sponsor-us/main-background.webp
+2026-03-11 16:12:24,284 - INFO - /get-image returning default url for key=sponsorus.hero: http://127.0.0.1:5500/sponsor-us/main-background.webp
+2026-03-11 16:12:24,284 - INFO - 127.0.0.1 - - [11/Mar/2026 16:12:24] "GET /get-image?key=sponsorus.hero HTTP/1.1" 200 -
+2026-03-11 16:12:32,162 - INFO - /get-image called from 127.0.0.1 with key=sponsorus.hero
+2026-03-11 16:12:32,162 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:12:32,163 - INFO - Loaded 6 image keys
+2026-03-11 16:12:32,163 - INFO - get_image_mapping called for key=sponsorus.hero
+2026-03-11 16:12:32,164 - INFO - get_image_mapping: no mapping found for key=sponsorus.hero
+2026-03-11 16:12:32,164 - INFO - /get-image no mapping for key=sponsorus.hero; default defined as: /sponsor-us/main-background.webp
+2026-03-11 16:12:32,164 - INFO - /get-image returning default url for key=sponsorus.hero: http://127.0.0.1:5500/sponsor-us/main-background.webp
+2026-03-11 16:12:32,165 - INFO - 127.0.0.1 - - [11/Mar/2026 16:12:32] "GET /get-image?key=sponsorus.hero HTTP/1.1" 200 -
+2026-03-11 16:20:42,346 - INFO - /get-image called from 127.0.0.1 with key=sponsorus.hero
+2026-03-11 16:20:42,346 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:20:42,347 - INFO - Loaded 6 image keys
+2026-03-11 16:20:42,347 - INFO - get_image_mapping called for key=sponsorus.hero
+2026-03-11 16:20:42,347 - INFO - get_image_mapping: no mapping found for key=sponsorus.hero
+2026-03-11 16:20:42,347 - INFO - /get-image no mapping for key=sponsorus.hero; default defined as: /sponsor-us/main-background.webp
+2026-03-11 16:20:42,347 - INFO - /get-image returning default url for key=sponsorus.hero: http://127.0.0.1:5500/sponsor-us/main-background.webp
+2026-03-11 16:20:42,347 - INFO - 127.0.0.1 - - [11/Mar/2026 16:20:42] "GET /get-image?key=sponsorus.hero HTTP/1.1" 200 -
+2026-03-11 16:25:15,990 - INFO - /get-image called from 127.0.0.1 with key=sponsorus.hero
+2026-03-11 16:25:15,990 - INFO - Loading image keys from c:\Users\akurama548\Documents\GitHub\Penn-robotics-website\api\image_keys.json
+2026-03-11 16:25:15,991 - INFO - Loaded 6 image keys
+2026-03-11 16:25:15,991 - INFO - get_image_mapping called for key=sponsorus.hero
+2026-03-11 16:25:15,991 - INFO - get_image_mapping: no mapping found for key=sponsorus.hero
+2026-03-11 16:25:15,991 - INFO - /get-image no mapping for key=sponsorus.hero; default defined as: /sponsor-us/main-background.webp
+2026-03-11 16:25:15,991 - INFO - /get-image returning default url for key=sponsorus.hero: http://127.0.0.1:5500/sponsor-us/main-background.webp
+2026-03-11 16:25:15,992 - INFO - 127.0.0.1 - - [11/Mar/2026 16:25:15] "GET /get-image?key=sponsorus.hero HTTP/1.1" 200 -

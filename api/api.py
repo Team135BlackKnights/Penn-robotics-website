@@ -112,8 +112,16 @@ def compress_image(file_bytes, mimetype, quality=85, max_dimension=2400):
 
 def create_app():
     app = Flask(__name__)
+    # CORS: allow the main site origin and local dev server; supports credentials for cross-site cookies
     CORS(app, origins=["https://pennrobotics.org", "http://127.0.0.1:5500"], supports_credentials=True)
+    # Session cookie settings to allow cross-subdomain cookies from api.pennrobotics.org -> pennrobotics.org
+    # Important: for cross-site cookies to be sent with `fetch(..., credentials: 'include')` the cookie
+    # must have SameSite=None and Secure. Also domain should be the parent domain if you want the cookie
+    # accessible across subdomains (eg. api.pennrobotics.org <-> pennrobotics.org).
     app.secret_key = os.urandom(24)  # Secret key for sessions
+    app.config['SESSION_COOKIE_DOMAIN'] = '.pennrobotics.org'
+    app.config['SESSION_COOKIE_SAMESITE'] = 'None'
+    app.config['SESSION_COOKIE_SECURE'] = True
 
     @app.errorhandler(429)
     def rate_limit_handler(e):

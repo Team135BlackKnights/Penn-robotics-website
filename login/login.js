@@ -1,5 +1,5 @@
-const isLocal = window.location.hostname === '127.0.0.1' && window.location.port === '5500';
-const baseUrl = isLocal ? 'http://127.0.0.1:5000' : 'https://api.pennrobotics.org';
+// Auto-detect API base from hostname (no overrides): local host -> local API, otherwise production
+const baseUrl = ((window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost' || window.location.hostname === '0.0.0.0' || window.location.hostname.startsWith('192.168.')) ? 'http://127.0.0.1:5000' : 'https://api.pennrobotics.org');
 
 document.getElementById('login-form').addEventListener('submit', function(event) {
     event.preventDefault();

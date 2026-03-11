@@ -516,25 +516,34 @@ html {
   background-size: cover;
   background-color: rgba(0, 0, 0, 0.5);
   background-blend-mode: soft-light;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  min-height: 90vh;
 }
 .landing .hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* fill most of the viewport while leaving room for the navbar */
+  min-height: calc(100vh - 88px);
+  padding: 6vh 2vw;
+  box-sizing: border-box;
   font-weight: 700;
   color: rgb(250, 250, 250);
   text-align: center;
 }
 .landing .hero .title {
+  padding-top: 0;
   font-size: clamp(3rem, 10vw, 7.5rem);
-  text-align: center;
+  line-height: 1;
+  margin: 0; /* remove any default spacing so centering is exact */
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.55); /* improve contrast on busy backgrounds */
+  max-width: 95vw;
+  word-break: break-word;
 }
 .landing .hero .typed-title {
-  margin-top: 2rem;
+  margin-top: 1vh;
   font-weight: 400;
   font-size: clamp(16px, 3vw, 18px);
-  text-align: center;
 }
 
 .team-container {

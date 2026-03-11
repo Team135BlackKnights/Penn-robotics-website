@@ -196,7 +196,7 @@
                 </div></li>
                 <li><div class="step-body">
                     <strong>Upload a new image</strong>
-                    <p>Click: <strong>Choose File</strong> (or drag &amp; drop an image file directly onto the card), then click: <strong><i class="fa-solid fa-cloud-arrow-up"></i> Upload</strong>. The new image goes live on the website immediately.</p>
+                    <p>Click: <strong>Choose File</strong> (or drag &amp; drop an image file directly onto the card), then click: <strong><i class="fa-solid fa-cloud-arrow-up"></i> Upload</strong>The new image goes live on the website immediately.</p>
                     <p>Keep file sizes reasonable. We do have image compression but that can only do so much. Large file sizes make loading slow for visitors.</p>
                 </div></li>
                 <li><div class="step-body">
@@ -295,9 +295,8 @@
 
     <!-- Check if the user is logged in when loading the page -->
     <script>
-        // See if local build or production build
-        const isLocal = window.location.hostname === '127.0.0.1' && window.location.port === '5500';
-        const baseUrl = isLocal ? 'http://127.0.0.1:5000' : 'https://api.pennrobotics.org';
+        // Auto-detect API base from hostname: local dev -> local API, otherwise production API host
+        const baseUrl = ((window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost' || window.location.hostname === '0.0.0.0' || window.location.hostname.startsWith('192.168.')) ? 'http://127.0.0.1:5000' : 'https://api.pennrobotics.org');
 
         fetch(`${baseUrl}/check-login`, {
             credentials: 'include'

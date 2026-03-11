@@ -1,32 +1,4 @@
 
-// If the post-management section has been marked deprecated, disable its UI and prevent submissions.
-(function () {
-    const postSec = document.getElementById('post-management-section');
-    if (postSec && postSec.classList.contains('deprecated-section')) {
-        // disable inputs/controls so the UI is visually and functionally read-only
-        postSec.querySelectorAll('input, textarea, button, select').forEach(el => {
-            try { el.disabled = true; } catch (e) {}
-            el.setAttribute && el.setAttribute('aria-disabled', 'true');
-        });
-
-        // prevent any form submissions or button actions as a safety net
-        postSec.querySelectorAll('form').forEach(f => {
-            f.addEventListener('submit', function (e) {
-                e.preventDefault();
-                e.stopImmediatePropagation();
-                return false;
-            }, { capture: true });
-        });
-        postSec.querySelectorAll('button').forEach(b => {
-            b.addEventListener('click', function (e) {
-                e.preventDefault();
-                e.stopImmediatePropagation();
-                return false;
-            }, { capture: true });
-        });
-    }
-})();
-
 // Make Post Form Submission
 document.getElementById('make-post-form').addEventListener('submit', function (event) {
     event.preventDefault();
@@ -230,14 +202,10 @@ document.getElementById('fetch-logs').addEventListener('click', fetchLogs);
 })();
 
 document.getElementById('download-logs').addEventListener('click', function () {
-    const proceed = confirm("Download logs? The file may contain sensitive information. Continue?");
-    if (!proceed) return;
     window.location.href = `${baseUrl}/download-logs`;
 });
 
 document.getElementById('reset-logs').addEventListener('click', function () {
-    const proceed = confirm("Are you sure you want to delete and reset all logs? This action cannot be undone.");
-    if (!proceed) return;
     fetch(`${baseUrl}/reset-logs`, {
         method: 'POST',
         credentials: 'include'
@@ -349,13 +317,14 @@ function createImageSlotWidget(key, meta) {
     const slot = document.createElement('div');
     slot.className = 'image-slot';
     if (meta && meta.page) slot.setAttribute('data-slot-page', meta.page);
-    // Header: title on left, optional 'View on site' link on right
-    const header = document.createElement('div');
-    header.className = 'slot-header';
-
     const title = document.createElement('h3');
     title.textContent = meta.label || key;
-    header.appendChild(title);
+    slot.appendChild(title);
+
+    const keyText = document.createElement('p');
+    keyText.className = 'image-slot-key';
+    keyText.textContent = `Key: ${key}`;
+    slot.appendChild(keyText);
 
     // Link to view the image target on the live site (opens page and focuses this slot)
     if (meta && meta.page) {
@@ -365,16 +334,11 @@ function createImageSlotWidget(key, meta) {
         viewLink.href = `${meta.page}#focus=${encodeURIComponent(key)}`;
         viewLink.target = '_blank';
         viewLink.rel = 'noopener noreferrer';
-        viewLink.innerHTML = '<i class="fa-solid fa-arrow-up-right-from-square"></i> View on site';
-        header.appendChild(viewLink);
+        viewLink.textContent = 'View on site';
+        viewLink.style.display = 'inline-block';
+        viewLink.style.marginTop = '6px';
+        slot.appendChild(viewLink);
     }
-
-    slot.appendChild(header);
-
-    const keyText = document.createElement('p');
-    keyText.className = 'image-slot-key';
-    keyText.textContent = `Key: ${key}`;
-    slot.appendChild(keyText);
 
     if (meta.description) {
         const desc = document.createElement('p');
@@ -404,21 +368,20 @@ function createImageSlotWidget(key, meta) {
     fileInput.className = 'image-slot-input';
     slot.appendChild(fileInput);
 
-    const uploadBtn = document.createElement('button');
-    uploadBtn.type = 'button';
-    uploadBtn.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> Upload';
-    
-    const resetBtn = document.createElement('button');
-    resetBtn.type = 'button';
-    resetBtn.innerHTML = '<i class="fa-solid fa-rotate-left"></i> Reset to default';
-    resetBtn.style.marginLeft = '8px';
-    slot.appendChild(resetBtn);
-
-    // Group buttons into a row so we can control their widths separately from global button styles
+    // Put both buttons into a flex row so they display side-by-side
     const buttonsRow = document.createElement('div');
     buttonsRow.className = 'buttons-row';
+
+    const uploadBtn = document.createElement('button');
+    uploadBtn.type = 'button';
+    uploadBtn.textContent = 'Upload';
     buttonsRow.appendChild(uploadBtn);
+
+    const resetBtn = document.createElement('button');
+    resetBtn.type = 'button';
+    resetBtn.textContent = 'Reset to default';
     buttonsRow.appendChild(resetBtn);
+
     slot.appendChild(buttonsRow);
 
     const status = document.createElement('div');

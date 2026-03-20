@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function fetchPost(postId) {
-    fetch(`https://api.pennrobotics.org/get-post/${postId}`)
+    const API_BASE = ((window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost' || window.location.hostname === '0.0.0.0' || window.location.hostname.startsWith('192.168.')) ? 'http://127.0.0.1:5000' : 'https://api.pennrobotics.org');
+    fetch(`${API_BASE}/get-post/${postId}`)
         .then(response => response.json())
         .then(data => {
             if (data.error) {

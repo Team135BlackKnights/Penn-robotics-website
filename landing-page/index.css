@@ -403,7 +403,6 @@
 }
 
 .landing {
-  background-image: url("/landing-page/media/main-background-3.webp");
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
@@ -412,13 +411,26 @@
   min-height: 90vh;
 }
 .landing .hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* fill most of the viewport while leaving room for the navbar */
+  min-height: calc(100vh - 88px);
+  padding: 6vh 2vw;
+  box-sizing: border-box;
   font-weight: 700;
   color: white;
   text-align: center;
 }
 .landing .hero .title {
-  padding-top: 36vh;
+  padding-top: 0;
   font-size: clamp(3rem, 10vw, 7.5rem);
+  line-height: 1;
+  margin: 0; /* remove any default spacing so centering is exact */
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.55); /* improve contrast on busy backgrounds */
+  max-width: 95vw;
+  word-break: break-word;
 }
 .landing .hero .typed-title {
   margin-top: 1vh;
@@ -527,7 +539,6 @@
 }
 
 .quote-section {
-  background-image: url("/landing-page/media/quote-background.webp");
   background-position: center;
   background-attachment: fixed;
   background-color: rgba(0, 0, 0, 0.8);

@@ -11,7 +11,7 @@
 }
 
 .landing {
-  background-image: url("/team-135/media/team135-background-2.webp");
+  // background-image removed — managed by image-slot-loader.js via data-image-slot
   background-position: center;
   background-attachment: fixed;
   background-size: cover;

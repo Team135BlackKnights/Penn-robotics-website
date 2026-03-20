@@ -15,12 +15,16 @@
     <link rel="icon" type="image/x-icon" href="main-logo.png" />
     <meta name="description" content="Browse Penn Robotics sponsor benefits." />
     <link rel="canonical" href="https://pennrobotics.org/sponsor-us.html" />
+    <link rel="preconnect" href="https://api.pennrobotics.org" crossorigin />
     <link rel="stylesheet" href="/sponsor-us/sponsor-us.css" />
     <script src="hamburger.js" defer></script>
     <script
       src="https://kit.fontawesome.com/73232d6f01.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="/focus-arrow.css" />
+    <script src="/focus-arrow.js" defer></script>
+    <script src="image-slot-loader.js" defer></script>
   </head>
   <body>
     <div class="navbar">
@@ -69,7 +73,7 @@
       </div>
     </div>
 
-    <div class="landing">
+    <div class="landing" data-image-slot="sponsorus.hero">
       <div class="hero">
         <div class="title">Sponsor Us!</div>
         <a

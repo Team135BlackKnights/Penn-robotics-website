@@ -111,6 +111,33 @@ body {
   margin-bottom: 30px;
   position: relative;
 }
+.login-container {
+  /* Show-password button inside password group */
+}
+.login-container .show-pass {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: rgb(250, 200, 0);
+  border-radius: 8px;
+  transition: background 0.12s ease, color 0.12s ease;
+  padding: 0;
+}
+.login-container .show-pass:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+.login-container .show-pass[aria-pressed=true] svg circle {
+  fill: transparent;
+}
 .login-container .input {
   font-size: 16px;
   padding: 10px 10px 10px 5px;

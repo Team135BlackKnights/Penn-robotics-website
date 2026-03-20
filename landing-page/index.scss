@@ -234,7 +234,7 @@ button {
   }
 }
 .landing {
-  background-image: url("/landing-page/media/main-background-3.webp");
+  // background-image removed — managed by image-slot-loader.js via data-image-slot
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
@@ -243,13 +243,26 @@ button {
   min-height: 90vh;
 
   .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* fill most of the viewport while leaving room for the navbar */
+    min-height: calc(100vh - 88px);
+    padding: 6vh 2vw;
+    box-sizing: border-box;
     font-weight: 700;
     color: $primary;
     text-align: center;
 
     .title {
-      padding-top: 15vh;
+      padding-top: 0;
       font-size: $cover;
+      line-height: 1;
+      margin: 0; /* remove any default spacing so centering is exact */
+      text-shadow: 0 6px 18px rgba(0,0,0,0.55); /* improve contrast on busy backgrounds */
+      max-width: 95vw;
+      word-break: break-word;
     }
 
     .typed-title {
@@ -401,7 +414,7 @@ button {
 
 
 .quote-section {
-  background-image: url("/landing-page/media/quote-background.webp");
+  // background-image removed — managed by image-slot-loader.js via data-image-slot
   background-position: center;
   background-attachment: fixed;
   background-color: rgba(0, 0, 0, 0.8);

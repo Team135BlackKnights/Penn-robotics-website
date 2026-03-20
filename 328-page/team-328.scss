@@ -11,7 +11,7 @@
 }
 
 .landing {
-  background-image: url("/328-page/Media/328-Background-Main.webp");
+  // background-image removed — managed by image-slot-loader.js via data-image-slot
   background-position: center;
   background-attachment: fixed;
   background-size: cover;

@@ -280,7 +280,7 @@
 }
 
 .landing {
-  background-image: url("/cresendo/Media/FRC_Logo.svg.webp");
+  background-image: url("cresendo/Media/FRC_Logo.svg.webp");
   background-position: center;
   background-attachment: fixed;
   background-size: cover;

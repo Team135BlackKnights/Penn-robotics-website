@@ -681,7 +681,7 @@ html {
 }
 
 .sponsors {
-  background-image: url("/team-135/media/main-logo.webp");
+  background-image: url("team-135/media/main-logo.webp");
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;

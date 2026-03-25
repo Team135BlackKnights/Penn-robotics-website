@@ -290,7 +290,7 @@
 }
 
 .landing {
-  background-image: url("/328history/media/328historymain.webp");
+  background-image: url("328history/media/328historymain.webp");
   background-position: bottom;
   background-attachment: fixed;
   background-size: cover;

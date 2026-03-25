@@ -346,7 +346,7 @@ html {
   min-height: 100vh;
 }
 .history .header {
-  background-image: url("/ME/media/history-header.webp");
+  background-image: url("ME/media/history-header.webp");
   background-position: center;
   background-size: cover;
   background-color: rgba(0, 0, 0, 0.5);
@@ -418,7 +418,7 @@ html {
   min-height: 100vh;
 }
 .projects .header {
-  background-image: url("/ME/media/projects-header.webp");
+  background-image: url("ME/media/projects-header.webp");
   background-position: center;
   background-size: cover;
   background-color: rgba(0, 0, 0, 0.5);
@@ -486,7 +486,7 @@ html {
   min-height: 100vh;
 }
 .ATIA .header {
-  background-image: url("/ME/media/ATIA-header.webp");
+  background-image: url("ME/media/ATIA-header.webp");
   background-position: center;
   background-size: cover;
   background-color: rgba(0, 0, 0, 0.5);
@@ -576,7 +576,7 @@ html {
   min-height: 100vh;
 }
 .adapt-a-thon .header {
-  background-image: url("/ME/media/adapt-1.webp");
+  background-image: url("ME/media/adapt-1.webp");
   background-position: center;
   background-size: cover;
   background-color: rgba(0, 0, 0, 0.5);
@@ -623,7 +623,7 @@ html {
   min-height: 100vh;
 }
 .contact-us .header {
-  background-image: url("/ME/media/contact-header.webp");
+  background-image: url("ME/media/contact-header.webp");
   background-position: center;
   background-size: cover;
   background-color: rgba(0, 0, 0, 0.7);

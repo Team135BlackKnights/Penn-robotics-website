@@ -3,3 +3,5 @@
 *.log
 api/api.log
 /api/__pycache__
+*.pyc
+/uploads

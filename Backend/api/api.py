@@ -39,9 +39,42 @@ flask_logger.addHandler(api_handler)
 
 flask_logger.propagate = False
 
-UPLOAD_FOLDER = 'uploads'
+TRUSTED_ORIGINS = {
+    "https://pennrobotics.org",
+    "https://www.pennrobotics.org"
+}
+
+UPLOAD_FOLDER = os.path.abspath(os.path.join(current_directory, 'uploads'))
 if not os.path.exists(UPLOAD_FOLDER):
-    os.makedirs(UPLOAD_FOLDER)
+    os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+
+def normalize_origin(origin):
+    if not origin:
+        return None
+    return origin.strip().rstrip('/').lower()
+
+
+def require_trusted_origin():
+    origin = normalize_origin(request.headers.get('Origin'))
+    trusted = {normalize_origin(item) for item in TRUSTED_ORIGINS}
+    if not origin or origin not in trusted:
+        api_logger.warning(f"Blocked request due to invalid origin: {origin}")
+        return jsonify(error="Forbidden origin"), 403
+    return None
+
+
+def build_safe_upload_path(original_filename):
+    safe_filename = secure_filename(original_filename or "")
+    if not safe_filename:
+        return None, None
+
+    unique_name = f"{uuid.uuid4().hex}_{safe_filename}"
+    save_path = os.path.abspath(os.path.join(UPLOAD_FOLDER, unique_name))
+    if os.path.commonpath([UPLOAD_FOLDER, save_path]) != UPLOAD_FOLDER:
+        return None, None
+
+    return save_path, unique_name
 
 
 def compress_image(file_bytes, mimetype, quality=85, max_dimension=2400):
@@ -112,8 +145,8 @@ def compress_image(file_bytes, mimetype, quality=85, max_dimension=2400):
 
 def create_app():
     app = Flask(__name__)
-    # CORS: allow the main site origin and local dev server; supports credentials for cross-site cookies
-    CORS(app, origins=["https://pennrobotics.org", "http://127.0.0.1:5500"], supports_credentials=True)
+    # CORS: allow only trusted production origins; supports credentials for cross-site cookies
+    CORS(app, origins=list(TRUSTED_ORIGINS), supports_credentials=True)
     # Session cookie settings to allow cross-subdomain cookies from api.pennrobotics.org -> pennrobotics.org
     # Important: for cross-site cookies to be sent with `fetch(..., credentials: 'include')` the cookie
     # must have SameSite=None and Secure. Also domain should be the parent domain if you want the cookie
@@ -122,6 +155,13 @@ def create_app():
     app.config['SESSION_COOKIE_DOMAIN'] = '.pennrobotics.org'
     app.config['SESSION_COOKIE_SAMESITE'] = 'None'
     app.config['SESSION_COOKIE_SECURE'] = True
+
+    @app.before_request
+    def enforce_origin_on_mutating_requests():
+        if request.method in ('POST', 'PUT', 'PATCH', 'DELETE'):
+            origin_check = require_trusted_origin()
+            if origin_check:
+                return origin_check
 
     @app.errorhandler(429)
     def rate_limit_handler(e):
@@ -184,7 +224,9 @@ def create_app():
 
         image_path = None
         if image:
-            image_path = os.path.join(UPLOAD_FOLDER, image.filename)
+            image_path, _ = build_safe_upload_path(image.filename)
+            if not image_path:
+                return jsonify(error="Invalid filename"), 400
             image.save(image_path)
 
         date = ("Published " + datetime.now().strftime('%m/%d/%Y'))
@@ -224,7 +266,9 @@ def create_app():
 
         image = request.files.get('image')
         if image:
-            image_path = os.path.join(UPLOAD_FOLDER, image.filename)
+            image_path, _ = build_safe_upload_path(image.filename)
+            if not image_path:
+                return jsonify(error="Invalid filename"), 400
             image.save(image_path)
             updates['image'] = image_path
 
@@ -255,7 +299,7 @@ def create_app():
             return {}
 
     @app.route('/image-keys', methods=['GET'])
-    @cross_origin(origins=["http://127.0.0.1:5500", "https://pennrobotics.org"], supports_credentials=True)
+    @cross_origin(origins=list(TRUSTED_ORIGINS), supports_credentials=True)
     def image_keys():
         api_logger.info(f"/image-keys requested from {request.remote_addr}")
         keys = load_image_keys()
@@ -311,12 +355,10 @@ def create_app():
             compression_ratio = (1 - compressed_size / original_size) * 100 if original_size > 0 else 0
             api_logger.info(f"/upload-image compressed: {original_size} -> {compressed_size} bytes ({compression_ratio:.1f}% reduction)")
 
-            filename = secure_filename(image.filename)
-            if not filename:
+            save_path, unique_name = build_safe_upload_path(image.filename)
+            if not save_path:
                 api_logger.info("/upload-image invalid filename after secure_filename")
                 return jsonify(error="Invalid filename"), 400
-            unique_name = f"{uuid.uuid4().hex}_{filename}"
-            save_path = os.path.join(UPLOAD_FOLDER, unique_name)
             with open(save_path, 'wb') as f:
                 f.write(compressed_bytes)
 
@@ -339,7 +381,7 @@ def create_app():
             api_logger.error(f"Error saving uploaded image: {e}")
             return jsonify(error=str(e)), 500
     @app.route('/get-image', methods=['GET'])
-    @cross_origin(origins=["http://127.0.0.1:5500", "https://pennrobotics.org"], supports_credentials=True)
+    @cross_origin(origins=list(TRUSTED_ORIGINS), supports_credentials=True)
     def get_image():
         key = request.args.get('key')
         api_logger.info(f"/get-image called from {request.remote_addr} with key={key}")
@@ -403,7 +445,7 @@ def create_app():
             return jsonify(error="Invalid default image configuration"), 500
 
     @app.route('/delete-image', methods=['POST'])
-    @cross_origin(origins=["http://127.0.0.1:5500", "https://pennrobotics.org"], supports_credentials=True)
+    @cross_origin(origins=list(TRUSTED_ORIGINS), supports_credentials=True)
     def delete_image():
         if not session.get('logged_in'):
             api_logger.info('/delete-image unauthorized request')
@@ -498,4 +540,4 @@ def create_app():
 
 if __name__ == '__main__':
     app = create_app()
-    app.run(host='0.0.0.0', port=5000, debug=True, use_reloader=False)
+    app.run(host='0.0.0.0', port=5000, debug=False, use_reloader=False)

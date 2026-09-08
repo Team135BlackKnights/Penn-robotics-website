@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "eamodio.gitlens",
+    "ecmel.vscode-html-css",
+    "xabikos.JavaScriptSnippets",
+    "ritwickdey.live-sass",
+    "ritwickdey.LiveServer",
+    "esbenp.prettier-vscode",
+    "alefragnani.project-manager"
+  ]
+}

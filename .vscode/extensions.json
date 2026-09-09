@@ -6,6 +6,8 @@
     "glenn2223.live-sass",
     "ritwickdey.LiveServer",
     "esbenp.prettier-vscode",
-    "alefragnani.project-manager"
+    "alefragnani.project-manager",
+    "ms-vsliveshare.vsl",
+    "lucasnorgaard.live-server-qr"
   ]
 }

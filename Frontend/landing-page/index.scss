@@ -234,7 +234,7 @@ button {
   }
 }
 .landing {
-  // background-image removed — managed by image-slot-loader.js via data-image-slot
+  background-image: url("media/main-background.webp"); //background-image removed — managed by image-slot-loader.js via data-image-slot except the loader didnt work so this is a temporary solution until its solved
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
@@ -289,7 +289,7 @@ button {
       font-size: $subheader;
     }
     .team-description {
-      color: rgba(150, 150, 150); /* Match the color of the other text */
+      color: rgb(150, 150, 150); /* Match the color of the other text */
       font-family: "Roboto", Arial, Helvetica, sans-serif; /* Match the font-family */
       font-size: 16px; /* Match the font size */
       font-weight: 300; /* Match the font weight */

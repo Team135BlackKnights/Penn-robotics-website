@@ -511,6 +511,7 @@ html {
 }
 
 .landing {
+  background-image: url("media/main-background.webp");
   background-position: center;
   background-attachment: fixed;
   background-size: cover;

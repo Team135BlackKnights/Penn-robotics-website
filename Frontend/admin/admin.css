@@ -3,16 +3,29 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   background-color: #f4f4f4;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Center everything horizontally */
-  justify-content: center; /* Keep content at the top */
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /* Stack elements vertically */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* Center everything horizontally */
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* Keep content at the top */
   min-height: 100vh;
   padding: 20px;
 }
@@ -24,10 +37,11 @@ body {
   padding: 20px;
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   min-height: 100px;
   /* Allow absolutely-positioned children (filter dropdown) to escape the container
-     while still allowing vertical scroll for inner content where needed. */
+       while still allowing vertical scroll for inner content where needed. */
   overflow-x: visible;
   overflow-y: auto;
 }
@@ -41,13 +55,13 @@ h1.main-title {
 }
 
 h1 {
-  color: rgb(60, 72, 88);
+  color: #3c4858;
   text-align: center;
   margin-bottom: 20px;
 }
 
 h2 {
-  color: rgb(60, 72, 88);
+  color: #3c4858;
   margin-bottom: 10px;
 }
 
@@ -56,12 +70,17 @@ h2 {
 }
 
 form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 label {
-  color: rgb(60, 72, 88);
+  color: #3c4858;
   margin-bottom: 5px;
   font-weight: bold;
 }
@@ -70,7 +89,7 @@ input, textarea {
   padding: 10px;
   margin-bottom: 15px;
   border-radius: 8px;
-  border: 1px solid rgb(60, 72, 88);
+  border: 1px solid #3c4858;
   font-family: inherit;
   font-size: 1rem;
   width: 100%;
@@ -86,14 +105,16 @@ button {
   cursor: pointer;
   font-family: inherit;
   font-size: 1rem;
+  -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
 }
+
 button:hover {
   background-color: #0056b3;
 }
 
 #delete-btn {
-  background: rgb(224, 55, 55);
+  background: #e03737;
 }
 
 .logs-display {
@@ -119,18 +140,26 @@ button:hover {
   bottom: 12px;
   right: 20px;
   z-index: 50;
-  display: none; /* shown/hidden by JS */
+  display: none;
+  /* shown/hidden by JS */
   width: 44px;
   height: 44px;
   border-radius: 50%;
   border: none;
   background: #007bff;
   color: #fff;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  -webkit-box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-size: 18px;
 }
 
@@ -147,12 +176,12 @@ button:hover {
 }
 
 #download-logs {
-  background: rgb(75, 224, 55);
+  background: #4be037;
   margin-bottom: 3px;
 }
 
 #reset-logs {
-  background: rgb(224, 55, 55);
+  background: #e03737;
 }
 
 #fetch-post {
@@ -162,42 +191,55 @@ button:hover {
 #edit-fields {
   display: none;
 }
+
 #edit-fields label {
-  color: rgb(60, 72, 88);
+  color: #3c4858;
   margin-bottom: 5px;
   font-weight: bold;
 }
+
 #edit-fields .current-image-text {
-  color: rgb(60, 72, 88);
+  color: #3c4858;
   margin-bottom: 5px;
   font-weight: bold;
 }
+
 #edit-fields .post-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: left;
-  align-items: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   overflow: hidden;
   max-width: 100%;
 }
+
 #edit-fields .post-image img {
   border-radius: 8px;
   margin-bottom: 15px;
   max-width: 100%;
   height: auto;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
+
 #edit-fields input, #edit-fields textarea {
   padding: 10px;
   margin-bottom: 15px;
   border-radius: 5px;
-  border: 1px solid rgb(60, 72, 88);
+  border: 1px solid #3c4858;
   font-family: inherit;
   font-size: 1rem;
   width: 100%;
 }
+
 #edit-fields #edit-post-btn {
   width: 100%;
-  background: rgb(75, 224, 55);
+  background: #4be037;
   margin-top: 10px;
 }
 
@@ -210,8 +252,13 @@ button:hover {
 /* Image slot layout and buttons */
 .image-slot {
   margin-bottom: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 8px;
 }
 
@@ -226,9 +273,15 @@ button:hover {
 
 /* Slot header: title left, view link right */
 .image-slot .slot-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   gap: 8px;
   margin-bottom: 6px;
 }
@@ -236,26 +289,40 @@ button:hover {
 .image-slot .slot-header h3 {
   margin: 0;
   font-size: 1.05rem;
-  flex: 1 1 0;
-  min-width: 0; /* allow flex children to shrink correctly */
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0;
+  min-width: 0;
+  /* allow flex children to shrink correctly */
 }
 
 .image-slot .slot-header .image-slot-link {
   margin: 0;
-  align-self: flex-start;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: center;
-  white-space: nowrap; /* keep icon and text on one line */
-  flex: 0 0 auto; /* don't allow the link to shrink and wrap */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  white-space: nowrap;
+  /* keep icon and text on one line */
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  /* don't allow the link to shrink and wrap */
 }
 
 /* Give the header link a bit more breathing room */
 .image-slot .slot-header .image-slot-link i {
-  margin-right: 8px; /* reduced gap for balance */
+  margin-right: 8px;
+  /* reduced gap for balance */
 }
 
 .image-slot .slot-header .image-slot-link {
-  padding: 8px 12px; /* internal padding for the pill */
+  padding: 8px 12px;
+  /* internal padding for the pill */
 }
 
 /* Icon spacing for buttons where icons are used */
@@ -269,7 +336,7 @@ button:hover {
 
 /* Style the second button in the slot (Reset to default) to match #reset-logs */
 .image-slot button + button {
-  background: rgb(224, 55, 55);
+  background: #e03737;
   color: white;
   border: none;
   border-radius: 8px;
@@ -302,21 +369,30 @@ button:hover {
 
 /* Toolbar: search + filter side by side */
 .slot-toolbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 10px;
-  align-items: stretch;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   margin-bottom: 12px;
 }
 
 #image-slot-search {
-  flex: 1;
-  padding: 10px 14px 10px 40px; /* accommodate left icon */
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 10px 14px 10px 40px;
+  /* accommodate left icon */
   font-size: 15px;
   border: 2px solid #ccc;
   border-radius: 6px;
   outline: none;
+  -webkit-transition: border-color 0.15s ease;
   transition: border-color 0.15s ease;
 }
+
 #image-slot-search:focus {
   border-color: #007bff;
 }
@@ -324,14 +400,17 @@ button:hover {
 /* Search input wrapper with inline icon */
 .search-input-wrap {
   position: relative;
-  flex: 1 1 auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 .search-input-wrap .search-icon {
   position: absolute;
   left: 12px;
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   margin-top: -7px;
   color: #6b7280;
   pointer-events: none;
@@ -353,16 +432,23 @@ button:hover {
   border: 2px solid #c4d4fb;
   border-radius: 6px;
   cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 8px;
   white-space: nowrap;
+  -webkit-transition: background 0.15s ease, border-color 0.15s ease;
   transition: background 0.15s ease, border-color 0.15s ease;
 }
+
 .filter-btn:hover {
   background: #dce8ff;
   border-color: #1a56db;
 }
+
 .filter-btn:focus {
   outline: 3px solid rgba(26, 86, 219, 0.12);
 }
@@ -371,19 +457,21 @@ button:hover {
   position: absolute;
   top: calc(100% + 6px);
   /* prefer aligning under the left edge of the button wrapper; constrain so it never
-     exceeds the viewport (prevents horizontal page scroll / clipping) */
+       exceeds the viewport (prevents horizontal page scroll / clipping) */
   left: 0;
   right: auto;
   background: #fff;
   border: 2px solid #ccc;
   border-radius: 8px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
   padding: 14px 16px;
   z-index: 100;
   min-width: 200px;
   /* don't allow it to be wider than viewport minus some gutter */
   max-width: calc(100vw - 40px);
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   max-height: 60vh;
   overflow-y: auto;
   overflow-x: hidden;
@@ -392,6 +480,7 @@ button:hover {
 .filter-group {
   margin-bottom: 12px;
 }
+
 .filter-group:last-of-type {
   margin-bottom: 8px;
 }
@@ -406,21 +495,32 @@ button:hover {
 }
 
 .filter-dropdown label {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: flex-start; /* keep checkbox and label together on the left */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  /* keep checkbox and label together on the left */
   gap: 10px;
   padding: 6px 0;
   font-size: 14px;
   cursor: pointer;
   line-height: 1.2;
-  white-space: normal; /* allow wrapping for long page names */
+  white-space: normal;
+  /* allow wrapping for long page names */
 }
 
-.filter-dropdown label input[type=checkbox] {
+.filter-dropdown label input[type="checkbox"] {
   margin: 0;
-  flex-shrink: 0;
-  order: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-ordinal-group: 1;
+      -ms-flex-order: 0;
+          order: 0;
   width: 16px;
   height: 16px;
   accent-color: #007bff;
@@ -431,6 +531,7 @@ button:hover {
   padding-top: 8px;
   text-align: right;
 }
+
 .filter-actions button {
   font-size: 13px;
   background: none;
@@ -439,21 +540,29 @@ button:hover {
   cursor: pointer;
   font-weight: 600;
 }
+
 .filter-actions button:hover {
   text-decoration: underline;
 }
 
 /* Active filter tags */
 #active-filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 6px;
   margin-bottom: 10px;
 }
 
 .filter-tag {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 5px;
   padding: 4px 10px;
   font-size: 13px;
@@ -461,9 +570,11 @@ button:hover {
   color: #1a56db;
   border-radius: 12px;
 }
+
 .filter-tag i {
   font-size: 11px;
 }
+
 .filter-tag button {
   background: none;
   border: none;
@@ -473,28 +584,36 @@ button:hover {
   cursor: pointer;
   padding: 0 2px;
 }
+
 .filter-tag button:hover {
   color: #c00;
 }
 
 /* Container: show slots two-per-row on wide screens, stack to one-per-row on smaller screens */
 #image-slots-container {
+  display: -ms-grid;
   display: grid;
   /* allow columns to shrink below their content width when necessary */
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  -ms-grid-columns: (minmax(0, 1fr))[2];
+      grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
 
 @media (max-width: 800px) {
   #image-slots-container {
-    grid-template-columns: 1fr;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
   }
 }
+
 /* Make buttons sit side-by-side when there's space */
 .image-slot .buttons-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 8px;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 /* prevent buttons or other children from forcing the slot to be wider than the grid column */
@@ -510,14 +629,17 @@ button:hover {
   width: auto;
   padding: 8px 12px;
   white-space: nowrap;
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 /* Make image previews taller and preserve aspect while filling area to avoid looking tiny next to controls */
 .image-slot .image-slot-preview {
   max-height: 180px;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
   border-radius: 8px;
 }
@@ -527,11 +649,18 @@ button:hover {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.75);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   z-index: 2000;
   opacity: 0;
+  -webkit-transition: opacity 180ms ease;
   transition: opacity 180ms ease;
 }
 
@@ -543,16 +672,23 @@ button:hover {
   position: relative;
   max-width: 90vw;
   max-height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .image-lightbox-img {
   max-width: 100%;
   max-height: 100%;
   border-radius: 6px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
 }
 
 .image-lightbox-close {
@@ -566,10 +702,17 @@ button:hover {
   border-radius: 50%;
   font-size: 20px;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .image-lightbox-close:hover {
@@ -588,10 +731,15 @@ button:hover {
 }
 
 .image-slots-header-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 8px;
-  flex-wrap: wrap;
-  align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .how-to-btn--green {
@@ -599,6 +747,7 @@ button:hover {
   color: #1a7a3c;
   border-color: #b7e4c7;
 }
+
 .how-to-btn--green:hover {
   background: #d4f5e1;
   border-color: #1a7a3c;
@@ -606,13 +755,21 @@ button:hover {
 
 /* Image Slots section header with inline help button */
 .image-slots-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 12px;
 }
+
 .image-slots-header h2 {
   margin-bottom: 0;
 }
@@ -627,11 +784,17 @@ button:hover {
   border: 2px solid #c4d4fb;
   border-radius: 8px;
   cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 6px;
+  -webkit-transition: background 0.15s ease, border-color 0.15s ease;
   transition: background 0.15s ease, border-color 0.15s ease;
 }
+
 .how-to-btn:hover {
   background: #dce8ff;
   border-color: #1a56db;
@@ -642,9 +805,15 @@ button:hover {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.55);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   z-index: 3000;
   padding: 40px 20px 20px;
   overflow-y: auto;
@@ -654,16 +823,19 @@ button:hover {
   position: relative;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
   max-width: 680px;
   width: 100%;
   padding: 32px 32px 28px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   max-height: calc(100vh - 80px);
   overflow-y: auto;
 }
+
 .how-to-modal-content h2 {
-  color: rgb(60, 72, 88);
+  color: #3c4858;
   margin-bottom: 8px;
   font-size: 1.4rem;
 }
@@ -678,15 +850,24 @@ button:hover {
   border: none;
   background: #f0f0f0;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 0;
+  -webkit-transition: background 0.15s ease;
   transition: background 0.15s ease;
 }
+
 .how-to-modal-close:hover {
   background: #e0e0e0;
 }
+
 .how-to-modal-close svg {
   display: block;
   color: #333;
@@ -705,12 +886,16 @@ button:hover {
   margin-bottom: 20px;
   counter-reset: step-counter;
 }
+
 .how-to-steps > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 14px;
   margin-bottom: 24px;
   counter-increment: step-counter;
 }
+
 .how-to-steps > li::before {
   content: counter(step-counter);
   min-width: 30px;
@@ -720,18 +905,32 @@ button:hover {
   color: #fff;
   font-weight: 700;
   font-size: 0.9rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   margin-top: 1px;
 }
+
 .how-to-steps .step-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 6px;
   min-width: 0;
 }
+
 .how-to-steps strong {
   display: block;
   font-size: 1rem;
@@ -739,16 +938,19 @@ button:hover {
   color: #111;
   line-height: 1.3;
 }
+
 .how-to-steps p {
   margin: 0;
   color: #444;
   font-size: 0.95rem;
   line-height: 1.55;
 }
+
 .how-to-steps ul {
   margin: 4px 0 0 4px;
   padding-left: 18px;
 }
+
 .how-to-steps ul li {
   margin-bottom: 4px;
   font-size: 0.93rem;
@@ -768,7 +970,7 @@ button:hover {
 }
 
 .how-to-steps code {
-  font-family: "Consolas", "Fira Code", monospace;
+  font-family: 'Consolas', 'Fira Code', monospace;
   font-size: 0.85rem;
   color: #1a56db;
   background: #f0f4ff;
@@ -783,8 +985,12 @@ button:hover {
 }
 
 .how-to-tip {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   gap: 10px;
   padding: 12px 16px;
   background: #fffbe6;
@@ -794,10 +1000,12 @@ button:hover {
   color: #7a5700;
   line-height: 1.4;
 }
+
 .how-to-tip i {
   margin-top: 2px;
   color: #f0a500;
-  flex-shrink: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 /* Ensure slot looks like a card */
@@ -816,12 +1024,17 @@ button:hover {
 /* Drag-and-drop visual state */
 .image-slot {
   position: relative;
+  -webkit-transition: -webkit-transform 120ms ease, -webkit-box-shadow 120ms ease;
+  transition: -webkit-transform 120ms ease, -webkit-box-shadow 120ms ease;
   transition: transform 120ms ease, box-shadow 120ms ease;
+  transition: transform 120ms ease, box-shadow 120ms ease, -webkit-transform 120ms ease, -webkit-box-shadow 120ms ease;
 }
 
 .image-slot.drag-over {
-  transform: scale(1.03);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  -webkit-box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   z-index: 50;
 }
 
@@ -829,8 +1042,12 @@ button:hover {
   position: absolute;
   inset: 0;
   display: none;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   color: #fff;
   background: rgba(0, 0, 0, 0.5);
   border-radius: 8px;
@@ -841,19 +1058,25 @@ button:hover {
 }
 
 .image-slot.drag-over .image-drop-hint {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .image-slot.drag-over .image-slot-preview {
-  transform: scale(1.02);
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
   opacity: 0.9;
 }
 
 /* Deprecated post-management styling: visually grey out and make read-only */
 .deprecated-section {
   opacity: 0.55;
-  pointer-events: none; /* disable interactions inside */
-  filter: grayscale(25%);
+  pointer-events: none;
+  /* disable interactions inside */
+  -webkit-filter: grayscale(25%);
+          filter: grayscale(25%);
+  -webkit-transition: opacity 160ms ease;
   transition: opacity 160ms ease;
   position: relative;
   padding-top: 10px;
@@ -874,4 +1097,5 @@ button:hover {
 .deprecated-section button {
   cursor: not-allowed;
   opacity: 0.9;
-}/*# sourceMappingURL=admin.css.map */
+}
+/*# sourceMappingURL=admin.css.map */

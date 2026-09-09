@@ -4,6 +4,7 @@
   left: 0;
   pointer-events: none;
   z-index: 2200;
+  -webkit-transition: opacity 160ms ease;
   transition: opacity 160ms ease;
 }
 
@@ -15,12 +16,15 @@
 .pr-focus-arrow-shape {
   display: block;
   color: #ff0000;
-  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.35));
+  -webkit-filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.35));
+          filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.35));
 }
 
 /* Small helpful default for very small viewports */
 @media (max-width: 420px) {
   .pr-focus-arrow-shape {
-    transform: scale(0.85);
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
   }
-}/*# sourceMappingURL=focus-arrow.css.map */
+}
+/*# sourceMappingURL=focus-arrow.css.map */

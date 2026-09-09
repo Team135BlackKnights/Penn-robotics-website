@@ -4,87 +4,125 @@
   position: fixed;
   width: 100%;
   z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
   overflow: visible;
 }
+
 .navbar .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 2vw;
 }
+
 .navbar .icons i {
   font-size: 32px;
-  color: rgb(250, 250, 250);
+  color: #fafafa;
+  -webkit-transition: color 100ms ease-in, -webkit-transform 100ms ease-in;
+  transition: color 100ms ease-in, -webkit-transform 100ms ease-in;
   transition: transform 100ms ease-in, color 100ms ease-in;
+  transition: transform 100ms ease-in, color 100ms ease-in, -webkit-transform 100ms ease-in;
 }
+
 .navbar .icons i:hover {
-  transform: translateY(-2px) scale(1.05);
-  color: rgb(250, 200, 0);
+  -webkit-transform: translateY(-2px) scale(1.05);
+          transform: translateY(-2px) scale(1.05);
+  color: #fac800;
 }
+
 .navbar .icons a img {
   height: 88px;
   width: auto;
   margin: 3px 2vw 0 0;
 }
+
 .navbar .icons a .home:hover {
-  border: 1px solid rgb(250, 250, 250);
+  border: 1px solid #fafafa;
 }
+
 .navbar .icons a .invert {
-  filter: invert(1);
+  -webkit-filter: invert(1);
+          filter: invert(1);
 }
+
 .navbar .icons a .invert:hover {
   border: 1px solid black;
 }
+
 .navbar .nav-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 2vw;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
 }
+
 .navbar .nav-menu .nav-item {
   text-decoration: none;
   position: relative;
-  color: rgb(250, 250, 250);
+  color: #fafafa;
   font-size: 24px;
   font-weight: 300;
 }
+
 .navbar .nav-menu .nav-item::after {
   content: "";
   width: 0%;
   height: 1px;
+  -webkit-transition: width 200ms ease-in;
   transition: width 200ms ease-in;
-  background-color: rgb(250, 250, 250);
+  background-color: #fafafa;
   position: absolute;
   top: 31px;
   left: 1px;
 }
+
 .navbar .nav-menu .nav-item:not(.dropdown):hover::after {
   width: 100%;
 }
+
 .navbar .nav-menu #donate {
-  background-color: rgb(250, 200, 0);
+  background-color: #fac800;
   padding: 0.5rem 1rem;
   border-radius: 4px;
   text-transform: uppercase;
 }
+
 .navbar .nav-menu #donate::after {
   display: none;
 }
+
 .navbar .nav-menu #donate:hover {
-  box-shadow: 0px 2px 10px 1px rgb(250, 200, 0);
+  -webkit-box-shadow: 0px 2px 10px 1px #fac800;
+          box-shadow: 0px 2px 10px 1px #fac800;
 }
+
 .navbar .nav-menu .dropdown {
   position: relative;
   cursor: pointer;
-  display: inline-block; /* <-- parent width follows the title */
+  display: inline-block;
+  /* <-- parent width follows the title */
 }
+
 .navbar .nav-menu .dropdown .dropdown-title {
-  display: inline-block; /* size follows the text */
+  display: inline-block;
+  /* size follows the text */
   padding: 0.5rem 1rem;
   position: relative;
 }
+
 .navbar .nav-menu .dropdown .dropdown-title::after {
   content: "";
   display: inline-block;
@@ -93,46 +131,76 @@
   margin-left: 0.5rem;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23ffffff' d='M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z'/%3E%3C/svg%3E") no-repeat center center;
   background-size: contain;
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
   transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
 }
+
 .navbar .nav-menu .dropdown:hover .dropdown-title::after {
-  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
+
 .navbar .nav-menu .dropdown .dropdown-menu {
   position: absolute;
-  top: calc(100% + 25px); /* just below the title */
-  left: 0; /* align with the title's left edge */
-  transform: translateY(-10px); /* initial animation offset */
+  top: calc(100% + 25px);
+  /* just below the title */
+  left: 0;
+  /* align with the title's left edge */
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  /* initial animation offset */
   opacity: 0;
   visibility: hidden;
   background-color: rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  width: 100%; /* <-- same width as the .dropdown (title) */
-  min-width: 0; /* remove the hard min width */
+  -webkit-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  /* <-- same width as the .dropdown (title) */
+  min-width: 0;
+  /* remove the hard min width */
   text-align: center;
-  flex-direction: column;
-  z-index: 999; /* ensure it sits above other elements */
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 999;
+  /* ensure it sits above other elements */
+  -webkit-transition: opacity 300ms ease, visibility 300ms ease, -webkit-transform 300ms ease;
+  transition: opacity 300ms ease, visibility 300ms ease, -webkit-transform 300ms ease;
   transition: opacity 300ms ease, transform 300ms ease, visibility 300ms ease;
+  transition: opacity 300ms ease, transform 300ms ease, visibility 300ms ease, -webkit-transform 300ms ease;
   margin-top: 0;
-  box-sizing: border-box; /* include padding in width measurement */
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* include padding in width measurement */
 }
+
 .navbar .nav-menu .dropdown .dropdown-menu a {
   display: block;
   padding: 0.5rem 1rem;
-  color: rgb(250, 250, 250);
+  color: #fafafa;
   text-decoration: none;
+  -webkit-transition: background 200ms ease-in;
   transition: background 200ms ease-in;
-  white-space: normal; /* allows wrapping if a menu item is wider */
-  overflow-wrap: anywhere; /* break long URLs if needed */
+  white-space: normal;
+  /* allows wrapping if a menu item is wider */
+  overflow-wrap: anywhere;
+  /* break long URLs if needed */
 }
+
 .navbar .nav-menu .dropdown:hover .dropdown-menu {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
+
 .navbar .nav-menu .dropdown:hover .dropdown-title {
   position: relative;
 }
+
 .navbar .nav-menu .dropdown:hover .dropdown-title::before {
   content: "";
   position: absolute;
@@ -146,28 +214,36 @@
 .hamburger {
   display: none;
 }
+
 .hamburger .bar {
   display: block;
   width: 50px;
   height: 6px;
   margin: 10px auto;
+  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-color: rgb(250, 250, 250);
+  background-color: #fafafa;
 }
 
 @media (max-width: 1300px) {
   .navbar {
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding: 0 8vw;
   }
   .navbar .nav-menu {
     position: fixed;
     right: -100%;
     top: 95px;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
     text-align: center;
+    -webkit-transition: 0.3s;
     transition: 0.3s;
   }
   .navbar .nav-menu .nav-item {
@@ -186,7 +262,8 @@
     background-color: rgba(250, 200, 0, 0.8);
   }
   .navbar .nav-menu #donate:hover {
-    box-shadow: 0px 2px 10px 1px rgba(250, 200, 0, 0.8);
+    -webkit-box-shadow: 0px 2px 10px 1px rgba(250, 200, 0, 0.8);
+            box-shadow: 0px 2px 10px 1px rgba(250, 200, 0, 0.8);
   }
   .navbar .nav-menu .dropdown {
     max-width: 50vw;
@@ -196,6 +273,7 @@
     max-height: none;
   }
   .navbar .nav-menu .dropdown .dropdown-menu {
+    -webkit-transition: max-height 0.3s ease;
     transition: max-height 0.3s ease;
     font-weight: 300;
     position: relative;
@@ -203,7 +281,10 @@
     max-width: 50vw;
     background-color: transparent;
     text-align: center;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     max-height: 0;
   }
   .navbar .nav-menu .dropdown .dropdown-menu a:hover {
@@ -221,12 +302,15 @@
     opacity: 0;
   }
   .navbar .hamburger.active .bar:nth-child(1) {
-    transform: translateY(16px) rotate(45deg);
+    -webkit-transform: translateY(16px) rotate(45deg);
+            transform: translateY(16px) rotate(45deg);
   }
   .navbar .hamburger.active .bar:nth-child(3) {
-    transform: translateY(-16px) rotate(-45deg);
+    -webkit-transform: translateY(-16px) rotate(-45deg);
+            transform: translateY(-16px) rotate(-45deg);
   }
 }
+
 @media (max-width: 500px) {
   .navbar .nav-menu .dropdown {
     max-width: 100%;
@@ -235,57 +319,82 @@
     max-width: 100%;
   }
 }
+
 .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 0.5rem;
   text-align: center;
   padding: 2rem 1rem;
-  background-color: rgb(60, 72, 88);
-  color: rgb(250, 250, 250);
+  background-color: #3c4858;
+  color: #fafafa;
   font-size: 18px;
   margin-top: 2vw;
 }
+
 .footer .title {
   text-transform: uppercase;
   font-weight: 700;
 }
+
 .footer .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 1.5rem;
 }
+
 .footer .content a {
-  color: rgb(250, 250, 250);
+  color: #fafafa;
   font-size: 48px;
 }
+
 .footer .content a i {
+  -webkit-transition: color 100ms ease-in, -webkit-transform 100ms ease-in;
+  transition: color 100ms ease-in, -webkit-transform 100ms ease-in;
   transition: transform 100ms ease-in, color 100ms ease-in;
+  transition: transform 100ms ease-in, color 100ms ease-in, -webkit-transform 100ms ease-in;
 }
+
 .footer .content a i:hover {
-  transform: translateY(-2px) scale(1.15);
-  color: rgb(250, 200, 0);
+  -webkit-transform: translateY(-2px) scale(1.15);
+          transform: translateY(-2px) scale(1.15);
+  color: #fac800;
 }
+
 .footer .copywrite {
   margin-top: 1rem;
   font-size: 16px;
 }
+
 .footer .copywrite .name {
-  box-shadow: inset 0 -0.125rem 0 rgb(250, 200, 0);
+  -webkit-box-shadow: inset 0 -0.125rem 0 #fac800;
+          box-shadow: inset 0 -0.125rem 0 #fac800;
+  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  color: rgb(250, 200, 0);
+  color: #fac800;
   text-decoration: none;
   display: inline-block;
 }
+
 .footer .copywrite .name:hover {
-  background-color: rgb(250, 200, 0);
-  color: rgb(250, 250, 250);
+  background-color: #fac800;
+  color: #fafafa;
 }
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
@@ -296,70 +405,98 @@ html {
 .landing {
   min-height: 90vh;
 }
+
 .landing .hero {
   text-align: center;
-  color: rgb(60, 72, 88);
+  color: #3c4858;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
+
 .landing .hero .title {
   font-size: clamp(2.5rem, 8vw, 4rem);
   font-weight: 700;
-  color: rgb(60, 72, 88);
+  color: #3c4858;
   margin-top: 20vh;
 }
+
 .landing .hero .subtitle {
   font-size: clamp(16px, 3vw, 18px);
   margin: 1vh 10vw 6vh;
-  color: rgb(150, 150, 150);
+  color: #969696;
   font-weight: 400;
 }
+
 .landing .hero .button {
   border-radius: 1vw;
   font-weight: 400;
   font-size: clamp(16px, 3vw, 24px);
   margin-top: 4vh;
 }
+
 .landing .hero .button a {
-  background-color: rgb(250, 200, 0);
+  background-color: #fac800;
   text-transform: uppercase;
   text-decoration: none;
-  color: rgb(250, 250, 250);
+  color: #fafafa;
   padding: 24px;
 }
+
 .landing .hero .button a:hover {
-  box-shadow: 0px 2px 10px 1px rgb(250, 200, 0);
+  -webkit-box-shadow: 0px 2px 10px 1px #fac800;
+          box-shadow: 0px 2px 10px 1px #fac800;
 }
+
 .landing .hero .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-evenly;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   margin: 12vh 0;
 }
+
 .landing .hero .content i {
   font-size: 100px;
-  color: rgb(250, 200, 0);
+  color: #fac800;
+  -webkit-transition: color 200ms ease-in, -webkit-transform 200ms ease-in;
+  transition: color 200ms ease-in, -webkit-transform 200ms ease-in;
   transition: transform 200ms ease-in, color 200ms ease-in;
+  transition: transform 200ms ease-in, color 200ms ease-in, -webkit-transform 200ms ease-in;
 }
+
 .landing .hero .content i:hover {
-  transform: translateY(-7px) scale(1.1);
-  color: rgb(250, 225, 12);
+  -webkit-transform: translateY(-7px) scale(1.1);
+          transform: translateY(-7px) scale(1.1);
+  color: #fae10c;
 }
+
 .landing .hero .content h3 {
   margin-top: 1rem;
   font-size: 24px;
   width: 150px;
 }
+
 .landing .hero .content p {
   font-size: 16px;
   margin: 0 auto;
   font-weight: 300;
-  color: rgb(150, 150, 150);
+  color: #969696;
 }
 
 .short-circuits {
   min-height: 100vh;
 }
+
 .short-circuits .header {
   background-image: url("youth-camps/media/short-circuits-header.webp");
   background-position: center;
@@ -368,43 +505,57 @@ html {
   background-blend-mode: soft-light;
   padding: clamp(4rem, 10vw, 6rem) 0;
 }
+
 .short-circuits .header .title {
   font-size: clamp(2.5rem, 8vw, 4rem);
   font-weight: 700;
   text-align: center;
-  color: rgb(250, 250, 250);
+  color: #fafafa;
 }
+
 .short-circuits .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 2vw;
   text-align: center;
   width: clamp(40rem, 85vw, 50rem);
   margin: 2vw auto;
 }
+
 .short-circuits .content .text {
   font-size: 16px;
-  color: rgb(150, 150, 150);
+  color: #969696;
   line-height: 1.5rem;
   font-weight: 400;
   margin: 1vw 2vw;
 }
+
 .short-circuits .content .images {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 0.5vw;
 }
+
 .short-circuits .content .images img {
-  width: clamp(11.4285714286rem, 24.2857142857vw, 14.2857142857rem);
+  width: clamp(40rem/3.5, 85vw/3.5, 50rem/3.5);
   height: auto;
 }
+
 .short-circuits .content img {
-  width: clamp(26.6666666667rem, 56.6666666667vw, 33.3333333333rem);
+  width: clamp(40rem/1.5, 85vw/1.5, 50rem/1.5);
   height: auto;
 }
 
 .summer-camps {
   min-height: 100vh;
 }
+
 .summer-camps .header {
   background-image: url("youth-camps/media/summer-camp-header.webp");
   background-position: center;
@@ -413,36 +564,46 @@ html {
   background-blend-mode: soft-light;
   padding: clamp(4rem, 10vw, 6rem) 0;
 }
+
 .summer-camps .header .title {
   font-size: clamp(2.5rem, 8vw, 4rem);
   font-weight: 700;
   text-align: center;
-  color: rgb(250, 250, 250);
+  color: #fafafa;
 }
+
 .summer-camps .content {
   text-align: center;
   width: clamp(40rem, 85vw, 50rem);
   margin: 2vw auto;
 }
+
 .summer-camps .content .subtitle {
-  color: rgb(60, 72, 88);
+  color: #3c4858;
   font-size: clamp(18px, 3vw, 24px);
   font-weight: 400;
   margin-bottom: 1vw;
 }
+
 .summer-camps .content .images {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 0.5vw;
   margin-bottom: 0.5vw;
 }
+
 .summer-camps .content .images img {
   height: auto;
   width: clamp(200px, 25vw, 250px);
 }
+
 .summer-camps .content .text p {
   font-size: 16px;
-  color: rgb(150, 150, 150);
+  color: #969696;
   line-height: 1.5rem;
   font-weight: 400;
   margin: 2vh;
@@ -451,6 +612,7 @@ html {
 .junior-stem {
   min-height: 100vh;
 }
+
 .junior-stem .header {
   background-image: url("youth-camps/media/junior-stem-header.webp");
   background-position: top;
@@ -459,42 +621,52 @@ html {
   background-blend-mode: soft-light;
   padding: clamp(4rem, 10vw, 6rem) 0;
 }
+
 .junior-stem .header .title {
   font-size: clamp(2.5rem, 8vw, 4rem);
   font-weight: 700;
   text-align: center;
-  color: rgb(250, 250, 250);
+  color: #fafafa;
 }
+
 .junior-stem .content {
   width: clamp(40rem, 85vw, 50rem);
   margin: 2vw auto;
   text-align: center;
 }
+
 .junior-stem .content .subtitle {
-  color: rgb(60, 72, 88);
+  color: #3c4858;
   font-weight: 400;
   font-size: clamp(18px, 3vw, 24px);
   margin-bottom: 1vw;
 }
+
 .junior-stem .content .section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
+
 .junior-stem .content .section p {
   font-size: 16px;
-  color: rgb(150, 150, 150);
+  color: #969696;
   line-height: 1.5rem;
   font-weight: 400;
   padding: 0 1vw;
   text-align: left;
 }
+
 .junior-stem .content .section #right {
   padding-left: 0;
 }
+
 .junior-stem .content .section img {
   width: 100%;
   width: 350px;
   height: auto;
 }
+
 .junior-stem .content #gap {
   margin-top: 1vw;
 }
@@ -502,6 +674,7 @@ html {
 .workshops {
   min-height: 100vh;
 }
+
 .workshops .header {
   background-image: url("youth-camps/media/workshops-header.webp");
   background-position: center;
@@ -510,70 +683,100 @@ html {
   background-blend-mode: soft-light;
   padding: clamp(4rem, 10vw, 6rem) 0;
 }
+
 .workshops .header .title {
   font-size: clamp(2.5rem, 8vw, 4rem);
   font-weight: 700;
   text-align: center;
-  color: rgb(250, 250, 250);
+  color: #fafafa;
 }
+
 .workshops .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   text-align: center;
   width: clamp(40rem, 85vw, 50rem);
   margin: 2vw auto;
 }
+
 .workshops .content .subtitle {
-  color: rgb(60, 72, 88);
+  color: #3c4858;
   font-weight: 400;
   font-size: clamp(18px, 3vw, 24px);
   margin-bottom: 1vw;
 }
+
 .workshops .content .section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 .workshops .content .section .subheader {
-  background-color: rgb(250, 200, 0);
+  background-color: #fac800;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
+
 .workshops .content .section .subheader .text {
   margin: auto auto;
   padding: 2rem;
   font-size: 16px;
 }
+
 .workshops .content .section .subheader .text h1 {
-  color: rgb(60, 72, 88);
+  color: #3c4858;
   font-size: clamp(24px, 3vw, 40px);
 }
+
 .workshops .content .section .subheader .text h3 {
-  color: rgb(150, 150, 150);
+  color: #969696;
   font-size: clamp(16px, 3vw, 18px);
   font-weight: 300;
   line-height: 3vw;
 }
+
 .workshops .content .section #gap {
   margin-top: 2vw;
 }
+
 .workshops .content .section .workshop {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 .workshops .content .section .workshop h2 {
-  background-color: rgb(150, 150, 150);
-  color: rgb(250, 250, 250);
+  background-color: #969696;
+  color: #fafafa;
   font-size: 24px;
   font-weight: 400;
   padding: 1.5vw;
 }
+
 .workshops .content .section .workshop p {
   font-size: 16px;
-  color: rgb(60, 72, 88);
+  color: #3c4858;
   line-height: 1.5rem;
   font-weight: 300;
   background-color: lightgrey;
   padding: 1vw;
 }
+
 .workshops .content .section img {
   width: 100%;
   width: 300px;
@@ -593,18 +796,30 @@ html {
   .landing .hero .content {
     margin: 2vh auto;
     width: 400px;
-    flex-wrap: wrap;
-    justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     gap: 4vw;
   }
   .short-circuits .content {
     width: 400px;
-    flex-direction: column-reverse;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
   }
   .short-circuits .content .images {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .short-circuits .content img {
     width: 400px;
@@ -619,8 +834,13 @@ html {
     width: 400px;
   }
   .junior-stem .content .section {
-    align-items: center;
-    flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .junior-stem .content .section p {
     text-align: center;
@@ -633,7 +853,10 @@ html {
     margin: 3vw;
   }
   .junior-stem .content #gap {
-    flex-direction: column-reverse;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
   }
   .workshops .content {
     width: 400px;
@@ -645,9 +868,13 @@ html {
     width: 200px;
   }
 }
+
 @media (max-width: 480px) {
   .landing .hero .content {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 300px;
   }
   .landing .hero .content h3 {
@@ -684,4 +911,5 @@ html {
     width: 100px;
     height: auto;
   }
-}/*# sourceMappingURL=youth-camps.css.map */
+}
+/*# sourceMappingURL=youth-camps.css.map */

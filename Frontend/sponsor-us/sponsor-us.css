@@ -363,9 +363,7 @@
   font-size: 2rem;
   margin-bottom: 1rem;
 }
-.button-container .button-section {
-  /* make .btn work for anchors and buttons */
-}
+
 .button-container .button-section .btn {
   display: inline-block;
   padding: 12px 0;

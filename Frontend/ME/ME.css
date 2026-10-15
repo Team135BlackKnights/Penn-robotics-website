@@ -482,6 +482,193 @@ html {
   margin: 1vh 2vw 2vh;
 }
 
+.outreach-projects .header {
+  background-image: url("ME/media/projects-header.webp");
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: soft-light;
+  padding: clamp(4rem, 10vw, 6rem) 0;
+}
+.outreach-projects .header .title {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 700;
+  text-align: center;
+  color: rgb(250, 250, 250);
+}
+.outreach-projects .content {
+  margin: 2rem auto;
+  width: min(85vw, 44rem);
+}
+.outreach-projects .content .tool-card {
+  background-color: rgb(250, 250, 250);
+  padding: clamp(1rem, 3vw, 2rem);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+.outreach-projects .content .tool-card h2 {
+  color: rgb(60, 72, 88);
+  font-size: clamp(24px, 3vw, 40px);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.outreach-projects .content .tool-card .image-carousel {
+  aspect-ratio: 4/3;
+  background-color: #303030;
+  overflow: hidden;
+  position: relative;
+}
+.outreach-projects .content .tool-card .image-carousel .carousel-image {
+  display: block;
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+.outreach-projects .content .tool-card .image-carousel .carousel-control {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.65);
+  border: 0;
+  border-radius: 50%;
+  color: rgb(250, 250, 250);
+  cursor: pointer;
+  display: flex;
+  font-size: 1.2rem;
+  height: 2.75rem;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.75rem;
+}
+.outreach-projects .content .tool-card .image-carousel .carousel-control:hover {
+  background-color: rgb(250, 200, 0);
+  color: rgb(60, 72, 88);
+}
+.outreach-projects .content .tool-card .image-carousel .carousel-control:focus-visible {
+  outline: 3px solid rgb(250, 250, 250);
+  outline-offset: 2px;
+}
+.outreach-projects .content .tool-card .image-carousel .carousel-control.previous {
+  left: 1rem;
+}
+.outreach-projects .content .tool-card .image-carousel .carousel-control.next {
+  right: 1rem;
+}
+.outreach-projects .content .tool-card .image-carousel .carousel-indicators {
+  bottom: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+}
+.outreach-projects .content .tool-card .image-carousel .carousel-indicators button {
+  background-color: rgba(250, 250, 250, 0.6);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 0.75rem;
+  padding: 0;
+  width: 0.75rem;
+}
+.outreach-projects .content .tool-card .image-carousel .carousel-indicators button.active {
+  background-color: rgb(250, 200, 0);
+}
+.outreach-projects .content .tool-card .image-carousel .carousel-indicators button:focus-visible {
+  outline: 2px solid rgb(250, 250, 250);
+  outline-offset: 2px;
+}
+.outreach-projects .content .tool-card .tool-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+.outreach-projects .content .tool-card .tool-actions .tool-action {
+  align-items: center;
+  background-color: rgb(60, 72, 88);
+  border: 0;
+  border-radius: 4px;
+  color: rgb(250, 250, 250);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-weight: 700;
+  gap: 0.5rem;
+  justify-content: center;
+  min-width: 9rem;
+  padding: 0.8rem 1.2rem;
+  text-decoration: none;
+}
+.outreach-projects .content .tool-card .tool-actions .tool-action:hover {
+  background-color: rgb(250, 200, 0);
+  color: rgb(60, 72, 88);
+}
+.outreach-projects .content .tool-card .tool-actions .tool-action:focus-visible {
+  outline: 3px solid rgb(250, 200, 0);
+  outline-offset: 3px;
+}
+
+.stl-dialog {
+  background-color: rgb(60, 72, 88);
+  border: 0;
+  border-radius: 8px;
+  color: rgb(250, 250, 250);
+  margin: auto;
+  max-height: 90vh;
+  max-width: 900px;
+  padding: 1rem;
+  width: 92vw;
+}
+.stl-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.stl-dialog .stl-dialog-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+.stl-dialog .stl-dialog-header h2 {
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
+}
+.stl-dialog .stl-dialog-header .stl-dialog-close {
+  background: none;
+  border: 0;
+  color: rgb(250, 250, 250);
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+.stl-dialog .stl-dialog-header .stl-dialog-close:focus-visible {
+  outline: 2px solid rgb(250, 200, 0);
+}
+.stl-dialog .stl-viewer {
+  background-color: #202a37;
+  height: min(65vh, 600px);
+  min-height: 300px;
+  position: relative;
+  width: 100%;
+}
+.stl-dialog .stl-viewer canvas {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.stl-dialog .stl-viewer .stl-viewer-status {
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+}
+.stl-dialog .stl-viewer-help {
+  color: rgb(250, 250, 250);
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
 .ATIA {
   min-height: 100vh;
 }

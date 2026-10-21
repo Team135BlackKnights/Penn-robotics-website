@@ -265,7 +265,7 @@ html {
 
       .image-carousel {
         aspect-ratio: 4 / 3;
-        background-color: #303030;
+        background-color: #000;
         overflow: hidden;
         position: relative;
 
@@ -274,6 +274,46 @@ html {
           height: 100%;
           object-fit: contain;
           width: 100%;
+
+          &[hidden] {
+            display: none;
+          }
+        }
+
+        .carousel-viewer {
+          background-color: #202a37;
+          inset: 0;
+          position: absolute;
+
+          &[hidden] {
+            display: none;
+          }
+
+          canvas {
+            display: block;
+            height: 100%;
+            width: 100%;
+          }
+
+          .stl-viewer-status {
+            left: 50%;
+            position: absolute;
+            text-align: center;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+          }
+
+          .stl-viewer-help {
+            color: $primary;
+            left: 0;
+            margin: 0;
+            pointer-events: none;
+            position: absolute;
+            text-align: center;
+            top: 0.75rem;
+            width: 100%;
+          }
         }
 
         .carousel-control {
@@ -375,75 +415,6 @@ html {
         }
       }
     }
-  }
-}
-
-.stl-dialog {
-  background-color: $secondary;
-  border: 0;
-  border-radius: 8px;
-  color: $primary;
-  margin: auto;
-  max-height: 90vh;
-  max-width: 900px;
-  padding: 1rem;
-  width: 92vw;
-
-  &::backdrop {
-    background-color: rgba(0, 0, 0, 0.75);
-  }
-
-  .stl-dialog-header {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.75rem;
-
-    h2 {
-      font-size: clamp(1.25rem, 4vw, 1.75rem);
-    }
-
-    .stl-dialog-close {
-      background: none;
-      border: 0;
-      color: $primary;
-      cursor: pointer;
-      font-size: 1.5rem;
-      padding: 0.5rem;
-
-      &:focus-visible {
-        outline: 2px solid $decoration;
-      }
-    }
-  }
-
-  .stl-viewer {
-    background-color: #202a37;
-    height: min(65vh, 600px);
-    min-height: 300px;
-    position: relative;
-    width: 100%;
-
-    canvas {
-      display: block;
-      height: 100%;
-      width: 100%;
-    }
-
-    .stl-viewer-status {
-      left: 50%;
-      position: absolute;
-      text-align: center;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 90%;
-    }
-  }
-
-  .stl-viewer-help {
-    color: $primary;
-    margin-top: 0.75rem;
-    text-align: center;
   }
 }
 

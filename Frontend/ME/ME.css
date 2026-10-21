@@ -513,14 +513,49 @@ html {
 }
 .outreach-projects .content .tool-card .image-carousel {
   aspect-ratio: 4/3;
-  background-color: #303030;
+  background-color: #000;
   overflow: hidden;
   position: relative;
 }
 .outreach-projects .content .tool-card .image-carousel .carousel-image {
   display: block;
   height: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+}
+.outreach-projects .content .tool-card .image-carousel .carousel-image[hidden] {
+  display: none;
+}
+.outreach-projects .content .tool-card .image-carousel .carousel-viewer {
+  background-color: #202a37;
+  inset: 0;
+  position: absolute;
+}
+.outreach-projects .content .tool-card .image-carousel .carousel-viewer[hidden] {
+  display: none;
+}
+.outreach-projects .content .tool-card .image-carousel .carousel-viewer canvas {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.outreach-projects .content .tool-card .image-carousel .carousel-viewer .stl-viewer-status {
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+}
+.outreach-projects .content .tool-card .image-carousel .carousel-viewer .stl-viewer-help {
+  color: rgb(250, 250, 250);
+  left: 0;
+  margin: 0;
+  pointer-events: none;
+  position: absolute;
+  text-align: center;
+  top: 0.75rem;
   width: 100%;
 }
 .outreach-projects .content .tool-card .image-carousel .carousel-control {
@@ -607,66 +642,6 @@ html {
 .outreach-projects .content .tool-card .tool-actions .tool-action:focus-visible {
   outline: 3px solid rgb(250, 200, 0);
   outline-offset: 3px;
-}
-
-.stl-dialog {
-  background-color: rgb(60, 72, 88);
-  border: 0;
-  border-radius: 8px;
-  color: rgb(250, 250, 250);
-  margin: auto;
-  max-height: 90vh;
-  max-width: 900px;
-  padding: 1rem;
-  width: 92vw;
-}
-.stl-dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.75);
-}
-.stl-dialog .stl-dialog-header {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.75rem;
-}
-.stl-dialog .stl-dialog-header h2 {
-  font-size: clamp(1.25rem, 4vw, 1.75rem);
-}
-.stl-dialog .stl-dialog-header .stl-dialog-close {
-  background: none;
-  border: 0;
-  color: rgb(250, 250, 250);
-  cursor: pointer;
-  font-size: 1.5rem;
-  padding: 0.5rem;
-}
-.stl-dialog .stl-dialog-header .stl-dialog-close:focus-visible {
-  outline: 2px solid rgb(250, 200, 0);
-}
-.stl-dialog .stl-viewer {
-  background-color: #202a37;
-  height: min(65vh, 600px);
-  min-height: 300px;
-  position: relative;
-  width: 100%;
-}
-.stl-dialog .stl-viewer canvas {
-  display: block;
-  height: 100%;
-  width: 100%;
-}
-.stl-dialog .stl-viewer .stl-viewer-status {
-  left: 50%;
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-}
-.stl-dialog .stl-viewer-help {
-  color: rgb(250, 250, 250);
-  margin-top: 0.75rem;
-  text-align: center;
 }
 
 .ATIA {

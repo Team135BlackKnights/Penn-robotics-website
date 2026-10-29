@@ -295,7 +295,7 @@ html {
             width: 100%;
           }
 
-          .stl-viewer-status {
+          .model-viewer-status {
             left: 50%;
             position: absolute;
             text-align: center;
@@ -304,7 +304,7 @@ html {
             width: 90%;
           }
 
-          .stl-viewer-help {
+          .model-viewer-help {
             color: $primary;
             left: 0;
             margin: 0;
@@ -380,37 +380,102 @@ html {
         }
       }
 
-      .tool-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        justify-content: center;
-        margin-top: 1.25rem;
+    }
 
-        .tool-action {
-          align-items: center;
+    .tool-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1.25rem;
+
+      .tool-action {
+        align-items: center;
+        background-color: $secondary;
+        border: 0;
+        border-radius: 4px;
+        color: $primary;
+        cursor: pointer;
+        display: inline-flex;
+        font: inherit;
+        font-weight: 700;
+        gap: 0.5rem;
+        justify-content: center;
+        min-width: 9rem;
+        padding: 0.8rem 1.2rem;
+        text-decoration: none;
+
+        &:hover {
+          background-color: $decoration;
+          color: $secondary;
+        }
+
+        &:focus-visible {
+          outline: 3px solid $decoration;
+          outline-offset: 3px;
+        }
+      }
+
+      .download-all-files {
+        box-sizing: border-box;
+        font-size: 1.5rem;
+        min-height: 5rem;
+        padding: 1.25rem 2rem;
+        width: min(100%, 28rem);
+      }
+    }
+
+    .download-terms-dialog {
+      border: 0;
+      border-radius: 8px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      color: $secondary;
+      left: 50%;
+      margin: 0;
+      max-width: min(32rem, calc(100vw - 2rem));
+      padding: 2rem;
+      position: fixed;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      &::backdrop {
+        background-color: rgba(0, 0, 0, 0.65);
+      }
+
+      h2 {
+        margin-top: 0;
+      }
+
+      label {
+        align-items: flex-start;
+        display: flex;
+        gap: 0.6rem;
+        line-height: 1.5;
+      }
+
+      input {
+        margin-top: 0.3rem;
+      }
+
+      .download-terms-actions {
+        display: flex;
+        gap: 0.75rem;
+        justify-content: flex-end;
+        margin-top: 1.5rem;
+
+        button {
           background-color: $secondary;
           border: 0;
           border-radius: 4px;
           color: $primary;
           cursor: pointer;
-          display: inline-flex;
           font: inherit;
           font-weight: 700;
-          gap: 0.5rem;
-          justify-content: center;
-          min-width: 9rem;
-          padding: 0.8rem 1.2rem;
-          text-decoration: none;
+          padding: 0.7rem 1rem;
 
-          &:hover {
-            background-color: $decoration;
-            color: $secondary;
-          }
-
-          &:focus-visible {
-            outline: 3px solid $decoration;
-            outline-offset: 3px;
+          &:disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
           }
         }
       }

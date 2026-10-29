@@ -355,11 +355,11 @@
               src="ME/media/penn-holder-1-black-background.png"
               alt="Penn Holder, viewed from the side"
             />
-            <div class="carousel-viewer" data-stl-viewer hidden>
-              <p class="stl-viewer-status" role="status">
+            <div class="carousel-viewer" data-3d-viewer hidden>
+              <p class="model-viewer-status" role="status">
                 Loading 3D viewer…
               </p>
-              <p class="stl-viewer-help">
+              <p class="model-viewer-help">
                 Drag to rotate. Scroll or pinch to zoom.
               </p>
             </div>
@@ -415,20 +415,49 @@
               <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
               PDF
             </a>
-            <button class="tool-action" type="button" data-show-stl>
+            <button class="tool-action" type="button" data-show-3d-model>
               <i class="fa-solid fa-cube" aria-hidden="true"></i>
               View 3D
             </button>
-            <a
-              class="tool-action"
-              href="ME/media/penn-holder-all-files.zip"
-              download="penn-holder-all-files.zip"
-            >
-              <i class="fa-solid fa-file-zipper" aria-hidden="true"></i>
-              Download all files
-            </a>
           </div>
         </article>
+        <div class="tool-actions">
+          <button
+            class="tool-action download-all-files"
+            type="button"
+            data-open-download-terms
+          >
+            <i class="fa-solid fa-download" aria-hidden="true"></i>
+            Download all files
+          </button>
+        </div>
+        <a
+          href="ME/media/Pen%20Holder%20Silas.3mf"
+          download="Pen Holder Silas.3mf"
+          data-download-file
+          hidden
+        ></a>
+        <dialog
+          class="download-terms-dialog"
+          aria-labelledby="download-terms-title"
+          aria-describedby="download-terms-description"
+          data-download-terms-dialog
+        >
+          <h2 id="download-terms-title">Terms and Conditions</h2>
+          <p id="download-terms-description">
+            ...........(Wait for AJ's input)...........
+          </p>
+          <label>
+            <input type="checkbox" data-agree-to-download-terms />
+            I agree to the terms and conditions
+          </label>
+          <div class="download-terms-actions">
+            <button type="button" data-cancel-download>Cancel</button>
+            <button type="button" data-continue-download disabled>
+              Continue
+            </button>
+          </div>
+        </dialog>
       </div>
     </div>
     <div class="ATIA">

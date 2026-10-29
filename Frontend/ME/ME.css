@@ -540,7 +540,7 @@ html {
   height: 100%;
   width: 100%;
 }
-.outreach-projects .content .tool-card .image-carousel .carousel-viewer .stl-viewer-status {
+.outreach-projects .content .tool-card .image-carousel .carousel-viewer .model-viewer-status {
   left: 50%;
   position: absolute;
   text-align: center;
@@ -548,7 +548,7 @@ html {
   transform: translate(-50%, -50%);
   width: 90%;
 }
-.outreach-projects .content .tool-card .image-carousel .carousel-viewer .stl-viewer-help {
+.outreach-projects .content .tool-card .image-carousel .carousel-viewer .model-viewer-help {
   color: rgb(250, 250, 250);
   left: 0;
   margin: 0;
@@ -612,14 +612,14 @@ html {
   outline: 2px solid rgb(250, 250, 250);
   outline-offset: 2px;
 }
-.outreach-projects .content .tool-card .tool-actions {
+.outreach-projects .content .tool-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
   margin-top: 1.25rem;
 }
-.outreach-projects .content .tool-card .tool-actions .tool-action {
+.outreach-projects .content .tool-actions .tool-action {
   align-items: center;
   background-color: rgb(60, 72, 88);
   border: 0;
@@ -635,13 +635,68 @@ html {
   padding: 0.8rem 1.2rem;
   text-decoration: none;
 }
-.outreach-projects .content .tool-card .tool-actions .tool-action:hover {
+.outreach-projects .content .tool-actions .tool-action:hover {
   background-color: rgb(250, 200, 0);
   color: rgb(60, 72, 88);
 }
-.outreach-projects .content .tool-card .tool-actions .tool-action:focus-visible {
+.outreach-projects .content .tool-actions .tool-action:focus-visible {
   outline: 3px solid rgb(250, 200, 0);
   outline-offset: 3px;
+}
+.outreach-projects .content .tool-actions .download-all-files {
+  box-sizing: border-box;
+  font-size: 1.5rem;
+  min-height: 5rem;
+  padding: 1.25rem 2rem;
+  width: min(100%, 28rem);
+}
+.outreach-projects .content .download-terms-dialog {
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  color: rgb(60, 72, 88);
+  left: 50%;
+  margin: 0;
+  max-width: min(32rem, 100vw - 2rem);
+  padding: 2rem;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.outreach-projects .content .download-terms-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.65);
+}
+.outreach-projects .content .download-terms-dialog h2 {
+  margin-top: 0;
+}
+.outreach-projects .content .download-terms-dialog label {
+  align-items: flex-start;
+  display: flex;
+  gap: 0.6rem;
+  line-height: 1.5;
+}
+.outreach-projects .content .download-terms-dialog input {
+  margin-top: 0.3rem;
+}
+.outreach-projects .content .download-terms-dialog .download-terms-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+.outreach-projects .content .download-terms-dialog .download-terms-actions button {
+  background-color: rgb(60, 72, 88);
+  border: 0;
+  border-radius: 4px;
+  color: rgb(250, 250, 250);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  padding: 0.7rem 1rem;
+}
+.outreach-projects .content .download-terms-dialog .download-terms-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 
 .ATIA {

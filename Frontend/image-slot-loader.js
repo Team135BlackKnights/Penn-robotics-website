@@ -84,13 +84,13 @@
   }
 
   function loadImageKeys() {
-    return fetch('./api/image_keys.json')  // let browser cache normally
+    return fetch(`${baseUrl}/image-keys`)  // let browser cache normally
       .then(r => r.ok ? r.json() : null)
       .catch(() => null);
   }
 
   // ── Run on DOMContentLoaded (much earlier than window.load).
-  //    Fetch image_keys.json and all per-slot API calls in parallel.
+  // Fetch image-key metadata and all per-slot API calls in parallel.
   document.addEventListener('DOMContentLoaded', function () {
     console.debug('image-slot-loader: DOM ready — starting slot load');
 
@@ -100,8 +100,8 @@
     var elems = document.querySelectorAll('[data-image-slot]');
     if (!elems || elems.length === 0) return;
 
-    // Begin per-slot API fetches NOW (don't wait for image_keys.json).
-    // image_keys.json is only needed for applyMode metadata and the
+    // Begin per-slot API fetches NOW (don't wait for the metadata endpoint).
+    // Image-key metadata is only needed for applyMode and the
     // default fallback URL; we resolve it in parallel and merge later.
     var slotEntries = [];
     elems.forEach(function (el) {
@@ -118,7 +118,7 @@
         var defaultUrl = (meta && meta.default) ? meta.default : null;
 
         // Safety timeout: if the API hasn't responded, apply the default
-        // image from image_keys.json so the section isn't blank.
+        // image from the metadata endpoint so the section isn't blank.
         var fallbackTimer = setTimeout(function () {
           console.debug('image-slot-loader: timeout for', entry.key, '— applying default');
           if (defaultUrl) {
@@ -134,7 +134,7 @@
             console.debug('image-slot-loader: applying', data.url, 'to', entry.key, 'mode=', applyMode);
             applySlotToElement(entry.el, data.url, applyMode);
           } else {
-            // No uploaded image — use the default from image_keys.json
+            // No uploaded image — use the default from the metadata endpoint.
             console.debug('image-slot-loader: no image returned for', entry.key, '— applying default');
             if (defaultUrl) {
               applySlotToElement(entry.el, defaultUrl, applyMode);

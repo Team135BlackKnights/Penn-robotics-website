@@ -290,6 +290,7 @@
 }
 
 .landing {
+  background-image: url("Media/328-Background-Main.webp");
   background-position: center;
   background-attachment: fixed;
   background-size: cover;

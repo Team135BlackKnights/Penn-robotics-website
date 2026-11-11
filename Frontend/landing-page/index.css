@@ -961,4 +961,348 @@ html {
   .team-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.home-page .navbar {
+  background-color: rgba(15, 18, 24, 0.82);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+.home-page .navbar .nav-menu .nav-item {
+  font-size: clamp(15px, 1vw, 18px);
+  font-weight: 400;
+}
+.home-page .navbar .nav-menu #donate {
+  border-radius: 2px;
+  box-shadow: none;
+}
+.home-page .landing.home-hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  background-image: url("media/main-background.webp");
+  background-position: center;
+  background-attachment: scroll;
+  background-color: #101318;
+  background-blend-mode: normal;
+  position: relative;
+}
+.home-page .landing.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(0deg, rgba(8, 10, 14, 0.74), transparent 72%), linear-gradient(90deg, rgba(8, 10, 14, 0.6), rgba(8, 10, 14, 0.28) 58%, rgba(8, 10, 14, 0.08));
+  pointer-events: none;
+}
+.home-page .landing.home-hero .hero {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  min-height: 100svh;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 8rem clamp(24px, 8vw, 120px) clamp(64px, 9vh, 120px);
+  align-items: flex-start;
+  justify-content: flex-end;
+  text-align: left;
+}
+.home-page .landing.home-hero .hero-copy {
+  max-width: 850px;
+}
+.home-page .landing.home-hero .hero-kicker {
+  margin-bottom: 1.2rem;
+  color: rgb(250, 200, 0);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.home-page .landing.home-hero .hero .title {
+  max-width: none;
+  font-size: clamp(3.75rem, 5vw, 4.5rem);
+  font-weight: 600;
+  letter-spacing: -0.055em;
+  line-height: 0.94;
+  text-shadow: none;
+  white-space: nowrap;
+}
+.home-page .landing.home-hero .hero-description {
+  max-width: 38ch;
+  margin-top: 1.35rem;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  font-weight: 400;
+  line-height: 1.55;
+}
+.home-page .landing.home-hero .hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+  margin-top: 2rem;
+}
+.home-page .landing.home-hero .hero-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+  color: rgb(250, 250, 250);
+  font-size: 1rem;
+  font-weight: 400;
+  text-decoration: none;
+  transition: border-color 180ms ease, color 180ms ease;
+}
+.home-page .landing.home-hero .hero-links a:hover {
+  border-color: rgb(250, 200, 0);
+  color: rgb(250, 200, 0);
+}
+.home-page .main.home-main {
+  margin: 0;
+  padding: 0;
+  background: rgb(250, 250, 250);
+  color: #202124;
+  text-align: left;
+}
+.home-page .home-programs,
+.home-page .home-teams,
+.home-page .home-history {
+  scroll-margin-top: 6rem;
+}
+.home-page .home-programs,
+.home-page .home-history {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: clamp(72px, 9vw, 132px) clamp(24px, 7vw, 112px);
+}
+.home-page .section-heading {
+  max-width: 780px;
+  margin-bottom: 3rem;
+}
+.home-page .section-heading .eyebrow {
+  margin-bottom: 1.15rem;
+  color: #806300;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.home-page .section-heading h2 {
+  color: #202124;
+  font-size: clamp(2.2rem, 4.5vw, 4rem);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 1.04;
+}
+.home-page .section-heading > p:not(.eyebrow) {
+  max-width: 58ch;
+  margin-top: 1.25rem;
+  color: #55595f;
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  font-weight: 400;
+  line-height: 1.65;
+}
+.home-page .program-list {
+  margin-top: 3.5rem;
+  border-bottom: 1px solid #d5d7da;
+}
+.home-page .program-row {
+  display: grid;
+  grid-template-columns: minmax(72px, 0.45fr) minmax(210px, 1.25fr) minmax(260px, 2fr) minmax(100px, 0.55fr);
+  align-items: center;
+  gap: 28px;
+  padding: 28px 0;
+  border-top: 1px solid #d5d7da;
+}
+.home-page .program-mark {
+  color: rgb(60, 72, 88);
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+.home-page .program-name h3 {
+  color: #202124;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.home-page .program-name p {
+  margin-top: 0.35rem;
+  color: #73777d;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+.home-page .program-copy {
+  color: #55595f;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.home-page .program-link {
+  justify-self: end;
+  color: #202124;
+  font-size: 0.9rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.home-page .program-link span {
+  margin-left: 0.25rem;
+  color: #806300;
+}
+.home-page .program-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.home-page .home-teams {
+  background: #f3f3f3;
+}
+.home-page .home-teams-inner {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: clamp(72px, 9vw, 132px) clamp(24px, 7vw, 112px);
+}
+.home-page .home-teams-inner .section-heading {
+  margin-bottom: 2.5rem;
+}
+.home-page .team-photo {
+  margin: 0;
+}
+.home-page .team-photo img {
+  display: block;
+  width: 100%;
+  max-height: 650px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  object-position: center 54%;
+}
+.home-page .team-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 48px;
+  margin-top: 2rem;
+  border-bottom: 1px solid #c9c9c9;
+}
+.home-page .team-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.3rem 0;
+  border-top: 1px solid #c9c9c9;
+  color: #202124;
+  text-decoration: none;
+}
+.home-page .team-link strong,
+.home-page .team-link small {
+  display: block;
+}
+.home-page .team-link strong {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.home-page .team-link small {
+  margin-top: 0.35rem;
+  color: #686c72;
+  font-size: 0.9rem;
+}
+.home-page .team-link .team-arrow {
+  font-size: 1.4rem;
+  transition: transform 180ms ease;
+}
+.home-page .team-link:hover .team-arrow {
+  transform: translateX(4px);
+}
+.home-page .home-history {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr auto;
+  align-items: center;
+  gap: 2rem;
+  border-top: 1px solid #e0e0e0;
+}
+.home-page .home-history .eyebrow {
+  margin-bottom: 0.8rem;
+  color: #806300;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.home-page .home-history h2 {
+  color: #202124;
+  font-size: clamp(1.6rem, 2.6vw, 2.3rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+.home-page .home-history > p {
+  color: #55595f;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.home-page .home-history > a {
+  color: #202124;
+  font-size: 0.95rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.home-page .home-history > a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.home-page .quote-section {
+  background-color: #171a20;
+}
+.home-page .quote-section .title {
+  width: min(100%, 1120px);
+  padding: 0;
+  border: 0;
+  color: rgb(250, 250, 250);
+  font-size: clamp(1.8rem, 3.4vw, 3.2rem);
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .home-page .landing.home-hero {
+    background-position: left center !important;
+  }
+  .home-page .landing.home-hero .hero {
+    padding: 8rem 24px 64px;
+  }
+  .home-page .landing.home-hero .hero .title {
+    max-width: 9ch;
+    font-size: clamp(3.5rem, 14vw, 5rem);
+    white-space: normal;
+  }
+  .home-page .landing.home-hero .hero-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .home-page .program-row {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 10px 18px;
+    padding: 24px 0;
+  }
+  .home-page .program-mark {
+    grid-column: 1;
+    grid-row: 1/span 3;
+  }
+  .home-page .program-name,
+  .home-page .program-copy,
+  .home-page .program-link {
+    grid-column: 2;
+  }
+  .home-page .program-link {
+    justify-self: start;
+  }
+  .home-page .team-photo img {
+    aspect-ratio: 4/3;
+  }
+  .home-page .team-links {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .home-page .home-history {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }/*# sourceMappingURL=index.css.map */

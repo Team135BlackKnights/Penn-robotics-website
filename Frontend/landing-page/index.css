@@ -600,7 +600,7 @@ html {
 .main {
   text-align: center;
   padding: 10vw;
-  background-color: rgb(250, 250, 250);
+  background-color: #fff;
 }
 .main .title {
   font-size: clamp(2.5rem, 8vw, 4rem);
@@ -686,9 +686,12 @@ html {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-color: rgb(250, 250, 250);
+  background-color: #fff;
   background-blend-mode: soft-light;
   padding: 2vw 0;
+}
+.sponsors img {
+  mix-blend-mode: multiply;
 }
 .sponsors .title {
   font-size: clamp(2.5rem, 8vw, 4rem);

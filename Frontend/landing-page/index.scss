@@ -330,7 +330,7 @@ button {
   }
   text-align: center;
   padding: 10vw;
-  background-color: $primary;
+  background-color: #fff;
 
   .title {
     font-size: $title;
@@ -437,9 +437,13 @@ button {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-color: $primary;
+  background-color: #fff;
   background-blend-mode: soft-light;
   padding: 2vw 0;
+
+  img {
+    mix-blend-mode: multiply;
+  }
 
   .title {
     font-size: $title;
